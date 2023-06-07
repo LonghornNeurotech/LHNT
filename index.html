@@ -11,7 +11,6 @@
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222; justify-content: center;}
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
@@ -31,29 +30,73 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 header{
     padding-top: none;
 }
+.logo{
+  padding-bottom: none;
+  user-select: none;
+  -moz-user-select: none;
+  margin-top: auto;
+  height: fit-content;
+}
+.logo:hover{
+  background-color: #222;
+}
+.sidebar{
+  flex-direction: column;
+  width: 120px;
+  background: #222;
+  justify-content: center;
+  height:100%;
+  position:fixed!important;
+  z-index:1;
+  overflow:auto;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50px;
+  height:100vh;
+}
+.bar-item{
+  padding:8px 16px;
+  width:auto;
+  border:none;
+  display:block;
+  outline:0;
+  text-align:center
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+.bar-item:nth-child(5){
+  margin-top: auto;
+}
+
 </style>
 </head>
 <body class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+<nav class="sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
   <!--img src="/w3images/avatar_smoke.jpg" style="width:100%"--->
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-greyscale">
+  <a href="#" class="bar-item w3-button w3-padding-large w3-hover-greyscale">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-greyscale">
+  <a href="#about" class="bar-item w3-button w3-padding-large w3-hover-greyscale">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
   </a>
-  <a href="#teams" class="w3-bar-item w3-button w3-padding-large w3-hover-greyscale">
+  <a href="#teams" class="bar-item w3-button w3-padding-large w3-hover-greyscale">
     <i class="fa fa-users w3-xxlarge"></i>
     <p>TEAMS</p>
   </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-greyscale">
+  <a href="#contact" class="bar-item w3-button w3-padding-large w3-hover-greyscale">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>CONTACT</p>
+  </a>
+  <a href="https://www.utexas.edu" class="bar-item button w3-padding-large">
+    <i class="w3-xxlarge logo"></i>
+    <object id="svg-logo" data="TEXAS_official_seal.svg"> </object>
   </a>
 </nav>
 
@@ -211,30 +254,19 @@ header{
       <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
     </div><br>
-    <p>Intereseted? Send us a message:</p>
+    <p>Let's get in touch. Send me a message:</p>
 
-    <form id = "contact" action="https://docs.google.com/forms/d/e/1FAIpQLSfQ4hE_kS5lYWUroivOzxLidBgyqFaV_kKK1OZ547NvYEBlZw/formResponse" method="post" target = "_blank" onsubmit="return clearForm()">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="entry.629102593"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="entry.864179738"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Major(s)" required name="entry.953024310"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Why are you interested?" required name="entry.1563692699"></p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
     </form>
-    
-    <script>
-      function clearForm() {
-        // delay the form clearning to ensure the data gets submitted
-        setTimeout(function(){
-          document.getElementById("contact").reset();
-        }, 500);
-        return true;
-      }
-    </script>
-
   <!-- End Contact Section -->
   </div>
   
