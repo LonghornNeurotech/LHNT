@@ -113,7 +113,3 @@ An example structure to give users an overview of where they can find key files:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-This README format covers the essentials and provides clarity for anyone visiting the repository, whether they're end-users or developers. Let me know if you'd like any additional sections or specific customization!
