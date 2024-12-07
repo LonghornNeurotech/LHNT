@@ -5,7 +5,7 @@ import SponsorsWidget from "../SponsorWidget";
 
 const About = () => {
   return (
-    <div style={{ backgroundColor: '#BF5700' }}>
+    <div style={{ backgroundColor: '#213C58' }}>
       <AboutInfo />
       <OfficerSection />  
       <SponsorsWidget />

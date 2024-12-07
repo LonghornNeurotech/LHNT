@@ -6,7 +6,7 @@ const ExecutiveOfficers = () => {
   return (
     <div>
       <div className="margin-top"><br /></div>
-      <h2 className="margin-top about-title">Executive Officers</h2>
+      <h2 className="margin-top about-title font-['Antonio']">Executive Officers</h2>
       {/* <hr style="width:270px; margin-bottom: 40px;" class="w3-opacity" /> */}
       <ContactCard name="Taima Crean" title="President" img="/OfficerImages/Taima_Crean.jpg" styleClass="pfp taima" linkedin="https://www.linkedin.com/in/taima00">
         Taima Crean is the President and Co-Founder of Longhorn Neurotech. She is a part of the class of 2025 studying Biomedical Engineering with a focus in computation and double minors in Business and Computer Science. In her work she uses deep learning to optimize radiation treatment for lung cancer patients. She has a passion for innovation and hopes to one day work on machine learning applications in healthcare.

@@ -1,3 +1,21 @@
+.container {
+  display: flex; /* Align columns side by side */
+  gap: 20px; /* Space between the columns */
+}
+
+.column {
+  flex: 1; /* Each column takes up equal width */
+}
+
+@media (max-width: 768px) { /* When screen width is 768px or smaller */
+  .container {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .column {
+    flex: 1 1 100%; /* Make each column take 100% width */
+  }
+}
 .half{
     display: inline-block;
     width: 50%;
@@ -5,5 +23,6 @@
 }
 
 .about-title{
+    color: #FFEBAD;
     font-size: 30px;
 }
