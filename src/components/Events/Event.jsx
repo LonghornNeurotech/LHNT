@@ -15,7 +15,10 @@ const Event = ({ event }) => {
     const { name, date, location, details, type, images } = event;
 
     return (
-        <div style={{backgroundColor: BONE_WHITE}} className="flex flex-col h-full rounded-lg shadow-md overflow-hidden">
+        <div 
+            style={{backgroundColor: BONE_WHITE}} 
+            className="flex flex-col h-full rounded-lg shadow-md overflow-hidden"
+        >
             {/* Event Type Banner */}
             <div className="w-full">
                 <span 

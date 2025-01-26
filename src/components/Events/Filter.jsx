@@ -15,7 +15,11 @@ const Filter = ({ setFilter }) => {
 
   return (
     <div className="filter-section">
-      <select style={{backgroundColor: BONE_WHITE, height: "2.5em"}} onChange={handleFilterChange} className="form-select baseText text-2xl">
+      <select 
+        style={{backgroundColor: BONE_WHITE, height: "2.5em"}}
+        onChange={handleFilterChange}
+        className="form-select baseText text-2xl"
+      >
         <option value="all">All Events</option>
         <option value="past">Past Events</option>
         <option value="upcoming">Upcoming Events</option>
