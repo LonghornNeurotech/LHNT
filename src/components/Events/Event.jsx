@@ -39,7 +39,9 @@ const Event = ({ event }) => {
     return (
         <div 
             style={{backgroundColor: BONE_WHITE}} 
-            className="flex flex-col h-full rounded-lg shadow-md overflow-hidden"
+            className="flex flex-col h-full rounded-lg shadow-md overflow-hidden
+                event-card hover:shadow-[0_0_16px_4px_#5D89BA] transition-shadow
+                duration-300 ease-in-out"
         >
 
             {/* Top Section with Type Banner and File Icon */}
