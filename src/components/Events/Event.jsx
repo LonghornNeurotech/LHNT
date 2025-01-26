@@ -20,8 +20,15 @@ const Event = ({ event }) => {
         <div style={{backgroundColor: BONE_WHITE}} className="flex flex-col h-full rounded-lg shadow-md overflow-hidden">
             {/* Event Type Banner */}
             <div className="w-full">
-                <span style={{backgroundColor: VANILLA, fontFamily: 'Antonio', letterSpacing: "0.05em"}} 
-                      className="w-full inline-block py-2 text-center text-base md:text-lg font-semibold">
+                <span 
+                    style={{
+                        backgroundColor: VANILLA, 
+                        fontFamily: 'Antonio', 
+                        letterSpacing: "0.05em", 
+                        display: 'block'
+                    }} 
+                    className="w-full inline-block py-2 pl-4 text-base md:text-lg font-semibold"
+                >
                     {type}
                 </span>
             </div>
