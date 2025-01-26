@@ -17,18 +17,72 @@ const Event = ({ event }) => {
     const placeholderImage = "https://via.placeholder.com/150";
 
     return (
-        <div style={{minHeight: '50em', backgroundColor: BONE_WHITE}} className="event-card border p-4 pb-1 rounded-xl shadow-sm mb-1">
-            <span style={{backgroundColor: VANILLA}} className="event-type badge mt-0.5 mb-4 text-base text-black heading">{type}</span>
-            <img 
-                src={image || placeholderImage} 
-                alt={`${name} image`} 
-                className="event-image w-full h-50 object-contain rounded mb-4" 
-            />
-            <div  className="flex flex-col flex-wrap flex-auto">
-                <h2 style={{color: PRUSSIAN_BLUE}} className="text-2xl mb-2 heading font-bold">{name}</h2>
-                <p className="mb-2 text-base normal baseText">{details}</p>
-                <p className="text-lg baseText"><strong>Date:</strong> {new Date(date).toLocaleDateString()}</p>
-                {location && <p className="text-lg baseText"><strong>Location:</strong> {location}</p>} {/* Only display location if provided */}
+        <div style={{backgroundColor: BONE_WHITE}} className="flex flex-col h-full rounded-lg shadow-md overflow-hidden">
+            {/* Event Type Banner */}
+            <div className="w-full">
+                <span style={{backgroundColor: VANILLA, fontFamily: 'Antonio', letterSpacing: "0.05em"}} 
+                      className="w-full inline-block py-2 text-center text-base md:text-lg font-semibold">
+                    {type}
+                </span>
+            </div>
+            
+            {/* Event Image */}
+            <div className="relative w-full overflow-hidden flex items-center justify-center" 
+                style={{ 
+                    minHeight: '300px',
+                    height: 'auto',
+                    maxHeight: '350px',
+                    '@media (max-width: 768px)': {
+                        minHeight: '500px',  // Increased minimum height for mobile
+                        maxHeight: '600px'   // Increased maximum height for mobile
+                    }
+                }}>
+                <img 
+                    src={image || placeholderImage} 
+                    alt={name} 
+                    className="h-full w-auto md:w-auto max-w-full"
+                    style={{
+                        backgroundColor: BONE_WHITE,
+                        padding: '4px',      // Reduced padding
+                        objectFit: 'contain',
+                        '@media (max-width: 768px)': {
+                            objectFit: 'contain',
+                            height: '100%',  // Fill container height
+                            width: 'auto',   // Maintain aspect ratio
+                            maxWidth: '98%', // Nearly full width
+                            minHeight: '480px' // Ensure minimum height for portrait images
+                        }
+                    }}
+                />
+            </div>
+
+
+            {/* Event Content */}
+            <div className="flex flex-col flex-grow p-4" style={{ fontFamily: 'Antonio' }}>
+                {/* Event Title */}
+                <h3 style={{color: PRUSSIAN_BLUE, fontFamily: 'Antonio'}} 
+                    className="text-xl font-bold mb-3">
+                    {name}
+                </h3>
+                
+                {/* Event Description */}
+                <div className="flex-grow mb-4">
+                    <p className="text-base normal baseText">
+                        {details}
+                    </p>
+                </div>
+                
+                {/* Event Details Footer */}
+                <div className="mt-auto">
+                    <p className="text-lg baseText">
+                        <strong>Date:</strong> {new Date(date).toLocaleDateString()}
+                    </p>
+                    {location && 
+                        <p className="text-lg baseText">
+                            <strong>Location:</strong> {location}
+                        </p>
+                    }
+                </div>
             </div>
         </div>
     );
