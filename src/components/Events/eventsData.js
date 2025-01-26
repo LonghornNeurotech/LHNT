@@ -113,6 +113,18 @@ const events = [
             development of brain-computer interface technology!`,
         type: `Guest Speaker Talks`,
         images: ["/assets/DrJordan.jpg"],
+    },
+
+    {
+        id: 7,
+        name: "Guest Speakers Dr. Justin Kilmarx and Dr. Ivan Tashev talk",
+        date: new Date("2024-10-09"),
+        location: "The University of Texas at Austin",
+        details: `Meet with Dr. Justin Kilmarx and Dr. Ivan Tashev, researchers from the
+            Brain-Computer Interfaces project in Microsoft Research, in their guest speaker
+            talk at the scheduled date at 8PM in the University of Texas at Austin.`,
+        type: `Guest Speaker Talks`,
+        images: ["/assets/events/justin.png", "/assets/events/ivan_tashev.png"]
     }
 
 ];
