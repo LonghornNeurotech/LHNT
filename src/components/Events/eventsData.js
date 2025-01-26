@@ -40,10 +40,18 @@ const events = [
             Brain Organoids and Human-AI co-evolution. Please join us at 7:00 PM - 9:00 PM
             at the scheduled date!`,
         type: `Guest Speaker Talks`,
-        images: ["/assets/events/Longhorn Neurotech + Synapse Guest Speaker Panel.png", "/assets/events/DSCF0650.JPG", 
-            "/assets/events/DSCF0607.JPG"],
+        images: ["/assets/events/Longhorn Neurotech + Synapse Guest Speaker Panel.png", "/assets/events/DSCF0547.JPG", 
+            "/assets/events/DSCF0600.JPG", "/assets/events/DSCF0607.JPG", "/assets/events/DSCF0611.JPG",
+            "/assets/events/DSCF0617.JPG", "/assets/events/DSCF0650.JPG", "/assets/events/DSCF0657.JPG",
+            "/assets/events/DSCF0659.JPG"],
+        files: [
+            {
+                type: "pdf",
+                name: "Future of Neural Engineering Forum Questions",
+                link: "/assets/events/Final Three _  Forum Questions.docx.pdf"
+            }
+        ]
     },
-
 
     {
         id: 2,

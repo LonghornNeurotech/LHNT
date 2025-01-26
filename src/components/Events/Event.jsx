@@ -1,4 +1,5 @@
 // Event component for the Events page
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import {PRUSSIAN_BLUE, VANILLA, BONE_WHITE} from './colors.js';
 import ImageCarousel from './ImageCarousel';
@@ -10,6 +11,8 @@ import ImageCarousel from './ImageCarousel';
 */
 const Event = ({ event }) => {
 
+    const [showFiles, setShowFiles] = useState(false);
+
     console.log(`Event received in Event component:`, event);
 
     const { name, date, location, details, type, images } = event;
@@ -19,19 +22,72 @@ const Event = ({ event }) => {
             style={{backgroundColor: BONE_WHITE}} 
             className="flex flex-col h-full rounded-lg shadow-md overflow-hidden"
         >
-            {/* Event Type Banner */}
-            <div className="w-full">
+
+            {/* Top Section with Type Banner and File Icon */}
+            <div className="relative w-full">
+                {/* Event Type Banner */}
                 <span 
                     style={{
                         backgroundColor: VANILLA, 
-                        fontFamily: 'Antonio', 
-                        letterSpacing: "0.05em", 
-                        display: 'block'
-                    }} 
-                    className="w-full inline-block py-2 pl-4 text-base md:text-lg font-semibold"
+                        fontFamily: 'Antonio',
+                        letterSpacing: "0.05em"
+                    }}
+                    className="inline-block py-2 px-4 text-base md:text-lg font-semibold rounded-br-lg"
                 >
                     {type}
                 </span>
+
+                {/* File Icon (if files exist) */}
+                {event.files && event.files.length > 0 && (
+                    <div className="absolute top-0 right-0">
+                        <button 
+                            className="p-2 m-1 rounded-full hover:bg-opacity-90 transition-all"
+                            style={{backgroundColor: PRUSSIAN_BLUE}}
+                        >
+                            <svg 
+                                width="24" 
+                                height="24" 
+                                viewBox="0 0 24 24" 
+                                fill="none" 
+                                stroke={BONE_WHITE}
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <line x1="10" y1="9" x2="8" y2="9" />
+                            </svg>
+                        </button>
+
+                        {/* Dropdown Menu */}
+                        {showFiles && (
+                            <div className="absolute right-0 mt-1 w-64 bg-white rounded-lg shadow-lg z-20 overflow-hidden">
+                                {event.files.map((file, index) => (
+                                    <a 
+                                        key={index}
+                                        href={file.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="flex items-center gap-2 p-3 hover:bg-gray-100 transition-colors"
+                                        style={{ color: PRUSSIAN_BLUE }}
+                                    >
+                                        {/* PDF Icon */}
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill={PRUSSIAN_BLUE}>
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                                            <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" fill="none" stroke="white" strokeWidth="2"/>
+                                        </svg>
+                                        <span className="font-medium">{file.name}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                )}
+
+
             </div>
 
             {/* Image Carousel */}
@@ -76,6 +132,11 @@ Event.propTypes = {
         details: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         images: PropTypes.arrayOf(PropTypes.string).isRequired,
+        files: PropTypes.arrayOf(PropTypes.shape({
+            type: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            link: PropTypes.string.isRequired
+        }))
     }).isRequired,
 };
 
