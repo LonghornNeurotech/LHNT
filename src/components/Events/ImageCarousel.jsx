@@ -27,7 +27,8 @@ const ImageCarousel = ({ images }) => {
     // If only one image, render without carousel controls
     if (images.length === 1) {
         return (
-            <div className="relative w-full overflow-hidden flex items-center justify-center" 
+            <div 
+                className="relative w-full overflow-hidden flex items-center justify-center" 
                 style={{ 
                     minHeight: '300px',
                     height: 'auto',
@@ -36,7 +37,8 @@ const ImageCarousel = ({ images }) => {
                         minHeight: '500px',
                         maxHeight: '600px'
                     }
-                }}>
+                }}
+            >
                 <img 
                     src={images[0]} 
                     alt="Event"
@@ -62,30 +64,32 @@ const ImageCarousel = ({ images }) => {
     return (
         <div className="relative w-full overflow-hidden" 
             style={{ 
-                minHeight: '300px',
+                minHeight: '450px',
                 height: 'auto',
-                maxHeight: '350px',
-                '@media (max-width: 768px)': {
+                maxHeight: '600px',
+                '@media (min-width: 768px) and (max-width: 1024px)': {
                     minHeight: '500px',
-                    maxHeight: '600px'
+                    maxHeight: '650px'
+                },
+                '@media (max-width: 768px)': {
+                    minHeight: '400px',
+                    maxHeight: '500px'
                 }
             }}>
             {/* Image Container */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center w-full h-full px-8">
                 <img 
                     src={images[currentIndex]} 
                     alt={`Event ${currentIndex + 1}`}
-                    className="h-full w-auto md:w-auto max-w-full"
+                    className="object-contain w-full h-full"
                     style={{
                         backgroundColor: BONE_WHITE,
                         padding: '4px',
-                        objectFit: 'contain',
-                        '@media (max-width: 768px)': {
-                            objectFit: 'contain',
-                            height: '100%',
-                            width: 'auto',
-                            maxWidth: '98%',
-                            minHeight: '480px'
+                        maxWidth: '100%',
+                        maxHeight: '95%',
+                        '@media (min-width: 768px) and (max-width: 1024px)': {
+                            maxWidth: '95%',
+                            minHeight: '450px'
                         }
                     }}
                 />
@@ -94,25 +98,53 @@ const ImageCarousel = ({ images }) => {
             {/* Navigation Buttons */}
             <button 
                 onClick={goToPrevious}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 rounded-full 
+                    hover:opacity-80 transition-all flex items-center justify-center"
+                style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    width: '40px',
+                    height: '40px',
+                    zIndex: 10
+                }}
                 aria-label="Previous image"
             >
-                ←
-            </button>
-            <button 
-                onClick={goToNext}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
-                aria-label="Next image"
-            >
-                →
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M15 19l-7-7 7-7" stroke="#FFF" strokeWidth="2" strokeLinecap="round" 
+                        strokeLinejoin="round"/>
+                </svg>
             </button>
 
-            {/* Optional: Image Counter */}
-            <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm">
+            <button 
+                onClick={goToNext}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full 
+                    hover:opacity-80 transition-all flex items-center justify-center"
+                style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    width: '40px',
+                    height: '40px',
+                    zIndex: 10
+                }}
+                aria-label="Next image"
+            >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M9 5l7 7-7 7" stroke="#FFF" strokeWidth="2" strokeLinecap="round" 
+                        strokeLinejoin="round"/>
+                </svg>
+            </button>
+
+            {/* Image Counter */}
+            <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white 
+                px-2 py-1 rounded-full text-sm"
+            >
                 {currentIndex + 1} / {images.length}
             </div>
         </div>
     );
+
 };
 
 ImageCarousel.propTypes = {
