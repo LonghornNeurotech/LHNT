@@ -1,6 +1,7 @@
 // Event component for the Events page
 import PropTypes from 'prop-types';
 import {PRUSSIAN_BLUE, VANILLA, BONE_WHITE} from './colors.js';
+import ImageCarousel from './ImageCarousel';
 
 /* 
     Takes in all properties of event and returns 
@@ -11,10 +12,7 @@ const Event = ({ event }) => {
 
     console.log(`Event received in Event component:`, event);
 
-    const { name, date, location, details, type, image } = event;
-
-    // Provide a placeholder image if the event provided doesn't have an image URL.
-    const placeholderImage = "https://via.placeholder.com/150";
+    const { name, date, location, details, type, images } = event;
 
     return (
         <div style={{backgroundColor: BONE_WHITE}} className="flex flex-col h-full rounded-lg shadow-md overflow-hidden">
@@ -32,37 +30,9 @@ const Event = ({ event }) => {
                     {type}
                 </span>
             </div>
-            
-            {/* Event Image */}
-            <div className="relative w-full overflow-hidden flex items-center justify-center" 
-                style={{ 
-                    minHeight: '300px',
-                    height: 'auto',
-                    maxHeight: '350px',
-                    '@media (max-width: 768px)': {
-                        minHeight: '500px',  // Increased minimum height for mobile
-                        maxHeight: '600px'   // Increased maximum height for mobile
-                    }
-                }}>
-                <img 
-                    src={image || placeholderImage} 
-                    alt={name} 
-                    className="h-full w-auto md:w-auto max-w-full"
-                    style={{
-                        backgroundColor: BONE_WHITE,
-                        padding: '4px',      // Reduced padding
-                        objectFit: 'contain',
-                        '@media (max-width: 768px)': {
-                            objectFit: 'contain',
-                            height: '100%',  // Fill container height
-                            width: 'auto',   // Maintain aspect ratio
-                            maxWidth: '98%', // Nearly full width
-                            minHeight: '480px' // Ensure minimum height for portrait images
-                        }
-                    }}
-                />
-            </div>
 
+            {/* Image Carousel */}
+            <ImageCarousel images={images} />
 
             {/* Event Content */}
             <div className="flex flex-col flex-grow p-4" style={{ fontFamily: 'Antonio' }}>
@@ -102,7 +72,7 @@ Event.propTypes = {
         location: PropTypes.string,
         details: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
-        image: PropTypes.string,
+        images: PropTypes.arrayOf(PropTypes.string).isRequired,
     }).isRequired,
 };
 

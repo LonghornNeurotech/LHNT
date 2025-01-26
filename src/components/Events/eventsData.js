@@ -39,7 +39,7 @@ const events = [
             False memory implantation, and Brain Organoids and Human-AI co-evolution. Please join us at 7:00 PM 
             - 9:00 PM at the scheduled date!`,
         type: `Guest Speaker Talks`,
-        image: "/assets/events/Longhorn Neurotech + Synapse Guest Speaker Panel.png",
+        images: ["/assets/events/Longhorn Neurotech + Synapse Guest Speaker Panel.png", "/assets/events/DSCF0650.JPG", "/assets/events/DSCF0607.JPG"],
     },
 
 
@@ -50,7 +50,7 @@ const events = [
         location: "Online on Zoom",
         details: `Join us for a completely online guest speaker session starring Dr. Scott Wood from NASA Johnson Space center!`,
         type: `Guest Speaker Talks`,
-        image: "/assets/events/Guest Speaker with Dr. Scott Wood.png",
+        images: ["/assets/events/Guest Speaker with Dr. Scott Wood.png"],
     },
 
     {
@@ -63,7 +63,7 @@ const events = [
             All are welcome, no RSVP or anything. Our very own Tony Chae will also host their Journal Club presentation in
             this general meeting too!`,
         type: `General Meeting`,
-        image: "/assets/events/General Meeting with Dr. Jose Del R. Milan.png",
+        images: ["/assets/events/General Meeting with Dr. Jose Del R. Milan.png"],
     },
 
     {
@@ -75,7 +75,7 @@ const events = [
             the scheduled date and location! Learn more about the various opportunties and projects Longhorn Neurotech
             will provide this year!`,
         type: `General Meeting`,
-        image: "/assets/events/LHNT First General Meeting.png",
+        images: ["/assets/events/LHNT First General Meeting.png"],
     },
 
     {
@@ -85,7 +85,7 @@ const events = [
         location: "EER Stairway",
         details: `Legendary group photo of all Longhorn Neurotech's 2024-2025 project members!`,
         type: `Project Meeting`,
-        image: "/assets/lab.jpg",
+        images: ["/assets/lab.jpg"],
     },
 
     {
@@ -98,7 +98,7 @@ const events = [
             A legendary opportunity for our members to learn directly from a leading expert on the past,
             present, and future development of brain-computer interface technology!`,
         type: `Guest Speaker Talks`,
-        image: "/assets/DrJordan.jpg"
+        images: ["/assets/DrJordan.jpg"],
     }
 
 ];
