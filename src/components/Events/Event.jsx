@@ -1,5 +1,5 @@
 // Event component for the Events page
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {PRUSSIAN_BLUE, VANILLA, BONE_WHITE} from './colors.js';
 import ImageCarousel from './ImageCarousel';
@@ -12,10 +12,29 @@ import ImageCarousel from './ImageCarousel';
 const Event = ({ event }) => {
 
     const [showFiles, setShowFiles] = useState(false);
+    const dropdownRef = useRef(null);
+    const buttonRef = useRef(null); 
 
     console.log(`Event received in Event component:`, event);
 
     const { name, date, location, details, type, images } = event;
+
+    // Handles clicking outside of dropdown
+    useEffect( () => {
+        const handleClickOutside = (e) => {
+            if (dropdownRef.current && buttonRef.current 
+                    && !buttonRef.current.contains(e.target)
+                    && !dropdownRef.current.contains(e.target)
+            ){
+                setShowFiles(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => document.removeEventListener('mousedown',
+            handleClickOutside);
+    }, []);
 
     return (
         <div 
@@ -41,6 +60,8 @@ const Event = ({ event }) => {
                 {event.files && event.files.length > 0 && (
                     <div className="absolute top-0 right-0">
                         <button 
+                            ref={buttonRef}
+                            onClick={() => setShowFiles(!showFiles)}
                             className="p-2 m-1 rounded-full hover:bg-opacity-90 transition-all"
                             style={{backgroundColor: PRUSSIAN_BLUE}}
                         >
@@ -64,7 +85,12 @@ const Event = ({ event }) => {
 
                         {/* Dropdown Menu */}
                         {showFiles && (
-                            <div className="absolute right-0 mt-1 w-64 bg-white rounded-lg shadow-lg z-20 overflow-hidden">
+                            <div 
+                                ref={dropdownRef} 
+                                className={`absolute right-0 mt-1 w-64 bg-white rounded-lg shadow-lg z-20 overflow-hidden
+                                    transition-all duration-200 ease-in-out origin-top ${showFiles ? 'opacity-100 scale-y-100'
+                                    : 'opacity-0 scale-y-0 pointer-events-none'} `}
+                            >
                                 {event.files.map((file, index) => (
                                     <a 
                                         key={index}
