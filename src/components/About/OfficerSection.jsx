@@ -1,4 +1,3 @@
-import React from "react";
 import ExecutiveOfficers from "./ExecutiveOfficers"
 import LeadershipTeam from "./LeadershipTeam"
 import "./OfficerSection.css"

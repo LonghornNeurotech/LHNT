@@ -1,3 +1,4 @@
+/* Alumni page */
 import SponsorWidget from './SponsorWidget';
 
 const Alumni = () => {

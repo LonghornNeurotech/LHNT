@@ -1,4 +1,3 @@
-import React from 'react';
 import "./ContactCard.css"
 
 const ContactCard = ({ name, title, img, styleClass, linkedin, children }) => {

@@ -1,3 +1,4 @@
+/* Events page */
 import { useState, useEffect } from 'react';
 import eventsData from './Events/eventsData';
 import { EventsDisplay, Filter } from './Events/events';

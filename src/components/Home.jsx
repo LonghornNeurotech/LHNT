@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
+/* Home page */
+import { useRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SponsorsWidget from "./SponsorWidget";
