@@ -1,3 +1,4 @@
+/* About page */
 import AboutInfo from "./AboutInfo"
 import OfficerSection from "./OfficerSection"
 import SponsorsWidget from "../SponsorWidget";
