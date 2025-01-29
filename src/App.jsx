@@ -1,6 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { Home, About, Contact, Navbar, Events } from "./components";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { Home, About, Contact, Navbar, Events, Alumni } from "./components";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +14,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/alumni" element={<Alumni />} />
           </Routes>
         </div>
       </div>
