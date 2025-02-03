@@ -1,3 +1,8 @@
+import Profile from './Profile/Profile';
+import ProfileDisplay from './ProfileDisplay/ProfileDisplay';
+import Search from './Search/Search';
+import Filter from './Filter/Filter';
+
 /* 
     This is where each component under the Alumni directory 
     are imported and then exported, so other components 
@@ -9,7 +14,13 @@
     import { Profile, ProfileDisplay, Search, Filter } from './alumni';
 */
 
-export { default as Profile } from './Profile/Profile';
-export { default as ProfileDisplay } from './ProfileDisplay/ProfileDisplay';
-export { default as Search } from './Search/Search';
-export { default as Filter } from './Filter/Filter';
+export { Profile, ProfileDisplay, Search, Filter };
+
+const AlumniComponents = {
+    Profile,
+    ProfileDisplay,
+    Search,
+    Filter
+};
+
+export default AlumniComponents;

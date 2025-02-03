@@ -1,5 +1,6 @@
 /* Alumni page */
 import SponsorWidget from './SponsorWidget';
+import ProfileDisplay from './Alumni/ProfileDisplay/ProfileDisplay';
 
 const Alumni = () => {
     return (
@@ -25,6 +26,7 @@ const Alumni = () => {
                         Welcome to the Alumni page! Here we showcase the incredible journeys and accomplishments of our alumni.
                     </p>
                     {/* Alumni cards or list will go here */}
+                    <ProfileDisplay />
                 </main>
             </div>
 

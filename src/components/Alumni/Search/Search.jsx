@@ -9,3 +9,12 @@
 
     - Looks like a search bar
 */
+const Search = () => {
+    return (
+        <div>
+            
+        </div>
+    );
+};
+
+export default Search;

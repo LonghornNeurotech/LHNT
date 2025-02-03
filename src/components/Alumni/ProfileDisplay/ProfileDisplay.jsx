@@ -1,3 +1,4 @@
+import Pagination from '../Pagination/Pagination'
 /* 
     ProfileDisplay component to arrange the Profile
     cards for each member 
@@ -11,3 +12,12 @@
 
     - May handle pagination too!
 */
+const ProfileDisplay = () => {
+
+  return(
+    <Pagination itemsPerPage={3}/>
+  );
+
+};
+
+export default ProfileDisplay;
