@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Pagination from '../Pagination/Pagination'
 /* 
     ProfileDisplay component to arrange the Profile
@@ -14,8 +15,20 @@ import Pagination from '../Pagination/Pagination'
 */
 const ProfileDisplay = () => {
 
+  const [items, setItems] = useState([]);
+
+  // Parse test data from json file. 
+  useEffect(() => {
+  fetch('/test_data.json')
+      .then(response => response.json())
+      .then(data => {
+          setItems(data);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   return(
-    <Pagination itemsPerPage={3}/>
+    <Pagination itemsPerPage={3} items={items}/>
   );
 
 };
