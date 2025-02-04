@@ -1,3 +1,5 @@
+import { filter } from 'framer-motion/client';
+import { useState, useEffect } from 'react';
 /* 
     Search bar for the Alumni page 
 
@@ -9,10 +11,23 @@
 
     - Looks like a search bar
 */
-const Search = () => {
+const Search = ({setFilteredData, data}) => {
+    const [query, setQuery] = useState("");
+    
+    useEffect(() => {
+        const filteredData = data.filter((item) => {
+            return item.name.toLowerCase().includes(query.toLowerCase());
+        });
+        setFilteredData(filteredData);
+    }, [query, data, setFilteredData]);
+
+    const handleQuery = (event) => {
+        setQuery(event.target.value);
+    };
+
     return (
         <div>
-            
+            <input placeholder={"Enter name"} onChange={handleQuery}></input>
         </div>
     );
 };
