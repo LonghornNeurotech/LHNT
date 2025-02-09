@@ -26,8 +26,14 @@ const Search = ({setFilteredData, data}) => {
     };
 
     return (
-        <div>
-            <input placeholder={"Enter name"} onChange={handleQuery}></input>
+        <div className="w-full">
+            <input
+                type="text" 
+                className="w-full px-4 py-3 text-lg rounded-md shadow-sm focus:ring focus:ring-opacity-50 transition-colors duration-300 bg-bone-white border-silver-lake-blue text-prussian-blue"
+                placeholder={"Enter name"} 
+                value={query}
+                onChange={handleQuery}
+            />
         </div>
     );
 };
