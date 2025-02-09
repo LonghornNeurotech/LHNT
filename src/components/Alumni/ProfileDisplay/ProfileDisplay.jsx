@@ -1,8 +1,3 @@
-import { useEffect, useState } from 'react';
-
-import Profile from '../Profile/Profile';
-import Pagination from '../Pagination/Pagination'
-import Search from '../Search/Search'
 /* 
     ProfileDisplay component to arrange the Profile
     cards for each member 
@@ -16,6 +11,12 @@ import Search from '../Search/Search'
 
     - May handle pagination too!
 */
+
+import { useEffect, useState } from 'react';
+import Profile from '../Profile/Profile';
+import Pagination from '../Pagination/Pagination'
+import Search from '../Search/Search'
+
 const ProfileDisplay = () => {
 
   const [items, setItems] = useState([]);
