@@ -19,6 +19,7 @@ const ProfileDisplay = () => {
 
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
+  const itemsPerPage = 3;
 
   // Parse test data from json file. 
   useEffect(() => {
@@ -34,7 +35,7 @@ const ProfileDisplay = () => {
   return(
     <div>
       <Search setFilteredData={setFilteredItems} data={items}/>
-      <Pagination itemsPerPage={3} items={filteredItems}/>
+      <Pagination itemsPerPage={itemsPerPage} items={filteredItems}/>
     </div>
   );
 

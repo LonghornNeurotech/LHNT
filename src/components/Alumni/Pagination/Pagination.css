@@ -12,16 +12,19 @@
   padding: 0.1rem 1rem;
   border: gray 1px solid;
   cursor: pointer;
+  color: white;
 }
 .react-paginate .previous a,
 .react-paginate .next a,
 .react-paginate .break a {
   border-color: transparent;
+  color: white;
+
 }
 .react-paginate .selected a {
-  background-color: #0366d6;
+  background-color: #F3E5AB;
   border-color: transparent;
-  color: white;
+  color: black;
   min-width: 32px;
 }
 .react-paginate .disabled a {
