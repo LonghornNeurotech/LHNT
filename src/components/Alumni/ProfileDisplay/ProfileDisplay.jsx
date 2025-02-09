@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import Profile from '../Profile/Profile';
 import Pagination from '../Pagination/Pagination'
 import Search from '../Search/Search'
 /* 
@@ -19,25 +20,49 @@ const ProfileDisplay = () => {
 
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 6;
+  const offset = currentPage * itemsPerPage;
+  const currentPageItems = filteredItems.slice(offset, offset + itemsPerPage);
+  const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
 
-  // Parse test data from json file. 
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  // Parse test data from json file.
   useEffect(() => {
-  fetch('/test_data.json')
-      .then(response => response.json())
-      .then(data => {
-          setItems(data);
-          setFilteredItems(data);
-      })
-      .catch(error => console.error('Error fetching data:', error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/test_data.json');
+        const data = await response.json();
+        setItems(data);
+        setFilteredItems(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  return(
-    <div>
-      <Search setFilteredData={setFilteredItems} data={items}/>
-      <Pagination itemsPerPage={3} items={filteredItems}/>
+  return (
+    <div className="py-8">
+      <div className="mb-8 w-1/3">
+        <Search setFilteredData={setFilteredItems} data={items} />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {currentPageItems.map((item) => (
+          <Profile key={item.id} {...item} />
+        ))}
+      </div>
+
+      <div className="mt-8">
+        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+      </div>
     </div>
   );
-
 };
 
 export default ProfileDisplay;
