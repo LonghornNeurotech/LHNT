@@ -1,36 +1,39 @@
-.react-paginate {
-  margin-bottom: 2rem;
+/* Pagination.css */
+.pagination {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style-type: none;
-  padding: 0 5rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
 }
 
-.react-paginate a {
-  border-radius: 7px;
-  padding: 0.1rem 1rem;
-  border: gray 1px solid;
+.page-item {
+  margin: 0 0.5rem;
+}
+
+.page-link {
+  border: 1px solid #003153; /* Prussian Blue */
+  color: #003153; /* Prussian Blue */
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
   cursor: pointer;
-  color: white;
+  font-size: 1.1rem; /* Make the text larger */
+  line-height: 1.5;
+  transition: all 0.3s ease;
 }
-.react-paginate .previous a,
-.react-paginate .next a,
-.react-paginate .break a {
-  border-color: transparent;
-  color: white;
 
+.page-link:hover {
+  background-color: #F3E5AB; /* Vanilla */
+  border-color: #003153; /* Prussian Blue */
+  color: #003153; /* Prussian Blue */
+
+.active .page-link {
+  background-color: #003153; /* Prussian Blue */
+  border-color: #003153; /* Prussian Blue */
+  color: #FFF8D6; /* Light Cream */
 }
-.react-paginate .selected a {
-  background-color: #F3E5AB;
-  border-color: transparent;
-  color: black;
-  min-width: 32px;
-}
-.react-paginate .disabled a {
-  color: grey;
-}
-.react-paginate .disable,
-.react-paginate .disabled a {
-  cursor: default;
+
+.disabled .page-link {
+  color: #ccc;
+  pointer-events: none;
 }

@@ -5,16 +5,19 @@
     - Displays relevant information about an alumni 
         member from Longhorn Neurotech!
 */
-const Profile = (name) => {
-    return (
-      // Temp class for testing. TODO: Replace with profile class
-      <div className="contact-card">
-        <div>
-          <h2 className="margin-top">Placeholder</h2>
-          <h2 className="w3-xlarge margin-top"><b>{name}</b></h2>
-        </div>
-      </div>
-    );
+const Profile = ({ name, photo, major, graduationYear, bio }) => {
+  return (
+    <div className="bg-[#FFF8D6] rounded-lg shadow-md p-4 flex flex-col items-center">
+      <img
+        src={photo || 'default-profile.jpg'}
+        alt={name}
+        className="w-32 h-32 rounded-full object-cover mb-2"
+      />
+      <h3 className="text-xl font-semibold text-prussian-blue break-words text-center">{name}</h3>
+      <p className="text-sm text-prussian-blue">{major} - {graduationYear}</p>
+      <p className="text-sm text-prussian-blue text-center mt-2">{bio}</p>
+    </div>
+  );
 };
 
 export default Profile;
