@@ -19,7 +19,7 @@ import Pagination from '../Pagination/Pagination'
 import Search from '../Search/Search'
 
 const ProfileDisplay = () => {
-
+  const [tags, setTags] = useState([]);
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
@@ -32,7 +32,8 @@ const ProfileDisplay = () => {
     setCurrentPage(selected);
   };
 
-  // Parse test data from json file.
+  // Parse test data from json file. 
+  // TODO: Replace with actual data from either S3 or cached server data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,7 +53,7 @@ const ProfileDisplay = () => {
     <div className="py-8">
       <div className="mb-8 flex">
         <Search className="float-left w-1/4" setFilteredData={setFilteredItems} data={items} />
-        <Filter className="float-right w-1/4"></Filter>
+        <Filter className="float-right w-1/4" setSelectedTags={setTags} selectedTags={tags}></Filter>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

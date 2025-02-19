@@ -11,9 +11,8 @@
 import React, { useState, useEffect } from 'react';
 import './Filter.css';
 
-const Filter = () => {
+const Filter = ({selectedTags, setSelectedTags}) => {
     const [checkboxesVisible, setCheckboxesVisible] = useState(false);
-    const [selectedTags, setSelectedTags] = useState([]);
     const tags = ['2024', '2025', 'Alumni', 'Officer', 'Member', 'UI/UX'];
 
     useEffect(() => {
@@ -34,6 +33,7 @@ const Filter = () => {
         setCheckboxesVisible(!checkboxesVisible);
     };
 
+    // TODO: Do sort for tags array so displays same every time
     const checkboxStatusChange = (event) => {
         const value = event.target.value;
         setSelectedTags((prevValues) => {
