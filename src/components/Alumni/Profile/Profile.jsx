@@ -5,7 +5,7 @@
     - Displays relevant information about an alumni 
         member from Longhorn Neurotech!
 */
-const Profile = ({ name, photo, major, graduationYear, bio }) => {
+const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio }) => { // Phone is optional. Maybe implement placeholder in data itself
   return (
     <div className="bg-[#FFF8D6] rounded-lg shadow-md p-4 flex flex-col items-center">
       {photo && (
@@ -27,6 +27,12 @@ const Profile = ({ name, photo, major, graduationYear, bio }) => {
       )}
       <h3 className="text-xl font-semibold text-prussian-blue break-words text-center">{name}</h3>
       <p className="text-sm text-prussian-blue">{major} - {graduationYear}</p>
+      {cohorts.map((cohort, index) => (
+        <p key={index} className="text-sm text-prussian-blue">{cohort.year} - {cohort.role}</p>
+      ))}
+      <p className="text-sm text-prussian-blue text-center mt-2">{contacts.email}</p>
+      <p className="text-sm text-prussian-blue text-center mt-2">{contacts.phone}</p>
+      {/* // <p className="text-sm text-prussian-blue text-center mt-2">{contact.linkedin}</p> */}
       <p className="text-sm text-prussian-blue text-center mt-2">{bio}</p>
     </div>
   );

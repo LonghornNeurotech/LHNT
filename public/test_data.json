@@ -2,97 +2,169 @@
   {
     "_id": "679ffb8fe8d66612577f4c8b",
     "name": "Cassie Lynch",
+    "major": "Chemistry",
+    "graduationYear": 2025,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "UI/UX"
       },
       {
-        "year": 1
+        "year": 1,
+        "role": "UI/UX"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp@gmail.com",
+      "phone": "123-111-1111"
+    }
   },
   {
     "_id": "679ffb8ff3403d755066bbe9",
     "name": "Della Stephens",
+    "major": "Computer Science",
+    "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "VR Headset Design"
       },
       {
-        "year": 1
+        "year": 1,
+        "role": "VP Operations"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp1@gmail.com",
+      "phone": "223-111-1111"
+    }
   },
   {
     "_id": "679ffb8f70580cc8d83febbd",
     "name": "Cecelia Browning",
+    "major": "Biomedical Engineering",
+    "graduationYear": 2027,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "Signal Acquisition"
       },
       {
-        "year": 1
+        "year": 1,
+        "role": "ML"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp2@gmail.com",
+      "phone": "323-111-1111"
+    }
   },
   {
     "_id": "679ffb8f2fbd1d974a9eef5e",
     "name": "Olivia Mccray",
+    "major": "Electrical Engineering",
+    "graduationYear": 2027,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "ML"
       },
       {
-        "year": 1
+        "year": 1,
+        "role": "ML"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp3@gmail.com",
+      "phone": "133-111-1111"
+    }
   },
   {
     "_id": "679ffb8f31c670d55594f0d5",
     "name": "Anna Mendoza",
+    "major": "History",
+    "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "UI/UX"
       },
       {
-        "year": 1
+        "year": 1,
+        "role":"ML"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp4@gmail.com",
+      "phone": "233-111-1111"
+    }
   },
   {
     "_id": "679ffb8fe8d66612577f4c8d",
     "name": "Cassie Grinch",
+    "major": "Biology",
+    "graduationYear": 2025,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "Outreach"
       },
       {
-        "year": 1
+        "year": 1,
+        "role":"Signal Acquisition"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp4@gmail.com",
+      "phone": "333-111-1111"
+    }
   },
   {
     "_id": "679ffb8fe8d66612577f4c8g",
     "name": "Cassie Pinch",
+    "major": "Neuroscience",
+    "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "Outreach"
       },
       {
-        "year": 1
+        "year": 1,
+        "role": "Outreach"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp5@gmail.com",
+      "phone": null
+    }
   },
   {
     "_id": "679ffb8fe8d66612577f4c8l",
     "name": "Cassie Flinch",
+    "major": "Biomedical Engineering",
+    "graduationYear": 2028,
     "cohorts": [
       {
-        "year": 0
+        "year": 0,
+        "role": "Hardware Integration"
       },
       {
-        "year": 1
+        "year": 1,
+        "role": "Software Integration"
       }
-    ]
+    ],
+    "contacts": 
+    {
+      "email": "temp6@gmail.com",
+      "phone": null
+    }
   }
 ]
