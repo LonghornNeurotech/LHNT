@@ -13,6 +13,7 @@
 */
 
 import { useEffect, useState } from 'react';
+import Filter from '../Filter/Filter';
 import Profile from '../Profile/Profile';
 import Pagination from '../Pagination/Pagination'
 import Search from '../Search/Search'
@@ -49,8 +50,9 @@ const ProfileDisplay = () => {
 
   return (
     <div className="py-8">
-      <div className="mb-8 w-1/3">
-        <Search setFilteredData={setFilteredItems} data={items} />
+      <div className="mb-8 flex">
+        <Search className="float-left w-1/4" setFilteredData={setFilteredItems} data={items} />
+        <Filter className="float-right w-1/4"></Filter>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

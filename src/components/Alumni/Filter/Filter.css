@@ -1,0 +1,41 @@
+.multiselect {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Set a fixed width for the multiselect box */
+}
+
+.selectBox {
+    position: relative;
+    width: 100%;
+}
+
+.selectBox select {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.checkboxes {
+    display: block;
+    border: 1px #dadada solid;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    max-height: 200px; /* Set a maximum height for the checkboxes container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.checkboxes label {
+    display: block; /* Ensure each label appears on a new line */
+    padding: 5px; /* Optional: Add some padding for better readability */
+}
