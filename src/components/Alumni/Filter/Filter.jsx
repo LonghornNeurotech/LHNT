@@ -11,10 +11,27 @@
 import React, { useState, useEffect } from 'react';
 import './Filter.css';
 
-const Filter = ({selectedTags, setSelectedTags}) => {
+const Filter = ({setTaggedData, data}) => {
     const [checkboxesVisible, setCheckboxesVisible] = useState(false);
-    const tags = ['2024', '2025', 'Alumni', 'Officer', 'Member', 'UI/UX'];
+    const tags = ['President', 'VP Membership', 'VP Outreach', 'VP Finance', 'VP Marketing', 'VP Operations', 'VP Competition',
+    'ML', 'UI/UX', 'Signal Acquisition']; // Consider loading tags from the data
+    const [selectedTags, setSelectedTags] = useState([]);
 
+    // Filter the data based on the selected tags
+    useEffect(() => {
+        if (selectedTags.length === 0) {
+            setTaggedData(data);
+            return;
+        }
+
+        const filteredData = data.filter((item) => {
+            // return selectedTags.any((tag) => item.tags.includes(tag));
+            return item.cohorts.some(cohort => selectedTags.includes(cohort.role));
+        });
+        setTaggedData(filteredData);
+    }, [selectedTags, data, setTaggedData]);
+
+    // Close the dropdown when clicking outside of it
     useEffect(() => {
         const handleClickOutside = (event) => {
             const flyoutElement = document.getElementById('myMultiselect');
@@ -33,34 +50,19 @@ const Filter = ({selectedTags, setSelectedTags}) => {
         setCheckboxesVisible(!checkboxesVisible);
     };
 
-    // TODO: Do sort for tags array so displays same every time
     const checkboxStatusChange = (event) => {
         const value = event.target.value;
         setSelectedTags((prevValues) => {
             if (prevValues.includes(value)) {
                 return prevValues.filter((v) => v !== value);
             } else {
-                return [...prevValues, value];
+                return [...prevValues, value].sort();
             }
         });
     };
 
-    // TODO: if we want to implement a dropdown filter over tags, need to handle selection logic for starting value of none.
-    const dropDownChange = (event) => {
-        console.log("need to implement with new single variable react hook");
-    };
-
     return (
         <div className="container-fluid">
-            {/* Drop Down Option */}
-            <div className="form-group col-sm-8">
-                <select id="dur" className="form-select">
-                    {tags.map((tag, index) => (
-                        <option key={index} value={tag} onChange={dropDownChange}>{tag}</option>
-                    ))}
-                </select>
-            </div>
-
             {/* Tag Filter Option */}
             <div className="form-group col-sm-8">
                 <div id="myMultiselect" className="multiselect">

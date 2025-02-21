@@ -19,9 +19,9 @@ import Pagination from '../Pagination/Pagination'
 import Search from '../Search/Search'
 
 const ProfileDisplay = () => {
-  const [tags, setTags] = useState([]);
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
+  const [taggedItems, setTaggedItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
   const offset = currentPage * itemsPerPage;
@@ -40,6 +40,7 @@ const ProfileDisplay = () => {
         const response = await fetch('/test_data.json');
         const data = await response.json();
         setItems(data);
+        setTaggedItems(data);
         setFilteredItems(data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -52,8 +53,9 @@ const ProfileDisplay = () => {
   return (
     <div className="py-8">
       <div className="mb-8 flex">
-        <Search className="float-left w-1/4" setFilteredData={setFilteredItems} data={items} />
-        <Filter className="float-right w-1/4" setSelectedTags={setTags} selectedTags={tags}></Filter>
+      {/* Strange naming. Filter gives tags and Search gives filtered data */}
+        <Search className="float-left w-1/4" setFilteredData={setFilteredItems} data={taggedItems} />
+        <Filter className="float-right w-1/4" setTaggedData={setTaggedItems} data={items}></Filter>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

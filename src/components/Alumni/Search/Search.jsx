@@ -1,4 +1,3 @@
-import { filter } from 'framer-motion/client';
 import { useState, useEffect } from 'react';
 /* 
     Search bar for the Alumni page 
