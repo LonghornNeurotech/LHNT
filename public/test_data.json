@@ -166,5 +166,47 @@
       "email": "temp6@gmail.com",
       "phone": null
     }
+  },
+  {
+    "_id": "679ffb8fe8d66372577f4c8l",
+    "name": "Runner Upper",
+    "major": "Biomedical Engineering",
+    "graduationYear": 2027,
+    "cohorts": [
+      {
+        "year": 0,
+        "role": "VP Marketing"
+      },
+      {
+        "year": 1,
+        "role": "President"
+      }
+    ],
+    "contacts": 
+    {
+      "email": "temp7@gmail.com",
+      "phone": null
+    }
+  },
+  {
+    "_id": "679ffb8fe2736372577f4c8l",
+    "name": "Runner Downer",
+    "major": "Biomedical Engineering",
+    "graduationYear": 2026,
+    "cohorts": [
+      {
+        "year": 0,
+        "role": "VP Competition"
+      },
+      {
+        "year": 1,
+        "role": "VP Membership"
+      }
+    ],
+    "contacts": 
+    {
+      "email": "temp8@gmail.com",
+      "phone": null
+    }
   }
 ]
