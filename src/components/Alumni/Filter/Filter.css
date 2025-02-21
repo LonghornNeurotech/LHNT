@@ -39,3 +39,25 @@
     display: block; /* Ensure each label appears on a new line */
     padding: 5px; /* Optional: Add some padding for better readability */
 }
+
+#dropDownOptions {
+    border: 3px solid #783700; /* Dropper Approximation, refer to design doc for correct color */
+    background-color: #fff8d6; /* Approximation, refer to design doc for correct color */
+}
+
+#selectBoxLabel {
+    background-color: #bf5801; /* Dropper Approximation, refer to design doc for correct color */
+    color: #fff8d6; /* Dropper Approximation, refer to design doc for correct color */
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 3px #783700;
+}
+
+.optionText {
+    color: black; /* Dropper Approximation, refer to design doc for correct color */
+}
+
+.optionText:hover {
+    background-color: #783700; /* Dropper Approximation, refer to design doc for correct color */
+    color: white; /* Dropper Approximation, refer to design doc for correct color */
+}

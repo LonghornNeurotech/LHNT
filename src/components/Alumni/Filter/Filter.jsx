@@ -65,17 +65,17 @@ const Filter = ({setTaggedData, data}) => {
         <div className="container-fluid">
             {/* Tag Filter Option */}
             <div className="form-group col-sm-8">
-                <div id="myMultiselect" className="multiselect">
-                    <div id="mySelectLabel" className="selectBox" onClick={toggleCheckboxArea}>
-                        <select className="form-select">
-                            <option>{selectedTags.length > 0 ? selectedTags.join(', ') : 'Select Tags'}</option>
+                <div id="filterTagSelect" className="multiselect">
+                    <div className="selectBox" onClick={toggleCheckboxArea}>
+                        <select id="selectBoxLabel"className="form-select">
+                            <option className="bg-white">{selectedTags.length > 0 ? selectedTags.join(', ') : 'Select Roles'}</option>
                         </select>
                         <div className="overSelect"></div>
                     </div>
                     {checkboxesVisible && (
-                        <div id="mySelectOptions" className="checkboxes">
+                        <div id="dropDownOptions" className="checkboxes">
                             {tags.map((tag, index) => (
-                                <label key={index} htmlFor={tag}>
+                                <label key={index} htmlFor={tag} className="optionText">
                                     <input
                                         type="checkbox"
                                         id={tag}
