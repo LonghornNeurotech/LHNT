@@ -7,11 +7,11 @@
 */
 const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio }) => { // Phone is optional. Maybe implement placeholder in data itself
   return (
-    <div className="bg-[#FFF8D6] rounded-lg shadow-md p-4 flex flex-col items-center">
+    <div className="bg-[#5D89BA] rounded-lg shadow-md p-4 flex flex-col items-center">
       {photo && (
         <img 
           src={photo}
-          alt={name}
+          alt={`Profile picture of ${name}`}
           className="w-32 h-32 rounded-full object-cover mb-2"
           /* 
             If image fails to load or there are no image for the 
@@ -25,15 +25,15 @@ const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio })
           }}
         />
       )}
-      <h3 className="text-xl font-semibold text-prussian-blue break-words text-center">{name}</h3>
-      <p className="text-sm text-prussian-blue">{major} - {graduationYear}</p>
+      <h3 className="text-xl font-bold text-[#FFF8D6] break-words text-center">{name}</h3>
       {cohorts.map((cohort, index) => (
-        <p key={index} className="text-sm text-prussian-blue">{cohort.year} - {cohort.role}</p>
+        <p key={index} className="text-sm text-[#F3E5AB]"> {cohort.role} {cohort.year} - {cohort.year + 1} </p>
       ))}
-      <p className="text-sm text-prussian-blue text-center mt-2">{contacts.email}</p>
-      <p className="text-sm text-prussian-blue text-center mt-2">{contacts.phone}</p>
+      <p className="text-sm text-[#F3E5AB]">{major} - {graduationYear}</p>
+      <p className="text-sm text-[#F9F6EE] mt-2">{contacts.email}</p>
+      <p className="text-sm text-[#F9F6EE] mt-2">{contacts.phone}</p>
       {/* // <p className="text-sm text-prussian-blue text-center mt-2">{contact.linkedin}</p> */}
-      <p className="text-sm text-prussian-blue text-center mt-2">{bio}</p>
+      <p className="text-sm text-[#F9F6EE] text-center mt-2">{bio}</p>
     </div>
   );
 };
