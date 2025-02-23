@@ -64,7 +64,7 @@ const Filter = ({setTaggedData, data}) => {
     return (
         <div className="container-fluid">
             {/* Tag Filter Option */}
-            <div className="form-group col-sm-8">
+            <div className="form-group">
                 <div id="filterTagSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
                         <select id="selectBoxLabel"className="form-select">

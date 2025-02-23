@@ -52,10 +52,10 @@ const ProfileDisplay = () => {
 
   return (
     <div className="py-8">
-      <div className="mb-8 flex">
+      <div className="mb-8 flex justify-between">
       {/* Strange naming. Filter gives tags and Search gives filtered data */}
-        <Search className="float-left w-1/4" setFilteredData={setFilteredItems} data={taggedItems} />
-        <Filter className="float-right w-1/4" setTaggedData={setTaggedItems} data={items}></Filter>
+        <Search className="w-1/4" setFilteredData={setFilteredItems} data={taggedItems} />
+        <Filter className="w-1/4" setTaggedData={setTaggedItems} data={items}></Filter>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

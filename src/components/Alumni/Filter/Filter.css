@@ -1,3 +1,8 @@
+.container-fluid {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .multiselect {
     position: relative;
     display: inline-block;

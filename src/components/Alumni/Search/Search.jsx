@@ -25,7 +25,7 @@ const Search = ({setFilteredData, data}) => {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-1/2">
             <input
                 type="text" 
                 className="w-full px-4 py-3 text-lg rounded-md shadow-sm focus:ring focus:ring-opacity-50 transition-colors duration-300 bg-bone-white border-silver-lake-blue text-prussian-blue"
