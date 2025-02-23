@@ -66,6 +66,7 @@ export default {
       },
       fontFamily: {
         anton: ['"Anton"', 'sans-serif'],
+        antonio: ['Antonio', 'sans-serif']
       }
     },
   },
