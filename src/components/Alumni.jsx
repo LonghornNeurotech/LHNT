@@ -17,7 +17,7 @@ const Alumni = () => {
                 <header 
                     className="text-center py-8"
                 >
-                    <h1 className="text-[#F3E5AB] text-5xl mb-4 heading">Our Alumni</h1>
+                    <h1 className="text-[#F3E5AB] text-5xl mb-4 heading">Our Leadership Alumni</h1>
                     <p className="text-[#F9F6EE] text-3xl subheading">Celebrating the achievements of our alumni</p>
                 </header>
 

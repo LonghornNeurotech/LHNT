@@ -13,15 +13,18 @@
 */
 
 import { useEffect, useState } from 'react';
-import Filter from '../Filter/Filter';
+import RoleFilter from '../Filter/RoleFilter';
+import YearFilter from '../Filter/YearFilter';
 import Profile from '../Profile/Profile';
 import Pagination from '../Pagination/Pagination'
 import Search from '../Search/Search'
 
 const ProfileDisplay = () => {
+  // items -> roleTaggedItems -> yearTaggedItems -> filteredItems
   const [items, setItems] = useState([]);
+  const [roleTaggedItems, setRoleTaggedItems] = useState([]);
+  const [yearTaggedItems, setYearTaggedItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
-  const [taggedItems, setTaggedItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
   const offset = currentPage * itemsPerPage;
@@ -40,7 +43,8 @@ const ProfileDisplay = () => {
         const response = await fetch('/test_data.json');
         const data = await response.json();
         setItems(data);
-        setTaggedItems(data);
+        setRoleTaggedItems(data);
+        setYearTaggedItems(data);
         setFilteredItems(data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -54,8 +58,9 @@ const ProfileDisplay = () => {
     <div className="py-8">
       <div className="mb-8 flex justify-between">
       {/* Strange naming. Filter gives tags and Search gives filtered data */}
-        <Search className="w-1/4" setFilteredData={setFilteredItems} data={taggedItems} />
-        <Filter className="w-1/4" setTaggedData={setTaggedItems} data={items}></Filter>
+        <Search className="w-1/4" setFilteredData={setFilteredItems} data={yearTaggedItems} />
+        <RoleFilter className="w-1/4" setTaggedData={setRoleTaggedItems} data={items}></RoleFilter>
+        <YearFilter className="w-1/4" setTaggedData={setYearTaggedItems} data={roleTaggedItems}></YearFilter>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

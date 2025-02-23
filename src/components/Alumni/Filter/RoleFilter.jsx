@@ -11,7 +11,7 @@
 import React, { useState, useEffect } from 'react';
 import './Filter.css';
 
-const Filter = ({setTaggedData, data}) => {
+const RoleFilter = ({setTaggedData, data}) => {
     const [checkboxesVisible, setCheckboxesVisible] = useState(false);
     const tags = ['President', 'VP Membership', 'VP Outreach', 'VP Finance', 'VP Marketing', 'VP Operations', 'VP Competition',
     'ML', 'UI/UX', 'Signal Acquisition']; // Consider loading tags from the data
@@ -94,4 +94,4 @@ const Filter = ({setTaggedData, data}) => {
     );
 };
 
-export default Filter;
+export default RoleFilter;
