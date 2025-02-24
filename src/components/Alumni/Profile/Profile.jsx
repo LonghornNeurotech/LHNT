@@ -27,7 +27,7 @@ const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio })
       )}
       <h3 className="text-xl font-bold text-[#FFF8D6] break-words text-center">{name}</h3>
       {cohorts.map((cohort, index) => (
-        <p key={index} className="text-sm text-[#F3E5AB]"> {cohort.role} {cohort.year} - {cohort.year + 1} </p>
+        <p key={index} className="text-sm text-[#F3E5AB]"> {cohort.role} {cohort.year} </p>
       ))}
       <p className="text-sm text-[#F3E5AB]">{major} - {graduationYear}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.email}</p>
