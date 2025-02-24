@@ -21,6 +21,7 @@ import Search from '../Search/Search'
 
 const ProfileDisplay = () => {
   // items -> roleTaggedItems -> yearTaggedItems -> filteredItems
+  const [roles, setRoles] = useState([]);
   const [items, setItems] = useState([]);
   const [roleTaggedItems, setRoleTaggedItems] = useState([]);
   const [yearTaggedItems, setYearTaggedItems] = useState([]);
@@ -59,8 +60,8 @@ const ProfileDisplay = () => {
       <div className="mb-8 flex justify-between">
       {/* Strange naming. Filter gives tags and Search gives filtered data */}
         <Search className="w-1/4" setFilteredData={setFilteredItems} data={yearTaggedItems} />
-        <RoleFilter className="w-1/4" setTaggedData={setRoleTaggedItems} data={items}></RoleFilter>
-        <YearFilter className="w-1/4" setTaggedData={setYearTaggedItems} data={roleTaggedItems}></YearFilter>
+        <RoleFilter className="w-1/4" setTaggedData={setRoleTaggedItems} setRoles={setRoles} roles={roles} data={items}></RoleFilter>
+        <YearFilter className="w-1/4" setTaggedData={setYearTaggedItems} roles={roles} data={roleTaggedItems}></YearFilter>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
