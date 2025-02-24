@@ -11,25 +11,23 @@
 import React, { useState, useEffect } from 'react';
 import './Filter.css';
 
-const Filter = ({setTaggedData, data}) => {
+const YearFilter = ({setTaggedData, roles, data}) => {
     const [checkboxesVisible, setCheckboxesVisible] = useState(false);
-    const tags = ['President', 'VP Membership', 'VP Outreach', 'VP Finance', 'VP Marketing', 'VP Operations', 'VP Competition',
-    'ML', 'UI/UX', 'Signal Acquisition']; // Consider loading tags from the data
-    const [selectedTags, setSelectedTags] = useState([]);
+    const tags = ["2024", "2025"]; // Consider loading tags from the data
+    const [selectedYears, setSelectedYears] = useState([]);
 
     // Filter the data based on the selected tags
     useEffect(() => {
-        if (selectedTags.length === 0) {
+        if (selectedYears.length === 0) {
             setTaggedData(data);
             return;
         }
 
         const filteredData = data.filter((item) => {
-            // return selectedTags.any((tag) => item.tags.includes(tag));
-            return item.cohorts.some(cohort => selectedTags.includes(cohort.role));
+            return item.cohorts.some(cohort => selectedYears.includes(cohort.year) && roles.includes(cohort.role)); 
         });
         setTaggedData(filteredData);
-    }, [selectedTags, data, setTaggedData]);
+    }, [selectedYears, data, setTaggedData]);
 
     // Close the dropdown when clicking outside of it
     useEffect(() => {
@@ -52,7 +50,7 @@ const Filter = ({setTaggedData, data}) => {
 
     const checkboxStatusChange = (event) => {
         const value = event.target.value;
-        setSelectedTags((prevValues) => {
+        setSelectedYears((prevValues) => {
             if (prevValues.includes(value)) {
                 return prevValues.filter((v) => v !== value);
             } else {
@@ -64,11 +62,11 @@ const Filter = ({setTaggedData, data}) => {
     return (
         <div className="container-fluid">
             {/* Tag Filter Option */}
-            <div className="form-group col-sm-8">
+            <div className="form-group">
                 <div id="filterTagSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
                         <select id="selectBoxLabel"className="form-select">
-                            <option className="bg-white">{selectedTags.length > 0 ? selectedTags.join(', ') : 'Select Roles'}</option>
+                            <option className="bg-white">{selectedYears.length > 0 ? selectedYears.join(', ') : 'Select Year'}</option>
                         </select>
                         <div className="overSelect"></div>
                     </div>
@@ -81,7 +79,7 @@ const Filter = ({setTaggedData, data}) => {
                                         id={tag}
                                         onChange={checkboxStatusChange}
                                         value={tag}
-                                        checked={selectedTags.includes(tag)}
+                                        checked={selectedYears.includes(tag)}
                                     />
                                     {tag}
                                 </label>
@@ -94,4 +92,4 @@ const Filter = ({setTaggedData, data}) => {
     );
 };
 
-export default Filter;
+export default YearFilter;

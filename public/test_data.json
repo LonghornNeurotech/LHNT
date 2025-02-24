@@ -6,11 +6,11 @@
     "graduationYear": 2025,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "UI/UX"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "UI/UX"
       }
     ],
@@ -27,11 +27,11 @@
     "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "VR Headset Design"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "VP Operations"
       }
     ],
@@ -48,11 +48,11 @@
     "graduationYear": 2027,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "Signal Acquisition"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "ML"
       }
     ],
@@ -69,11 +69,11 @@
     "graduationYear": 2027,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "ML"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "ML"
       }
     ],
@@ -90,11 +90,11 @@
     "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "UI/UX"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role":"ML"
       }
     ],
@@ -111,11 +111,11 @@
     "graduationYear": 2025,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "Outreach"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role":"Signal Acquisition"
       }
     ],
@@ -132,11 +132,11 @@
     "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "Outreach"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "VP Outreach"
       }
     ],
@@ -153,11 +153,11 @@
     "graduationYear": 2028,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "Hardware Integration"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "VP Finance"
       }
     ],
@@ -174,15 +174,15 @@
     "graduationYear": 2027,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "VP Marketing"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "President"
       }
     ],
-    "contacts": 
+    "contacts":   
     {
       "email": "temp7@gmail.com",
       "phone": null
@@ -195,11 +195,11 @@
     "graduationYear": 2026,
     "cohorts": [
       {
-        "year": 0,
+        "year": "2024",
         "role": "VP Competition"
       },
       {
-        "year": 1,
+        "year": "2025",
         "role": "VP Membership"
       }
     ],
