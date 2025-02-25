@@ -60,8 +60,7 @@ const YearFilter = ({setTaggedData, roles, data}) => {
     };
 
     return (
-        <div className="container-fluid">
-            {/* Tag Filter Option */}
+        // <div className="container-fluid">
             <div className="form-group">
                 <div id="filterTagSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
@@ -88,7 +87,7 @@ const YearFilter = ({setTaggedData, roles, data}) => {
                     )}
                 </div>
             </div>
-        </div>
+        // {/* </div> */}
     );
 };
 
