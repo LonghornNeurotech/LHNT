@@ -32,7 +32,9 @@ const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio })
       <p className="text-sm text-[#F3E5AB]">{major} - {graduationYear}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.email}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.phone}</p>
-      {/* // <p className="text-sm text-prussian-blue text-center mt-2">{contact.linkedin}</p> */}
+      <a href={contacts.linkedin} target="_blank">
+        <i class="fa fa-linkedin fa-4x w3-hover-opacity"></i>
+      </a>
       <p className="text-sm text-[#F9F6EE] text-center mt-2">{bio}</p>
     </div>
   );
