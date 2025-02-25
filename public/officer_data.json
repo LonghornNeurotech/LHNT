@@ -1,0 +1,231 @@
+[
+    {
+      "_id": "1",
+      "name": "Taima Crean",
+      "major": "Biomedical Engineering",
+      "graduationYear": 2025,
+      "imgLink": "/OfficerImages/Taima_Crean.jpg",
+      "cohorts": [
+        {
+          "year": "2024",
+          "role": "Blank"
+        },
+        {
+          "year": "2025",
+          "role": "President"
+        }
+      ],
+      "contacts": 
+      {
+        "email": "temp@gmail.com",
+        "phone": "temp",
+        "linkedin": "https://www.linkedin.com/in/taima00"
+      }
+    },
+    {
+        "_id": "2",
+        "name": "Holland Ernst",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2025,
+        "imgLink": "/OfficerImages/holland1.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "Captain"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/holland-ernst"
+        }
+      },
+      {
+        "_id": "3",
+        "name": "Julian Weaver",
+        "major": "Neuroscience & CS",
+        "graduationYear": 2025,
+        "imgLink": "/OfficerImages/julian-weaver.jpeg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "R&D Lead"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/julian-weaver"
+        }
+      },
+      {
+        "_id": "4",
+        "name": "Tony Chae",
+        "major": "Electrical & Computer Engineering",
+        "graduationYear": 2025,
+        "imgLink": "/OfficerImages/tony_chae.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "VP of Outreach"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/tony-chae-3bb600249"
+        }
+      },      {
+        "_id": "5",
+        "name": "Debarghya Chaki",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2026,
+        "imgLink": "/OfficerImages/Chaki.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "VP of Finance"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/dchaki"
+        }
+      },
+      {
+        "_id": "6",
+        "name": "Tarun Dasari",
+        "major": "Placeholder",
+        "graduationYear": -1,
+        "imgLink": "/OfficerImages/Tarun_Desari.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "VP of Operations"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/tsdasari/"
+        }
+      },
+      {
+        "_id": "7",
+        "name": "Alan Fletcher",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2025,
+        "imgLink": "/OfficerImages/Alan_Fletcher.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "Hardware Lead"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/alan-fletcher01"
+        }
+      },
+      {
+        "_id": "8",
+        "name": "Nathan Feldt",
+        "major": "Neuroscience & Math",
+        "graduationYear": 2025,
+        "imgLink": "/OfficerImages/Nathan_Feldt.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "Software Lead"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/nathan-feldt-1b6573229"
+        }
+      },
+      {
+        "_id": "9",
+        "name": "Jay Damodaran",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2027,
+        "imgLink": "/OfficerImages/Jay.png",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "VP of Membership"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/jaydamobme"
+        }
+      },
+      {
+        "_id": "10",
+        "name": "Vivek Beeram",
+        "major": "Neuroscience",
+        "graduationYear": 2025,
+        "imgLink": "/OfficerImages/Vivek_Beeram.jpg",
+        "cohorts": [
+          {
+            "year": "2024",
+            "role": "Blank"
+          },
+          {
+            "year": "2025",
+            "role": "R&D Lead"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/vivek-beeram-370852212"
+        }
+      }
+  ]
