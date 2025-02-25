@@ -18,15 +18,25 @@ const YearFilter = ({setTaggedData, roles, data}) => {
 
     // Filter the data based on the selected tags
     useEffect(() => {
+        // No years selected => return data as is
         if (selectedYears.length === 0) {
             setTaggedData(data);
             return;
         }
 
-        const filteredData = data.filter((item) => {
-            return item.cohorts.some(cohort => selectedYears.includes(cohort.year) && roles.includes(cohort.role)); 
-        });
-        setTaggedData(filteredData);
+        // Only years filter selected => return leadership positions serving those years
+        if (roles.length === 0){
+            const filteredData = data.filter((item) => {
+                return item.cohorts.some(cohort => selectedYears.includes(cohort.year));
+            })
+            setTaggedData(filteredData);
+        } // AND behavior between roles AND years. ((role OR role) AND (year OR year))
+        else {
+            const filteredData = data.filter((item) => {
+                return item.cohorts.some(cohort => selectedYears.includes(cohort.year) && roles.includes(cohort.role)); 
+            });
+            setTaggedData(filteredData);
+        }
     }, [selectedYears, data, setTaggedData]);
 
     // Close the dropdown when clicking outside of it
@@ -60,7 +70,6 @@ const YearFilter = ({setTaggedData, roles, data}) => {
     };
 
     return (
-        // <div className="container-fluid">
             <div className="form-group">
                 <div id="filterTagSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
@@ -87,7 +96,6 @@ const YearFilter = ({setTaggedData, roles, data}) => {
                     )}
                 </div>
             </div>
-        // {/* </div> */}
     );
 };
 

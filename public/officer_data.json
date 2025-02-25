@@ -227,5 +227,24 @@
           "phone": "temp",
           "linkedin": "https://www.linkedin.com/in/vivek-beeram-370852212"
         }
+      },
+      {
+        "_id": "11",
+        "name": "Test",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2027,
+        "photo": null,
+        "cohorts": [
+          {
+            "year": "2025",
+            "role": "President"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": null
+        }
       }
   ]

@@ -62,7 +62,6 @@ const RoleFilter = ({setTaggedData, data, setRoles, roles}) => {
     };
 
     return (
-        // <div className="container-fluid">
             <div className="form-group">
                 <div id="filterTagSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
@@ -89,7 +88,6 @@ const RoleFilter = ({setTaggedData, data, setRoles, roles}) => {
                     )}
                 </div>
             </div>
-        // {/* </div> */}
     );
 };
 
