@@ -13,8 +13,10 @@ import './Filter.css';
 
 const RoleFilter = ({setTaggedData, data, setRoles, roles}) => {
     const [checkboxesVisible, setCheckboxesVisible] = useState(false);
-    const tags = ['President', 'VP Membership', 'VP Outreach', 'VP Finance', 'VP Marketing', 'VP Operations', 'VP Competition',
-    'ML', 'UI/UX', 'Signal Acquisition']; // Consider loading tags from the data
+    const tags = ['President', 'Captain', 'R&D Lead', 'Hardware Lead', 'Software Lead',
+    'VP of Membership', 'VP of Outreach', 'VP of Finance',
+    'VP of Marketing', 'VP of Operations', 'VP of Competition',
+    ]; // Consider loading tags from the data
 
     // Filter the data based on the selected tags
     useEffect(() => {
@@ -27,7 +29,6 @@ const RoleFilter = ({setTaggedData, data, setRoles, roles}) => {
             return item.cohorts.some(cohort => roles.includes(cohort.role));
         });
         setTaggedData(filteredData);
-        console.log(filteredData);
     }, [roles, data, setTaggedData]);
 
     // Close the dropdown when clicking outside of it
