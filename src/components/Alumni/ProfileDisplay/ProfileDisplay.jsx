@@ -55,6 +55,11 @@ const ProfileDisplay = () => {
     fetchData();
   }, []);
 
+  // Set page back to first when roles selected
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [roles, filteredItems]);
+
   return (
     <div className="py-8">
       <div className="mb-8 flex justify-between">
@@ -73,7 +78,7 @@ const ProfileDisplay = () => {
       </div>
 
       <div className="mt-8">
-        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} currentPage={currentPage}/>
       </div>
     </div>
   );
