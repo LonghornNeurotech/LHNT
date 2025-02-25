@@ -41,7 +41,7 @@ const ProfileDisplay = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/test_data.json');
+        const response = await fetch('/officer_data.json');
         const data = await response.json();
         setItems(data);
         setRoleTaggedItems(data);
