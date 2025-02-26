@@ -25,15 +25,15 @@ const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio })
           }}
         />
       )}
-      <h3 className="text-xl font-bold text-[#FFF8D6] break-words text-center">{name}</h3>
+      <h3 className="text-2xl font-bold text-[#FFF8D6] break-words text-center">{name}</h3>
       {cohorts.map((cohort, index) => (
-        <p key={index} className="text-sm text-[#F3E5AB]"> {cohort.role} {cohort.year} </p>
+        <p key={index} className="text-lg text-[#F3E5AB]"> {cohort.role} {cohort.year} </p>
       ))}
-      <p className="text-sm text-[#F3E5AB]">{major} - {graduationYear}</p>
+      <p className="text-sm text-[#F9F6EE]">{major} - {graduationYear}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.email}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.phone}</p>
       <a href={contacts.linkedin} target="_blank">
-        <i class="fa fa-linkedin fa-4x w3-hover-opacity"></i>
+        <i className="fa fa-linkedin fa-4x w3-hover-opacity"></i>
       </a>
       <p className="text-sm text-[#F9F6EE] text-center mt-2">{bio}</p>
     </div>
