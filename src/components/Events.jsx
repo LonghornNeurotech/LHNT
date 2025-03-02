@@ -77,8 +77,8 @@ const Events = () => {
                 </h1>
 
                 {/* Texas Neurotech BCI Competition Banner */}
-                <div className="flex justify-center">
-                    <img src="/public/assets/events/Competition Banner.png"></img>
+                <div className="flex justify-center mt-4 mx-4">
+                    <img src="/public/assets/events/Competition Banner.png" className="rounded-2xl m-auto"></img>
                 </div>
 
                 {/* Instagram Feed Section */}
