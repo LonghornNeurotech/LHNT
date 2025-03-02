@@ -76,6 +76,11 @@ const Events = () => {
                     See what Longhorn Neurotech is Up To!
                 </h1>
 
+                {/* Texas Neurotech BCI Competition Banner */}
+                <div className="flex justify-center">
+                    <img src="/public/assets/events/Competition Banner.png"></img>
+                </div>
+
                 {/* Instagram Feed Section */}
                 <div className="max-w-[1400px] mx-auto px-4 my-8 hidden">
                     <h2 style={{color: BONE_WHITE}} className="text-4xl font-bold mb-4 subheading">Recent News</h2>
@@ -125,6 +130,7 @@ const Events = () => {
                     </div>
                 </div>
 
+                
                 {/* Events Section */}
                 <div className="flex flex-col items-center max-w-[1400px] mx-auto my-8 px-4">
                     <div className="flex flex-row items-center justify-between w-full mb-4">
