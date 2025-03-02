@@ -34,7 +34,7 @@ const RoleFilter = ({setTaggedData, data, setRoles, roles}) => {
     // Close the dropdown when clicking outside of it
     useEffect(() => {
         const handleClickOutside = (event) => {
-            const flyoutElement = document.getElementById('myMultiselect');
+            const flyoutElement = document.getElementById('filterRoleSelect');
             if (flyoutElement && !flyoutElement.contains(event.target) && checkboxesVisible) {
                 setCheckboxesVisible(false);
             }
@@ -63,7 +63,7 @@ const RoleFilter = ({setTaggedData, data, setRoles, roles}) => {
 
     return (
             <div className="form-group">
-                <div id="filterTagSelect" className="multiselect">
+                <div id="filterRoleSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
                         <select id="selectBoxLabel"className="form-select">
                             <option className="bg-white">{roles.length > 0 ? roles.join(', ') : 'Select Roles'}</option>

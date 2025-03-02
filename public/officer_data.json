@@ -7,10 +7,6 @@
       "photo": "/OfficerImages/Taima_Crean.jpg",
       "cohorts": [
         {
-          "year": "2024",
-          "role": "Blank"
-        },
-        {
           "year": "2025",
           "role": "President"
         }
@@ -29,10 +25,6 @@
         "graduationYear": 2025,
         "photo": "/OfficerImages/holland1.jpg",
         "cohorts": [
-          {
-            "year": "2024",
-            "role": "Blank"
-          },
           {
             "year": "2025",
             "role": "Captain"
@@ -53,10 +45,6 @@
         "photo": "/OfficerImages/julian-weaver.jpeg",
         "cohorts": [
           {
-            "year": "2024",
-            "role": "Blank"
-          },
-          {
             "year": "2025",
             "role": "R&D Lead"
           }
@@ -76,10 +64,6 @@
         "photo": "/OfficerImages/tony_chae.jpg",
         "cohorts": [
           {
-            "year": "2024",
-            "role": "Blank"
-          },
-          {
             "year": "2025",
             "role": "VP of Outreach"
           }
@@ -97,10 +81,6 @@
         "graduationYear": 2026,
         "photo": "/OfficerImages/Chaki.jpg",
         "cohorts": [
-          {
-            "year": "2024",
-            "role": "Blank"
-          },
           {
             "year": "2025",
             "role": "VP of Finance"
@@ -121,10 +101,6 @@
         "photo": "/OfficerImages/Tarun_Desari.jpg",
         "cohorts": [
           {
-            "year": "2024",
-            "role": "Blank"
-          },
-          {
             "year": "2025",
             "role": "VP of Operations"
           }
@@ -143,10 +119,6 @@
         "graduationYear": 2025,
         "photo": "/OfficerImages/Alan_Fletcher.jpg",
         "cohorts": [
-          {
-            "year": "2024",
-            "role": "Blank"
-          },
           {
             "year": "2025",
             "role": "Hardware Lead"
@@ -167,10 +139,6 @@
         "photo": "/OfficerImages/Nathan_Feldt.jpg",
         "cohorts": [
           {
-            "year": "2024",
-            "role": "Blank"
-          },
-          {
             "year": "2025",
             "role": "Software Lead"
           }
@@ -189,10 +157,6 @@
         "graduationYear": 2027,
         "photo": "/OfficerImages/Jay.png",
         "cohorts": [
-          {
-            "year": "2024",
-            "role": "Blank"
-          },
           {
             "year": "2025",
             "role": "VP of Membership"
@@ -213,10 +177,6 @@
         "photo": "/OfficerImages/Vivek_Beeram.jpg",
         "cohorts": [
           {
-            "year": "2024",
-            "role": "Blank"
-          },
-          {
             "year": "2025",
             "role": "Machine Learning Specialist"
           }
@@ -235,6 +195,10 @@
         "graduationYear": 2027,
         "photo": null,
         "cohorts": [
+          {
+            "year": "2024",
+            "role": "Placeholder"
+          },
           {
             "year": "2025",
             "role": "President"

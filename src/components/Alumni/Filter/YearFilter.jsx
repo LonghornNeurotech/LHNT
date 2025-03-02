@@ -42,7 +42,7 @@ const YearFilter = ({setTaggedData, roles, data}) => {
     // Close the dropdown when clicking outside of it
     useEffect(() => {
         const handleClickOutside = (event) => {
-            const flyoutElement = document.getElementById('myMultiselect');
+            const flyoutElement = document.getElementById('filterYearSelect');
             if (flyoutElement && !flyoutElement.contains(event.target) && checkboxesVisible) {
                 setCheckboxesVisible(false);
             }
@@ -71,7 +71,7 @@ const YearFilter = ({setTaggedData, roles, data}) => {
 
     return (
             <div className="form-group">
-                <div id="filterTagSelect" className="multiselect">
+                <div id="filterYearSelect" className="multiselect">
                     <div className="selectBox" onClick={toggleCheckboxArea}>
                         <select id="selectBoxLabel"className="form-select">
                             <option className="bg-white">{selectedYears.length > 0 ? selectedYears.join(', ') : 'Select Year'}</option>
