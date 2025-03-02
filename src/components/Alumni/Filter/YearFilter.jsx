@@ -13,7 +13,7 @@ import './Filter.css';
 
 const YearFilter = ({setTaggedData, roles, data}) => {
     const [checkboxesVisible, setCheckboxesVisible] = useState(false);
-    const tags = ["2024", "2025"]; // Consider loading tags from the data
+    const tags = [2024, 2025]; // Consider loading tags from the data
     const [selectedYears, setSelectedYears] = useState([]);
 
     // Filter the data based on the selected tags

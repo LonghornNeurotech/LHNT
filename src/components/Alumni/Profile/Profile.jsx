@@ -8,6 +8,12 @@
 const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio }) => { // Phone is optional. Maybe implement placeholder in data itself
   return (
     <div className="bg-[#5D89BA] rounded-lg shadow-md p-4 flex flex-col items-center">
+      <h3 className="text-xl font-bold text-[#FFF8D6] break-words text-center">{name}</h3>
+      {cohorts.map((cohort, index) => (
+        <div className="bg-[#bf5801] py-1 w-1/2 text-center  ">
+          <p key={index} className="text-sm text-white"> {cohort.role} {cohort.year} - {cohort.year + 1} </p>
+        </div>
+      ))}
       {photo && (
         <img 
           src={photo}
@@ -25,10 +31,6 @@ const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio })
           }}
         />
       )}
-      <h3 className="text-xl font-bold text-[#FFF8D6] break-words text-center">{name}</h3>
-      {cohorts.map((cohort, index) => (
-        <p key={index} className="text-sm text-[#F3E5AB]"> {cohort.role} {cohort.year} </p>
-      ))}
       <p className="text-sm text-[#F3E5AB]">{major} - {graduationYear}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.email}</p>
       <p className="text-sm text-[#F9F6EE] mt-2">{contacts.phone}</p>
