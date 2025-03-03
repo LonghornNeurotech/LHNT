@@ -7,7 +7,7 @@
       "photo": "/OfficerImages/Taima_Crean.jpg",
       "cohorts": [
         {
-          "year": "2025",
+          "year": 2024,
           "role": "President"
         }
       ],
@@ -26,7 +26,7 @@
         "photo": "/OfficerImages/holland1.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "Captain"
           }
         ],
@@ -45,7 +45,7 @@
         "photo": "/OfficerImages/julian-weaver.jpeg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "R&D Lead"
           }
         ],
@@ -64,7 +64,7 @@
         "photo": "/OfficerImages/tony_chae.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "VP of Outreach"
           }
         ],
@@ -82,7 +82,7 @@
         "photo": "/OfficerImages/Chaki.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "VP of Finance"
           }
         ],
@@ -101,7 +101,7 @@
         "photo": "/OfficerImages/Tarun_Desari.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "VP of Operations"
           }
         ],
@@ -120,7 +120,7 @@
         "photo": "/OfficerImages/Alan_Fletcher.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "Hardware Lead"
           }
         ],
@@ -139,7 +139,7 @@
         "photo": "/OfficerImages/Nathan_Feldt.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "Software Lead"
           }
         ],
@@ -158,7 +158,7 @@
         "photo": "/OfficerImages/Jay.png",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "VP of Membership"
           }
         ],
@@ -177,7 +177,7 @@
         "photo": "/OfficerImages/Vivek_Beeram.jpg",
         "cohorts": [
           {
-            "year": "2025",
+            "year": 2024,
             "role": "Machine Learning Specialist"
           }
         ],
@@ -196,11 +196,11 @@
         "photo": null,
         "cohorts": [
           {
-            "year": "2024",
+            "year": 2024,
             "role": "Placeholder"
           },
           {
-            "year": "2025",
+            "year": 2025,
             "role": "President"
           }
         ],
