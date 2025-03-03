@@ -72,14 +72,15 @@ const Events = () => {
     return (
         <>
             <div style={{backgroundColor: PRUSSIAN_BLUE}} className="min-h-screen pt-10 pb-4">
-                <h1 style={{color: VANILLA, lineHeight: "125%", letterSpacing: "0.02em"}} className="text-6xl font-bold text-center pt-3 heading">
-                    See what Longhorn Neurotech is Up To!
-                </h1>
 
                 {/* Texas Neurotech BCI Competition Banner */}
                 <div className="flex justify-center mt-4 mx-4">
                     <img src="/public/assets/events/Competition Banner.png" className="rounded-2xl m-auto"></img>
                 </div>
+
+                <h1 style={{color: VANILLA, lineHeight: "125%", letterSpacing: "0.02em"}} className="text-6xl font-bold text-center pt-3 heading">
+                    See what Longhorn Neurotech is Up To!
+                </h1>
 
                 {/* Instagram Feed Section */}
                 <div className="max-w-[1400px] mx-auto px-4 my-8 hidden">
