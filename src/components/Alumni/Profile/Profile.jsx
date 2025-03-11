@@ -44,7 +44,7 @@ const Profile = ({ name, photo, major, graduationYear, cohorts, contacts, bio })
 
         {/* Content Section */}
         <div
-          className={`flex flex-col ${
+          className={`ml-4 flex flex-col ${
             imageError ? "items-center" : "items-start"
           } w-full md:w-1/2`}
         >
