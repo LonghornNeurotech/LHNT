@@ -1,14 +1,28 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "/assets/cow purssian blue.svg";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Implementing controlled display for when user is logged in or not
+  const [profileDropdown, setProfileDropdown] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Handle logout and close menu
+  const handleLogout = () => {
+    logout();
+    setProfileDropdown(false);
+    setIsOpen(false);
+    navigate("/");
+  }
 
   return (
     <nav className="w-full h-20 border-b-2 bg-white border-gray-200 text-[#598BBC] font-['Antonio'] shadow-md fixed top-0 left-0 z-50">
@@ -56,12 +70,35 @@ const Navbar = () => {
               Contact
             </Link>
 
-            <Link
-              to="/login"
-              className="text-2xl  text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
-            >
-              Login
-            </Link>
+            {/* Authenticated: Show Profile Icon with Dropdown */}
+            {isAuthenticated ? (
+              <div className="relative">
+                <button
+                  className="flex items-center px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 transition-colors duration-200"
+                  onClick={() => setProfileDropdown((prev) => !prev)}
+                  aria-label="Profile"
+                >
+                  <User className="text-[#213C58]" size={28} />
+                </button>
+                {profileDropdown && (
+                  <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
+              >
+                Login
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,6 +158,7 @@ const Navbar = () => {
               Contact
             </Link>
 
+            {/* Old Login button for Mobile */}
             <Link
               to="/login"
               className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
