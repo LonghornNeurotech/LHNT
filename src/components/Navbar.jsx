@@ -158,14 +158,24 @@ const Navbar = () => {
               Contact
             </Link>
 
-            {/* Old Login button for Mobile */}
-            <Link
-              to="/login"
-              className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Login
-            </Link>
+            {/* Authenticated: Show Profile Icon with Logout */}
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="flex items-center text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+              >
+                <User className="mr-2" size={24} />
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>
