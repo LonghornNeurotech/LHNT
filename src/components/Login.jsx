@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -9,6 +10,7 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const validateForm = () => {
     const newErrors = {};
@@ -34,10 +36,9 @@ const Login = () => {
 
       // For demo purposes - replace with actual authentication
       if (username === 'admin' && password === 'password') {
-        localStorage.setItem(
-          'user',
-          JSON.stringify({ username, isAuthenticated: true })
-        );
+        
+        // Use login function from context instead of directly updating localStorage
+        login({ username, isAuthenticated: true });
 
         Swal.fire({
           title: 'Success!',
