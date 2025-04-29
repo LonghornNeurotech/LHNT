@@ -34,12 +34,13 @@ const Login = () => {
       // Simulate authentication - replace with actual API call later
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // For demo purposes - replace with actual authentication
-      if (username === 'admin' && password === 'password') {
-        
-        // Use login function from context instead of directly updating localStorage
-        login({ username, isAuthenticated: true });
+      // Get boolean value of whether username and password are correct to login to 
+      // specific account
+      const success = await login({ username, password })
 
+
+      if (success) {
+        // Successfully logged in 
         Swal.fire({
           title: 'Success!',
           text: 'You are authorized',
@@ -50,6 +51,7 @@ const Login = () => {
 
         navigate('/');
       } else {
+        // Failed to login
         Swal.fire({
           title: 'Authentication Failed',
           text: 'Invalid username or password',
