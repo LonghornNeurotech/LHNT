@@ -158,9 +158,9 @@ const Navbar = () => {
                       <span className="text-sm text-[#598BBC]">{user?.role || "Member"}</span>
                     </div>
                     {/* Button user can click on to view more details about their assigned role */}
-                    <div className="px-4 pb-2 mt-2 flex">
+                    <div className="px-0 pb-2 mt-2">
                       <button
-                        className="text-xs text-[#5D89BA] underline"
+                        className="blcok w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md text-base font-normal"
                         onClick={() => setShowRoleModal(true)}
                       >
                         What can I do?
@@ -177,10 +177,8 @@ const Navbar = () => {
                 )}
                 {/* Role Modal */}
                 {showRoleModal && (
-                  <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg shadow-lg w-[420px] sm:w-[520px] p-8 relative"
-                      style={{ maxWidth: "90vw" }}
-                    >
+                  <div className="fixed inset-0 bg-black/85 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg shadow-lg p-8 relative">
                       <button
                         className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
                         style={{
