@@ -227,7 +227,7 @@ const Navbar = () => {
           
           {/* Mobile Navigation */}
           <div
-            className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
+            className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 rounded-b-lg shadow-md transition-all duration-300 ${
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
             style={{
@@ -292,7 +292,7 @@ const Navbar = () => {
           {/* Mobile Profile Dropdown */}
           {isAuthenticated && (
             <div
-              className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
+              className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 rounded-b-lg shadow-md transition-all duration-300 ${
                 mobileProfileDropdown ? "opacity-100 visible" : "opacity-0 invisible"
               }`}
               style={{
