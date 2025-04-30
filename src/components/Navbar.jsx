@@ -178,24 +178,33 @@ const Navbar = () => {
                 {/* Role Modal */}
                 {showRoleModal && (
                   <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+                    <div className="bg-white rounded-lg shadow-lg w-[420px] sm:w-[520px] p-8 relative"
+                      style={{ maxWidth: "90vw" }}
+                    >
                       <button
-                        className="absolute top-2 right-2 text-gray-400 hover:text-gray-700"
+                        className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
+                        style={{
+                          fontSize: "4rem",
+                          lineHeight: "0.5rem",
+                          background: "none",
+                          border: "none",
+                          cursor: "pointer"
+                        }}
                         onClick={() => setShowRoleModal(false)}
                         aria-label="Close"
                       >
                         &times;
                       </button>
-                      <h2 className="text-xl font-bold mb-2">{user?.role} Permissions</h2>
+                      <h2 className="text-2xl font-bold mb-4 text-[#213C58]">{user?.role} Permissions</h2>
                       <div>
-                        <h3 className="font-semibold">You can:</h3>
-                        <ul className="list-disc ml-5 mb-2 text-green-700">
+                        <h3 className="font-semibold text-[#213C58]">You can:</h3>
+                        <ul className="list-disc ml-6 mb-4 text-green-700">
                           {ROLE_DETAILS[user?.role]?.can.map((item, i) => (
                             <li key={i}>{item}</li>
                           ))}
                         </ul>
-                        <h3 className="font-semibold">You cannot:</h3>
-                        <ul className="list-disc ml-5 text-red-700">
+                        <h3 className="font-semibold text-[#213C58]">You cannot:</h3>
+                        <ul className="list-disc ml-6 text-red-700">
                           {ROLE_DETAILS[user?.role]?.cannot.map((item, i) => (
                             <li key={i}>{item}</li>
                           ))}
