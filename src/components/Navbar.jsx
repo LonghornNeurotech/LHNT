@@ -76,7 +76,6 @@ const Navbar = () => {
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [showRoleModal, setShowRoleModal] = useState(false);
 
-
   const { isAuthenticated, user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -93,214 +92,210 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="w-full h-20 border-b-2 bg-white border-gray-200 text-[#598BBC] font-['Antonio'] shadow-md fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 h-full">
-        <div className="flex justify-between items-center h-full">
-          {/* Logo/Home Link */}
-          <Link
-            to="/"
-            className="flex items-center hover:opacity-80 transition-opacity duration-200"
-          >
-            <img
-              src={Logo}
-              className="w-24 h-auto p-2"
-              alt="Longhorn Neurotech Logo"
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-4">
+    <>
+      <nav className="w-full h-20 border-b-2 bg-white border-gray-200 text-[#598BBC] font-['Antonio'] shadow-md fixed top-0 left-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 h-full">
+          <div className="flex justify-between items-center h-full">
+            {/* Logo/Home Link */}
             <Link
-              to="/about"
-              className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
+              to="/"
+              className="flex items-center hover:opacity-80 transition-opacity duration-200"
             >
-              About Us
+              <img
+                src={Logo}
+                className="w-24 h-auto p-2"
+                alt="Longhorn Neurotech Logo"
+              />
             </Link>
 
-            <Link
-              to="/events"
-              className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC]  transition-colors duration-200"
-            >
-              Events
-            </Link>
-
-            <Link
-              to="/alumni"
-              className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC]  transition-colors duration-200"
-            >
-              Alumni
-            </Link>
-
-            <Link
-              to="/contact"
-              className="text-2xl  text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
-            >
-              Contact
-            </Link>
-
-            {/* Authenticated: Show Profile Icon with Dropdown */}
-            {isAuthenticated ? (
-              <div className="relative">
-                <button
-                  className="flex items-center px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 transition-colors duration-200"
-                  onClick={() => setProfileDropdown((prev) => !prev)}
-                  aria-label="Profile"
-                >
-                  <User className="text-[#213C58]" size={28} />
-                </button>
-                {profileDropdown && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                    {/* User info section */}
-                    <div className="px-4 pt-3 pb-1">
-                      <p className="font-semibold text-[#213C58] mb-0">
-                        {user?.name || "User"}
-                      </p>
-                      <span className="text-sm text-[#598BBC]">{user?.role || "Member"}</span>
-                    </div>
-                    {/* Button user can click on to view more details about their assigned role */}
-                    <div className="px-0 pb-2 mt-2">
-                      <button
-                        className="blcok w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md text-base font-normal"
-                        onClick={() => setShowRoleModal(true)}
-                      >
-                        What can I do?
-                      </button>
-                    </div>
-                    {/* Logout button */}
-                    <button
-                      onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md"
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-                {/* Role Modal */}
-                {showRoleModal && (
-                  <div className="fixed inset-0 bg-black/85 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg shadow-lg p-8 relative">
-                      <button
-                        className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
-                        style={{
-                          fontSize: "4rem",
-                          lineHeight: "0.5rem",
-                          background: "none",
-                          border: "none",
-                          cursor: "pointer"
-                        }}
-                        onClick={() => setShowRoleModal(false)}
-                        aria-label="Close"
-                      >
-                        &times;
-                      </button>
-                      <h2 className="text-2xl font-bold mb-4 text-[#213C58]">{user?.role} Permissions</h2>
-                      <div>
-                        <h3 className="font-semibold text-[#213C58]">You can:</h3>
-                        <ul className="list-disc ml-6 mb-4 text-green-700">
-                          {ROLE_DETAILS[user?.role]?.can.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                        <h3 className="font-semibold text-[#213C58]">You cannot:</h3>
-                        <ul className="list-disc ml-6 text-red-700">
-                          {ROLE_DETAILS[user?.role]?.cannot.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-4">
               <Link
-                to="/login"
+                to="/about"
                 className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
               >
-                Login
+                About Us
               </Link>
-            )}
+
+              <Link
+                to="/events"
+                className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC]  transition-colors duration-200"
+              >
+                Events
+              </Link>
+
+              <Link
+                to="/alumni"
+                className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC]  transition-colors duration-200"
+              >
+                Alumni
+              </Link>
+
+              <Link
+                to="/contact"
+                className="text-2xl  text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
+              >
+                Contact
+              </Link>
+
+              {/* Authenticated: Show Profile Icon with Dropdown */}
+              {isAuthenticated ? (
+                <div className="relative">
+                  <button
+                    className="flex items-center px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 transition-colors duration-200"
+                    onClick={() => setProfileDropdown((prev) => !prev)}
+                    aria-label="Profile"
+                  >
+                    <User className="text-[#213C58]" size={28} />
+                  </button>
+                  {profileDropdown && (
+                    <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                      {/* User info section */}
+                      <div className="px-4 pt-3 pb-1">
+                        <p className="font-semibold text-[#213C58] mb-0">
+                          {user?.name || "User"}
+                        </p>
+                        <span className="text-sm text-[#598BBC]">{user?.role || "Member"}</span>
+                      </div>
+                      {/* Button user can click on to view more details about their assigned role */}
+                      <div className="px-0 pb-2 mt-2">
+                        <button
+                          className="block w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md text-base font-normal"
+                          onClick={() => setShowRoleModal(true)}
+                        >
+                          What can I do?
+                        </button>
+                      </div>
+                      {/* Logout button */}
+                      <button
+                        onClick={handleLogout}
+                        className="block w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  to="/login"
+                  className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
+                >
+                  Login
+                </Link>
+              )}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X size={24} className="text-primary" />
+              ) : (
+                <Menu size={24} className="text-primary" />
+              )}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
+          {/* Mobile Navigation */}
+          <div
+            className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
+              isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
+            style={{
+              transform: isOpen ? "translateY(0)" : "translateY(-100%)",
+              top: "80px",
+            }}
           >
-            {isOpen ? (
-              <X size={24} className="text-primary" />
-            ) : (
-              <Menu size={24} className="text-primary" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
-            isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
-          style={{
-            transform: isOpen ? "translateY(0)" : "translateY(-100%)",
-            top: "80px",
-          }}
-        >
-          <div className="flex flex-col p-4 space-y-2">
-            <Link
-              to="/about"
-              className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              About Us
-            </Link>
-
-            <Link
-              to="/events"
-              className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Events
-            </Link>
-
-            <Link
-              to="/alumni"
-              className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Alumni
-            </Link>
-
-            <Link
-              to="/contact"
-              className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-
-            {/* Authenticated: Show Profile Icon with Logout */}
-            {isAuthenticated ? (
-              <button
-                onClick={handleLogout}
-                className="flex items-center text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-              >
-                <User className="mr-2" size={24} />
-                Logout
-              </button>
-            ) : (
+            <div className="flex flex-col p-4 space-y-2">
               <Link
-                to="/login"
+                to="/about"
                 className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Login
+                About Us
               </Link>
-            )}
+
+              <Link
+                to="/events"
+                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Events
+              </Link>
+
+              <Link
+                to="/alumni"
+                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Alumni
+              </Link>
+
+              <Link
+                to="/contact"
+                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+
+              {/* Authenticated: Show Profile Icon with Logout */}
+              {isAuthenticated ? (
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                >
+                  <User className="mr-2" size={24} />
+                  Logout
+                </button>
+              ) : (
+                <Link
+                  to="/login"
+                  className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Link>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Role Modal - placed at the root level so it is never clipped or hidden */}
+      {showRoleModal && (
+        <div className="fixed inset-0 bg-black/85 flex items-center justify-center z-[9999]">
+          <div className="bg-white rounded-lg shadow-lg p-8 relative max-w-lg w-full mx-4">
+            <button
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-4xl"
+              onClick={() => setShowRoleModal(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl font-bold mb-4 text-[#213C58]">{user?.role} Permissions</h2>
+            <div>
+              <h3 className="font-semibold text-[#213C58]">You can:</h3>
+              <ul className="list-disc ml-6 mb-4 text-green-700">
+                {ROLE_DETAILS[user?.role]?.can.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+              <h3 className="font-semibold text-[#213C58]">You cannot:</h3>
+              <ul className="list-disc ml-6 text-red-700">
+                {ROLE_DETAILS[user?.role]?.cannot.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
