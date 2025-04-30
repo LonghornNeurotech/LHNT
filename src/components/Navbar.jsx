@@ -76,17 +76,29 @@ const Navbar = () => {
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [showRoleModal, setShowRoleModal] = useState(false);
 
+  // New state for mobile profile dropdown
+  const [mobileProfileDropdown, setMobileProfileDropdown] = useState(false);
+
   const { isAuthenticated, user, logout } = useAuth();
   const navigate = useNavigate();
 
+  // New changes: Hamburger menu toggler also closes mobile profile dropdown
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setMobileProfileDropdown(false);
   };
+
+  // New Changes: Toggle mobile profile dropdown and close hamburger menu
+  const toggleMobileProfile = () => {
+    setMobileProfileDropdown(!mobileProfileDropdown);
+    setIsOpen(false);
+  }
 
   // Handle logout and close menu
   const handleLogout = () => {
     logout();
     setProfileDropdown(false);
+    setMobileProfileDropdown(false);
     setIsOpen(false);
     navigate("/");
   }
@@ -186,7 +198,34 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* New Changes: Mobile Header Icons */}
+            <div className="md:hidden flex items-center space-x-2">
+              {/* New Changes: Mobile Profile Icon (only when authenticated) */}
+              {isAuthenticated && (
+                <button
+                  className="p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+                  onClick={toggleMobileProfile}
+                  aria-label="Profile"
+                >
+                  <User size={24} className="text-[#213C58]" />
+                </button>
+              )}
+
+              {/* New Changes: Mobile Menu Button */}
+              <button
+                className="p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+              >
+                {isOpen ? (
+                  <X size={24} className="text-primary" />
+                ) : (
+                  <Menu size={24} className="text-primary" />
+                )}
+              </button>
+            </div>
+
+            {/* 
             <button
               className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
               onClick={toggleMenu}
@@ -198,9 +237,10 @@ const Navbar = () => {
                 <Menu size={24} className="text-primary" />
               )}
             </button>
+            */}
           </div>
-
-          {/* Mobile Navigation */}
+          
+          {/* New Mobile Navigation */}
           <div
             className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -208,6 +248,7 @@ const Navbar = () => {
             style={{
               transform: isOpen ? "translateY(0)" : "translateY(-100%)",
               top: "80px",
+              zIndex: 60
             }}
           >
             <div className="flex flex-col p-4 space-y-2">
@@ -243,16 +284,8 @@ const Navbar = () => {
                 Contact
               </Link>
 
-              {/* Authenticated: Show Profile Icon with Logout */}
-              {isAuthenticated ? (
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
-                >
-                  <User className="mr-2" size={24} />
-                  Logout
-                </button>
-              ) : (
+              {/* When not Authenticated, only display Login button */}
+              {!isAuthenticated && (
                 <Link
                   to="/login"
                   className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
@@ -263,6 +296,48 @@ const Navbar = () => {
               )}
             </div>
           </div>
+
+          {/* New Mobile Profile Dropdown */}
+          {isAuthenticated && (
+            <div
+              className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
+                mobileProfileDropdown ? "opacity-100 visible" : "opacity-0 invisible"
+              }`}
+              style={{
+                transform: mobileProfileDropdown ? "translateY(0)" : "translateY(-100%)",
+                top: "80px",
+                zIndex: 70
+              }}
+            >
+              <div className="flex flex-col p-4">
+                {/* User info section */}
+                <div className="border-b border-gray-200 pb-3">
+                  <p className="font-semibold text-[#213C58] text-xl">
+                    {user?.name || "User"}
+                  </p>
+                  <span className="text-sm text-[#598BBC]">{user?.role || "Member"}</span>
+                </div>
+                {/* What can I do button */}
+                <button
+                  className="text-left py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary mt-2"
+                  onClick={() => {
+                    setShowRoleModal(true);
+                    setMobileProfileDropdown(false);
+                  }}
+                >
+                  What can I do?
+                </button>
+                {/* Logout button */}
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center text-left py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                >
+                  <User className="mr-2" size={24} />
+                  Logout
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
