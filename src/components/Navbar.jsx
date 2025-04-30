@@ -75,20 +75,19 @@ const Navbar = () => {
   // Implementing controlled display for when user is logged in or not
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [showRoleModal, setShowRoleModal] = useState(false);
-
   // New state for mobile profile dropdown
   const [mobileProfileDropdown, setMobileProfileDropdown] = useState(false);
 
   const { isAuthenticated, user, logout } = useAuth();
   const navigate = useNavigate();
 
-  // New changes: Hamburger menu toggler also closes mobile profile dropdown
+  // Hamburger menu toggler also closes mobile profile dropdown
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     setMobileProfileDropdown(false);
   };
 
-  // New Changes: Toggle mobile profile dropdown and close hamburger menu
+  // Toggle mobile profile dropdown and close hamburger menu
   const toggleMobileProfile = () => {
     setMobileProfileDropdown(!mobileProfileDropdown);
     setIsOpen(false);
@@ -198,12 +197,12 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* New Changes: Mobile Header Icons */}
+            {/* Mobile Header Icons */}
             <div className="md:hidden flex items-center space-x-2">
-              {/* New Changes: Mobile Profile Icon (only when authenticated) */}
+              {/* Mobile Profile Icon (only when authenticated) */}
               {isAuthenticated && (
                 <button
-                  className="p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+                  className="p-2 rounded-md hover:bg-[#FEEBAD] transition-colors duration-200"
                   onClick={toggleMobileProfile}
                   aria-label="Profile"
                 >
@@ -211,36 +210,22 @@ const Navbar = () => {
                 </button>
               )}
 
-              {/* New Changes: Mobile Menu Button */}
+              {/* Mobile Menu Button */}
               <button
-                className="p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+                className="p-2 rounded-md hover:bg-[#FEEBAD] transition-colors duration-200"
                 onClick={toggleMenu}
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
-                  <X size={24} className="text-primary" />
+                  <X size={24} className="text-[#213C58]" />
                 ) : (
-                  <Menu size={24} className="text-primary" />
+                  <Menu size={24} className="text-[#213C58]" />
                 )}
               </button>
             </div>
-
-            {/* 
-            <button
-              className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X size={24} className="text-primary" />
-              ) : (
-                <Menu size={24} className="text-primary" />
-              )}
-            </button>
-            */}
           </div>
           
-          {/* New Mobile Navigation */}
+          {/* Mobile Navigation */}
           <div
             className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -251,10 +236,17 @@ const Navbar = () => {
               zIndex: 60
             }}
           >
-            <div className="flex flex-col p-4 space-y-2">
+            <div className="flex flex-col">
+              <div className="px-4 pt-4">
+                <span className="font-semibold text-[#213C58] text-2xl">
+                  Ready to discover more?
+                </span>
+                <hr className="mt-2 border-t-2 border-[#5D89BA]" />
+              </div>
+
               <Link
                 to="/about"
-                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
@@ -262,7 +254,7 @@ const Navbar = () => {
 
               <Link
                 to="/events"
-                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Events
@@ -270,7 +262,7 @@ const Navbar = () => {
 
               <Link
                 to="/alumni"
-                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Alumni
@@ -278,7 +270,7 @@ const Navbar = () => {
 
               <Link
                 to="/contact"
-                className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
@@ -288,7 +280,7 @@ const Navbar = () => {
               {!isAuthenticated && (
                 <Link
                   to="/login"
-                  className="text-xl py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                  className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   Login
@@ -297,7 +289,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* New Mobile Profile Dropdown */}
+          {/* Mobile Profile Dropdown */}
           {isAuthenticated && (
             <div
               className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 shadow-md transition-all duration-300 ${
@@ -309,17 +301,18 @@ const Navbar = () => {
                 zIndex: 70
               }}
             >
-              <div className="flex flex-col p-4">
+              <div className="flex flex-col">
                 {/* User info section */}
-                <div className="border-b border-gray-200 pb-3">
-                  <p className="font-semibold text-[#213C58] text-xl">
+                <div className="px-4 pt-4">
+                  <p className="font-semibold text-[#213C58] text-2xl mb-1">
                     {user?.name || "User"}
                   </p>
-                  <span className="text-sm text-[#598BBC]">{user?.role || "Member"}</span>
+                  <span className="text-lg text-[#598BBC]">{user?.role || "Member"}</span>
+                  <hr className="mt-2 border-t-2 border-[#5D89BA]" />
                 </div>
                 {/* What can I do button */}
                 <button
-                  className="text-left py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary mt-2"
+                  className="w-full text-left text-xl text-[#213C58] font-['Antonio'] py-3 px-4 hover:bg-[#FEEBAD] rounded-md transition-colors duration-200"
                   onClick={() => {
                     setShowRoleModal(true);
                     setMobileProfileDropdown(false);
@@ -330,9 +323,8 @@ const Navbar = () => {
                 {/* Logout button */}
                 <button
                   onClick={handleLogout}
-                  className="flex items-center text-left py-3 px-4 hover:bg-gray-100 rounded-md transition-colors duration-200 text-primary"
+                  className="w-full text-left text-xl text-[#213C58] font-['Antonio'] py-3 px-4 hover:bg-[#FEEBAD] rounded-md transition-colors duration-200 flex items-center"
                 >
-                  <User className="mr-2" size={24} />
                   Logout
                 </button>
               </div>
