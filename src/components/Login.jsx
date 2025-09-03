@@ -43,7 +43,7 @@ const Login = () => {
           timer: 1500,
           showConfirmButton: false,
         });
-        navigate('/');
+        navigate('/member');
       } else {
         Swal.fire({
           title: 'Authentication Failed',

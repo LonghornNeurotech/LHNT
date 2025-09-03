@@ -8,6 +8,9 @@ import Login from "./Login";
 import SponsorWidget from "./SponsorWidget";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import MemberHome from "./MemberHome";
+import ProgramsMenu from "./ProgramsMenu";
+
 export { 
     Navbar, 
     About, 
@@ -16,5 +19,7 @@ export {
     Events, 
     Alumni, 
     Login, 
-    SponsorWidget
+    SponsorWidget,
+    MemberHome,
+    ProgramsMenu,
 };
