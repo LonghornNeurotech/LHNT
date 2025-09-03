@@ -63,7 +63,8 @@ const Login = () => {
   return (
     <div className="bg-[#213C58] min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-lg p-8 w-[40em] mx-[1em] mt-0" style={{borderRadius: '10px'}}>
-        <h2 className="text-center text-[2rem] font-bold mb-6 heading">Login</h2>
+        <h2 className="text-center text-[2.2rem] font-bold mb-3 heading">Welcome!</h2>
+        <h2 className="text-center text-[1.4rem] font-bold mb-6 heading leading-8">Enter the organization password to access your member account.</h2>
         <form onSubmit={handleSubmit} className="mx-auto">
           <div className="mb-4">
             <label
