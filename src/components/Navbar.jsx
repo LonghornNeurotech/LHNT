@@ -69,13 +69,6 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/alumni"
-                className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC]  transition-colors duration-200"
-              >
-                Alumni
-              </Link>
-
-              <Link
                 to="/contact"
                 className="text-2xl  text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
               >
@@ -109,7 +102,7 @@ const Navbar = () => {
                   to="/login"
                   className="text-2xl text-[#213C58] font-['Antonio'] px-4 py-2 rounded-md hover:bg-[#FFEBAD] hover:bg-opacity-75 hover:text-[#598BBC] transition-colors duration-200"
                 >
-                  Login
+                  Members
                 </Link>
               )}
             </div>
@@ -178,14 +171,6 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/alumni"
-                className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Alumni
-              </Link>
-
-              <Link
                 to="/contact"
                 className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
@@ -200,7 +185,7 @@ const Navbar = () => {
                   className="text-xl font-['Antonio'] text-[#213C58] py-3 px-4 hover:bg-[#FFEBAD] rounded-md transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
-                  Login
+                  Members
                 </Link>
               )}
             </div>

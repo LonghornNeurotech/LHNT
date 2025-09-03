@@ -1,4 +1,13 @@
-/* Alumni page */
+/* Alumni page 
+
+    STATUS UPDATE: 
+    All routes and navigation links to this page are removed,
+    so this page can be further renovated and all data is made accurate!
+
+    DEVELOPER'S NOTES: 
+    After Alumni page is ready, will readd the route and navigation
+    links to this page on the website!
+*/
 import SponsorWidget from './SponsorWidget';
 import ProfileDisplay from './Alumni/ProfileDisplay/ProfileDisplay';
 

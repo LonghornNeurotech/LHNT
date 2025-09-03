@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import { Home, About, Contact, Navbar, Events, Alumni, Login} from "./components";
+import { Home, About, Contact, Navbar, Events, Login} from "./components";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,7 +21,6 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/events" element={<Events />} />
-              <Route path="/alumni" element={<Alumni />} />
               <Route path="/login" element={<Login />} />
             </Routes>
           </div>
