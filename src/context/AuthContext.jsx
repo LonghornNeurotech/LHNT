@@ -1,12 +1,8 @@
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 // Create Auth Context
 const AuthContext = createContext();
-
-// Custom hook to access Auth Context
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
 
 // AuthProvider component to manage authentication state
 export const AuthProvider = ({ children }) => {
@@ -43,3 +39,11 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+// PropTypes validation for children
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+// Export AuthContext for useAuth custom hook in separate file (see below)
+export default AuthContext;
