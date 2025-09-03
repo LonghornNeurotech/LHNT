@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useAuth } from '../context/useAuth';
+import EyeToggle from '../components/EyeToggle';
 
 const Login = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -73,15 +75,47 @@ const Login = () => {
             >
               Password
             </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={`w-full px-2 py-2 border rounded-lg focus:outline-none ${
-                errors.password ? 'border-red-500' : 'border-[#598BBC]'
-              }`}
-            />
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className={`w-full border rounded-lg focus:outline-none ${
+                  errors.password ? 'border-red-500' : 'border-[#598BBC]'
+                }`}
+                style={{
+                  height: '44px',
+                  fontSize: '1.15rem',
+                  paddingLeft: '0.75em',
+                  paddingRight: '2.5em',
+                  minWidth: 0,
+                }}
+              />
+              <span
+                style={{
+                  position: 'absolute',
+                  right: '0.75em',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  height: '44px',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <EyeToggle
+                  visible={showPassword}
+                  onClick={() => setShowPassword((prev) => !prev)}
+                />
+              </span>
+            </div>
             {errors.password && (
               <p className="text-red-500 text-md mt-1 subheading">{errors.password}</p>
             )}

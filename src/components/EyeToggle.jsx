@@ -1,4 +1,4 @@
-// Reusable Eye Toggle component to switch between "hidden" and "unhidden" state of any confidential data!
+// Reusable Eye Toggle icon to signal switch between "hidden" and "unhidden" state of any info!
 import PropTypes from 'prop-types';
 import { Eye, EyeOff } from 'lucide-react';
 
@@ -10,12 +10,18 @@ const EyeToggle = ({ visible, onClick }) => (
     style={{
       background: 'transparent',
       border: 'none',
+      boxShadow: 'none',
       cursor: 'pointer',
       outline: 'none',
-      padding: 0
+      padding: 0,
+      margin: 0,
+      display: 'flex',
+      alignItems: 'center',
     }}
   >
-    {visible ? <EyeOff size={22} /> : <Eye size={22} />}
+    {visible 
+        ? <EyeOff size={22} color="#213C58"/> 
+        : <Eye size={22} color="#213C58"/>}
   </button>
 );
 
