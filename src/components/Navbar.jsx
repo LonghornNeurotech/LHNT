@@ -11,7 +11,7 @@ const Navbar = () => {
   // New state for mobile profile dropdown
   const [mobileProfileDropdown, setMobileProfileDropdown] = useState(false);
 
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
   // Hamburger menu toggler also closes mobile profile dropdown
@@ -94,22 +94,6 @@ const Navbar = () => {
                   </button>
                   {profileDropdown && (
                     <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                      {/* User info section */}
-                      <div className="px-4 pt-3 pb-1">
-                        <p className="font-semibold text-[#213C58] mb-0">
-                          {user?.name || "User"}
-                        </p>
-                        <span className="text-sm text-[#598BBC]">{user?.role || "Member"}</span>
-                      </div>
-                      {/* Button user can click on to view more details about their assigned role */}
-                      <div className="px-0 pb-2 mt-2">
-                        <button
-                          className="block w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md text-base font-normal"
-                          onClick={() => setShowRoleModal(true)}
-                        >
-                          What can I do?
-                        </button>
-                      </div>
                       {/* Logout button */}
                       <button
                         onClick={handleLogout}
