@@ -4,77 +4,10 @@ import Logo from "/assets/cow purssian blue.svg";
 import { Menu, X, User } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
-// Role details that get displayed in modal when user needs to know more about their assigned role.
-const ROLE_DETAILS = {
-  Admin: {
-    can: [
-      "Approve, create, remove, or edit user accounts",
-      "Assign, change, or revoke user roles",
-      "View and manage audit logs",
-      "Override or rollback content or design changes",
-      "Access all admin/system settings",
-      "Approve production deployments",
-      "View onboarding walkthroughs and technical resources"
-    ],
-    cannot: [
-      "Directly edit website content (unless also Content Editor)",
-      "Directly change design/theme (unless also Developer)",
-      "Participate in regular content workflows unless needed"
-    ]
-  },
-  Developer: {
-    can: [
-      "Access and edit design system (colors, fonts, spacing)",
-      "Modify UI component styling and layout",
-      "Adjust responsive breakpoints and animation logic",
-      "Access and update Tailwind, CSS, or theme configuration",
-      "Test design changes in staging/previews",
-      "View onboarding walkthroughs and technical resources"
-    ],
-    cannot: [
-      "Edit or approve page content",
-      "Manage user accounts or roles",
-      "Deploy to production without Admin approval"
-    ]
-  },
-  "Content Editor": {
-    can: [
-      "Edit all page content (Home, About, Events, Alumni)",
-      "Add, edit, or remove images and files",
-      "Add, edit, or remove event cards and alumni profiles",
-      "Reassign event types",
-      "Edit leadership profiles",
-      "Manage image carousels/roulettes",
-      "Preview and submit content changes for review",
-      "View onboarding walkthroughs and technical resources"
-    ],
-    cannot: [
-      "Change design system settings",
-      "Access or modify codebase or component styling",
-      "Manage user accounts or roles",
-      "Deploy to production without Admin approval"
-    ]
-  },
-  Member: {
-    can: [
-      "View onboarding walkthroughs and technical resources",
-      "View protected member-only content",
-      "Submit content suggestions or feedback"
-    ],
-    cannot: [
-      "Edit any website content",
-      "Access design system or codebase",
-      "Manage user accounts or roles",
-      "Approve or deploy changes"
-    ]
-  }
-};
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   // Implementing controlled display for when user is logged in or not
   const [profileDropdown, setProfileDropdown] = useState(false);
-  const [showRoleModal, setShowRoleModal] = useState(false);
   // New state for mobile profile dropdown
   const [mobileProfileDropdown, setMobileProfileDropdown] = useState(false);
 
@@ -302,24 +235,6 @@ const Navbar = () => {
               }}
             >
               <div className="flex flex-col">
-                {/* User info section */}
-                <div className="px-4 pt-4">
-                  <p className="font-semibold text-[#213C58] text-2xl mb-1">
-                    {user?.name || "User"}
-                  </p>
-                  <span className="text-lg text-[#598BBC]">{user?.role || "Member"}</span>
-                  <hr className="mt-2 border-t-2 border-[#5D89BA]" />
-                </div>
-                {/* What can I do button */}
-                <button
-                  className="w-full text-left text-xl text-[#213C58] font-['Antonio'] py-3 px-4 hover:bg-[#FEEBAD] rounded-md transition-colors duration-200"
-                  onClick={() => {
-                    setShowRoleModal(true);
-                    setMobileProfileDropdown(false);
-                  }}
-                >
-                  What can I do?
-                </button>
                 {/* Logout button */}
                 <button
                   onClick={handleLogout}
@@ -332,36 +247,6 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-
-      {/* Role Modal - placed at the root level so it is never clipped or hidden */}
-      {showRoleModal && (
-        <div className="fixed inset-0 bg-black/85 flex items-center justify-center z-[9999]">
-          <div className="bg-white rounded-lg shadow-lg p-8 relative max-w-lg w-full mx-4">
-            <button
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-4xl"
-              onClick={() => setShowRoleModal(false)}
-              aria-label="Close"
-            >
-              &times;
-            </button>
-            <h2 className="text-2xl font-bold mb-4 text-[#213C58]">{user?.role} Permissions</h2>
-            <div>
-              <h3 className="font-semibold text-[#213C58]">You can:</h3>
-              <ul className="list-disc ml-6 mb-4 text-green-700">
-                {ROLE_DETAILS[user?.role]?.can.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-              <h3 className="font-semibold text-[#213C58]">You cannot:</h3>
-              <ul className="list-disc ml-6 text-red-700">
-                {ROLE_DETAILS[user?.role]?.cannot.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

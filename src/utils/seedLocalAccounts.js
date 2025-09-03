@@ -3,6 +3,8 @@
     with each account assigned to a different role, to
     test difference between logging into the website for 
     each role. 
+
+    Don't need this file anymore!
 */
 export function seedLocalAccounts() {
     if (!localStorage.getItem("accounts")) {

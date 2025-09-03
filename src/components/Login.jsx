@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +13,6 @@ const Login = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!username.trim()) newErrors.username = 'Username is required';
     if (!password) newErrors.password = 'Password is required';
     return newErrors;
   };
@@ -22,7 +20,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validateForm();
-
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
@@ -31,16 +28,12 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      // Simulate authentication - replace with actual API call later
+      // Simulate authentication delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // Get boolean value of whether username and password are correct to login to 
-      // specific account
-      const success = await login({ username, password })
-
+      const success = await login(password);
 
       if (success) {
-        // Successfully logged in 
         Swal.fire({
           title: 'Success!',
           text: 'You are authorized',
@@ -48,13 +41,11 @@ const Login = () => {
           timer: 1500,
           showConfirmButton: false,
         });
-
         navigate('/');
       } else {
-        // Failed to login
         Swal.fire({
           title: 'Authentication Failed',
-          text: 'Invalid username or password',
+          text: 'Invalid password',
           icon: 'error',
         });
       }
@@ -74,26 +65,6 @@ const Login = () => {
       <div className="bg-white rounded-lg shadow-lg p-8 w-[40em] mx-[1em] mt-0" style={{borderRadius: '10px'}}>
         <h2 className="text-center text-[2rem] font-bold mb-6 heading">Login</h2>
         <form onSubmit={handleSubmit} className="mx-auto">
-          <div className="mb-4">
-            <label
-              htmlFor="username"
-              className="block text-xl font-medium text-[#213C58] mb-2 subheading"
-            >
-              Username
-            </label>
-            <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className={`w-full px-2 py-2 border rounded-lg focus:outline-none ${
-                errors.username ? 'border-red-500' : 'border-[#598BBC]'
-              }`}
-            />
-            {errors.username && (
-              <p className="text-red-500 text-md mt-1 subheading">{errors.username}</p>
-            )}
-          </div>
           <div className="mb-4">
             <label
               htmlFor="password"
