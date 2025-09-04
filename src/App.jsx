@@ -30,9 +30,7 @@ const App = () => {
                 path="/member"
                 element={
                   <MemberRoute>
-                    <MemberHome
-                      onSelectPrograms={() => window.location.href = '/programs'}
-                    />
+                    <MemberHome />
                   </MemberRoute>
                 }
               />
