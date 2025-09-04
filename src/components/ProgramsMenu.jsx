@@ -10,16 +10,16 @@ const BONE_WHITE = '#F9F6EE';
 // Mapping option sets to PDF files
 const pdfMap = {
   Software: [
-    { label: 'Block 1: General Skills', file: 'Software-B1_-General-Skills.pdf' },
-    { label: 'Block 2: Virtual Reality', file: 'Software-B2_-Virtual-Reality.pdf' },
-    { label: 'Block 3: Signals', file: 'Software-B3_-Signals.pdf' },
-    { label: 'Block 4: Machine Learning', file: 'Software-B4_-Machine-Learning.pdf' }
+    { label: 'Block 1: General Skills', file: 'Software - B1_ General Skills.pdf' },
+    { label: 'Block 2: Virtual Reality', file: 'Software - B2_ Virtual Reality.pdf' },
+    { label: 'Block 3: Signals', file: 'Software - B3_ Signals.pdf' },
+    { label: 'Block 4: Machine Learning', file: 'Software - B4_ Machine Learning.pdf' }
   ],
   Hardware: [
-    { label: 'Block 1: General Skills', file: 'Hardware-B1_-General-Skills.pdf' },
-    { label: 'Block 2: Design', file: 'Hardware-B2_-Design.pdf' },
-    { label: 'Block 3: Electronics', file: 'Hardware-B3_-Electronics.pdf' },
-    { label: 'Block 4: Hardware-Software Interfacing', file: 'Hardware-B4_-Hardware-Software-Interfacing.pdf' }
+    { label: 'Block 1: General Skills', file: 'Hardware - B1_ General Skills.pdf' },
+    { label: 'Block 2: Design', file: 'Hardware - B2_ Design.pdf' },
+    { label: 'Block 3: Electronics', file: 'Hardware -B3_ Electronics.pdf' },
+    { label: 'Block 4: Hardware-Software Interfacing', file: 'Hardware -B4_ Hardware-Software Interfacing.pdf' }
   ]
 };
 
@@ -103,26 +103,30 @@ const ProgramsMenu = () => {
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3em' }}>
               {pdfMap[group].map(({ label, file }) => (
-                <button
-                  key={file}
-                  onClick={() =>
-                    window.open(`/onboarding/${file}`, "_blank")
-                  }
-                  style={{
-                    background: SILVER_LAKE_BLUE,
-                    color: LIGHT_CREAM,
-                    border: 'none',
-                    borderRadius: '8px',
-                    padding: '1em 0',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    letterSpacing: '1px',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s',
-                  }}
+                <a
+                    key={file}
+                    href={`/onboarding/${file}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'block',
+                        textAlign: 'center',
+                        background: SILVER_LAKE_BLUE,
+                        color: LIGHT_CREAM,
+                        border: 'none',
+                        borderRadius: '8px',
+                        padding: '1em 0',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        letterSpacing: '1px',
+                        cursor: 'pointer',
+                        textDecoration: 'none',
+                        marginBottom: '0.5em',
+                        transition: 'background 0.2s',
+                    }}
                 >
-                  {label}
-                </button>
+                    {label}
+                </a>
               ))}
               <button
                 onClick={() => setGroup(null)}
