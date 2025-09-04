@@ -8,6 +8,7 @@ const LIGHT_CREAM = '#FFF8D6';
 const BONE_WHITE = '#F9F6EE';
 
 // Mapping option sets to PDF files
+// Make sure to match file name here with EXACT file name in onboarding directory!
 const pdfMap = {
   Software: [
     { label: 'Block 1: General Skills', file: 'Software - B1_ General Skills.pdf' },
@@ -18,8 +19,8 @@ const pdfMap = {
   Hardware: [
     { label: 'Block 1: General Skills', file: 'Hardware - B1_ General Skills.pdf' },
     { label: 'Block 2: Design', file: 'Hardware - B2_ Design.pdf' },
-    { label: 'Block 3: Electronics', file: 'Hardware -B3_ Electronics.pdf' },
-    { label: 'Block 4: Hardware-Software Interfacing', file: 'Hardware -B4_ Hardware-Software Interfacing.pdf' }
+    { label: 'Block 3: Electronics', file: 'Hardware - B3_ Electronics.pdf' },
+    { label: 'Block 4: Hardware-Software Interfacing', file: 'Hardware - B4_ Hardware-Software Interfacing.pdf' }
   ]
 };
 
@@ -38,7 +39,7 @@ const ProgramsMenu = () => {
       <div style={{
         background: BONE_WHITE,
         borderRadius: '18px',
-        padding: '2.5em 3em',
+        padding: '3em 3.3em',
         boxShadow: `0 8px 32px 0 ${SILVER_LAKE_BLUE}44`,
         minWidth: '320px',
         maxWidth: '400px',
@@ -49,8 +50,9 @@ const ProgramsMenu = () => {
               textAlign: 'center',
               color: PRUSSIAN_BLUE,
               fontWeight: 700,
-              fontSize: '1.6rem',
-              marginBottom: '2em',
+              fontSize: '2.3rem',
+              lineHeight: 1.14,
+              marginBottom: '1em',
             }}>
               Which team are you in?
             </h2>
@@ -62,10 +64,10 @@ const ProgramsMenu = () => {
                   color: BONE_WHITE,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '1.1em 0',
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  letterSpacing: '1.1px',
+                  padding: '1.3em 0',
+                  fontSize: '1.35rem',
+                  fontWeight: 700,
+                  letterSpacing: '1.2px',
                   cursor: 'pointer',
                   transition: 'background 0.3s',
                 }}
@@ -79,10 +81,10 @@ const ProgramsMenu = () => {
                   color: BONE_WHITE,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '1.1em 0',
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  letterSpacing: '1.1px',
+                  padding: '1.3em 0',
+                  fontSize: '1.35rem',
+                  fontWeight: 700,
+                  letterSpacing: '1.2px',
                   cursor: 'pointer',
                   transition: 'background 0.3s',
                 }}
@@ -98,10 +100,10 @@ const ProgramsMenu = () => {
                   color: LIGHT_CREAM,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '1em 0',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  letterSpacing: '1px',
+                  padding: '0.8em 0',
+                  fontSize: '1.19rem',
+                  fontWeight: 700,
+                  letterSpacing: '1.2px',
                   cursor: 'pointer',
                   marginTop: '1em',
                   transition: 'background 0.3s',
@@ -117,8 +119,9 @@ const ProgramsMenu = () => {
               textAlign: 'center',
               color: PRUSSIAN_BLUE,
               fontWeight: 700,
-              fontSize: '1.4rem',
-              marginBottom: '1.8em',
+              fontSize: '2.2rem',
+              lineHeight: 1.15,
+              marginBottom: '1em',
             }}>
               Select your onboarding block
             </h2>
@@ -135,10 +138,10 @@ const ProgramsMenu = () => {
                     background: SILVER_LAKE_BLUE,
                     color: BONE_WHITE,
                     borderRadius: '10px',
-                    padding: '1em 0',
-                    fontSize: '1.05rem',
-                    fontWeight: 600,
-                    letterSpacing: '1.05px',
+                    padding: '1.14em 0',
+                    fontSize: '1.28rem',
+                    fontWeight: 700,
+                    letterSpacing: '1.1px',
                     cursor: 'pointer',
                     textDecoration: 'none',
                     marginBottom: '0.6em',
@@ -155,9 +158,9 @@ const ProgramsMenu = () => {
                   color: LIGHT_CREAM,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '1em 0',
-                  fontSize: '1rem',
-                  fontWeight: 600,
+                  padding: '0.8em 0',
+                  fontSize: '1.2rem',
+                  fontWeight: 700,
                   letterSpacing: '1px',
                   cursor: 'pointer',
                   marginTop: '1em',

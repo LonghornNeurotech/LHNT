@@ -37,8 +37,9 @@ const MemberHome = () => {
           textAlign: 'center',
           color: PRUSSIAN_BLUE,
           fontWeight: 700,
-          fontSize: '2rem',
-          marginBottom: '2.2rem',
+          fontSize: '2.5rem',
+          lineHeight: 1.18,
+          marginBottom: '2.5rem',
         }}>
           Member Home
         </h2>
@@ -53,9 +54,9 @@ const MemberHome = () => {
                 color: opt.enabled ? BONE_WHITE : SILVER_LAKE_BLUE,
                 border: 'none',
                 borderRadius: '9px',
-                padding: '1em 0',
-                fontSize: '1.12rem',
-                fontWeight: 600,
+                padding: '1.3em 0',
+                fontSize: '1.35rem',
+                fontWeight: 700,
                 letterSpacing: '1px',
                 cursor: opt.enabled ? 'pointer' : 'not-allowed',
                 opacity: opt.enabled ? 1 : 0.6,
