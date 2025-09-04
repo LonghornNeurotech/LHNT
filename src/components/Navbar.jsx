@@ -49,7 +49,7 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* DESKTOP NAVIGATION */}
+            {/* Desktop Navigation */}
             {isAuthenticated ? (
               // If logged in: Only show Profile icon/Logout with dropdown or link
               <div className="hidden md:flex space-x-4">
@@ -65,7 +65,11 @@ const Navbar = () => {
                     <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                       <button
                         onClick={handleLogout}
-                        className="block w-full text-left px-4 py-2 text-[#213C58] hover:bg-[#FFEBAD] rounded-md"
+                        className="w-full text-left text-[1.35rem] font-['Antonio'] py-3 px-4 leading-snug"
+                        style={{ 
+                          color: "#003153", 
+                          backgroundColor: "transparent",
+                        }}
                       >
                         Logout
                       </button>
@@ -103,7 +107,7 @@ const Navbar = () => {
               </div>
             )}
 
-            {/* MOBILE NAVIGATION ICONS */}
+            {/* Mobile Navigation Icons */}
             {/* Only show mobile menu when not authenticated */}
             <div className="md:hidden flex items-center space-x-2">
               {isAuthenticated ? (
@@ -133,7 +137,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* MOBILE PUBLIC NAVIGATION MENU */}
+          {/* Mobile Public Navigation Menu */}
           {!isAuthenticated && (
             <div
               className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 rounded-b-lg shadow-md transition-all duration-300 ${
@@ -184,22 +188,27 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* MOBILE PROFILE DROPDOWN */}
+          {/* Mobile Profile Dropdown*/}
           {isAuthenticated && (
             <div
               className={`md:hidden absolute left-0 right-0 bg-white border-b border-gray-200 rounded-b-lg shadow-md transition-all duration-300 ${
                 mobileProfileDropdown ? "opacity-100 visible" : "opacity-0 invisible"
               }`}
               style={{
-                transform: mobileProfileDropdown ? "translateY(0)" : "translateY(-100%)",
-                top: "80px",
+                top: "70px",
                 zIndex: 70
               }}
             >
               <div className="flex flex-col">
                 <button
                   onClick={handleLogout}
-                  className="w-full text-left text-xl text-[#213C58] font-['Antonio'] py-3 px-4 hover:bg-[#FEEBAD] rounded-md transition-colors duration-200 flex items-center"
+                  className="w-full text-left font-['Antonio'] flex items-center"
+                  style={{
+                    color: "#003153",
+                    fontSize: "1.35rem",
+                    padding: "0.95rem 1.3rem",
+                    backgroundColor: "transparent",
+                  }}
                 >
                   Logout
                 </button>
