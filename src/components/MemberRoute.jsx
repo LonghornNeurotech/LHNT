@@ -1,3 +1,4 @@
+// The MemberRoute ensures that only members can access member-only pages!
 import PropTypes from 'prop-types';
 import { useAuth } from '../context/useAuth';
 import { Navigate } from 'react-router-dom';

@@ -1,3 +1,4 @@
+// This Navbar ensures easier navigation to other pages!
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "/assets/cow purssian blue.svg";

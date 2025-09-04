@@ -1,3 +1,4 @@
+// Longhorn Neurotech Team Leaders's Info Card
 import "./ContactCard.css"
 
 const ContactCard = ({ name, title, img, styleClass, linkedin, children }) => {

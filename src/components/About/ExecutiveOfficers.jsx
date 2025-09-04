@@ -1,3 +1,4 @@
+// Display info about the organization's executive officers!
 import ContactCard from "./ContactCard";
 import "./ExecutiveOfficers.css"
 

@@ -1,3 +1,4 @@
+// Display info about the organization's leadership team member!
 import ContactCard from "./ContactCard";
 import "./LeadershipTeam.css"
 
