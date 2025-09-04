@@ -8,7 +8,7 @@
         Longhorn Neurotech!
     - Filters whatever is in the tags array
 */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Filter.css';
 
 const YearFilter = ({setTaggedData, roles, data}) => {
