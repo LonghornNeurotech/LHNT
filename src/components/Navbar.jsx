@@ -7,9 +7,13 @@ import { useAuth } from "../context/useAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // Controlling whether profile dropdown menu shows up or not
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [mobileProfileDropdown, setMobileProfileDropdown] = useState(false);
-
+  // Controlling hover state over Logout dropdown menu option
+  const [isLogoutHovered, setIsLogoutHovered] = useState(false);
+  const [isMobileLogoutHovered, setIsMobileLogoutHovered] = useState(false);
+  // Authentication state and navigation 
   const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -49,7 +53,7 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation Icons */}
             {isAuthenticated ? (
               // If logged in: Only show Profile icon/Logout with dropdown or link
               <div className="hidden md:flex space-x-4">
@@ -65,10 +69,14 @@ const Navbar = () => {
                     <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                       <button
                         onClick={handleLogout}
-                        className="w-full text-left text-[1.35rem] font-['Antonio'] py-3 px-4 leading-snug"
+                        onMouseEnter={() => setIsLogoutHovered(true)}
+                        onMouseLeave={() => setIsLogoutHovered(false)}
+                        className="w-full text-left font-['Antonio'] leading-snug hover:bg-[#FFEBAD] transition-colors"
                         style={{ 
                           color: "#003153", 
-                          backgroundColor: "transparent",
+                          fontSize: "1.35rem",
+                          padding: "0.95rem 1.3rem",
+                          backgroundColor: isLogoutHovered ? "#FFEBAD" : "transparent",
                         }}
                       >
                         Logout
@@ -202,12 +210,14 @@ const Navbar = () => {
               <div className="flex flex-col">
                 <button
                   onClick={handleLogout}
-                  className="w-full text-left font-['Antonio'] flex items-center"
+                  onMouseEnter={() => setIsMobileLogoutHovered(true)}
+                  onMouseLeave={() => setIsMobileLogoutHovered(false)}
+                  className="w-full text-left font-['Antonio'] flex items-center transition-colors"
                   style={{
                     color: "#003153",
                     fontSize: "1.35rem",
                     padding: "0.95rem 1.3rem",
-                    backgroundColor: "transparent",
+                    backgroundColor: isMobileLogoutHovered ? "#FFEBAD" : "transparent",
                   }}
                 >
                   Logout
