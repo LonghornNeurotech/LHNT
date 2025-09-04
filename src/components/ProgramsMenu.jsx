@@ -1,10 +1,10 @@
 // Programs Menu to go to Onboarding material for a member!
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SILVER_LAKE_BLUE = '#5D89BA';
 const PRUSSIAN_BLUE = '#003153';
 const LIGHT_CREAM = '#FFF8D6';
-const VANILLA = '#F3E5AB';
 const BONE_WHITE = '#F9F6EE';
 
 // Mapping option sets to PDF files
@@ -25,6 +25,7 @@ const pdfMap = {
 
 const ProgramsMenu = () => {
   const [group, setGroup] = useState(null);
+  const navigate = useNavigate();  // <-- Added navigate hook
 
   return (
     <div style={{
@@ -37,10 +38,10 @@ const ProgramsMenu = () => {
       <div style={{
         background: BONE_WHITE,
         borderRadius: '18px',
-        padding: '2.2em 3em',
+        padding: '2.5em 3em',
         boxShadow: `0 8px 32px 0 ${SILVER_LAKE_BLUE}44`,
         minWidth: '320px',
-        maxWidth: '372px',
+        maxWidth: '400px',
       }}>
         {!group ? (
           <>
@@ -48,25 +49,25 @@ const ProgramsMenu = () => {
               textAlign: 'center',
               color: PRUSSIAN_BLUE,
               fontWeight: 700,
-              fontSize: '1.4rem',
-              marginBottom: '2rem',
+              fontSize: '1.6rem',
+              marginBottom: '2em',
             }}>
-              Which major group are you in?
+              Which team are you in?
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3em' }}>
               <button
                 onClick={() => setGroup('Software')}
                 style={{
                   background: SILVER_LAKE_BLUE,
-                  color: LIGHT_CREAM,
+                  color: BONE_WHITE,
                   border: 'none',
-                  borderRadius: '8px',
-                  padding: '1em 0',
-                  fontSize: '1rem',
+                  borderRadius: '10px',
+                  padding: '1.1em 0',
+                  fontSize: '1.1rem',
                   fontWeight: 600,
-                  letterSpacing: '1px',
+                  letterSpacing: '1.1px',
                   cursor: 'pointer',
-                  transition: 'background 0.2s',
+                  transition: 'background 0.3s',
                 }}
               >
                 Software
@@ -75,18 +76,38 @@ const ProgramsMenu = () => {
                 onClick={() => setGroup('Hardware')}
                 style={{
                   background: SILVER_LAKE_BLUE,
+                  color: BONE_WHITE,
+                  border: 'none',
+                  borderRadius: '10px',
+                  padding: '1.1em 0',
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  letterSpacing: '1.1px',
+                  cursor: 'pointer',
+                  transition: 'background 0.3s',
+                }}
+              >
+                Hardware
+              </button>
+
+              {/* <-- Added Back button here to allow user to navigate back to MemberHome */}
+              <button
+                onClick={() => navigate('/member')}
+                style={{
+                  background: PRUSSIAN_BLUE,
                   color: LIGHT_CREAM,
                   border: 'none',
-                  borderRadius: '8px',
+                  borderRadius: '10px',
                   padding: '1em 0',
                   fontSize: '1rem',
                   fontWeight: 600,
                   letterSpacing: '1px',
                   cursor: 'pointer',
-                  transition: 'background 0.2s',
+                  marginTop: '1em',
+                  transition: 'background 0.3s',
                 }}
               >
-                Hardware
+                Back
               </button>
             </div>
           </>
@@ -96,52 +117,51 @@ const ProgramsMenu = () => {
               textAlign: 'center',
               color: PRUSSIAN_BLUE,
               fontWeight: 700,
-              fontSize: '1.3rem',
-              marginBottom: '2rem',
+              fontSize: '1.4rem',
+              marginBottom: '1.8em',
             }}>
-              Select your onboarding block:
+              Select your onboarding block
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3em' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2em' }}>
               {pdfMap[group].map(({ label, file }) => (
                 <a
-                    key={file}
-                    href={`/onboarding/${file}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                        display: 'block',
-                        textAlign: 'center',
-                        background: SILVER_LAKE_BLUE,
-                        color: LIGHT_CREAM,
-                        border: 'none',
-                        borderRadius: '8px',
-                        padding: '1em 0',
-                        fontSize: '1rem',
-                        fontWeight: 600,
-                        letterSpacing: '1px',
-                        cursor: 'pointer',
-                        textDecoration: 'none',
-                        marginBottom: '0.5em',
-                        transition: 'background 0.2s',
-                    }}
+                  key={file}
+                  href={`/onboarding/${encodeURIComponent(file)}`}  // <-- Added encodeURIComponent for safety with spaces in filenames
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    background: SILVER_LAKE_BLUE,
+                    color: BONE_WHITE,
+                    borderRadius: '10px',
+                    padding: '1em 0',
+                    fontSize: '1.05rem',
+                    fontWeight: 600,
+                    letterSpacing: '1.05px',
+                    cursor: 'pointer',
+                    textDecoration: 'none',
+                    marginBottom: '0.6em',
+                    transition: 'background 0.3s',
+                  }}
                 >
-                    {label}
+                  {label}
                 </a>
               ))}
               <button
                 onClick={() => setGroup(null)}
                 style={{
-                  background: VANILLA,
-                  color: SILVER_LAKE_BLUE,
+                  background: PRUSSIAN_BLUE,
+                  color: LIGHT_CREAM,
                   border: 'none',
-                  borderRadius: '8px',
-                  padding: '0.9em 0',
-                  fontSize: '0.96rem',
+                  borderRadius: '10px',
+                  padding: '1em 0',
+                  fontSize: '1rem',
                   fontWeight: 600,
                   letterSpacing: '1px',
                   cursor: 'pointer',
-                  marginTop: '0.5em',
-                  transition: 'background 0.2s',
+                  marginTop: '1em',
+                  transition: 'background 0.3s',
                 }}
               >
                 Back

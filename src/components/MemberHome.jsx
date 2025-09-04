@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const SILVER_LAKE_BLUE = '#5D89BA';
 const PRUSSIAN_BLUE = '#003153';
-const LIGHT_CREAM = '#FFF8D6';
-const VANILLA = '#F3E5AB';
 const BONE_WHITE = '#F9F6EE';
+const DISABLED_STATUS = 'rgba(93,137,186,0.13';
 
 const options = [
   { label: 'General Info', enabled: false },
@@ -41,7 +40,7 @@ const MemberHome = () => {
           fontSize: '2rem',
           marginBottom: '2.2rem',
         }}>
-          Member Menu
+          Member Home
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1em' }}>
           {options.map((opt) => (
@@ -50,8 +49,8 @@ const MemberHome = () => {
               onClick={opt.enabled ? () => navigate('/programs') : undefined}
               disabled={!opt.enabled}
               style={{
-                background: opt.enabled ? SILVER_LAKE_BLUE : VANILLA,
-                color: opt.enabled ? LIGHT_CREAM : SILVER_LAKE_BLUE,
+                background: opt.enabled ? SILVER_LAKE_BLUE : DISABLED_STATUS,
+                color: opt.enabled ? BONE_WHITE : SILVER_LAKE_BLUE,
                 border: 'none',
                 borderRadius: '9px',
                 padding: '1em 0',
