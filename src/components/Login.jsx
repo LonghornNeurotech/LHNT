@@ -23,6 +23,20 @@ const Login = () => {
     return newErrors;
   };
 
+  const handleFullNameChange = (e) => {
+    setFullName(e.target.value);
+    if (errors.fullName) {
+      setErrors((prev) => ({ ...prev, fullName: null }));
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    if (errors.password) {
+      setErrors((prev) => ({ ...prev, password: null }));
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validateForm();
@@ -80,7 +94,7 @@ const Login = () => {
               id="fullName"
               type="text"
               value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
+              onChange={handleFullNameChange}
               placeholder="Enter your full name (e.g., Jane Q. Doe)"
               autoComplete="name"
               className={`w-full h-11 px-3 rounded-lg text-lg focus:outline-none ${
@@ -112,7 +126,7 @@ const Login = () => {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePasswordChange}
                 placeholder="Enter the organization password"
                 autoComplete="current-password"
                 className={`w-full h-11 px-3 rounded-lg text-lg focus:outline-none ${
