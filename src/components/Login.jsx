@@ -6,15 +6,19 @@ import { useAuth } from '../context/useAuth';
 import EyeToggle from '../components/EyeToggle';
 
 const Login = () => {
+  const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
+  const headline = 'Welcome!';
+  const subtitle = 'Enter your full name and the organization password to access your member account.';
 
   const validateForm = () => {
     const newErrors = {};
+    if (!fullName.trim()) newErrors.fullName = 'Full name is required';
     if (!password) newErrors.password = 'Password is required';
     return newErrors;
   };
@@ -26,14 +30,13 @@ const Login = () => {
       setErrors(formErrors);
       return;
     }
-
     setIsLoading(true);
 
     try {
       // Simulate authentication delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const success = await login(password);
+      const success = await login({ fullName, password });
 
       if (success) {
         Swal.fire({
@@ -63,15 +66,37 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#213C58] min-h-screen flex items-center justify-center">
+    <div className="bg-prussian_blue min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-lg p-8 w-[40em] mx-[1em] mt-0" style={{borderRadius: '10px'}}>
-        <h2 className="text-center text-[2.2rem] font-bold mb-3 heading">Welcome!</h2>
-        <h2 className="text-center text-[1.4rem] font-bold mb-6 heading leading-8">Enter the organization password to access your member account.</h2>
+        <h2 className="text-center text-[2.2rem] font-bold mb-3 heading">{headline}</h2>
+        <h2 className="text-center text-[1.4rem] font-bold mb-6 heading leading-8">{subtitle}</h2>
         <form onSubmit={handleSubmit} className="mx-auto">
+          {/* Full Name Field */}
+          <div className="mb-5">
+            <label htmlFor="fullName" className="block text-prussian_blue font-semibold text-lg mb-2">
+              Full Name <span className="text-red-600">*</span>
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              placeholder="Enter your full name (e.g., Jane Q. Doe)"
+              autoComplete="name"
+              className={`w-full h-11 px-3 rounded-md text-lg focus:outline-none ${
+                errors.fullName ? 'border-red-600 border-2' : 'border-silver_lake_blue border-2'
+              }`}
+            />
+            {errors.fullName && (
+              <p className="text-red-600 mt-2 font-semibold text-sm">{errors.fullName}</p>
+            )}
+          </div>
+
+          {/* Password Field */}
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-xl font-medium text-[#213C58] mb-2 subheading"
+              className="block text-xl font-medium text-prussian_blue mb-2 subheading"
             >
               Password
             </label>
@@ -89,7 +114,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className={`w-full border rounded-lg focus:outline-none ${
-                  errors.password ? 'border-red-500' : 'border-[#598BBC]'
+                  errors.password ? 'border-red-600 border-2' : 'border-[#598BBC]'
                 }`}
                 style={{
                   height: '44px',
@@ -123,7 +148,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full py-2 px-4 rounded-lg font-bold text-white text-xl ${
+            className={`w-full py-2 px-4 rounded-lg font-bold text-bone_white text-xl ${
               isLoading ? 'bg-blue-400 cursor-not-allowed' : 'bg-[#598BBC] hover:bg-blue-700'
             }`}
           >

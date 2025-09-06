@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   Implement AuthProvider to manage authentication state of the user
   throughout the Longhorn Neurotech website!
 */
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthProvider";
 
 const App = () => {
   return (
