@@ -7,26 +7,24 @@ const PRUSSIAN_BLUE = '#003153';
 const LIGHT_CREAM = '#FFF8D6';
 const BONE_WHITE = '#F9F6EE';
 
-// Mapping option sets to PDF files
-// Make sure to match file name here with EXACT file name in onboarding directory!
 const pdfMap = {
   Software: [
-    { label: 'Block 1: General Skills', file: 'Software - B1_ General Skills.pdf' },
-    { label: 'Block 2: Virtual Reality', file: 'Software - B2_ Virtual Reality.pdf' },
-    { label: 'Block 3: Signals', file: 'Software - B3_ Signals.pdf' },
-    { label: 'Block 4: Machine Learning', file: 'Software - B4_ Machine Learning.pdf' }
+    { label: 'Block 1: General Skills', id: 'softwareB1' },
+    { label: 'Block 2: Virtual Reality', id: 'softwareB2' },
+    { label: 'Block 3: Signals', id: 'softwareB3' },
+    { label: 'Block 4: Machine Learning', id: 'softwareB4' }
   ],
   Hardware: [
-    { label: 'Block 1: General Skills', file: 'Hardware - B1_ General Skills.pdf' },
-    { label: 'Block 2: Design', file: 'Hardware - B2_ Design.pdf' },
-    { label: 'Block 3: Electronics', file: 'Hardware - B3_ Electronics.pdf' },
-    { label: 'Block 4: Hardware-Software Interfacing', file: 'Hardware - B4_ Hardware-Software Interfacing.pdf' }
+    { label: 'Block 1: General Skills', id: 'hardwareB1' },
+    { label: 'Block 2: Design', id: 'hardwareB2' },
+    { label: 'Block 3: Electronics', id: 'hardwareB3' },
+    { label: 'Block 4: Hardware-Software Interfacing', id: 'hardwareB4' }
   ]
 };
 
 const ProgramsMenu = () => {
   const [group, setGroup] = useState(null);
-  const navigate = useNavigate();  // <-- Added navigate hook
+  const navigate = useNavigate();
 
   return (
     <div style={{
@@ -92,7 +90,6 @@ const ProgramsMenu = () => {
                 Hardware
               </button>
 
-              {/* <-- Added Back button here to allow user to navigate back to MemberHome */}
               <button
                 onClick={() => navigate('/member')}
                 style={{
@@ -126,12 +123,10 @@ const ProgramsMenu = () => {
               Select your onboarding block
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2em' }}>
-              {pdfMap[group].map(({ label, file }) => (
-                <a
-                  key={file}
-                  href={`/onboarding/${encodeURIComponent(file)}`}  // <-- Added encodeURIComponent for safety with spaces in filenames
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {pdfMap[group].map(({ label, id }) => (
+                <button
+                  key={id}
+                  onClick={() => navigate(`/onboarding/${id}`)}
                   style={{
                     display: 'block',
                     textAlign: 'center',
@@ -143,13 +138,13 @@ const ProgramsMenu = () => {
                     fontWeight: 700,
                     letterSpacing: '1.1px',
                     cursor: 'pointer',
-                    textDecoration: 'none',
                     marginBottom: '0.6em',
+                    border: 'none',
                     transition: 'background 0.3s',
                   }}
                 >
                   {label}
-                </a>
+                </button>
               ))}
               <button
                 onClick={() => setGroup(null)}

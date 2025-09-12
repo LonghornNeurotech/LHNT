@@ -4,6 +4,9 @@ import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Debugging the Onboarding Block Page
+import HardwareBlock2Page from './components/onboarding/HardwareBlock2Page';
+
 /*
   Implement AuthProvider to manage authentication state of the user
   throughout the Longhorn Neurotech website!
@@ -39,6 +42,15 @@ const App = () => {
                 element={
                   <MemberRoute>
                     <ProgramsMenu />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
+                path="/onboarding/hardwareB2"
+                element={
+                  <MemberRoute>
+                    <HardwareBlock2Page />
                   </MemberRoute>
                 }
               />
