@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "question": "What is the primary purpose of MeshLab?",
+    "options": [
+      "Creating 2D animations",
+      "Editing, cleaning, and processing 3D captured data",
+      "Designing blueprints for construction",
+      "Simulating physical forces in a virtual environment"
+    ],
+    "correctAnswer": "Editing, cleaning, and processing 3D captured data"
+  },
+  {
+    "id": 2,
+    "question": "Which of the following is NOT a method for loading 3D data into MeshLab?",
+    "options": [
+      "Using the \"File\" tab in the menu bar",
+      "Importing a mesh via the quick access button",
+      "Dragging and dropping the 3D file into the GUI",
+      "Scanning an object directly into MeshLab"
+    ],
+    "correctAnswer": "Scanning an object directly into MeshLab"
+  },
+  {
+    "id": 3,
+    "question": "What is the function of the \"Pan\" tool in MeshLab?",
+    "options": [
+      "Rotates the 3D model",
+      "Moves the 3D model across the display screen",
+      "Adjusts the brightness of the 3D model",
+      "Changes the rendering mode of the model"
+    ],
+    "correctAnswer": "Moves the 3D model across the display screen"
+  },
+  {
+    "id": 4,
+    "question": "What tool in MeshLab allows you to measure distances between two points in a 3D model?",
+    "options": [
+      "Grid Tool",
+      "Edge Decorator Tool",
+      "Bounding Box Tool",
+      "Measurement Tool"
+    ],
+    "correctAnswer": "Measurement Tool"
+  }
+]

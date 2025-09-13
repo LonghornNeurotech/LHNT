@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "question": "What is the primary function of CAD software in hardware design?",
+    "options": [
+      "To manually draft designs using traditional tools.",
+      "To create, modify, analyze, and optimize designs in a digital space.",
+      "To manufacture hardware components directly.",
+      "To replace the need for prototypes entirely."
+    ],
+    "correctAnswer": "To create, modify, analyze, and optimize designs in a digital space."
+  },
+  {
+    "id": 2,
+    "question": "How has CAD software transformed the hardware design process compared to manual drafting?",
+    "options": [
+      "It has made the process more time-consuming.",
+      "It has increased the likelihood of errors.",
+      "It has allowed for greater precision and efficiency.",
+      "It has eliminated the need for any design tools."
+    ],
+    "correctAnswer": "It has allowed for greater precision and efficiency."
+  },
+  {
+    "id": 3,
+    "question": "Which of the following is a benefit of using CAD software in manufacturing?",
+    "options": [
+      "Increased design errors.",
+      "Reduced time-to-market.",
+      "Higher production costs.",
+      "Limited design flexibility."
+    ],
+    "correctAnswer": "Reduced time-to-market."
+  },
+  {
+    "id": 4,
+    "question": "What advantage does parametric modeling in CAD software provide to designers?",
+    "options": [
+      "It restricts design modifications.",
+      "It allows automatic adjustment of dimensions and relationships.",
+      "It eliminates the need for simulations.",
+      "It requires manual updates for each design change."
+    ],
+    "correctAnswer": "It allows automatic adjustment of dimensions and relationships."
+  },
+  {
+    "id": 5,
+    "question": "Why is the ability to simulate and analyze designs before manufacturing important?",
+    "options": [
+      "It increases the number of physical prototypes needed.",
+      "It helps identify potential issues and optimize designs, reducing costs and speeding up production.",
+      "It delays the design-to-production process.",
+      "It decreases design accuracy."
+    ],
+    "correctAnswer": "It helps identify potential issues and optimize designs, reducing costs and speeding up production."
+  }
+]

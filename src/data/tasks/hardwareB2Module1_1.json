@@ -1,0 +1,22 @@
+{
+  "block": "hardwareB2",
+  "module": "1_1",
+  "moduleTitle": "1.1 Advanced CAD",
+  "description": "3D CAD (Computer-Aided Design) is used in hardware design to create, visualize, and simulate mechanical components, enclosures, and assemblies in a digital environment. It enables engineers to optimize designs for manufacturability, thermal management, and structural integrity before production.",
+  "tasks": [
+    {
+      "id": "task1",
+      "title": "Read Article and Complete Quiz",
+      "description": "Read the article linked below and answer quiz questions related to CAD software in hardware design.",
+      "type": "quiz",
+      "documents": [
+        {
+          "label": "MeshLab CAD Software Article",
+          "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf"
+        }
+      ],
+      "quizId": "hardwareB2Module1_1_quiz",
+      "submissionRequired": true
+    }
+  ]
+}

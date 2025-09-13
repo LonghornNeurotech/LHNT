@@ -1,0 +1,21 @@
+{
+  "block": "hardwareB2",
+  "module": "2_1",
+  "moduleTitle": "2.1 Reverse Engineering and Spatial Visualization",
+  "description": "Spatial visualization is useful in neurotechnology for placement and design of neurostimulators, brain-computer interfaces, and implantable devices.",
+  "tasks": [
+    {
+      "id": "task1",
+      "title": "Watch Video on Reverse Engineering and Spatial Visualization",
+      "description": "Watch the video below to understand reverse engineering and spatial visualization.",
+      "type": "video",
+      "videos": [
+        {
+          "title": "Reverse Engineering and Spatial Visualization",
+          "url": "https://www.youtube.com/embed/4-B66eoNJ7E&t=20s"
+        }
+      ],
+      "submissionRequired": true
+    }
+  ]
+}

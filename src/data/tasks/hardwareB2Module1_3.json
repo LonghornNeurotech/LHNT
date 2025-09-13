@@ -1,0 +1,39 @@
+{
+  "block": "hardwareB2",
+  "module": "1_3",
+  "moduleTitle": "1.3 MeshLab",
+  "description": "MeshLab is software for editing and optimizing 3D meshes. It is commonly used in 3D scanning, reverse engineering, and digital fabrication.",
+  "tasks": [
+    {
+      "id": "task1",
+      "title": "Watch Tutorial Videos",
+      "description": "Watch the basic navigation and filtering/cleaning videos embedded below.",
+      "type": "video",
+      "videos": [
+        {
+          "title": "Basic Navigation System",
+          "url": "https://www.youtube.com/embed/Sl0vJfmj5LQ"
+        },
+        {
+          "title": "Filtering and Cleaning",
+          "url": "https://www.youtube.com/embed/j9EKk3Bs1TQ"
+        }
+      ],
+      "submissionRequired": true
+    },
+    {
+      "id": "task2",
+      "title": "Read Document and Take Quiz",
+      "description": "Read the following document and complete the quiz based on the material.",
+      "type": "quiz",
+      "documents": [
+        {
+          "label": "MeshLab Tutorial PDF",
+          "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf"
+        }
+      ],
+      "quizId": "hardwareB2Module1_3_quiz",
+      "submissionRequired": true
+    }
+  ]
+}

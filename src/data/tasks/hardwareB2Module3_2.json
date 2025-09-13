@@ -1,0 +1,15 @@
+{
+  "block": "hardwareB2",
+  "module": "3_2",
+  "moduleTitle": "3.2 TIW Training: Bambu Lab P1P 3D Printing Training",
+  "description": "Training module on Bambu Lab P1P 3D printer.",
+  "tasks": [
+    {
+      "id": "task1",
+      "title": "Complete Bambu Lab P1P Training Module",
+      "description": "Complete the Bambu Lab P1P training on Canvas and submit a screenshot.",
+      "type": "misc",
+      "submissionRequired": false
+    }
+  ]
+}

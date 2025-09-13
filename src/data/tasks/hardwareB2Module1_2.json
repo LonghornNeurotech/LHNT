@@ -1,0 +1,25 @@
+{
+  "block": "hardwareB2",
+  "module": "1_2",
+  "moduleTitle": "1.2 Blender",
+  "description": "Blender is an open-source 3D creation software used for modeling, sculpting, rendering, animation, and visual effects. It is used in neurotechnology to model brain structures, simulate neural implants, and visualize complex anatomical data.",
+  "tasks": [
+    {
+      "id": "task1",
+      "title": "Download Blender and Explore Resources",
+      "description": "Download Blender using the link below and review resources to understand the software.",
+      "type": "misc",
+      "links": [
+        {
+          "label": "Download Blender",
+          "url": "https://www.blender.org/download/"
+        },
+        {
+          "label": "Blender User Interface Documentation",
+          "url": "https://docs.blender.org/manual/en/latest/interface/index.html"
+        }
+      ],
+      "submissionRequired": false
+    }
+  ]
+}

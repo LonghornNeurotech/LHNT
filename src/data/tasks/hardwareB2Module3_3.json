@@ -1,0 +1,15 @@
+{
+  "block": "hardwareB2",
+  "module": "3_3",
+  "moduleTitle": "TIW Training: Advanced Filament Printers (Raise 3D)",
+  "description": "Training module on Advanced Filament Printers for Raise 3D printers.",
+  "tasks": [
+    {
+      "id": "task1",
+      "title": "Complete Advanced Filament Printers Training Module",
+      "description": "Complete the Advanced Filament Printers (Raise 3D) module on Canvas and submit a screenshot of completion.",
+      "type": "misc",
+      "submissionRequired": false
+    }
+  ]
+}
