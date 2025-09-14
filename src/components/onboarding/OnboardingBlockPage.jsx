@@ -4,7 +4,7 @@ import ModuleNavbar from './ModuleNavbar';
 import ModulePage from './ModulePage';
 import ProgressTracker from './ProgressTracker';
 
-const OnboardingBlock = ({ blockData }) => {
+const OnboardingBlockPage = ({ blockData }) => {
   const [currentModule, setCurrentModule] = useState(blockData.modules[0].module);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [completedModules, setCompletedModules] = useState([]);
@@ -47,10 +47,10 @@ const OnboardingBlock = ({ blockData }) => {
   );
 };
 
-OnboardingBlock.propTypes = {
+OnboardingBlockPage.propTypes = {
   blockData: PropTypes.shape({
     modules: PropTypes.array.isRequired,
   }).isRequired,
 };
 
-export default OnboardingBlock;
+export default OnboardingBlockPage;

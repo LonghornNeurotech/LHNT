@@ -1,4 +1,4 @@
-import OnboardingBlock from './OnboardingBlock';
+import OnboardingBlockPage from './OnboardingBlockPage';
 
 import module1_1 from '../../data/tasks/hardwareB2Module1_1.json';
 import module1_2 from '../../data/tasks/hardwareB2Module1_2.json';
@@ -25,7 +25,7 @@ const HardwareBlock2Page = () => {
     ],
   };
 
-  return <OnboardingBlock blockData={blockData} />;
+  return <OnboardingBlockPage blockData={blockData} />;
 };
 
 export default HardwareBlock2Page;
