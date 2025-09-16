@@ -3,13 +3,26 @@ import TaskCard from './TaskCard';
 
 const ModulePage = ({ moduleData, completedTasks, onTaskComplete }) => (
   <div className="module-page">
-    <h2>{moduleData.moduleTitle}</h2>
-    <div className="module-info">
-      {moduleData.info.map((info, idx) => (
-        <p key={idx}>{info}</p>
+    {/* Submodule Title */}
+    <h2 className="text-2xl font-bold text-prussian_blue mb-5">
+      {moduleData.moduleTitle}
+    </h2>
+
+    {/* Info Section */}
+    <section className="mb-6">
+      {moduleData.info.map((paragraph, idx) => (
+        <p
+          key={idx}
+          className="text-base text-gray-800 mb-3"
+          style={{ textIndent: "2em" }}
+        >
+          {paragraph}
+        </p>
       ))}
-    </div>
-    <div className="tasks-list">
+    </section>
+
+    {/* Task Section */}
+    <section className="mb-6">
       {moduleData.tasks.map((task) => (
         <TaskCard
           key={task.id}
@@ -18,7 +31,12 @@ const ModulePage = ({ moduleData, completedTasks, onTaskComplete }) => (
           onComplete={() => onTaskComplete(task.id)}
         />
       ))}
-    </div>
+    </section>
+
+    {/* Extra Resources Section (if needed) */}
+    {/* <section className="mb-6">
+      ...extra resources here...
+    </section> */}
   </div>
 );
 
@@ -33,6 +51,7 @@ ModulePage.propTypes = {
 };
 
 export default ModulePage;
+
 
 // import PropTypes from 'prop-types';
 // import TaskCard from './TaskCard';

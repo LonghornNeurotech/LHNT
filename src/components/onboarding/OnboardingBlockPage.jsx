@@ -37,12 +37,17 @@ const OnboardingBlockPage = ({ blockData }) => {
   return (
     <div
       className="flex w-full h-[calc(100vh-80px)] bg-prussian_blue"
-      style={{ padding: "24px 32px", boxSizing: "border-box" }}
+      style={{
+        padding: "24px 32px 32px 32px", // Add extra bottom padding here for both
+        boxSizing: "border-box",
+        height: "calc(100vh - 80px)",   // Explicit full height for the flex box
+        minHeight: "0"
+      }}
     >
       {/* Sidebar containing ModuleNavbar */}
       <aside
-        className="h-full w-[300px] min-w-[220px] rounded-xl shadow-lg bg-prussian_blue flex flex-col"
-        style={{ marginRight: "30px", height: "100%" }}
+        className="w-[300px] min-w-[220px] rounded-xl shadow-lg bg-prussian_blue flex flex-col h-full"
+        style={{ marginRight: "30px" }}
       >
         <div className="text-center text-white font-bold text-xl py-6">{blockTitle}</div>
         <div className="flex-1 min-h-0" style={{ paddingBottom: "20px" }}>
@@ -58,15 +63,14 @@ const OnboardingBlockPage = ({ blockData }) => {
 
       {/* Main content area */}
       <main
-        className="flex-1 min-w-0 h-full rounded-xl shadow-lg bg-white px-[2.7rem] py-[2.5rem] pb-16 flex flex-col"
+        className="flex-1 min-w-0 h-full rounded-xl shadow-lg bg-white px-[2.7rem] py-[2.5rem] flex flex-col"
         style={{
-          maxHeight: "100%", // Make it match parent's full height
           overflowY: "auto",
           boxSizing: "border-box",
+          height: "100%"
         }}
       >
-        <h1 className="mb-4 text-2xl font-bold text-prussian_blue">{blockData.moduleTitle || "Module"}</h1>
-        <ProgressTracker completedCount={completedTasks.length} total={blockData.tasks.length} />
+
         <ModulePage
           moduleData={blockData}
           completedTasks={completedTasks}
