@@ -10,7 +10,7 @@ const OnboardingBlockPage = ({ blockData }) => {
   const { blockId, moduleId } = useParams();
   const navigate = useNavigate();
 
-  // Disables window scroll on this page
+  // Disable window scroll on this page
   useEffect(() => {
     const original = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -31,37 +31,47 @@ const OnboardingBlockPage = ({ blockData }) => {
   }
 
   const handleModuleChange = (id) => navigate(`/onboarding/${blockId}/${id}`);
-  const handleTaskComplete = (taskId) => setCompletedTasks((prev) =>
-    prev.includes(taskId) ? prev : [...prev, taskId]);
+  const handleTaskComplete = (taskId) =>
+    setCompletedTasks((prev) => (prev.includes(taskId) ? prev : [...prev, taskId]));
 
-  // Height = viewport - navbar (adjust if your navbar is > 80px)
   return (
-    <div className="flex w-full h-[calc(100vh-80px)] bg-prussian_blue">
-      <aside className="h-full w-[300px] min-w-[220px] rounded-xl m-6 shadow-lg bg-prussian_blue flex flex-col">
-        <div className="text-center text-white font-bold text-xl py-6">
-          {blockTitle}
-        </div>
-        <div className="flex-1 min-h-0">
+    <div
+      className="flex w-full h-[calc(100vh-80px)] bg-prussian_blue"
+      style={{ padding: "24px 32px", boxSizing: "border-box" }}
+    >
+      {/* Sidebar containing ModuleNavbar */}
+      <aside
+        className="h-full w-[300px] min-w-[220px] rounded-xl shadow-lg bg-prussian_blue flex flex-col"
+        style={{ marginRight: "30px", height: "100%" }}
+      >
+        <div className="text-center text-white font-bold text-xl py-6">{blockTitle}</div>
+        <div className="flex-1 min-h-0" style={{ paddingBottom: "20px" }}>
           <ModuleNavbar
             groups={groups}
             currentModuleId={moduleId}
             onSelectModule={handleModuleChange}
             defaultOpenGroup={defaultOpenGroup}
-            completedSubmodules={[]} // wire up progress as you wish
+            completedSubmodules={[]} // optionally wire progress here
           />
         </div>
       </aside>
 
-      <main className="flex-1 min-w-0 h-full my-6 mr-6 rounded-xl shadow-lg bg-white px-[2.7rem] py-[2.5rem] flex flex-col">
-        <div className="flex-1 min-h-0 overflow-y-auto">
-          <h1 className="mb-4 text-2xl font-bold text-prussian_blue">{blockData.moduleTitle || "Module"}</h1>
-          <ProgressTracker completedCount={completedTasks.length} total={blockData.tasks.length} />
-          <ModulePage
-            moduleData={blockData}
-            completedTasks={completedTasks}
-            onTaskComplete={handleTaskComplete}
-          />
-        </div>
+      {/* Main content area */}
+      <main
+        className="flex-1 min-w-0 h-full rounded-xl shadow-lg bg-white px-[2.7rem] py-[2.5rem] pb-16 flex flex-col"
+        style={{
+          maxHeight: "100%", // Make it match parent's full height
+          overflowY: "auto",
+          boxSizing: "border-box",
+        }}
+      >
+        <h1 className="mb-4 text-2xl font-bold text-prussian_blue">{blockData.moduleTitle || "Module"}</h1>
+        <ProgressTracker completedCount={completedTasks.length} total={blockData.tasks.length} />
+        <ModulePage
+          moduleData={blockData}
+          completedTasks={completedTasks}
+          onTaskComplete={handleTaskComplete}
+        />
       </main>
     </div>
   );

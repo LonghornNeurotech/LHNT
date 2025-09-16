@@ -21,12 +21,19 @@ const ModuleNavbar = ({
   };
 
   return (
-    <nav className="overflow-y-auto max-h-full pr-1">
+    <nav
+      className="overflow-y-auto pr-1"
+      style={{
+        maxHeight: "calc(100vh - 160px)", // Limit vertical height with breathing room from viewport
+        paddingRight: '8px', // Padding to keep scrollbar separated
+        boxSizing: "border-box",
+      }}
+    >
       {groups.map(({ id, label, submodules }) => {
         const isGroupOpen = openGroups[id];
-        const isCompletedGroup = submodules.every(sub => completedSubmodules.includes(sub.moduleId));
+        const isCompletedGroup = submodules.every((sub) => completedSubmodules.includes(sub.moduleId));
         const isActive = submodules.some(
-          sub => sub.moduleId.toLowerCase() === currentModuleId.toLowerCase()
+          (sub) => sub.moduleId.toLowerCase() === currentModuleId.toLowerCase()
         );
 
         return (
@@ -35,7 +42,7 @@ const ModuleNavbar = ({
               onClick={() => toggleGroup(id)}
               className={`
                 w-full flex justify-between items-center px-4 py-3 rounded-lg font-bold cursor-pointer transition-colors shadow
-                ${isActive ? "bg-silver_lake_blue text-white" : "bg-vanilla text-prussian_blue"}
+                ${isActive ? "bg-silver_lake_blue text-white" : "bg-bone_white text-prussian_blue"}
               `}
               aria-expanded={isGroupOpen}
             >
@@ -43,11 +50,21 @@ const ModuleNavbar = ({
                 <CompletionIcon completed={isCompletedGroup} />
                 <span className="ml-2">{label}</span>
               </span>
-              <svg className={`w-4 h-4 transition-transform ${isGroupOpen ? "rotate-90" : ""}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <svg
+                className={`w-4 h-4 transition-transform ${isGroupOpen ? "rotate-90" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
                 <path d="M9 5l7 7-7 7" />
               </svg>
             </button>
-            <div className={`overflow-hidden transition-all ${isGroupOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+            <div
+              className={`overflow-hidden transition-all ${
+                isGroupOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
               {submodules.map(({ moduleId, label }) => {
                 const isActiveSub = moduleId.toLowerCase() === currentModuleId.toLowerCase();
                 const isCompleted = completedSubmodules.includes(moduleId);
