@@ -14,6 +14,7 @@ export default {
         silver_lake_blue: "#5D89BA",
         prussian_blue: "#003153",
         bone_white: "#F9F6EE",
+        vanilla: "#F3E5AB",
         disabled_status: "rgba(93, 137, 186, 0.13)"
       },
       screens: {
