@@ -24,14 +24,16 @@ const ModuleNavbar = ({
     <nav
       className="overflow-y-auto pr-1"
       style={{
-        maxHeight: "calc(100vh - 160px)", // Limit vertical height with breathing room from viewport
-        paddingRight: '8px', // Padding to keep scrollbar separated
+        maxHeight: "calc(100vh - 160px)",
+        paddingRight: "8px",
         boxSizing: "border-box",
       }}
     >
       {groups.map(({ id, label, submodules }) => {
         const isGroupOpen = openGroups[id];
-        const isCompletedGroup = submodules.every((sub) => completedSubmodules.includes(sub.moduleId));
+        const isCompletedGroup = submodules.every((sub) =>
+          completedSubmodules.includes(sub.moduleId)
+        );
         const isActive = submodules.some(
           (sub) => sub.moduleId.toLowerCase() === currentModuleId.toLowerCase()
         );
@@ -42,7 +44,9 @@ const ModuleNavbar = ({
               onClick={() => toggleGroup(id)}
               className={`
                 w-full flex justify-between items-center px-4 py-3 rounded-lg font-bold cursor-pointer transition-colors shadow
-                ${isActive ? "bg-silver_lake_blue text-white" : "bg-bone_white text-prussian_blue"}
+                ${isActive
+                  ? "bg-silver_lake_blue text-white"
+                  : "bg-bone_white text-prussian_blue"}
               `}
               aria-expanded={isGroupOpen}
             >
@@ -51,7 +55,9 @@ const ModuleNavbar = ({
                 <span className="ml-2">{label}</span>
               </span>
               <svg
-                className={`w-4 h-4 transition-transform ${isGroupOpen ? "rotate-90" : ""}`}
+                className={`w-4 h-4 transition-transform ${
+                  isGroupOpen ? "rotate-90" : ""
+                }`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -66,16 +72,19 @@ const ModuleNavbar = ({
               }`}
             >
               {submodules.map(({ moduleId, label }) => {
-                const isActiveSub = moduleId.toLowerCase() === currentModuleId.toLowerCase();
+                const isActiveSub =
+                  moduleId.toLowerCase() === currentModuleId.toLowerCase();
                 const isCompleted = completedSubmodules.includes(moduleId);
                 return (
                   <button
                     key={moduleId}
                     className={`
                       w-full flex items-center px-6 py-2 rounded-md my-1 font-semibold cursor-pointer transition-colors
-                      ${isActiveSub
-                        ? "bg-silver_lake_blue text-white"
-                        : "bg-bone_white text-prussian_blue hover:bg-silver_lake_blue hover:text-white"}
+                      ${
+                        isActiveSub
+                          ? "bg-silver_lake_blue text-white"
+                          : "bg-bone_white text-prussian_blue hover:bg-silver_lake_blue hover:text-white"
+                      }
                     `}
                     onClick={() => onSelectModule(moduleId)}
                   >
