@@ -4,8 +4,8 @@ import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Debugging the Onboarding Block Page
-import HardwareBlock2Page from './components/onboarding/HardwareBlock2Page';
+// Import OnboardingRouter to help control which onboarding pages content gets displayed!
+import OnboardingRouter from "./components/onboarding/OnboardingRouter";
 
 /*
   Implement AuthProvider to manage authentication state of the user
@@ -47,10 +47,10 @@ const App = () => {
               />
 
               <Route
-                path="/onboarding/hardwareB2"
+                path="/onboarding/:blockId/:moduleId"
                 element={
                   <MemberRoute>
-                    <HardwareBlock2Page />
+                    <OnboardingRouter />
                   </MemberRoute>
                 }
               />

@@ -7,7 +7,7 @@ const PRUSSIAN_BLUE = '#003153';
 const LIGHT_CREAM = '#FFF8D6';
 const BONE_WHITE = '#F9F6EE';
 
-const pdfMap = {
+const onboardingBlockMap = {
   Software: [
     { label: 'Block 1: General Skills', id: 'softwareB1' },
     { label: 'Block 2: Virtual Reality', id: 'softwareB2' },
@@ -123,10 +123,10 @@ const ProgramsMenu = () => {
               Select your onboarding block
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2em' }}>
-              {pdfMap[group].map(({ label, id }) => (
+              {onboardingBlockMap[group].map(({ label, id }) => (
                 <button
                   key={id}
-                  onClick={() => navigate(`/onboarding/${id}`)}
+                  onClick={() => navigate(`/onboarding/${id}/1_1`)}
                   style={{
                     display: 'block',
                     textAlign: 'center',
