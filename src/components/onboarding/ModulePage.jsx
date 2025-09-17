@@ -1,42 +1,32 @@
-import PropTypes from 'prop-types';
-import TaskCard from './TaskCard';
+import PropTypes from "prop-types";
+import TaskCard from "./TaskCard";
 
-const ModulePage = ({ moduleData, completedTasks, onTaskComplete }) => (
-  <div className="module-page">
-    {/* Submodule Title */}
-    <h2 className="text-2xl font-bold text-prussian_blue mb-5">
+const ModulePage = ({ moduleData, completedTasks, onCompleteTask }) => (
+  <div className="module-page" style={{ maxWidth: '100%', overflowX: 'hidden', boxSizing: 'border-box' }}>
+    <h2 className="text-2xl font-bold text-prussian_blue mb-4">
       {moduleData.moduleTitle}
     </h2>
-
-    {/* Info Section */}
     <section className="mb-6">
       {moduleData.info.map((paragraph, idx) => (
         <p
           key={idx}
-          className="text-base text-gray-800 mb-3"
+          className="text-gray-800 mb-3"
           style={{ textIndent: "2em" }}
         >
           {paragraph}
         </p>
       ))}
     </section>
-
-    {/* Task Section */}
     <section className="mb-6">
       {moduleData.tasks.map((task) => (
         <TaskCard
           key={task.id}
           task={task}
           isCompleted={completedTasks.includes(task.id)}
-          onComplete={() => onTaskComplete(task.id)}
+          onComplete={() => onCompleteTask(task.id)}
         />
       ))}
     </section>
-
-    {/* Extra Resources Section (if needed) */}
-    {/* <section className="mb-6">
-      ...extra resources here...
-    </section> */}
   </div>
 );
 
@@ -47,7 +37,7 @@ ModulePage.propTypes = {
     tasks: PropTypes.array.isRequired,
   }).isRequired,
   completedTasks: PropTypes.array.isRequired,
-  onTaskComplete: PropTypes.func.isRequired,
+  onCompleteTask: PropTypes.func.isRequired,
 };
 
 export default ModulePage;

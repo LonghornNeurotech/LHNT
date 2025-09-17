@@ -3,20 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import { moduleMap } from "../../config/moduleMap";
 import ModuleNavbar from "./ModuleNavbar";
 import ModulePage from "./ModulePage";
-import ProgressTracker from "./ProgressTracker";
 import PropTypes from "prop-types";
 
 const OnboardingBlockPage = ({ blockData }) => {
   const { blockId, moduleId } = useParams();
   const navigate = useNavigate();
 
-  // Disable window scroll on this page
   useEffect(() => {
     const original = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = original;
-    };
+    return () => { document.body.style.overflow = original; };
   }, []);
 
   const [completedTasks, setCompletedTasks] = useState([]);
@@ -30,51 +26,45 @@ const OnboardingBlockPage = ({ blockData }) => {
     return <div>Module data is missing or could not be loaded.</div>;
   }
 
-  const handleModuleChange = (id) => navigate(`/onboarding/${blockId}/${id}`);
-  const handleTaskComplete = (taskId) =>
+  const handleCompleteTask = (taskId) =>
     setCompletedTasks((prev) => (prev.includes(taskId) ? prev : [...prev, taskId]));
+
+  const handleModuleChange = (id) => navigate(`/onboarding/${blockId}/${id}`);
 
   return (
     <div
       className="flex w-full h-[calc(100vh-80px)] bg-prussian_blue"
       style={{
-        padding: "24px 32px 32px 32px", // Add extra bottom padding here for both
+        padding: "24px 32px 32px 32px",
         boxSizing: "border-box",
-        height: "calc(100vh - 80px)",   // Explicit full height for the flex box
-        minHeight: "0"
-      }}
-    >
-      {/* Sidebar containing ModuleNavbar */}
+        height: "calc(100vh - 80px)",
+        minHeight: 0,
+      }}>
       <aside
         className="w-[300px] min-w-[220px] rounded-xl shadow-lg bg-prussian_blue flex flex-col h-full"
-        style={{ marginRight: "30px" }}
-      >
-        <div className="text-center text-white font-bold text-xl py-6">{blockTitle}</div>
-        <div className="flex-1 min-h-0" style={{ paddingBottom: "20px" }}>
+        style={{ marginRight: 30 }}>
+        {/* Sidebar title */}
+        <div className="text-center text-white font-bold text-xl py-4 mb-2">
+          {blockTitle}
+        </div>
+        <div className="flex-1 min-h-0" style={{ paddingBottom: 20 }}>
           <ModuleNavbar
             groups={groups}
             currentModuleId={moduleId}
             onSelectModule={handleModuleChange}
             defaultOpenGroup={defaultOpenGroup}
-            completedSubmodules={[]} // optionally wire progress here
+            completedSubmodules={[]}
           />
         </div>
       </aside>
-
-      {/* Main content area */}
       <main
-        className="flex-1 min-w-0 h-full rounded-xl shadow-lg bg-white px-[2.7rem] py-[2.5rem] flex flex-col"
-        style={{
-          overflowY: "auto",
-          boxSizing: "border-box",
-          height: "100%"
-        }}
+        className="flex-1 h-full rounded-xl bg-white px-8 py-6 overflow-auto"
+        style={{ boxSizing: "border-box" }}
       >
-
         <ModulePage
           moduleData={blockData}
           completedTasks={completedTasks}
-          onTaskComplete={handleTaskComplete}
+          onCompleteTask={handleCompleteTask}
         />
       </main>
     </div>
