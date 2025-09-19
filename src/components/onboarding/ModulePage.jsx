@@ -5,7 +5,7 @@ import RichTextWithLinks from "./RichTextWithLinks";
 import TaskCard from "./TaskCard";
 
 const ModulePage = ({ data }) => {
-  const { moduleTitle, infoSections = [], tasks = [], extraResources = [], links = [] } = data;
+  const { moduleTitle, infoSections = [], tasks = [], extraResources = [] } = data;
 
   return (
     <div className="mx-auto">
@@ -17,7 +17,10 @@ const ModulePage = ({ data }) => {
           if (section.type === "text") {
             return (
               <p key={idx} className="text-prussian_blue text-base mb-2">
-                <RichTextWithLinks text={section.text} links={links} />
+                <RichTextWithLinks 
+                  text={section.text} 
+                  links={section.links || []} 
+                />
               </p>
             );
           }
@@ -67,7 +70,10 @@ const ModulePage = ({ data }) => {
               {res.title && <h3 className="font-bold text-prussian_blue mb-1">{res.title}</h3>}
               {res.text && (
                 <p className="text-prussian_blue text-base">
-                  <RichTextWithLinks text={res.text} links={links} />
+                  <RichTextWithLinks 
+                    text={res.text} 
+                    links={res.links || []} 
+                  />
                 </p>
               )}
               {res.url && !res.text && (
