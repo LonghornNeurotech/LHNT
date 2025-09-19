@@ -1,80 +1,127 @@
+// ./src/components/onboarding/ModulePage.jsx
+// This is the submodule page that displays all the content for the current submodule of the current onboarding block the user is in!
 import PropTypes from "prop-types";
+import RichTextWithLinks from "./RichTextWithLinks";
 import TaskCard from "./TaskCard";
 
-const ModulePage = ({ moduleData, completedTasks, onCompleteTask }) => (
-  <div className="module-page" style={{ maxWidth: '100%', overflowX: 'hidden', boxSizing: 'border-box' }}>
-    <h2 className="text-2xl font-bold text-prussian_blue mb-4">
-      {moduleData.moduleTitle}
-    </h2>
-    <section className="mb-6">
-      {moduleData.info.map((paragraph, idx) => (
-        <p
-          key={idx}
-          className="text-gray-800 mb-3"
-          style={{ textIndent: "2em" }}
-        >
-          {paragraph}
-        </p>
-      ))}
-    </section>
-    <section className="mb-6">
-      {moduleData.tasks.map((task) => (
-        <TaskCard
-          key={task.id}
-          task={task}
-          isCompleted={completedTasks.includes(task.id)}
-          onComplete={() => onCompleteTask(task.id)}
-        />
-      ))}
-    </section>
-  </div>
-);
+const ModulePage = ({ data }) => {
+  const { moduleTitle, infoSections = [], tasks = [], extraResources = [], links = [] } = data;
+
+  return (
+    <div className="mx-auto">
+      <h1 className="text-xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
+
+      {/* Info Sections */}
+      <section className="mb-6">
+        {infoSections.map((section, idx) => {
+          if (section.type === "text") {
+            return (
+              <p key={idx} className="text-prussian_blue text-base mb-2">
+                <RichTextWithLinks text={section.text} links={links} />
+              </p>
+            );
+          }
+          if (section.type === "document") {
+            return (
+              <p key={idx} className="mb-2">
+                <a
+                  href={section.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  {section.title}
+                </a>
+              </p>
+            );
+          }
+          if (section.type === "video") {
+            return (
+              <div key={idx} className="mb-4">
+                <iframe
+                  src={section.url}
+                  title={section.title}
+                  allowFullScreen
+                  className="w-full h-60"
+                ></iframe>
+              </div>
+            );
+          }
+          return null;
+        })}
+      </section>
+
+      {/* Tasks */}
+      <section className="mb-6 space-y-8">
+        {tasks.map((task, idx) => (
+          <TaskCard key={idx} task={task} />
+        ))}
+      </section>
+
+      {/* Extra Resources */}
+      {extraResources.length > 0 && (
+        <section>
+          <h2 className="font-semibold text-lg text-prussian_blue mb-2">Extra Resources</h2>
+          {extraResources.map((res, idx) => (
+            <div key={idx} className="mb-4">
+              {res.title && <h3 className="font-bold text-prussian_blue mb-1">{res.title}</h3>}
+              {res.text && (
+                <p className="text-prussian_blue text-base">
+                  <RichTextWithLinks text={res.text} links={links} />
+                </p>
+              )}
+              {res.url && !res.text && (
+                <a
+                  href={res.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  {res.title || res.url}
+                </a>
+              )}
+            </div>
+          ))}
+        </section>
+      )}
+    </div>
+  );
+};
 
 ModulePage.propTypes = {
-  moduleData: PropTypes.shape({
+  data: PropTypes.shape({
     moduleTitle: PropTypes.string.isRequired,
-    info: PropTypes.array.isRequired,
-    tasks: PropTypes.array.isRequired,
+    infoSections: PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        text: PropTypes.string,
+        url: PropTypes.string,
+        title: PropTypes.string,
+      })
+    ),
+    tasks: PropTypes.arrayOf(
+      PropTypes.shape({
+        taskTitle: PropTypes.string.isRequired,
+        taskDescription: PropTypes.string.isRequired,
+        links: PropTypes.array,
+        quizId: PropTypes.string,
+      })
+    ),
+    extraResources: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.string,
+        url: PropTypes.string,
+      })
+    ),
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        required: PropTypes.bool,
+      })
+    ),
   }).isRequired,
-  completedTasks: PropTypes.array.isRequired,
-  onCompleteTask: PropTypes.func.isRequired,
 };
 
 export default ModulePage;
-
-
-// import PropTypes from 'prop-types';
-// import TaskCard from './TaskCard';
-
-// const ModulePage = ({ moduleData, completedTasks, onTaskComplete }) => {
-//   const { moduleTitle, description, tasks } = moduleData;
-
-//   return (
-//     <section className="max-w-4xl mx-auto p-6 bg-white rounded shadow">
-//       <h2 className="text-2xl font-bold mb-4">{moduleTitle}</h2>
-//       <p className="mb-6 text-prussian_blue">{description}</p>
-
-//       {tasks.map((task, idx) => (
-//         <TaskCard
-//           key={task.id}
-//           task={task}
-//           taskNumber={idx + 1}
-//           completed={completedTasks.includes(task.id)}
-//           onComplete={() => onTaskComplete(task.id)}
-//         />
-//       ))}
-//     </section>
-//   );
-// };
-
-// ModulePage.propTypes = {
-//   moduleData: PropTypes.shape({
-//     moduleTitle: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     tasks: PropTypes.array.isRequired,
-//   }).isRequired,
-//   completedTasks: PropTypes.arrayOf(PropTypes.string).isRequired,
-//   onTaskComplete: PropTypes.func.isRequired,
-// };
-
-// export default ModulePage;

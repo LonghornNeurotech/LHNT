@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import { CheckCircle } from 'lucide-react';
 
-const VideoPlayer = ({ url, title, duration, subtitlesSrc, onComplete }) => {
+const VideoPlayer = ({ url, title, duration, subtitlesSrc, onComplete, style }) => {
   const playerRef = useRef(null);
   const [completed, setCompleted] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
@@ -34,101 +34,63 @@ const VideoPlayer = ({ url, title, duration, subtitlesSrc, onComplete }) => {
     }
   };
 
-  const handleError = (e) => {
-    setError('Sorry, this video cannot be played.');
-    console.error('Video playback error:', e);
+  const handleError = () => {
+    setError('Error loading video');
   };
 
   return (
-    <div className="relative bg-bone_white rounded-lg shadow p-4 max-w-xl mx-auto mb-6 border border-silver_lake_blue">
-      <div
-        className="font-antonio font-semibold text-prussian_blue text-lg mb-2 truncate"
-        title={title}
-      >
+    <div style={{ ...style, position: 'relative', backgroundColor: '#000', borderRadius: 12, padding: 16, boxSizing: 'border-box' }}>
+      <div style={{ marginBottom: 8, color: '#fff', fontWeight: 'bold' }}>
         {title}
       </div>
-
-      {error ? (
-        <div className="p-4 text-red-600 bg-red-100 rounded">{error}</div>
-      ) : (
-        <ReactPlayer
-          ref={playerRef}
-          url={url}
-          width="100%"
-          height="270px"
-          controls
-          onProgress={handleProgress}
-          onEnded={handleEnded}
-          playbackRate={playbackRate}
-          onError={handleError}
-          config={{
-            file: {
-              attributes: {
-                crossOrigin: 'anonymous',
-              },
-              tracks: subtitlesSrc
-                ? [
-                    {
-                      kind: 'subtitles',
-                      src: subtitlesSrc,
-                      srcLang: 'en',
-                      default: true,
-                      label: 'English',
-                    },
-                  ]
-                : [],
+      <ReactPlayer
+        ref={playerRef}
+        url={url}
+        controls
+        width="100%"
+        height="260px"
+        onProgress={handleProgress}
+        onEnded={handleEnded}
+        onError={handleError}
+        playbackRate={playbackRate}
+        config={{
+          file: {
+            attributes: {
+              crossOrigin: 'anonymous',
             },
-          }}
-        />
-      )}
-
-      <div className="mt-2 flex items-center space-x-2 text-prussian_blue font-antonio text-sm">
-        <label htmlFor="playbackSpeed" className="font-semibold">
-          Speed:
-        </label>
-        <select
-          id="playbackSpeed"
-          value={playbackRate}
-          onChange={handleSpeedChange}
-          className="rounded border px-2 py-1"
-          disabled={!!error}
-        >
-          {[0.5, 0.75, 1, 1.25, 1.5, 2].map((speed) => (
-            <option key={speed} value={speed}>
-              {speed}x
-            </option>
+            tracks: subtitlesSrc ? [{ kind: 'subtitles', src: subtitlesSrc, default: true }] : [],
+          },
+        }}
+      />
+      {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+      <div style={{ marginTop: 8 }}>
+        <label htmlFor="speed-select" style={{ marginRight: 8, fontWeight: 'bold' }}>Speed:</label>
+        <select id="speed-select" value={playbackRate} onChange={handleSpeedChange}>
+          {[0.25, 0.5, 0.75, 1, 1.25, 1.5, 2].map(rate => (
+            <option key={rate} value={rate}>{rate}x</option>
           ))}
         </select>
       </div>
-
-      {completed && !error && (
-        <CheckCircle
-          size={24}
-          className="absolute top-3 right-3 text-prussian_blue"
-          title="Video Completed"
-        />
-      )}
-
-      <div className="mt-2 text-sm text-prussian_blue font-antonio">
-        {formatDuration(duration)}
-      </div>
+      {completed && <CheckCircle color="green" size={24} style={{ position: 'absolute', top: 16, right: 16 }} />}
     </div>
   );
 };
 
 VideoPlayer.propTypes = {
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   duration: PropTypes.number,
   subtitlesSrc: PropTypes.string,
-  onComplete: PropTypes.func.isRequired,
+  onComplete: PropTypes.func,
+  style: PropTypes.object,
 };
 
-const formatDuration = (seconds) => {
-  if (!seconds) return '';
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+VideoPlayer.defaultProps = {
+  title: '',
+  duration: null,
+  subtitlesSrc: null,
+  onComplete: () => {},
+  style: {},
 };
 
 export default VideoPlayer;
