@@ -1,15 +1,19 @@
 {
   "block": "hardwareB2",
   "module": "3_3",
-  "moduleTitle": "TIW Training: Advanced Filament Printers (Raise 3D)",
-  "description": "Training module on Advanced Filament Printers for Raise 3D printers.",
+  "moduleTitle": "Module 3.3: TIW Training - Advanced Filament Printers (Raise 3D)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Raise3D's Advanced Filament Printers offer high-quality, reliable 3D printing for professional use. They support a wide range of materials, including PLA, ABS, Nylon, PETG, and composites. Models like the Pro2 feature dual extrusion for printing complex multi-material objects."
+    }
+  ],
   "tasks": [
     {
-      "id": "task1",
-      "title": "Complete Advanced Filament Printers Training Module",
-      "description": "Complete the Advanced Filament Printers (Raise 3D) module on Canvas and submit a screenshot of completion.",
-      "type": "misc",
-      "submissionRequired": false
+      "taskTitle": "Task 1",
+      "taskDescription": "Complete the \"Advanced Filmament Printers (Raise 3D)\" module on Canvas and submit a screenshot of completion",
+      "requiredActions": ["uploadFiles"]
     }
-  ]
+  ],
+  "extraResources": []
 }

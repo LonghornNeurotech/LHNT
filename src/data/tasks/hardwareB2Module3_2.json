@@ -1,15 +1,19 @@
 {
   "block": "hardwareB2",
   "module": "3_2",
-  "moduleTitle": "3.2 TIW Training: Bambu Lab P1P 3D Printing Training",
-  "description": "Training module on Bambu Lab P1P 3D printer.",
+  "moduleTitle": "Module 3.2: TIW Training - Bambu Lab P1P 3D Printing Training",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "The Bambu Lab P1P is a compact and versatile 3D printer designed for both beginners and experienced users. It features a dual extruder system, enabling the printing of multi-material objects, and boasts high print speed and precision. With a build volume of 256 x 256 x 256 mm, it's suitable for creating a wide range of prototypes and models."
+    }
+  ],
   "tasks": [
     {
-      "id": "task1",
-      "title": "Complete Bambu Lab P1P Training Module",
-      "description": "Complete the Bambu Lab P1P training on Canvas and submit a screenshot.",
-      "type": "misc",
-      "submissionRequired": false
+      "taskTitle": "Task 1",
+      "taskDescription": "Complete the \"Bambu Lab P1P 3D Printing Training\" module on Canvas and submit a screenshot of completion.",
+      "requiredActions": ["uploadFiles"]
     }
-  ]
+  ],
+  "extraResources": []
 }

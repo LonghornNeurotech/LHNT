@@ -1,15 +1,19 @@
 {
   "block": "hardwareB2",
   "module": "3_4",
-  "moduleTitle": "3.4 TIW Training: SLA 3D Printing Training",
-  "description": "Training module on SLA 3D printer.",
+  "moduleTitle": "Module 3.4: TIW Training - SLA 3D Printing Training",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "SLA (Stereolithography) printing uses light to cure liquid resin into detailed, solid objects. It is ideal for high-precision applications like dental models or fine prototypes."
+    }
+  ],
   "tasks": [
     {
-      "id": "task1",
-      "title": "Complete Bambu Lab P1P Training Module",
-      "description": "Complete the \"SLA 3D Printing\" module on Canvas and submit a screenshot of completion.",
-      "type": "misc",
-      "submissionRequired": false
+      "taskTitle": "Task 1",
+      "taskDescription": "Complete the \"SLA 3D Printing\" module on Canvas and submit a screenshot of completion.",
+      "requiredActions": ["uploadFiles"]
     }
-  ]
+  ],
+  "extraResources": []
 }

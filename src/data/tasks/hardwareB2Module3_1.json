@@ -1,21 +1,26 @@
 {
   "block": "hardwareB2",
   "module": "3_1",
-  "moduleTitle": "3.1 Basics of 3D Printing",
-  "description": "3D printing builds objects layer by layer from a digital model and is widely used for prototyping and medical applications.",
+  "moduleTitle": "Module 3.1: Basics of 3D Printing",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "3D printing, or additive manufacutring, is a process where objects are built layer by layer from a digital model. It starts with a design, typically created in CAD software, which is converted into a printer-readable format such as STL or OBJ. The model is sliced into thin layers, and the printer uses materials like PLA, ABS, resin, or metal to construct the object. Common menthods include FDM (Fused Deposition Modeling), SLA (Sterolithography), and SLS (Selective Laser Sintering). After printing, objects often require post-processing. 3D printing is widely used in prototyping, manufacturing, medical applications such as custom prosthetics, and artistic creation, offering fast and cost-effective production with minimal material waste."
+    }
+  ],
   "tasks": [
     {
-      "id": "task1",
-      "title": "Complete TIW Canvas Module on Culture and Community",
-      "description": "Enroll in TIW Canvas page and complete the Culture and Community module. Submit a screenshot of completion.",
-      "type": "misc",
+      "taskTitle": "Task 1",
+      "taskDescription": "Enroll in TIW Canvas page [here]. Complete the \"Culture and Community\" module on Canvas and submit a screenshot of completion.",
       "links": [
         {
-          "label": "TIW Canvas Page",
-          "url": "https://utexas.instructure.com/enroll/MT8GYT"
+          "label": "here",
+          "url": "https://utexas.instructure.com/enroll/MT8GYT",
+          "required": true
         }
       ],
-      "submissionRequired": false
+      "requiredActions": ["clickLinks, uploadFiles"]
     }
-  ]
+  ],
+  "extraResources": []
 }
