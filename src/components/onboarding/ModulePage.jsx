@@ -3,6 +3,7 @@
 import PropTypes from "prop-types";
 import RichTextWithLinks from "./RichTextWithLinks";
 import TaskCard from "./TaskCard";
+import VideoGallery from "./videos/VideoGallery";
 
 const ModulePage = ({ data }) => {
   const { moduleTitle, infoSections = [], tasks = [], extraResources = [] } = data;
@@ -41,12 +42,9 @@ const ModulePage = ({ data }) => {
           if (section.type === "video") {
             return (
               <div key={idx} className="mb-4">
-                <iframe
-                  src={section.url}
-                  title={section.title}
-                  allowFullScreen
-                  className="w-full h-60"
-                ></iframe>
+                <VideoGallery
+                  videos={[{ url: section.url, title: section.title, required: false }]}
+                />
               </div>
             );
           }
@@ -64,30 +62,38 @@ const ModulePage = ({ data }) => {
       {/* Extra Resources */}
       {extraResources.length > 0 && (
         <section>
-          <h2 className="font-semibold text-lg text-prussian_blue mb-2">Extra Resources</h2>
-          {extraResources.map((res, idx) => (
-            <div key={idx} className="mb-4">
-              {res.title && <h3 className="font-bold text-prussian_blue mb-1">{res.title}</h3>}
-              {res.text && (
-                <p className="text-prussian_blue text-base">
-                  <RichTextWithLinks 
-                    text={res.text} 
-                    links={res.links || []} 
+          <h2 className="font-bold text-lg text-prussian_blue mb-2">Extra Resources</h2>
+          {extraResources.map((res, idx) => {
+            if (res.type === "video") {
+              return (
+                <div key={idx} className="mb-4">
+                  <VideoGallery
+                    videos={[{ url: res.url, title: res.title, required: false }]}
                   />
-                </p>
-              )}
-              {res.url && !res.text && (
-                <a
-                  href={res.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
-                >
-                  {res.title || res.url}
-                </a>
-              )}
-            </div>
-          ))}
+                </div>
+              );
+            }
+            return (
+              <div key={idx} className="mb-4">
+                {res.title && <h3 className="font-semibold text-prussian_blue mb-1">{res.title}</h3>}
+                {res.text && (
+                  <p className="text-prussian_blue text-base">
+                    <RichTextWithLinks text={res.text} links={res.links || []} />
+                  </p>
+                )}
+                {res.url && !res.text && (
+                  <a
+                    href={res.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
+                    {res.title || res.url}
+                  </a>
+                )}
+              </div>
+            );
+          })}
         </section>
       )}
     </div>

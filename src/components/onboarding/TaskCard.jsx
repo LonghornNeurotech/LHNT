@@ -1,16 +1,21 @@
 import PropTypes from "prop-types";
 import RichTextWithLinks from "./RichTextWithLinks";
+import VideoGallery from "./videos/VideoGallery";
 
 const TaskCard = ({ task }) => {
+  const { taskTitle, taskDescription, videos } = task;
 
   return (
     <div>
       <div style={{ fontWeight: 700, fontSize: "1.2rem", color: "#183F5E" }}>
-        {task.taskTitle}
+        {taskTitle}
       </div>
       <div style={{ fontSize: "1.08rem", color: "#23395D" }}>
-        <RichTextWithLinks text={task.taskDescription} links={task.links || []} />
+        <RichTextWithLinks text={taskDescription} links={task.links || []} />
       </div>
+      {videos && videos.length > 0 && (
+        <VideoGallery videos={videos} />
+      )}
     </div>
   );
 };
@@ -21,6 +26,7 @@ TaskCard.propTypes = {
     taskDescription: PropTypes.string.isRequired,
     links: PropTypes.array,
     quizId: PropTypes.string,
+    videos: PropTypes.array,
   }).isRequired,
 };
 
