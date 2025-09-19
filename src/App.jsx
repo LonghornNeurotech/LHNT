@@ -47,7 +47,7 @@ const App = () => {
               />
 
               <Route
-                path="/onboarding/:blockId/:moduleId"
+                path="/onboarding/:onboardingBlock/:moduleSubmodule"
                 element={
                   <MemberRoute>
                     <OnboardingRouter />
