@@ -1,25 +1,42 @@
 import PropTypes from "prop-types";
 
-const VideoModal = function ({ url, title, open, onClose }) {
+const VideoModal = ({ url, title, open, onClose }) => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50" aria-modal="true" role="dialog">
-      <div className="bg-white rounded shadow-lg p-4 max-w-3xl w-full relative">
-        <button 
-          onClick={onClose} 
-          className="absolute top-2 right-2 text-gray-700 hover:text-gray-900 font-bold text-xl"
-          aria-label="Close video modal"
-        >
-          &times;
-        </button>
-        <iframe
-          title={title}
-          src={url}
-          className="w-full h-96 rounded"
-          allowFullScreen
-          frameBorder="0"
-        />
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+      <div className="w-full max-w-7xl mx-4 flex flex-col items-end">
+        {/* Close button above video container */}
+        <div className="mb-2 mr-2">
+            <button
+                onClick={onClose}
+                aria-label="Close video"
+                className="
+                    w-10 h-10 flex items-center justify-center 
+                    rounded-full bg-white bg-opacity-90 
+                    text-prussian_blue text-2xl font-bold shadow-lg 
+                    hover:bg-red-500 hover:text-white transition
+                "
+                >
+                ×
+            </button>
+        </div>
+        {/* Video and title container */}
+        <div className="rounded-lg overflow-hidden bg-white shadow-lg w-full">
+          <div style={{ aspectRatio: "16 / 9" }}>
+            <iframe
+              src={url}
+              title={title}
+              className="w-full h-full"
+              allowFullScreen
+            />
+          </div>
+          {title && (
+            <div className="p-4 text-left font-semibold text-prussian_blue">
+              {title}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -27,7 +44,7 @@ const VideoModal = function ({ url, title, open, onClose }) {
 
 VideoModal.propTypes = {
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
 };
