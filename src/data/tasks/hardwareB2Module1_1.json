@@ -23,7 +23,7 @@
     {
       "taskTitle": "Task 1",
       "taskDescription": "Complete this quiz.",
-      "quizId": "hardware2Module1_1",
+      "quizId": "hardwareB2Module1_1",
       "requiredActions": ["completeQuiz"]
     },
     {

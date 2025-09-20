@@ -37,7 +37,7 @@
           "required": true
         }
       ],
-      "quizId": "hardware2Module1_3",
+      "quizId": "hardwareB2Module1_3",
       "requiredActions": ["readDocuments", "completeQuiz"]
     }
   ],
