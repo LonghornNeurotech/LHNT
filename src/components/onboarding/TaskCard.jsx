@@ -1,8 +1,9 @@
-import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import RichTextWithLinks from "./RichTextWithLinks";
 import VideoGallery from "./videos/VideoGallery";
 import Quiz from "./quizzes/Quiz";
+import FileUploadManager from "./upload/FileUploadManager";
 import quizzesData from "../../data/quizzes";
 
 const TaskCard = ({ task }) => {
@@ -10,6 +11,7 @@ const TaskCard = ({ task }) => {
 
   const [quizData, setQuizData] = useState(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
+  const [uploadCompleted, setUploadCompleted] = useState(false);
 
   useEffect(() => {
     if (requiredActions.includes("completeQuiz") && quizId) {
@@ -20,11 +22,18 @@ const TaskCard = ({ task }) => {
       setQuizData(null);
     }
     setQuizCompleted(false);
+    setUploadCompleted(false);
   }, [requiredActions, quizId]);
 
   const handleQuizComplete = (passed) => {
     if (passed) {
       setQuizCompleted(true);
+    }
+  };
+
+  const handleUploadComplete = (completed) => {
+    if (completed) {
+      setUploadCompleted(true);
     }
   };
 
@@ -48,6 +57,16 @@ const TaskCard = ({ task }) => {
       )}
       {requiredActions.includes("completeQuiz") && quizData && quizData.length > 0 && (
         <Quiz quizData={quizData} onComplete={handleQuizComplete} />
+      )}
+
+      {uploadCompleted && (
+        <div className="mb-3 p-2 bg-green-100 text-green-700 rounded text-sm">
+          Files uploaded successfully! You may now proceed.
+        </div>
+      )}
+
+      {requiredActions.includes("uploadFiles") && (
+        <FileUploadManager onComplete={handleUploadComplete} />
       )}
     </div>
   );
