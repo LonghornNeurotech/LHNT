@@ -1,3 +1,4 @@
+// Button to click on and select files or drag any files to upload the files!
 import { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 
@@ -40,12 +41,12 @@ const FileUploadDropzone = ({ onFilesSelected, disabled = false }) => {
 
   return (
     <div
-      className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
+      className={`border-2 border-dashed rounded-lg p-8 text-center transition-all duration-200 ${
         disabled
           ? "border-gray-300 bg-gray-100 cursor-not-allowed"
           : isDragOver
-          ? "border-blue-500 bg-blue-50"
-          : "border-gray-400 bg-gray-50 hover:border-blue-400"
+          ? "border-blue-500 bg-blue-50 scale-105"
+          : "border-gray-400 bg-gray-50 hover:border-blue-400 hover:bg-blue-25"
       }`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
@@ -63,14 +64,25 @@ const FileUploadDropzone = ({ onFilesSelected, disabled = false }) => {
         htmlFor="file-upload-input"
         className={`cursor-pointer ${disabled ? "cursor-not-allowed" : ""}`}
       >
-        <div className="space-y-2">
-          <div className="text-4xl text-gray-400">📁</div>
+        <div className="space-y-3">
+          <div className={`text-5xl transition-transform ${isDragOver ? "scale-110" : ""}`}>
+            📁
+          </div>
           <div className="text-lg font-medium text-gray-700">
-            {disabled ? "Upload Disabled" : "Drop files here or click to browse"}
+            {disabled 
+              ? "Upload Disabled" 
+              : isDragOver 
+              ? "Drop files here!" 
+              : "Drop files here or click to browse"}
           </div>
           <div className="text-sm text-gray-500">
             {disabled ? "" : "Support for any file type, any number of files, no size limit"}
           </div>
+          {!disabled && (
+            <div className="text-xs text-blue-600 font-medium">
+              You can continue adding more files after uploading
+            </div>
+          )}
         </div>
       </label>
     </div>

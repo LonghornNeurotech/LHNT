@@ -1,3 +1,4 @@
+// Users can click on Preview button to be able to see the files they uploaded (only apply to specific file types now!)
 import { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -58,14 +59,18 @@ const FilePreviewItem = ({ file, onRemove }) => {
       </div>
       
       {showPreview && canPreview && (
-        <div className="mt-3">
+        <div className="mt-3 bg-gray-50 p-2 rounded">
           <img
             src={URL.createObjectURL(file)}
             alt={file.name}
-            className="max-w-full max-h-48 rounded border"
+            className="max-w-full max-h-96 mx-auto rounded border shadow-sm object-contain"
+            style={{ minHeight: '200px' }}
             onLoad={(e) => {
               // Clean up the object URL to prevent memory leaks
               setTimeout(() => URL.revokeObjectURL(e.target.src), 1000);
+            }}
+            onError={(e) => {
+              console.error("Error loading image:", e);
             }}
           />
         </div>
