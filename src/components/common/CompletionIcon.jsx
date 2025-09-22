@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 const CompletionIcon = ({ completed }) => {
   return (
     <div
-      className={`flex items-center justify-center rounded-full w-6 h-6 border-2 ${
-        completed
-          ? 'bg-green-600 border-green-600'
-          : 'bg-bone_white border-silver_lake_blue'
+      className={`flex items-center justify-center rounded-full w-6 h-6 border-2 bg-bone_white ${
+        completed 
+          ? `border-green-600`
+          : `border-silver_lake_blue`
       }`}
       aria-label={completed ? 'Completed' : 'Not completed'}
       role="img"
@@ -15,14 +15,14 @@ const CompletionIcon = ({ completed }) => {
     >
       {completed && (
         <svg
-          className="text-white w-4 h-4"
+          className="text-green-600 w-4 h-4"
           fill="none"
           stroke="currentColor"
-          strokeWidth="3"
+          strokeWidth="5"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       )}
     </div>
