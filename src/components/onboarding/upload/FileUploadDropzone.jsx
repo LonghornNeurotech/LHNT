@@ -41,12 +41,12 @@ const FileUploadDropzone = ({ onFilesSelected, disabled = false }) => {
 
   return (
     <div
-      className={`border-2 border-dashed rounded-lg p-8 text-center transition-all duration-200 ${
+      className={`border-2 border-dashed bg-silver_lake_blue rounded-lg p-8 text-center transition-all duration-200 ${
         disabled
           ? "border-gray-300 bg-gray-100 cursor-not-allowed"
           : isDragOver
           ? "border-blue-500 bg-blue-50 scale-105"
-          : "border-gray-400 bg-gray-50 hover:border-blue-400 hover:bg-blue-25"
+          : "border-white-400 bg-gray-50 hover:border-white-400 hover:bg-blue-25"
       }`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
@@ -68,18 +68,18 @@ const FileUploadDropzone = ({ onFilesSelected, disabled = false }) => {
           <div className={`text-5xl transition-transform ${isDragOver ? "scale-110" : ""}`}>
             📁
           </div>
-          <div className="text-lg font-medium text-gray-700">
+          <div className="text-xl font-medium text-white">
             {disabled 
               ? "Upload Disabled" 
               : isDragOver 
               ? "Drop files here!" 
               : "Drop files here or click to browse"}
           </div>
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-green-200">
             {disabled ? "" : "Support for any file type, any number of files, no size limit"}
           </div>
           {!disabled && (
-            <div className="text-xs text-blue-600 font-medium">
+            <div className="text-sm text-green-200">
               You can continue adding more files after uploading
             </div>
           )}
