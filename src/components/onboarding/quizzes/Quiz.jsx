@@ -5,7 +5,6 @@ const Quiz = ({ quizData, onComplete }) => {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
-  const [showRetry, setShowRetry] = useState(false);
   const [fullName, setFullName] = useState("");
   const [eid, setEid] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -14,7 +13,6 @@ const Quiz = ({ quizData, onComplete }) => {
     setAnswers({});
     setSubmitted(false);
     setScore(0);
-    setShowRetry(false);
     setFullName("");
     setEid("");
     setFormSubmitted(false);
@@ -22,7 +20,10 @@ const Quiz = ({ quizData, onComplete }) => {
 
   const handleAnswerChange = (questionId, option) => {
     if (submitted) return;
-    setAnswers((prev) => ({ ...prev, [questionId]: option }));
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: option
+    }));
   };
 
   const handleSubmit = () => {
@@ -34,7 +35,6 @@ const Quiz = ({ quizData, onComplete }) => {
     });
     setScore(correctCount);
     setSubmitted(true);
-    setShowRetry(true);
     onComplete && onComplete(correctCount === quizData.length);
   };
 
@@ -42,7 +42,6 @@ const Quiz = ({ quizData, onComplete }) => {
     setAnswers({});
     setSubmitted(false);
     setScore(0);
-    setShowRetry(false);
     setFullName("");
     setEid("");
     setFormSubmitted(false);
@@ -51,142 +50,209 @@ const Quiz = ({ quizData, onComplete }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    if (fullName.trim() && eid.trim()) {
+      setFormSubmitted(true);
+      // This is where you would trigger the email functionality
+      // Example: onQuizCompleted({ quizData, fullName, eid, score, answers });
+    }
   };
 
   const allAnswered = quizData.length === Object.keys(answers).length;
+  const isPerfectScore = score === quizData.length;
 
   return (
     <div className="mt-4">
-        {!submitted ? (
-            <form>
-            <div className="flex flex-col gap-1 mb-2">
-                <h3 className="text-xl font-bold text-prussian_blue mb-1">Quiz</h3>
-                <span className="text-lg text-silver_lake_blue mb-3">
-                    Complete this quiz with a 100% score to complete this task. You can retry this quiz an unlimited number of times.
-                </span>
+      <h3 className="text-lg font-semibold mb-1">Quiz</h3>
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+        <p className="text-sm text-blue-800 font-medium">
+          Complete this quiz with a 100% score to complete this task. You can retry this quiz an unlimited number of times.
+        </p>
+      </div>
+
+      {!submitted && (
+        <div className="space-y-4">
+          {quizData.map((q) => (
+            <div key={q.id} className="mb-6">
+              <h4 className="font-medium mb-3">
+                Question {q.id}: {q.question}
+              </h4>
+              <div className="space-y-2">
+                {q.options.map((option) => (
+                  <label
+                    key={option}
+                    className="flex items-start cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name={`question-${q.id}`}
+                      value={option}
+                      checked={answers[q.id] === option}
+                      onChange={() => handleAnswerChange(q.id, option)}
+                      className="mt-1 mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                    />
+                    <span className="text-sm leading-5">{option}</span>
+                  </label>
+                ))}
+              </div>
             </div>
-            {quizData.map(({ id, question, options }) => (
-                <div key={id} className="mb-4">
-                <p className="font-medium text-prussian_blue">
-                    Question {id}: {question}
-                </p>
-                <div className="mt-2 space-y-2">
-                    {options.map((option, index) => (
-                    <label
-                        key={index}
-                        className="flex items-center space-x-2 cursor-pointer"
-                    >
-                        <input
-                        type="radio"
-                        name={`question${id}`}
-                        value={option}
-                        checked={answers[id] === option}
-                        onChange={() => handleAnswerChange(id, option)}
-                        className="cursor-pointer"
-                        />
-                        <span>{option}</span>
-                    </label>
-                    ))}
-                </div>
-                </div>
-            ))}
-            <button
-                className="mt-3 px-2 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
-                disabled={!allAnswered}
-                onClick={handleSubmit}
-                type="button"
-            >
-                Submit Quiz
-            </button>
-            </form>
-        ) : (
-            <div>
-            <h3 className="text-xl font-semibold text-prussian_blue mb-1">Results</h3>
-            <p className="mb-3 text-silver_lake_blue">
-                Your score: {score} / {quizData.length} (
-                {((score / quizData.length) * 100).toFixed(1)}%)
+          ))}
+
+          <button
+            onClick={handleSubmit}
+            disabled={!allAnswered}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Submit Quiz
+          </button>
+        </div>
+      )}
+
+      {submitted && (
+        <div className="space-y-4">
+          {/* Score Display */}
+          <div className="mb-4">
+            <p className="font-semibold text-xl">
+              Your score: {score} / {quizData.length} (
+              {((score / quizData.length) * 100).toFixed(1)}%)
             </p>
-            {quizData.map(({ id, question, correctAnswer }) => {
-                const userAnswer = answers[id];
-                const isCorrect = userAnswer === correctAnswer;
-                return (
-                <div
-                    key={id}
-                    className={`mb-4 p-2 rounded border ${
-                    isCorrect
-                        ? "border-green-500 bg-green-50"
-                        : "border-red-500 bg-red-50"
-                    }`}
-                >
-                    <p className="font-medium">
-                    Question {id}: {question}
-                    </p>
-                    <p className="mt-1 mb-1">
-                    <span className={isCorrect ? "text-green-700" : "text-red-700"}>
-                        Your answer: {userAnswer || "No answer selected"}{" "}
-                        {isCorrect ? "✓ Correct" : "✗ Incorrect"}
-                    </span>
-                    </p>
-                    {!isCorrect && (
-                    <p className="text-green-700">Correct answer: {correctAnswer}</p>
-                    )}
+          </div>
+
+          {/* Quiz Results */}
+          <div className="space-y-4">
+            {quizData.map((q) => {
+              const userAnswer = answers[q.id];
+              return (
+                <div key={q.id} className="mb-6">
+                  <h4 className="font-medium mb-3">
+                    Question {q.id}: {q.question}
+                  </h4>
+                  <div className="space-y-2">
+                    {q.options.map((option) => {
+                      const isUserAnswer = userAnswer === option;
+                      const isCorrect = option === q.correctAnswer;
+                      const isWrongUserAnswer = isUserAnswer && !isCorrect;
+                      
+                      return (
+                        <label key={option} className="flex items-start">
+                          <div className="relative mr-3 mt-1">
+                            {/* Radio button with overlay icons */}
+                            <input
+                              type="radio"
+                              name={`result-question-${q.id}`}
+                              value={option}
+                              checked={isUserAnswer}
+                              disabled
+                              className="h-4 w-4 text-blue-600 border-gray-300"
+                            />
+                            {/* Correct answer checkmark */}
+                            {isCorrect && (
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="text-green-600 text-sm font-bold">✓</span>
+                              </div>
+                            )}
+                            {/* Wrong user answer X */}
+                            {isWrongUserAnswer && (
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="text-red-600 text-sm font-bold">✗</span>
+                              </div>
+                            )}
+                          </div>
+                          <span className={`text-sm leading-5 ${
+                            isCorrect 
+                              ? 'text-green-700 font-medium' 
+                              : isWrongUserAnswer 
+                                ? 'text-red-700' 
+                                : 'text-gray-700'
+                          }`}>
+                            {option}
+                            {isCorrect && !isUserAnswer && (
+                              <span className="ml-2 text-green-600 font-medium">(Correct Answer)</span>
+                            )}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
                 </div>
-                );
+              );
             })}
-            {showRetry && (
+          </div>
+
+          {/* Success Message for Perfect Score */}
+          {isPerfectScore && (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+              <p className="text-green-700 font-semibold">
+                Congratulations! You passed with a perfect score!
+              </p>
+            </div>
+          )}
+
+          {/* Complete Your Submission - ONLY for Perfect Score */}
+          {isPerfectScore && !formSubmitted && (
+            <div>
+              <h4 className="font-medium mb-2">Complete Your Submission</h4>
+              <div className="space-y-3">
+                <div>
+                  <label htmlFor="quizFullName" className="block font-medium mb-1">
+                    Full Name
+                  </label>
+                  <input
+                    id="quizFullName"
+                    type="text"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="border py-2 px-3 rounded w-full"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="quizEid" className="block font-medium mb-1">
+                    EID
+                  </label>
+                  <input
+                    id="quizEid"
+                    type="text"
+                    required
+                    value={eid}
+                    onChange={(e) => setEid(e.target.value)}
+                    className="border py-2 px-3 rounded w-full"
+                    placeholder="Enter your EID"
+                  />
+                </div>
                 <button
-                className="mt-3 px-2 py-2 bg-silver_lake_blue text-white rounded hover:bg-yellow-700"
-                onClick={handleRetry}
-                type="button"
+                  onClick={handleFormSubmit}
+                  disabled={!fullName.trim() || !eid.trim()}
+                  className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                Retry Quiz
+                  Submit
                 </button>
-            )}
+              </div>
             </div>
-        )}
-        {submitted && score === quizData.length && !formSubmitted && (
-            <form className="mt-5" onSubmit={handleFormSubmit}>
-            <h4 className="text-xl font-semibold text-prussian_blue mb-2">Complete Your Submission</h4>
-            <div className="mb-3">
-                <label htmlFor="fullName" className="block font-medium mb-1 border-silver_lake_blue text-prussian_blue">
-                Full Name
-                </label>
-                <input
-                id="fullName"
-                type="text"
-                required
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                className="border p-2 rounded w-full"
-                />
+          )}
+
+          {/* Form Submitted Success - ONLY for Perfect Score */}
+          {isPerfectScore && formSubmitted && (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <p className="text-green-700 font-semibold mb-2">
+                Quiz completed successfully! You may now proceed.
+              </p>
+              <div className="text-md text-green-600">
+                <p>Score: {score} / {quizData.length} (100%)</p>
+                <p>Submitted by: {fullName} ({eid})</p>
+              </div>
             </div>
-            <div className="mb-3">
-                <label htmlFor="eid" className="block font-medium mb-1 text-prussian_blue">
-                EID
-                </label>
-                <input
-                id="eid"
-                type="text"
-                required
-                value={eid}
-                onChange={(e) => setEid(e.target.value)}
-                className="border p-2 rounded w-full"
-                />
-            </div>
-            <button
-                type="submit"
-                className="px-2 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-            >
-                Submit
-            </button>
-            </form>
-        )}
-        {formSubmitted && (
-            <p className="mt-3 text-green-700 font-semibold px-0">
-            Thank you for submitting the quiz completion!
-            </p>
-        )}
+          )}
+
+          {/* Retry Button */}
+          <button
+            onClick={handleRetry}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Retry Quiz
+          </button>
+        </div>
+      )}
     </div>
   );
 };
@@ -194,7 +260,7 @@ const Quiz = ({ quizData, onComplete }) => {
 Quiz.propTypes = {
   quizData: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      id: PropTypes.number.isRequired,
       question: PropTypes.string.isRequired,
       options: PropTypes.arrayOf(PropTypes.string).isRequired,
       correctAnswer: PropTypes.string.isRequired,
