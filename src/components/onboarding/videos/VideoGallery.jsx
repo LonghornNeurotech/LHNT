@@ -3,53 +3,60 @@ import PropTypes from "prop-types";
 import VideoThumbnail from "./VideoThumbnail";
 import VideoModal from "./VideoModal";
 
-const VideoGallery = function ({ videos }) {
-  const [selectedVideoIdx, setSelectedVideoIdx] = useState(null);
+const VideoGallery = ({ videos, onVideoWatch, watchedVideos = new Set() }) => {
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // Extract YouTube video ID and generate thumbnail URL
-  const getYouTubeThumbnailUrl = (url) => {
-    const match = url.match(/youtube\.com\/embed\/([^/?]+)/);
-    return match ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : "";
+  const handleVideoClick = (video) => {
+    setSelectedVideo(video);
+    // Mark video as watched when clicked
+    if (onVideoWatch) {
+      onVideoWatch(video.title, video.required);
+    }
   };
 
-  const openVideo = (idx) => setSelectedVideoIdx(idx);
-  const closeVideo = () => setSelectedVideoIdx(null);
+  const handleCloseModal = () => {
+    setSelectedVideo(null);
+  };
 
-  if (!videos || videos.length === 0) return null;
+  if (!videos || videos.length === 0) {
+    return null;
+  }
 
   return (
-    <>
-      <div className="flex flex-wrap">
-        {videos.map((video, idx) => (
+    <div className="mb-6">
+      <h3 className="text-lg font-semibold mb-3">Videos</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {videos.map((video, index) => (
           <VideoThumbnail
-            key={video.url}
-            thumbnailUrl={getYouTubeThumbnailUrl(video.url)}
-            title={video.title}
-            required={!!video.required}
-            onClick={() => openVideo(idx)}
+            key={index}
+            video={video}
+            onClick={() => handleVideoClick(video)}
+            isWatched={watchedVideos.has(video.title)}
           />
         ))}
       </div>
-      {selectedVideoIdx !== null && (
+
+      {selectedVideo && (
         <VideoModal
-          open={true}
-          url={videos[selectedVideoIdx].url}
-          title={videos[selectedVideoIdx].title}
-          onClose={closeVideo}
+          video={selectedVideo}
+          isOpen={true}
+          onClose={handleCloseModal}
         />
       )}
-    </>
+    </div>
   );
 };
 
 VideoGallery.propTypes = {
   videos: PropTypes.arrayOf(
     PropTypes.shape({
-      url: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
       required: PropTypes.bool,
     })
   ).isRequired,
+  onVideoWatch: PropTypes.func,
+  watchedVideos: PropTypes.instanceOf(Set),
 };
 
 export default VideoGallery;
