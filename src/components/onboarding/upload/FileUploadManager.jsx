@@ -46,7 +46,7 @@ const FileUploadManager = ({ onComplete }) => {
       <div className="flex flex-col gap-1 mb-2">
         <h3 className="text-lg font-semibold mb-1">File Upload</h3>
         <span className="text-sm text-gray-700 mb-3">
-          Upload at least one file and complete your submission information to complete this task.
+          First, upload all the specified files that was asked for in this task. Then, complete your submission information to submit these files to Longhorn Neurotech and complete this task!
         </span>
       </div>
 

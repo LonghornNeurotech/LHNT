@@ -19,7 +19,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks, uploadFiles"]
+      "requiredActions": ["clickLinks", "uploadFiles"]
     }
   ],
   "extraResources": []
