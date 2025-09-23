@@ -20,7 +20,7 @@ const Quiz = ({ quizData, onComplete }) => {
     if (onComplete) {
       onComplete(false);
     }
-  }, [quizData]);
+  }, [quizData,]);
 
   const handleAnswerChange = (questionId, option) => {
     if (submitted) return;
@@ -192,12 +192,12 @@ const Quiz = ({ quizData, onComplete }) => {
             <>
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
                 <p className="text-green-700 font-semibold">
-                  Congratulations! You passed with a perfect score!
+                  Congratulations! You got a perfect score! Now, fill out your full name and EID below to confirm proof of your successful completion of this quiz to Longhorn Neurotech!
                 </p>
               </div>
 
               <div>
-                <h4 className="font-medium mb-2">Complete Your Submission</h4>
+                <h4 className="font-medium mb-2">Confirm Your Successful Completion of this Quiz!</h4>
                 <div className="space-y-3">
                   <div>
                     <label className="block font-medium mb-1">Full Name</label>

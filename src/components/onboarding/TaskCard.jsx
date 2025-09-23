@@ -138,7 +138,7 @@ const TaskCard = ({ task }) => {
   const isTaskComplete = calculateTaskCompletion();
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border p-6 mb-6">
+    <div className={`bg-white rounded-lg shadow-sm p-6 mb-6 border-silver_lake_blue`}>
       {/* Task Header with CompletionIcon */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-semibold text-gray-900">{taskTitle}</h2>
