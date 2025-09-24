@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import CompletionIcon from "../common/CompletionIcon";
+// import CompletionIcon from "../common/CompletionIcon";
 import moduleMap from "../../config/moduleMap";
 
 const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
@@ -56,11 +56,11 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
               style={{ minHeight: "56px", fontSize: "1.15rem" }}
             >
               <span className="flex items-center gap-x-3">
-                <span className="flex items-center justify-center w-6 h-6">
+                {/* <span className="flex items-center justify-center w-6 h-6">
                   <CompletionIcon
                     completed={group.submodules.every(id => moduleMapData.modules[id]?.completed)}
                   />
-                </span>
+                </span> */}
                 {group.name}
               </span>
               <span className={`transition-transform duration-200 ${openGroupIdx === groupIdx ? "rotate-90" : ""}`}>▸</span>
@@ -85,9 +85,9 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                       }
                       style={{ fontSize: "1rem", minHeight: "52px" }}
                     >
-                      <span className="flex items-center justify-center w-6 h-6">
+                      {/* <span className="flex items-center justify-center w-6 h-6">
                         <CompletionIcon completed={sub.completed} />
-                      </span>
+                      </span> */}
                       <span className="ml-3">{sub.title}</span>
                     </NavLink>
 
