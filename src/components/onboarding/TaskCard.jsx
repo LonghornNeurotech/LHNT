@@ -158,7 +158,7 @@ const TaskCard = ({ task }) => {
       {isTaskComplete && (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
           <p className="text-green-700 font-semibold">
-            Task completed successfully! You may now proceed.
+            Great work on successfully completing this task! Keep moving forward on completing the other tasks. I believe you got this!
           </p>
         </div>
       )}
