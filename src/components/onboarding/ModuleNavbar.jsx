@@ -38,32 +38,37 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
   if (!isGroupsValid) return null;
 
   return (
-    <nav className="h-full w-72 bg-prussian-blue flex flex-col overflow-y-auto p-6">
-      <h2 className="text-white font-bold text-xl mb-8">{moduleMapData.title}</h2>
+    <nav 
+      className="h-full bg-prussian-blue flex flex-col overflow-y-auto p-6"
+      style={{
+        width: "clamp(200px, 22vw, 320px)",
+        minWidth: "200px",
+        maxWidth: "320px"
+      }}
+    >
+      <h2 className="text-white font-bold text-2xl mb-8">{moduleMapData.title}</h2>
       <div className="flex-1 flex flex-col gap-3">
         {groupsArr.map((group, groupIdx) => (
           <div key={groupIdx} className="mb-1">
             <button
               type="button"
               onClick={() => setOpenGroupIdx(openGroupIdx === groupIdx ? null : groupIdx)}
-              className={`w-full flex items-center px-5 py-3 rounded-lg font-semibold justify-between shadow
+              className={`w-full flex items-center gap-x-2 px-2 sm:px-4 py-3 rounded-lg font-semibold justify-start shadow
                 ${
                   openGroupIdx === groupIdx
                     ? "bg-silver_lake_blue text-white"
                     : "bg-bone_white text-prussian_blue border border-silver_lake_blue"
                 }
-                transition`}
+                transition  min-h-[56px] text-[1.05rem] sm:text-[1.15rem]`}
               style={{ minHeight: "56px", fontSize: "1.15rem" }}
             >
-              <span className="flex items-center gap-x-3">
-                {/* <span className="flex items-center justify-center w-6 h-6">
-                  <CompletionIcon
-                    completed={group.submodules.every(id => moduleMapData.modules[id]?.completed)}
-                  />
-                </span> */}
-                {group.name}
-              </span>
-              <span className={`transition-transform duration-200 ${openGroupIdx === groupIdx ? "rotate-90" : ""}`}>▸</span>
+              {/* <span className="flex items-center" style={{ width: 24, height: 24 }}>
+                <CompletionIcon
+                  completed={group.submodules.every(id => moduleMapData.modules[id]?.completed)}
+                />
+              </span> */}
+              <span className="truncate text-left flex-1">{group.name}</span>
+              <span className={`transition-transform duration-200 {${openGroupIdx === groupIdx ? "rotate-90" : ""}`} style={{ verticalAlign: "middle" }}>▸</span>
             </button>
 
             {openGroupIdx === groupIdx && (
@@ -76,7 +81,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                       key={subId}
                       to={`/onboarding/${onboardingBlock}/${subId}`}
                       className={({ isActive }) =>
-                        `flex items-center px-8 py-3 rounded-lg font-normal border transition justify-start
+                        `flex items-center gap-x-2 px-2 sm:px-4 py-3 rounded-lg font-normal border transition justify-start text-[0.92rem] sm:text-[1rem] min-h-[44px]
                           ${
                             isActive
                               ? "bg-silver_lake_blue text-white border-silver_lake_blue"
@@ -85,12 +90,11 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                       }
                       style={{ fontSize: "1rem", minHeight: "52px" }}
                     >
-                      {/* <span className="flex items-center justify-center w-6 h-6">
+                      {/* <span className="flex items-center justify-center" style={{ width: 24, height: 24 }}>
                         <CompletionIcon completed={sub.completed} />
                       </span> */}
-                      <span className="ml-3">{sub.title}</span>
+                      <span className="ml-3 text-left flex-1">{sub.title}</span>
                     </NavLink>
-
                   );
                 })}
               </div>
