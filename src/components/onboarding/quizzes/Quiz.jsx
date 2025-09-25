@@ -74,9 +74,9 @@ const Quiz = ({ quizData, onComplete }) => {
 
   return (
     <div className="mt-4">
-      <h3 className="text-lg font-semibold mb-1">Quiz</h3>
+      <h3 className="text-xl text-prussian_blue font-semibold mb-1">Quiz</h3>
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
-        <p className="text-sm text-blue-800 font-medium">
+        <p className="text-md text-blue-800 font-medium">
           Complete this quiz with a 100% score to complete this task. You can retry this quiz an unlimited number of times.
         </p>
       </div>
@@ -85,7 +85,7 @@ const Quiz = ({ quizData, onComplete }) => {
         <div className="space-y-4">
           {quizData.map((q) => (
             <div key={q.id} className="mb-6">
-              <h4 className="font-medium mb-3">
+              <h4 className="font-medium text-lg text-prussian_blue mb-3">
                 Question {q.id}: {q.question}
               </h4>
               <div className="space-y-2">
