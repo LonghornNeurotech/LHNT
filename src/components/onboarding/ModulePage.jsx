@@ -10,7 +10,7 @@ const ModulePage = ({ data }) => {
 
   return (
     <div className="mx-auto">
-      <h1 className="text-xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
+      <h1 className="text-2xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
 
       {/* Info Sections */}
       <section className="mb-6">
