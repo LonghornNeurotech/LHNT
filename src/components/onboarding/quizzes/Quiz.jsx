@@ -62,7 +62,6 @@ const Quiz = ({ quizData, onComplete }) => {
   const handleFormSubmit = () => {
     if (fullName.trim() && eid.trim()) {
       setFormSubmitted(true);
-      // NOW the quiz is truly complete - both perfect score AND form submitted
       if (onComplete) {
         onComplete(true);
       }
@@ -82,13 +81,13 @@ const Quiz = ({ quizData, onComplete }) => {
       </div>
 
       {!submitted && (
-        <div className="space-y-4">
+        <div className="space-y-5">
           {quizData.map((q) => (
             <div key={q.id} className="mb-6">
               <h4 className="font-medium text-lg text-prussian_blue mb-3">
                 Question {q.id}: {q.question}
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {q.options.map((option) => (
                   <label
                     key={option}
@@ -102,7 +101,7 @@ const Quiz = ({ quizData, onComplete }) => {
                       onChange={() => handleAnswerChange(q.id, option)}
                       className="mt-1 mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
                     />
-                    <span className="text-sm leading-5">{option}</span>
+                    <span className="text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] leading-5">{option}</span>
                   </label>
                 ))}
               </div>
@@ -191,7 +190,7 @@ const Quiz = ({ quizData, onComplete }) => {
           {isPerfectScore && !formSubmitted && (
             <>
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-                <p className="text-green-700 font-semibold">
+                <p className="text-green-700 font-semibold md:text-[1.2rem]">
                   Congratulations! You got a perfect score! Now, fill out your full name and EID below to confirm proof of your successful completion of this quiz to Longhorn Neurotech!
                 </p>
               </div>

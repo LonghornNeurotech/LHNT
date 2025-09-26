@@ -141,7 +141,7 @@ const TaskCard = ({ task }) => {
     <div className={`bg-white rounded-lg shadow-sm p-6 mb-6 border-silver_lake_blue`}>
       {/* Task Header with CompletionIcon */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold text-gray-900">{taskTitle}</h2>
+        <h2 className="text-2xl font-semibold text-gray-900">{taskTitle}</h2>
         <CompletionIcon completed={isTaskComplete} />
       </div>
 
@@ -157,7 +157,7 @@ const TaskCard = ({ task }) => {
       {/* Success Message for Completed Task */}
       {isTaskComplete && (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-          <p className="text-green-700 font-semibold">
+          <p className="text-green-700 font-semibold text-[1.1rem] md:text-[1.2rem]">
             Great work on successfully completing this task! Keep moving forward on completing the other tasks. I believe you got this!
           </p>
         </div>
@@ -177,7 +177,7 @@ const TaskCard = ({ task }) => {
       {/* Documents Section */}
       {documents && documents.length > 0 && (
         <div className="mb-6">
-          <h3 className="text-lg font-semibold mb-3">Documents</h3>
+          <h3 className="text-xl font-semibold mb-3">Documents</h3>
           <div className="space-y-2">
             {documents.map((doc, index) => {
               const isRead = readDocuments.has(doc.title);
