@@ -1,0 +1,26 @@
+{
+  "block": "hardwareB4",
+  "module": "1_1",
+  "moduleTitle": "Module 1.1: C++",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "C++ is a high-performance, general-purpose programming language that extends C by adding object-oriented, generic, and functional programming features. It is widely used for system programming, game development, real-time applications, embedded systems, and high-performance computing. C++ offers fine control over memory and hardware, making it suitable for applications requiring efficiency and speed."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Sign up for this [course] to understand the basics of C++ and follow along. While this course is introductory, it will give you an understanding of the language you will be using. Submit a screenshot of completion and a screenshot of one of the projects within the course. If you are proficient in C++, submit a screenshot of a previous project as a replacement.",
+      "links": [
+        {
+          "label": "course",
+          "url": "https://www.codecademy.com/learn/learn-c-plus-plus-introduction",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

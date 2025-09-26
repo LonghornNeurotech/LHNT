@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Watch this video and understand how you will apply reverse engineering and spatial visualization.",
+      "taskDescription": "Watch this video below and understand how you will apply reverse engineering and spatial visualization.",
       "videos": [
         {
           "title": "Reverse Engineering and Spatial Visualization",

@@ -15,7 +15,7 @@
       "videos": [
         {
           "title": "Basic Navigation System",
-          "url": "https://www.youtube.com/embed/Sl0vJfmj5LQ?si=8rYFSBZ3z07O1TyZ",
+          "url": "https://youtu.be/Sl0vJfmj5LQ",
           "required": true
         },
         {
@@ -28,7 +28,7 @@
     },
     {
       "taskTitle": "Task 2",
-      "taskDescription": "Read the following document and complete the quiz based on the material.",
+      "taskDescription": "Read the entire following document and answer the following questions.",
       "documents": [
         {
           "title": "MeshLab Tutorial PDF",

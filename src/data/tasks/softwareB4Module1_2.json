@@ -1,0 +1,49 @@
+{
+  "block": "softwareB4",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: Neural Networks Basics + Math Behind It",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Neural networks are computational models inspired by the human brain, designed to recognize complex patterns and relationships in data. At their core, they consist of layers of interconnected neurons, each performing weighted computations followed by activation functions to introduce non-linearity. The mathematical foundation involves linear algebra for weight manipulation, calculus for backpropagation-based optimization, and probability theory for handling uncertainty in predictions."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this article and watch the following lessons to understand the basics of neural networks and how you can work with them.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://medium.com/@Kiana-Jafari/understanding-the-math-behind-deep-neural-networks-602b7b6a150a",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "Neural Networks Explained in 5 minutes",
+          "url": "https://www.youtube.com/embed/FgakZw6K1QQ",
+          "required": true
+        },
+        {
+          "title": "A Gentle Introduction To Math Behind Neural Networks and Deep Learning (nested composite function)",
+          "url": "https://www.youtube.com/embed/8_rrnzn0sS0",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    }
+  ],
+  "extraResources": [
+    {
+      "type": "text",
+      "text": "If you’d like to review or learn more about linear algebra for more advanced models, please explore the 3Blue1Brown page linked [here].",
+      "links": [
+        {
+          "label": "here",
+          "url": "https://www.3blue1brown.com/topics/linear-algebra"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "block": "hardwareB4",
+  "module": "3_1",
+  "moduleTitle": "Module 3.1: Bluetooth and WiFi",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Arduino communication systems allow interaction between microcontrollers and external devices using serial communication, I2C, SPI, or other protocols. Python, using Spyder or another IDE, provides a platform for processing, analyzing, and visualizing data collected from Arduino-connected sensors."
+    },
+    {
+      "type": "text",
+      "text": "In neurotech, this hardware-software interfacing is essential for applications like brain-computer interfaces (BCIs), biofeedback systems, and neural signal processing. Arduino can collect biosignals (e.g., EEG, EMG), transmit data to Python, and use machine learning or signal processing techniques for real-time feedback or control."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch the following videos to understand how WiFi and Bluetooth work and how to implement it.",
+      "videos": [
+        {
+          "title": "How Does Wi-Fi Work? | Earth Science",
+          "url": "https://www.youtube.com/embed/xmabFJUKMdg",
+          "required": true
+        },
+        {
+          "title": "How Does Bluetooth Work?",
+          "url": "https://www.youtube.com/embed/Mk6JfmmCDh0",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

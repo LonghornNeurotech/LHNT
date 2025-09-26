@@ -1,0 +1,26 @@
+{
+  "block": "softwareB4",
+  "module": "2_2",
+  "moduleTitle": "Module 2.2: Convolutional Neural Networks (with EEG Applications)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Convolutional Neural Networks (CNNs) enable advanced analysis of brain signals such as Electroencephalography (EEG) data. By leveraging spatial and temporal patterns, CNNs can efficiently extract meaningful features from raw EEG signals, improving the accuracy of brain-computer interfaces (BCIs) and neurological disorder detection. Their ability to automatically learn representations makes them ideal for real-time applications, from cognitive state monitoring to assistive neuroprosthetic control."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Follow along on GitHub 3.2.1 Lesson and Practice [here] to better understand how real-time EEG signal proceeding works. Submit a screenshot of your progress throughout the module.",
+      "links": [
+        {
+          "label": "here",
+          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%203",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

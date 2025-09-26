@@ -1,0 +1,74 @@
+{
+  "block": "hardwareB3",
+  "module": "2_1",
+  "moduleTitle": "Module 2.1: Arduino",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "An Arduino is a versatile microcontroller platform used in electronics development for prototyping, automation, and signal processing through easy-to-use hardware and software. In neurotech applications, it facilitates the development of brain-computer interface (BCI) prototypes, biosignal acquisition systems, and neural stimulation devices, enabling rapid testing and real-time data processing for innovative neuroelectronic solutions."
+    },
+    {
+      "type": "text",
+      "text": "Tinkercad is a free online tool that lets you design and test things like electronic circuits and 3D models. It’s like a virtual workshop where you can build and play with electronics without needing actual parts. Arduino is a small computer that you can use to control things like lights, motors, or sensors. Tinkercad works with Arduino by letting you build and test your Arduino projects on the computer first. You can make circuits and write simple code to control the Arduino, all in Tinkercad, before trying it out with real parts."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Use this [link] to sign in to TinkerCAD. If you don’t have an account, use your UT credentials to make one. Next, watch the videos below and follow the tutorials. Next, watch the videos below and follow the tutorials. Submit a screenshot of your progress as you follow along with the videos.",
+      "links": [
+        {
+          "label": "link",
+          "url": "https://www.tinkercad.com/join",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "Lesson 1: LEDs & Breadboards With Arduino in Tinkercad",
+          "url": "https://www.youtube.com/embed/MojSo7OtF9w",
+          "required": true
+        },
+        {
+          "title": "Lesson 2: Blink an LED With Arduino in Tinkercad",
+          "url": "https://www.youtube.com/embed/yyG0koj9nNY",
+          "required": true
+        },
+        {
+          "title": "Lesson 3: Pushbutton Digital Input With Arduino in Tinkercad",
+          "url": "https://www.youtube.com/embed/PC15jBx2UxI",
+          "required": true
+        },
+        {
+          "title": "Lesson 4: Potentiometer Analog Input With Arduino in Tinkercad",
+          "url": "https://www.youtube.com/embed/-EDYMQ9lczA",
+          "required": true
+        },
+        {
+          "title": "Lesson 5: RGB LEDs With Arduino in Tinkercad",
+          "url": "https://www.youtube.com/embed/YqHkULDmmGU",
+          "required": true
+        },
+        {
+          "title": "Lesson 6: Fading LED With Arduino in Tinkercad",
+          "url": "https://www.youtube.com/embed/X8dHbdhnGKY",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    },
+    {
+      "taskTitle": "Task 2",
+      "taskDescription": "Read through this [article], and follow the outlined steps. The goal is for you to feel comfortable with TinkerCAD, so do each step as many times as you need. Submit a screenshot of your final screen.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.tinkercad.com/projects/Basics-of-Arduino-TINKERCAD",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

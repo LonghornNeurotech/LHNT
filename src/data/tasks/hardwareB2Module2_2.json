@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Watch this video and follow the steps to complete rendering.",
+      "taskDescription": "Watch this video below and follow the steps to complete rendering.",
       "videos": [
         {
           "title": "CAD Rendering Tutorial",
@@ -20,19 +20,6 @@
         }
       ],
       "requiredActions": ["watchVideos"]
-    },
-    {
-      "taskTitle": "Task 2",
-      "taskDescription": "Read this document",
-      "documents": [
-        {
-          "title": "MeshLab CAD Software Article",
-          "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf",
-          "fileType": "pdf",
-          "required": true
-        }
-      ],
-      "requiredActions": ["readDocuments"]
     }
   ],
   "extraResources": []

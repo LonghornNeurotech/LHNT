@@ -6,105 +6,22 @@
     {
       "type": "text",
       "text": "3D CAD (Computer-Aided Design) is used in hardware design to create, visualize, and simulate mechanical components, enclosures, and assemblies in a digital environment. It enables engineers to optimize designs for manufacturability, thermal management, and structural integrity before production."
-    },
-    {
-      "type": "document",
-      "title": "Meshlab CAD Software Article",
-      "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf",
-      "fileType": "pdf"
-    },
-    {
-      "type": "video",
-      "title": "CAD Rendering Tutorial",
-      "url": "https://www.youtube.com/embed/CzlnmYOwaIw"
     }
   ],
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Complete this quiz.",
-      "quizId": "hardwareB2Module1_1",
-      "requiredActions": ["completeQuiz"]
-    },
-    {
-      "taskTitle": "Task 2",
-      "taskDescription": "Download and install the CAD software from the official [CAD software site]. Optionally, you can install [Blender] now.",
+      "taskDescription": "Read this [article] and answer the following questions.",
       "links": [
         {
-          "label": "CAD software site",
-          "url": "https://www.autodesk.com/solutions/cad-software",
+          "label": "article",
+          "url": "https://www.meegle.com/en_us/topics/hardware/cad-software-for-hardware-design",
           "required": true
-        },
-        {
-          "label": "Blender",
-          "url": "https://www.blender.org/download/",
-          "required": false
         }
       ],
-      "requiredActions": ["clickLinks"]
-    },
-    {
-      "taskTitle": "Task 3",
-      "taskDescription": "Upload a screenshot of your completion.",
-      "requiredActions": ["uploadFiles"]
-    },
-    {
-      "taskTitle": "Task 4",
-      "taskDescription": "Read all documents and watch all videos below.",
-      "documents": [
-        {
-          "title": "Meshlab CAD Software Article",
-          "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf",
-          "fileType": "pdf",
-          "required": true
-        },
-        {
-          "title": "Meshlab CAD Software Article",
-          "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf",
-          "fileType": "pdf",
-          "required": false
-        }
-      ],
-      "videos": [
-        {
-          "title": "CAD Rendering Tutorial",
-          "url": "https://www.youtube.com/embed/CzlnmYOwaIw",
-          "required": true
-        },
-        {
-          "title": "CAD Rendering Tutorial",
-          "url": "https://www.youtube.com/embed/CzlnmYOwaIw",
-          "required": false
-        }
-      ],
-      "requiredActions": ["readDocuments", "watchVideos"]
+      "quizId": "hardwareB2Module1_1",
+      "requiredActions": ["clickLinks", "completeQuiz"]
     }
   ],
-  "extraResources": [
-    {
-      "type": "text",
-      "text": "For more information, see the [CAD Software Documentation] and the [official website] for CAD for more information.",
-      "links": [
-        {
-          "label": "CAD Software Documentation",
-          "url": "https://help.autodesk.com/"
-        },
-        {
-          "label": "official website",
-          "url": "https://www.autodesk.com/solutions/cad-software"
-        }
-      ]
-    },
-    {
-      "type": "document",
-      "title": "Meshlab CAD Software Article",
-      "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf",
-      "fileType": "pdf"
-    },
-    {
-      "type": "video",
-      "title": "CAD Rendering Tutorial",
-      "url": "https://www.youtube.com/embed/CzlnmYOwaIw"
-    }
-  ]
+  "extraResources": []
 }

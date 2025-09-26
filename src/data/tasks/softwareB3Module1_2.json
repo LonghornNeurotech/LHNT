@@ -1,0 +1,26 @@
+{
+  "block": "softwareB3",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: EEG Signals",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Electroencephalography (EEG) is a non-invasive method used to record the electrical activity of the brain. EEG measures voltage fluctuations resulting from ionic current flows within neurons in the brain."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Follow along on GitHub 3.1.2 Lesson and Practice [here] to better understand the components of EEG and practice signal processing. Submit a screenshot of your progress throughout the module.",
+      "links": [
+        {
+          "label": "here",
+          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%203",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

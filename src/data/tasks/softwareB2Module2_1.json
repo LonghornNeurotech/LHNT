@@ -1,0 +1,59 @@
+{
+  "block": "softwareB2",
+  "module": "2_1",
+  "moduleTitle": "Module 2.1: Unity 3D User Interface",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Unity 3D's user interface (UI) is crucial in neurotechnology for visualizing BCI data, designing neurofeedback applications, and developing immersive VR/AR environments for cognitive and motor rehabilitation. It enables researchers to create real-time dashboards, BCI control interfaces, and interactive neurorehabilitation experiences. As a powerful tool for translating complex neural data into user-friendly interactions, Unity advances both research and practical applications in neurotech."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "To better understand how Unity 3D works, complete Udemy’s \"[Unity UI Development]\" and Coursera’s \"[Game Design and Development with Unity UI]\".  Send a screenshot of your completion screens upon finishing the courses. If you are proficient with Unity 3D, please send a screenshot of a recent project you have completed.",
+      "links": [
+        {
+          "label": "Unity UI Development",
+          "url": "https://learn.unity.com/course/ui-toolkit-fundamentals",
+          "required": true
+        },
+        {
+          "label": "Game Design and Development with Unity UI",
+          "url": "https://www.coursera.org/learn/introduction-to-game-design/paidmedia?utm_medium=sem&utm_source=gg&utm_campaign=b2c_namer_epic-games-game-design-professional-certificate_epic-games_ftcof_professional-certificates_px_dr_bau_gg_sem_pr-bd_us-ca_en_m_hyb_24-09_x&campaignid=21745957368&adgroupid=165903628257&device=c&keyword=&matchtype=&network=g&devicemodel=&creativeid=714990155250&assetgroupid=&targetid=dsa-2382188692783&extensionid=&placement=&gad_source=1&gclid=Cj0KCQiAoJC-BhCSARIsAPhdfSh8v7c0UdWR0NVLg7DIYD24uyOUDpMnFplnzgy4KzzOXTjIlJeVufMaAqr1EALw_wcB",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    },
+    {
+      "taskTitle": "Task 2",
+      "taskDescription": "Read the following [UI Toolkit Documents]. Answer the questions below to ensure reading comprehension.",
+      "links": [
+        {
+          "label": "UI Toolkit Documents",
+          "url": "https://docs.unity3d.com/Manual/UIToolkits.html",
+          "required": true
+        }
+      ],
+      "quizId": "softwareB2Module2_1",
+      "requiredActions": ["clickLinks", "completeQuiz"]
+    }
+  ],
+  "extraResources": [
+    {
+      "type": "text",
+      "text": "Extra Resources:\n\t* [Unity Beginner Tutorials YouTube PlayList]\n\t* [Modern Unity UI with UI Toolkit]",
+      "links": [
+        {
+          "label": "Unity Beginner Tutorials YouTube Playlist",
+          "url": "https://www.youtube.com/playlist?list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6"
+        },
+        {
+          "label": "Modern Unity UI with UI Toolkit",
+          "url": "https://www.udemy.com/course/modern-unity-ui-with-ui-toolkit/?srsltid=AfmBOoooDvPHIukJL1ry5Bjay_RKFzSFYEOX35KvdZwX2ZjlkKa2RAv3&couponCode=MT300725A"
+        }
+      ]
+    }
+  ]
+}
