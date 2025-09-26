@@ -126,7 +126,7 @@ const Login = () => {
               value={eid}
               onChange={handleEidChange}
               placeholder="Enter your UT EID"
-              autoComplete="name"
+              autoComplete="eid"
               className={`w-full h-11 px-3 rounded-lg text-lg focus:outline-none ${
                 errors.eid ? 'border-red-600 border-2' : 'border-silver_lake_blue border-2'
               }`}
