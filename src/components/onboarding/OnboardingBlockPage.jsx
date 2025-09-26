@@ -14,8 +14,14 @@ const OnboardingBlockPage = ({onboardingBlock, moduleSubmodule, data}) => {
         minHeight: 0,
       }}>
       <aside
-        className="w-[300px] min-w-[200px] rounded-xl shadow-lg bg-prussian_blue flex flex-col h-full"
-        style={{ marginRight: 30 }}>
+        className="rounded-xl shadow-lg bg-prussian_blue flex flex-col h-full"
+        style={{ 
+          marginRight: 30,
+          width: "clamp(200px, 22vw, 320px)",
+          minWidth: "200px",
+          maxWidth: "320px"
+        }}
+      >
         <div className="flex-1 min-h-0" style={{ paddingBottom: 20 }}>
           <ModuleNavbar onboardingBlock={onboardingBlock} moduleSubmodule={moduleSubmodule} />
         </div>
