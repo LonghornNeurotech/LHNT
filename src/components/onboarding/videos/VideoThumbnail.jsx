@@ -1,4 +1,3 @@
-// Previous Working A: Successful tracking of required video watching progress in a task, but can't check the video iframe and take user to watch video directly on YouTube instead of in the VideoModal component.
 import { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import CompletionIcon from "../../common/CompletionIcon";
