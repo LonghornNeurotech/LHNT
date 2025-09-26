@@ -17,12 +17,13 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   // Login function checks password only
-  const login = ({ fullName, password }) => {
+  const login = ({ fullName, eid, password }) => {
     const validPassword = 'LHNTFALL25';
-    if (password === validPassword && fullName.trim()) {
+    if (password === validPassword && fullName.trim() && eid.trim()) {
       const memberObj = {
         memberId: Date.now().toString(),
         fullName: fullName.trim(),
+        eid: eid.trim(),
         role: 'member',
       };
       setMember(memberObj);
@@ -38,6 +39,7 @@ export const AuthProvider = ({ children }) => {
 
   // Logout function
   const logout = () => {
+    setMember(null); 
     setIsAuthenticated(false);
     localStorage.removeItem('member');
   };

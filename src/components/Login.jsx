@@ -7,6 +7,7 @@ import EyeToggle from '../components/EyeToggle';
 
 const Login = () => {
   const [fullName, setFullName] = useState('');
+  const [eid, setEid] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -14,11 +15,12 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const headline = 'Welcome!';
-  const subtitle = 'Enter your full name and the organization password to access your member account.';
+  const subtitle = 'Enter your full name, EID, and the organization password to access your member account.';
 
   const validateForm = () => {
     const newErrors = {};
     if (!fullName.trim()) newErrors.fullName = 'Full name is required';
+    if (!eid.trim()) newErrors.eid = 'EID is required';
     if (!password) newErrors.password = 'Password is required';
     return newErrors;
   };
@@ -27,6 +29,13 @@ const Login = () => {
     setFullName(e.target.value);
     if (errors.fullName) {
       setErrors((prev) => ({ ...prev, fullName: null }));
+    }
+  };
+
+  const handleEidChange = (e) => {
+    setEid(e.target.value);
+    if (errors.eid) {
+      setErrors((prev) => ({ ...prev, eid: null }));
     }
   };
 
@@ -50,7 +59,7 @@ const Login = () => {
       // Simulate authentication delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const success = await login({ fullName, password });
+      const success = await login({ fullName, eid, password });
 
       if (success) {
         Swal.fire({
@@ -103,6 +112,27 @@ const Login = () => {
             />
             {errors.fullName && (
               <p className="text-red-600 mt-1 font-semibold text-sm font-antonio">{errors.fullName}</p>
+            )}
+          </div>
+
+          {/* EID Field */}
+          <div className="mb-4">
+            <label htmlFor="fullName" className="block text-prussian_blue font-semibold text-lg mb-2 font-antonio">
+              EID
+            </label>
+            <input
+              id="eid"
+              type="text"
+              value={eid}
+              onChange={handleEidChange}
+              placeholder="Enter your UT EID"
+              autoComplete="name"
+              className={`w-full h-11 px-3 rounded-lg text-lg focus:outline-none ${
+                errors.eid ? 'border-red-600 border-2' : 'border-silver_lake_blue border-2'
+              }`}
+            />
+            {errors.eid && (
+              <p className="text-red-600 mt-1 font-semibold text-sm font-antonio">{errors.eid}</p>
             )}
           </div>
 
