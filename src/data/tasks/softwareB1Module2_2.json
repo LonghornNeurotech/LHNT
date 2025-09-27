@@ -9,7 +9,15 @@
     },
     {
       "type": "text",
-      "text": "\t* NumPy is a fundamental package for scientific computing in Python. It provides support for large, multi-dimensional arrays and matrices.\n\t* SciPy builds on NumPy and provides additional functionality for scientific computing, including signal processing tools.\n\t* MNE-Python is an open-source package for processing EEG and MEG data."
+      "text": "- NumPy is a fundamental package for scientific computing in Python. It provides support for large, multi-dimensional arrays and matrices."
+    },
+    {
+      "type": "text",
+      "text": "- SciPy builds on NumPy and provides additional functionality for scientific computing, including signal processing tools."
+    },
+    {
+      "type": "text",
+      "text": "- MNE-Python is an open-source package for processing EEG and MEG data."
     }
   ],
   "tasks": [
