@@ -1,0 +1,45 @@
+{
+  "block": "softwareB1",
+  "module": "0_3",
+  "moduleTitle": "Module 0.3: Contact Us",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "We’re here to help! If you have any questions while completing the onboarding modules, please reach out to the appropriate contact below:"
+    },
+    {
+      "type": "text",
+      "text": "General Questions:"
+    },
+    {
+      "type": "text",
+      "text": "* Netta Blinchevsky (Education Lead) — nettablin@utexas.edu"
+    },
+    {
+      "type": "text",
+      "text": "* Raquel Paz Bergia (President) — raquelpazbergia@utexas.edu"
+    },
+    {
+      "type": "text",
+      "text": "Technical Questions:"
+    },
+    {
+      "type": "text",
+      "text": "* For Hardware Team, contact Victor (Vic) Moran (Hardware Director) — vic.rw.moran@gmail.com"
+    },
+    {
+      "type": "text",
+      "text": "* For Software Team, contact Alex Johnson (Software Director) — alexdjohnson74@utexas.edu"
+    },
+    {
+      "type": "text",
+      "text": "* For Research Team, contact Aryan Roghani (R&D Director) — aryanroghani4444@gmail.com"
+    },
+    {
+      "type": "text",
+      "text": "We encourage you to contact the team that best fits your question, but if you’re unsure where to start, feel free to reach out to Netta, and she’ll connect you with the right person."
+    }
+  ],
+  "tasks": [],
+  "extraResources": []
+}
