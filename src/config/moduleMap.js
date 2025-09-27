@@ -3,11 +3,24 @@ const moduleMap = {
   softwareB1: {
     title: "Software Block 1: General Skills",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1"],
       "Module 2": ["2_1", "2_2"],
       "Module 3": ["3_1"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/softwareB1/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/softwareB1/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/softwareB1/0_3"
+      },
       "1_1": {
         title: "Module 1.1: OneNote",
         path: "/onboarding/softwareB1/1_1"
@@ -29,10 +42,23 @@ const moduleMap = {
   softwareB2: {
     title: "Software Block 2: Virtual Reality",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1"],
       "Module 2": ["2_1", "2_2"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/softwareB2/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/softwareB2/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/softwareB2/0_3"
+      },
       "1_1": {
         title: "Module 1.1: C#",
         path: "/onboarding/softwareB2/1_1"
@@ -50,11 +76,24 @@ const moduleMap = {
   softwareB3: {
     title: "Software Block 3: Signals",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
       "Module 3": ["3_1", "3_2", "3_3"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/softwareB3/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/softwareB3/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/softwareB3/0_3"
+      },
       "1_1": {
         title: "Module 1.1: Brain Signals",
         path: "/onboarding/softwareB3/1_1"
@@ -88,11 +127,24 @@ const moduleMap = {
   softwareB4: {
     title: "Software Block 4: Machine Learning",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
       "Module 3": ["3_1", "3_2"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/softwareB4/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/softwareB4/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/softwareB4/0_3"
+      },
       "1_1": {
         title: "Module 1.1: Linear Regression and Classification",
         path: "/onboarding/softwareB4/1_1"
@@ -122,11 +174,24 @@ const moduleMap = {
   hardwareB1: {
     title: "Hardware Block 1: General Skills",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1"],
       "Module 3": ["3_1", "3_2"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/hardwareB1/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/hardwareB1/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/hardwareB1/0_3"
+      },
       "1_1": {
         title: "Module 1.1: Documentation",
         path: "/onboarding/hardwareB1/1_1"
@@ -152,11 +217,24 @@ const moduleMap = {
   hardwareB2: {
     title: "Hardware Block 2: Design",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1", "1_2", "1_3"],
       "Module 2": ["2_1", "2_2"],
       "Module 3": ["3_1", "3_2", "3_3", "3_4"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/hardwareB2/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/hardwareB2/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/hardwareB2/0_3"
+      },
       "1_1": {
         title: "Module 1.1: Advanced CAD",
         path: "/onboarding/hardwareB2/1_1"
@@ -198,11 +276,24 @@ const moduleMap = {
   hardwareB3: {
     title: "Hardware Block 3: Electronics",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1", "1_2", "1_3"],
       "Module 2": ["2_1", "2_2", "2_3", "2_4"],
       "Module 3": ["3_1", "3_2"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/hardwareB3/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/hardwareB3/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/hardwareB3/0_3"
+      },
       "1_1": {
         title: "Module 1.1: Tools",
         path: "/onboarding/hardwareB3/1_1"
@@ -244,11 +335,24 @@ const moduleMap = {
   hardwareB4: {
     title: "Hardware Block 4: Hardware-Software Interfacing",
     groups: {
+      "Module 0": ["0_1", "0_2", "0_3"],
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
       "Module 3": ["3_1", "3_2"]
     },
     modules: {
+      "0_1": {
+        title: "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+        path: "/onboarding/hardwareB4/0_1"
+      },
+      "0_2": {
+        title: "Module 0.2: Longhorn Neurotech Onboarding Project Competition Information",
+        path: "/onboarding/hardwareB4/0_2"
+      },
+      "0_3": {
+        title: "Module 0.3: Contact Us",
+        path: "/onboarding/hardwareB4/0_3"
+      },
       "1_1": {
         title: "Module 1.1: C++",
         path: "/onboarding/hardwareB4/1_1"

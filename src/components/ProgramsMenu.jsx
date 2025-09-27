@@ -126,7 +126,7 @@ const ProgramsMenu = () => {
               {onboardingBlockMap[group].map(({ label, id }) => (
                 <button
                   key={id}
-                  onClick={() => navigate(`/onboarding/${id}/1_1`)}
+                  onClick={() => navigate(`/onboarding/${id}/0_1`)}
                   style={{
                     display: 'block',
                     textAlign: 'center',
