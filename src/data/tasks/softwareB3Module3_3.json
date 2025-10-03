@@ -1,0 +1,26 @@
+{
+  "block": "softwareB3",
+  "module": "3_3",
+  "moduleTitle": "Module 3.3: LDA",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Linear Discriminant Analysis (LDA) is another dimensionality reduction technique similar to PCA. However, it attempts to maximize the separability of different classes of data instead of maximizing the variance of the samples."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this short video to get a conceptual understanding of LDA. As a check for understanding, can you think of situations when LDA would be better than PCA? What about the reverse?",
+      "videos": [
+        {
+          "title": "StatQuest: Linear Discriminant Analysis (LDA) clearly explained",
+          "url": "https://www.youtube.com/embed/azXCzI57Yfc",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

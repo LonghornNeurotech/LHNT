@@ -1,0 +1,21 @@
+{
+  "block": "hardwareB1",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: OneNote",
+  "infoSections": [],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Make sure you have access to the OneNote. Look at this example of the [Weekly Meeting] template, and complete the following.\n\t1. Open OneNote\n\t2. Click \"SOP\"\n\t3. Click \"Weekly Meeting Example\"\n\t4. Make a copy of it and move it to \"Onboarding\"\n\t5. Rename the page to your first and last name.\n\t6. Find the contact infomration of your subsystem lead or director. Send a message/email asking for access to Jira.\t7. Go back to OneNote, and at the bottom of your personal page, type \"I have requested access to Jira by contacting [who you contacted].\"",
+      "links": [
+        {
+          "label": "Weekly Meeting",
+          "url": "https://drive.google.com/file/d/1_BzpJJnEQHBNoEvzgNXRGaEl90ZnOBGl/view?usp=sharing",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks"]
+    }
+  ],
+  "extraResources": []
+}

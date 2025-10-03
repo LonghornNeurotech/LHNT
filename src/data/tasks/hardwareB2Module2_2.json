@@ -1,0 +1,26 @@
+{
+  "block": "hardwareB2",
+  "module": "2_2",
+  "moduleTitle": "Module 2.2: CAD Skills",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Rendering is the process of generating visual representations from a model using computer software. It involves transforming data, such as 3D models or simulations, into images, animations, or stimulations that can be viewed and analyzed."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video below and follow the steps to complete rendering.",
+      "videos": [
+        {
+          "title": "CAD Rendering Tutorial",
+          "url": "https://www.youtube.com/embed/CzlnmYOwaIw",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

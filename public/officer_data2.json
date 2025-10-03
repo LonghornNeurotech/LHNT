@@ -1,0 +1,225 @@
+[
+    {
+      "_id": "1",
+      "name": "Taima Crean",
+      "major": "Biomedical Engineering",
+      "graduationYear": 2025,
+      "photo": "/OfficerImages/Taima_Crean.jpg",
+      "cohorts": [
+        {
+          "year": 2024,
+          "role": "President"
+        }
+      ],
+      "bio": "She's one of the co-founder of Longhorn Neurotech.",
+      "contacts": 
+      {
+        "email": "temp@gmail.com",
+        "phone": "temp",
+        "linkedin": "https://www.linkedin.com/in/taima00"
+      }
+    },
+    {
+        "_id": "2",
+        "name": "Holland Ernst",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2025,
+        "photo": "/OfficerImages/holland1.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "Captain"
+          }
+        ],
+        "bio": "He's one of the co-founder of Longhorn Neurotech.",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/holland-ernst"
+        }
+    },
+    {
+        "_id": "3",
+        "name": "Julian Weaver",
+        "major": "Neuroscience & CS",
+        "graduationYear": 2025,
+        "photo": "/OfficerImages/julian-weaver.jpeg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "R&D Lead"
+          }
+        ],
+        "bio": "He leads Longhorn Neurotech's journal club with individual members who develop their own research projects! He also hosts the Longhorn Neurotech symposium event, featuring neuroscience lectures and journal club discussions, every Friday!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/julian-weaver"
+        }
+    },
+    {
+        "_id": "4",
+        "name": "Tony Chae",
+        "major": "Electrical & Computer Engineering",
+        "graduationYear": 2025,
+        "photo": "/OfficerImages/tony_chae.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "VP of Outreach"
+          }
+        ],
+        "bio": "He actively connects Longhorn Neurotech to a range of sponsors for our organizations and helps raise funds to support each project team's projects!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/tony-chae-3bb600249"
+        }
+    },      
+    {
+        "_id": "5",
+        "name": "Debarghya Chaki",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2026,
+        "photo": "/OfficerImages/Chaki.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "VP of Finance"
+          }
+        ],
+        "bio": "If you ever need to pay your member dues, reach out to him and pay either in Cash or through Venmo. These funds that he collects help pay for the materials needed for each project team's projects!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/dchaki"
+        }
+    },
+    {
+        "_id": "6",
+        "name": "Tarun Dasari",
+        "major": "Placeholder",
+        "graduationYear": -1,
+        "photo": "/OfficerImages/Tarun_Desari.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "VP of Operations"
+          }
+        ],
+        "bio": "He's the go-to guy whenever you have some feedback on how Longhorn Neurotech can improve! He ensures that each project team have clear communication channels for each member to reach out to the right person!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/tsdasari/"
+        }
+    },
+    {
+        "_id": "7",
+        "name": "Alan Fletcher",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2025,
+        "photo": "/OfficerImages/Alan_Fletcher.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "Hardware Lead"
+          }
+        ],
+        "bio": "He leads each project team developing their various range of hardware projects, from virtual reality headsets to a fully functional rover!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/alan-fletcher01"
+        }
+    },
+    {
+        "_id": "8",
+        "name": "Nathan Feldt",
+        "major": "Neuroscience & Math",
+        "graduationYear": 2025,
+        "photo": "/OfficerImages/Nathan_Feldt.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "Software Lead"
+          }
+        ],
+        "bio": "He lead each project team developing their various range of software projects, from collecting EEG signals from the brain to the development of our organization's new website! If you also have any software issue, he's the go-to guy to reach out to have the best chance of getting those issues fixed!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/nathan-feldt-1b6573229"
+        }
+    },
+    {
+        "_id": "9",
+        "name": "Jay Damodaran",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2027,
+        "photo": "/OfficerImages/Jay.png",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "VP of Membership"
+          }
+        ],
+        "bio": "He processes each membership application and helps recruit more members for Longhorn Neurotech!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/jaydamobme"
+        }
+    },
+    {
+        "_id": "10",
+        "name": "Vivek Beeram",
+        "major": "Neuroscience",
+        "graduationYear": 2025,
+        "photo": "/OfficerImages/Vivek_Beeram.jpg",
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "Machine Learning Specialist"
+          }
+        ],
+        "bio": "He leads each of the three machine learning teams to help process the EEG signal collected from the EEG Signal Subsystem Team into useful data!",
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": "https://www.linkedin.com/in/vivek-beeram-370852212"
+        }
+    },
+    {
+        "_id": "11",
+        "name": "Test",
+        "major": "Biomedical Engineering",
+        "graduationYear": 2027,
+        "photo": null,
+        "cohorts": [
+          {
+            "year": 2024,
+            "role": "Placeholder"
+          },
+          {
+            "year": 2025,
+            "role": "President"
+          }
+        ],
+        "contacts": 
+        {
+          "email": "temp@gmail.com",
+          "phone": "temp",
+          "linkedin": null
+        }
+    }
+]

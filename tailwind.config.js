@@ -9,6 +9,13 @@ export default {
         primary: "#BF5801",    // Your burnt orange
         secondary: "#FFF8D6",  // Your light cream
         tertiary: "#FFF0C2",   // Your light gold
+
+        // New colors defined by their exact names
+        silver_lake_blue: "#5D89BA",
+        prussian_blue: "#003153",
+        bone_white: "#F9F6EE",
+        vanilla: "#F3E5AB",
+        disabled_status: "rgba(93, 137, 186, 0.13)"
       },
       screens: {
         'sm': '640px',
@@ -66,6 +73,7 @@ export default {
       },
       fontFamily: {
         anton: ['"Anton"', 'sans-serif'],
+        antonio: ['Antonio', 'sans-serif']
       }
     },
   },

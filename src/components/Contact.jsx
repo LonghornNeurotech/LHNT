@@ -1,4 +1,4 @@
-import React from "react";
+/* Contact page */
 import './Contact.css'
 import Swal from 'sweetalert2'
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';

@@ -1,0 +1,27 @@
+{
+  "block": "hardwareB2",
+  "module": "1_1",
+  "moduleTitle": "Module 1.1: Advanced CAD",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "3D CAD (Computer-Aided Design) is used in hardware design to create, visualize, and simulate mechanical components, enclosures, and assemblies in a digital environment. It enables engineers to optimize designs for manufacturability, thermal management, and structural integrity before production."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this [article] and answer the following questions.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.meegle.com/en_us/topics/hardware/cad-software-for-hardware-design",
+          "required": true
+        }
+      ],
+      "quizId": "hardwareB2Module1_1",
+      "requiredActions": ["clickLinks", "completeQuiz"]
+    }
+  ],
+  "extraResources": []
+}

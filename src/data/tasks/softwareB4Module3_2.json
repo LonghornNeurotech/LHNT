@@ -1,0 +1,81 @@
+{
+  "block": "softwareB4",
+  "module": "3_2",
+  "moduleTitle": "Module 3.2: EFast Fourier Transform (FFT)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Fourier Transforms (FT) are a powerful tool for analyzing signals by converting them from the time domain to the frequency domain. This allows for the identification of dominant frequencies, filtering of noise, and extraction of meaningful patterns from complex data. In neurotechnology, they help analyze EEG and fMRI signals, detecting neural oscillations and brain activity. This improves signal clarity and enhances neural signal processing applications."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this [article], which can be accessed using your utexas email, to get an understanding of fast FT and complete the GitHub 4.3.2 [Lesson].  Submit a screenshot of your progress throughout the module.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/016516849090158U",
+          "required": true
+        },
+        {
+          "label": "Lesson",
+          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%204",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": [
+    {
+      "type": "text",
+      "text": "When it comes to machine learning, there’s always more to learn. We encourage you to have conversations, ask questions, and choose curiosity during this process, and do not hesitate to reach out if you have any questions!"
+    },
+    {
+      "type": "text",
+      "text": "[Machine Learning by StatQuest YouTube Playlist]",
+      "links": [
+        {
+          "label": "Machine Learning by StatQuest YouTube Playlist",
+          "url": "youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=BEpayFYgj1Dx8OIC"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "[FreeCodeCamp YouTube Channel]",
+      "links": [
+        {
+          "label": "FreeCodeCamp YouTube Channel",
+          "url": "https://www.youtube.com/@freecodecamp"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "[Google Teachable Machine (for fun!)]",
+      "links": [
+        {
+          "label": "Google Teachable Machine (for fun!)",
+          "url": "https://teachablemachine.withgoogle.com/train"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "[https://www.3blue1brown.com/topics/linear-algebra]",
+      "links": [
+        {
+          "label": "https://www.3blue1brown.com/topics/linear-algebra",
+          "url": "https://www.3blue1brown.com/topics/linear-algebra"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "title": "Machine Learning by StatQuest YouTube Playlist",
+      "url": "https://www.youtube.com/embed/videoseries?si=BlfQiaFslOVs0oI0&amp;list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF"
+    }
+  ]
+}

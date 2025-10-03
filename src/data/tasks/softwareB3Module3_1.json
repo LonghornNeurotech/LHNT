@@ -1,0 +1,38 @@
+{
+  "block": "softwareB3",
+  "module": "3_1",
+  "moduleTitle": "Module 3.1: t-SNE",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "t-Distributed Stochastic Neighbor Embedding (t-SNE) is a dimensionality reduction algorithm used in software pipelines for visualizing high-dimensional neural data. It helps cluster similar neural activity patterns, making it useful for feature exploration and anomaly detection in brain signal processing."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this [article] to understand t-SNE and watch these videos to help you get a better understanding:",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.datacamp.com/tutorial/introduction-t-sne",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "StatQuest: t-SNE, Clearly Explained",
+          "url": "https://www.youtube.com/embed/NEaUSP4YerM",
+          "required": true
+        },
+        {
+          "title": "tSNE",
+          "url": "https://www.youtube.com/embed/p3wFE85dAyY",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

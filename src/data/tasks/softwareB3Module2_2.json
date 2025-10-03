@@ -1,0 +1,31 @@
+{
+  "block": "softwareB3",
+  "module": "2_2",
+  "moduleTitle": "Module 2.2: Fourier Transforms",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Fourier Transforms (FT) are a powerful tool for analyzing signals by converting them from the time domain to the frequency domain. This allows for the identification of dominant frequencies, filtering of noise, and extraction of meaningful patterns from complex data. In neurotechnology, they help analyze EEG and fMRI signals, detecting neural oscillations and brain activity. This improves signal clarity and enhances neural signal processing applications."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this [article], which you can access using your utexas email, to get an understanding of fast FT and complete the GitHub 3.2.2 [Lesson].  Submit a screenshot of your progress throughout the module",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/016516849090158U",
+          "required": true
+        },
+        {
+          "label": "Lesson",
+          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%203",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

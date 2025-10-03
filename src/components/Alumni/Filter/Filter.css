@@ -1,0 +1,68 @@
+.form-group {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.multiselect {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Set a fixed width for the multiselect box */
+}
+
+.selectBox {
+    position: relative;
+    width: 100%;
+}
+
+.selectBox select {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.checkboxes {
+    display: block;
+    border: 1px #dadada solid;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    max-height: 200px; /* Set a maximum height for the checkboxes container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.checkboxes label {
+    display: block; /* Ensure each label appears on a new line */
+    padding: 5px; /* Optional: Add some padding for better readability */
+}
+
+#dropDownOptions {
+    border: 3px solid #783700; /* Dropper Approximation, refer to design doc for correct color */
+    background-color: #fff8d6; /* Approximation, refer to design doc for correct color */
+}
+
+#selectBoxLabel {
+    background-color: #bf5801; /* Dropper Approximation, refer to design doc for correct color */
+    color: #fff8d6; /* Dropper Approximation, refer to design doc for correct color */
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 3px #783700;
+}
+
+.optionText {
+    color: black; /* Dropper Approximation, refer to design doc for correct color */
+}
+
+.optionText:hover {
+    background-color: #783700; /* Dropper Approximation, refer to design doc for correct color */
+    color: white; /* Dropper Approximation, refer to design doc for correct color */
+}

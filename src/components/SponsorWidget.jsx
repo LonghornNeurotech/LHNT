@@ -1,4 +1,4 @@
-import React from "react";
+// This is the footer that displays all of Longhorn Neurotech's sponsors!
 import { Link } from "react-router-dom";
 
 const SponsorsWidget = () => {

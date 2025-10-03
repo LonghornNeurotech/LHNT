@@ -1,0 +1,26 @@
+{
+  "block": "softwareB4",
+  "module": "3_1",
+  "moduleTitle": "Module 3.1: Bandpass Filtering, Segmentation, Normalization",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Bandpass filtering extracts signals within a specific frequency range, removing unwanted noise. Segmentation divides data into meaningful sections, such as time windows in EEG analysis. Normalization scales data to a standard range, improving consistency in machine learning and signal processing."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Follow along on the GitHub 4.3.1 Lesson [here] to better understand bandpass and notch filtering signal processing. Submit a screenshot of your progress throughout the module.",
+      "links": [
+        {
+          "label": "here",
+          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%204",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

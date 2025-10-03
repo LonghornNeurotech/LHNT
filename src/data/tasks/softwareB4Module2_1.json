@@ -1,0 +1,26 @@
+{
+  "block": "softwareB4",
+  "module": "2_1",
+  "moduleTitle": "Module 2.1: PyTorch",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "PyTorch is an open-source deep learning framework developed by Meta (formerly Facebook) that provides flexibility and efficiency for building and training neural networks. It is widely used for research and production due to its dynamic computation graph, GPU acceleration, and ease of use with Python."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Follow along on the GitHub 4.2.1 Lesson and Practice [here] to practice using Pytorch for linear regression. Submit a screenshot of your progress throughout the module.",
+      "links": [
+        {
+          "label": "here",
+          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%204",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

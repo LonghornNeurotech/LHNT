@@ -1,0 +1,38 @@
+{
+  "block": "softwareB3",
+  "module": "3_2",
+  "moduleTitle": "Module 3.2: PCA",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Principal Component Analysis (PCA) enhances software efficiency by reducing the dimensionality of neural datasets while preserving key variance. It is commonly used for noise reduction, feature extraction, and optimizing machine learning models in neurotechnology applications."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this [article] to learn more about PCA, and watch the following videos to get a better understanding.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.geeksforgeeks.org/data-analysis/principal-component-analysis-pca/",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "StatQuest: Principal Component Analysis (PCA), Step-by-Step",
+          "url": "https://www.youtube.com/embed/FgakZw6K1QQ",
+          "required": true
+        },
+        {
+          "title": "StatQuest: PCA main ideas in only 5 minutes!!!",
+          "url": "https://www.youtube.com/embed/HMOI_lkzW08",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

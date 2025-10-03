@@ -1,0 +1,33 @@
+{
+  "block": "hardwareB3",
+  "module": "2_4",
+  "moduleTitle": "Module 2.4: KiCad",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "KiCad is an open-source electronics design automation (EDA) software used for creating schematics and printed circuit boards (PCBs). In neurotechnology, it is valuable for designing custom PCBs for brain-computer interfaces (BCIs), neural stimulators, and biosignal acquisition devices. Its powerful tools support complex, high-density circuit layouts essential for integrating low-noise amplifiers, microcontrollers, and wireless communication modules."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": " Use this link to download [KiCad] and watch this instructional video",
+      "links": [
+        {
+          "label": "KiCad",
+          "url": "https://www.kicad.org/download/",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "Getting Started with KiCad: Download and Installation Guide",
+          "url": "https://www.youtube.com/embed/rikH8tPhszk",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

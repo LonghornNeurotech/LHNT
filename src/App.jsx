@@ -1,24 +1,64 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { Home, About, Contact, Navbar, Events } from "./components";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { Home, About, Contact, Navbar, Events, Login, MemberHome, ProgramsMenu} from "./components";
+import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import OnboardingRouter to help control which onboarding pages content gets displayed!
+import OnboardingRouter from "./components/onboarding/OnboardingRouter";
+
+/*
+  Implement AuthProvider to manage authentication state of the user
+  throughout the Longhorn Neurotech website!
+*/
+import { AuthProvider } from "./context/AuthProvider";
+
 const App = () => {
   return (
-    <Router>
-      <div>
-        <Navbar />
+    <AuthProvider>
+      <Router>
         <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/events" element={<Events />} />
-          </Routes>
+          <Navbar />
+          <div>
+            <Routes>
+              {/* Public routes: open to anyone not logged in! */}
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/login" element={<Login />} />
+
+              {/* Member-only routes: open to only logged in members! */}
+              <Route
+                path="/member"
+                element={
+                  <MemberRoute>
+                    <MemberHome />
+                  </MemberRoute>
+                }
+              />
+              <Route
+                path="/programs"
+                element={
+                  <MemberRoute>
+                    <ProgramsMenu />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
+                path="/onboarding/:onboardingBlock/:moduleSubmodule"
+                element={
+                  <MemberRoute>
+                    <OnboardingRouter />
+                  </MemberRoute>
+                }
+              />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 };
 

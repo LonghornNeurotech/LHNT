@@ -1,3 +1,4 @@
+/* Events page */
 import { useState, useEffect } from 'react';
 import eventsData from './Events/eventsData';
 import { EventsDisplay, Filter } from './Events/events';
@@ -71,6 +72,12 @@ const Events = () => {
     return (
         <>
             <div style={{backgroundColor: PRUSSIAN_BLUE}} className="min-h-screen pt-10 pb-4">
+
+                {/* Texas Neurotech BCI Competition Banner */}
+                <div className="flex justify-center mt-4 mx-4">
+                    <img src="/public/assets/events/Competition Banner.png" className="rounded-2xl m-auto"></img>
+                </div>
+
                 <h1 style={{color: VANILLA, lineHeight: "125%", letterSpacing: "0.02em"}} className="text-6xl font-bold text-center pt-3 heading">
                     See what Longhorn Neurotech is Up To!
                 </h1>
@@ -124,6 +131,7 @@ const Events = () => {
                     </div>
                 </div>
 
+                
                 {/* Events Section */}
                 <div className="flex flex-col items-center max-w-[1400px] mx-auto my-8 px-4">
                     <div className="flex flex-row items-center justify-between w-full mb-4">

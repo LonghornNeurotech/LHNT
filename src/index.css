@@ -19,3 +19,19 @@
     font-family: 'Antonio', sans-serif;
     font-weight: 400;
 }
+
+/* Hide default but allow scrolling, or show a thin scroll */
+.module-page, .main-content-area  {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #fff;
+}
+
+.module-page::-webkit-scrollbar, .main-content-area::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.module-page::-webkit-scrollbar-thumb, .main-content-area::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}

@@ -1,0 +1,43 @@
+{
+  "block": "hardwareB1",
+  "module": "2_1",
+  "moduleTitle": "Module 2.1: Fusion 360 (CAD)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Fusion 360 is a powerful all-in-one CAD tool that combines design, engineering, simulation, and manufacturing into a seamless platform. With its ability to create detailed 3D models, perform stress and thermal simulations, and integrate directly with CNC machining processes, Fusion 360 is an essential tool for modern design and prototyping. Its parametric design capabilities make it easy to refine and adjust models, while cloud-based storage enables real-time collaboration and access from anywhere."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Use this link to download [Fusion]. If you don’t have an account, use your UT credentials to make one. Next, watch the videos below and follow the tutorials.",
+      "links": [
+        {
+          "label": "Fusion",
+          "url": "https://www.autodesk.com/education/edu-software/overview#FSN",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "Day 1 of Learn Fusion 360 in 30 Days for Complete Beginners! - 2023 EDITION",
+          "url": "https://www.youtube.com/embed/d3qGQ2utl2A",
+          "required": true
+        },
+        {
+          "title": "Day 2 of Learn Fusion 360 in 30 Days for Complete Beginners! - 2023 EDITION",
+          "url": "https://www.youtube.com/embed/DfAfxae8aRc",
+          "required": true
+        },
+        {
+          "title": "Day 3 of Learn Fusion 360 in 30 Days for Complete Beginners! - 2023 EDITION",
+          "url": "https://www.youtube.com/embed/ZReXmjT42DM",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

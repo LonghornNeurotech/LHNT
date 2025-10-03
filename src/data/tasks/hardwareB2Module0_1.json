@@ -1,0 +1,57 @@
+{
+  "block": "hardwareB2",
+  "module": "0_1",
+  "moduleTitle": "Module 0.1: Welcome to Longhorn Neurotech Onboarding!",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "We’re so excited to have you here. Longhorn Neurotechnology (LHNT) isn’t just a student organization; it’s a place to learn, build, and explore the future of neurotech together."
+    },
+    {
+      "type": "text",
+      "text": "Why Onboarding?"
+    },
+    {
+      "type": "text",
+      "text": "Our goal is to make sure every new member gains real, hands-on knowledge in the areas that power LHNT’s teams: hardware, software, and research."
+    },
+    {
+      "type": "text",
+      "text": "Onboarding helps you build a strong technical foundation and experience working within teams, so when spring comes around, you’ll be ready to join one of our official project teams."
+    },
+    {
+      "type": "text",
+      "text": "How It Works:"
+    },
+    {
+      "type": "text",
+      "text": "1) General Skills Block: Everyone completes these core modules to get familiar with either hardware or software basics."
+    },
+    {
+      "type": "text",
+      "text": "2) Specific Skills Blocks: You’ll work through training tailored to the skillset you were admitted to."
+    },
+    {
+      "type": "text",
+      "text": "3) Onboarding Competition (October to December): Teams of new members will take on a relevant, hands-on neurotech challenge. Projects will be ranked by our leadership, and the results will help determine spring team placements."
+    },
+    {
+      "type": "text",
+      "text": "What’s Next?"
+    },
+    {
+      "type": "text",
+      "text": "* Complete your modules → Team up for the competition → Join your spring project team!"
+    },
+    {
+      "type": "text",
+      "text": "* Along the way, you’ll gain experience you can put on your CV and the confidence to contribute meaningfully to real neurotech projects."
+    },
+    {
+      "type": "text",
+      "text": "We’re so excited to see what you’ll create. Welcome to the future of neurotechnology at UT!"
+    }
+  ],
+  "tasks": [],
+  "extraResources": []
+}

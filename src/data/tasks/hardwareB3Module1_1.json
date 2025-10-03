@@ -1,0 +1,27 @@
+{
+  "block": "hardwareB3",
+  "module": "1_1",
+  "moduleTitle": "Module 1.1: Breadboard",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "A breadboard is a fundamental tool in electronics, allowing for rapid prototyping, circuit testing, and component integration without soldering. In neurotech applications, it enables the development of low-noise amplifiers, signal conditioning circuits, and biosensor interfaces, ensuring reliable testing before final implementation in brain-computer interfaces (BCIs) and neural recording systems."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video and answer the following questions.",
+      "videos": [
+        {
+          "title": "How to Use a Breadboard",
+          "url": "https://www.youtube.com/embed/6WReFkfrUIk",
+          "required": true
+        }
+      ],
+      "quizId": "hardwareB3Module1_1",
+      "requiredActions": ["watchVideos", "completeQuiz"]
+    }
+  ],
+  "extraResources": []
+}
