@@ -1,0 +1,19 @@
+{
+  "block": "hardwareB2",
+  "module": "3_4",
+  "moduleTitle": "Module 3.4: TIW Training - SLA 3D Printing Training",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "SLA (Stereolithography) printing uses light to cure liquid resin into detailed, solid objects. It is ideal for high-precision applications like dental models or fine prototypes."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Complete the \"SLA 3D Printing\" module on Canvas and submit a screenshot of completion.",
+      "requiredActions": ["uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

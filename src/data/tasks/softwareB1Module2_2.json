@@ -1,0 +1,38 @@
+{
+  "block": "softwareB1",
+  "module": "2_2",
+  "moduleTitle": "Module 2.2: Numpy and Time Series",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "These 3 Python libraries below play a crucial role in our software-based projects!"
+    },
+    {
+      "type": "text",
+      "text": "- NumPy is a fundamental package for scientific computing in Python. It provides support for large, multi-dimensional arrays and matrices."
+    },
+    {
+      "type": "text",
+      "text": "- SciPy builds on NumPy and provides additional functionality for scientific computing, including signal processing tools."
+    },
+    {
+      "type": "text",
+      "text": "- MNE-Python is an open-source package for processing EEG and MEG data."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video to learn about how to use Numpy.",
+      "videos": [
+        {
+          "title": "NumPy for Beginners in 15 minutes | Python Crash Course",
+          "url": "https://www.youtube.com/embed/uRsE5WGiKWo",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

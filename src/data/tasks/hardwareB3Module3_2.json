@@ -1,0 +1,14 @@
+{
+  "block": "hardwareB3",
+  "module": "3_2",
+  "moduleTitle": "Module 3.2: TIW Training - Basic Soldering Training (E1)",
+  "infoSections": [],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Complete the \"Basic Soldering Training (E1)\" module on Canvas and submit a screenshot of completion.",
+      "requiredActions": ["uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}

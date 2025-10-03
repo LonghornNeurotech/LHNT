@@ -1,0 +1,31 @@
+{
+  "block": "hardwareB3",
+  "module": "2_3",
+  "moduleTitle": "Module 2.3: Eagle PCB",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Eagle PCB (Printed Circuit Board) design software is essential for electronics development, enabling the creation of custom circuit layouts, schematic design, and multi-layer PCB prototyping. In neurotech, it is used to design compact, low-noise PCBs for brain-computer interfaces (BCIs), biosignal amplifiers, and neural recording systems, ensuring high precision and signal integrity in advanced neuroelectronic devices."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video to learn how to access Autodesk Eagle from Fusion 360, which you should have already downloaded in Block 1. Then, watch this video to learn how to make a PCB.",
+      "videos": [
+        {
+          "title": "Import EAGLE files into Fusion 360",
+          "url": "https://www.youtube.com/embed/TjgqGNcewZg",
+          "required": true
+        },
+        {
+          "title": "Place & Connect Components | Autodesk Fusion Electronics for Beginners",
+          "url": "https://www.youtube.com/embed/cplzhrjvXCQ",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

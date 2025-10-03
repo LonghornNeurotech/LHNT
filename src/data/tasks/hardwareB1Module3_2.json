@@ -1,0 +1,26 @@
+{
+  "block": "hardwareB1",
+  "module": "3_1",
+  "moduleTitle": "Module 3.1: Basics (Ohm's Law, Components, Schematics, Breadboard)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "A PCB (Printed Circuit Board) schematic is a diagram that represents the electrical components and their connections in a circuit design, specifically for a PCB. It visually shows how each component, such as resistors, capacitors, diodes, transistors, etc., is interconnected through electrical traces (wires) and how the circuit functions."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video and follow the steps to design a PCB schematic using Fusion.",
+      "videos": [
+        {
+          "title": "Place & Connect Components | Autodesk Fusion Electronics for Beginners",
+          "url": "https://www.youtube.com/embed/cplzhrjvXCQ",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

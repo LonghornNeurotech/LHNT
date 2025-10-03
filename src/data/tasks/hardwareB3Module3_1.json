@@ -1,0 +1,26 @@
+{
+  "block": "hardwareB3",
+  "module": "3_1",
+  "moduleTitle": "Module 3.1: Soldering",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Soldering is the process of joining electronic components by melting a metal alloy (solder) to create a strong electrical connection between wires, circuit boards, and sensors. In neurotechnology, soldering is essential for assembling and repairing devices like EEG headsets, EMG-controlled systems, and neural implants, which rely on precise, low-resistance connections to accurately transmit bioelectrical signals"
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video to learn the basics of soldering",
+      "videos": [
+        {
+          "title": "Soldering Tutorial for Beginners: Five Easy Steps",
+          "url": "https://www.youtube.com/embed/TjgqGNcewZg",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

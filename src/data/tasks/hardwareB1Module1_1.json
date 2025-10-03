@@ -1,0 +1,48 @@
+{
+  "block": "hardwareB1",
+  "module": "1_1",
+  "moduleTitle": "Module 1.1: Documentation",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Documenting hardware medical devices is essential for regulatory compliance, traceability, and patient safety. It ensures consistent manufacturing and proper uses, and facilitates troubleshooting by providing clear records of design, testing, and production. Documentation also supports knowledge transfer, legal protection, and innovation, enabling improvements and adherence to industry standards."
+    },
+    {
+      "type": "text",
+      "text": "ISO 13485 is an international standard that outlines quality management system (QMS) requirements for medical device manufacturers."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Read this [article] and answer the following questions.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://www.meddeviceonline.com/doc/a-brief-guide-to-iso-s-design-controls-in-medical-device-development-0001",
+          "required": true
+        }
+      ],
+      "quizId": "hardwareB1Module1_1",
+      "requiredActions": ["clickLinks", "completeQuiz"]
+    },
+    {
+      "taskTitle": "Task 2",
+      "taskDescription": "Read both the following [\"Requirement Specifications\" document] and [\"Design Specifications\" document]. There are no required questions for these documents, but here are some things to look out for: Formatting (look at the order of titles, the numbering, etc.), Writing tone, and the way the information is presented (read through both of them and understand how this serves as an example of proper documentation)",
+      "links": [
+        {
+          "label": "\"Requirement Specifications\" document",
+          "url": "https://docs.google.com/document/d/1G_dPJwNa2U-PZIh893eeqdzHbfUyghzF/edit?usp=sharing&ouid=101455201241381428188&rtpof=true&sd=true",
+          "required": true
+        },
+        {
+          "label": "\"Design Specifications\" document",
+          "url": "https://docs.google.com/document/d/1-22l283_OHTqTtYtOvUHrSpTG24wh6fD/edit?usp=sharing&ouid=101455201241381428188&rtpof=true&sd=true",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks"]
+    }
+  ],
+  "extraResources": []
+}

@@ -1,0 +1,37 @@
+{
+  "block": "hardwareB1",
+  "module": "3_1",
+  "moduleTitle": "Module 3.1: Basics (Ohm's Law, Components, Schematics, Breadboard)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Ohm’s Law states the relationship between voltage (V), current (I), and resistance (R) in an electrical circuit: V = I x R"
+    },
+    {
+      "type": "text",
+      "text": "\tVoltage (V) is the electrical potential difference, measured in volts (V)."
+    },
+    {
+      "type": "text",
+      "text": "\tCurrent (I) is the flow of electric charge, measured in amperes (A)."
+    },
+    {
+      "type": "text",
+      "text": "\tResistance (R) is the opposition to current flow, measured in ohms (Ω)."
+    },
+    {
+      "type": "text",
+      "text": "Common components in circuits include:\n\t- Resistor: Limits the flow of current.\n\t- Capacitor: Stores and releases electrical energy.\n\t- Inductor: Resists changes in current.\n\t- Diode: Allows current to flow in one direction only.\n\t- Transistor: Acts as a switch or amplifier.\n\t- Battery: Provides the power (voltage) for the circuit."
+    },
+    {
+      "type": "text",
+      "text": "Schematics are graphical representations of circuits. They use symbols for each component (e.g., a zigzag line for resistors, a triangle for transistors) to show how components are connected. These diagrams help engineers and technicians design, analyze, and troubleshoot circuits."
+    },
+    {
+      "type": "text",
+      "text": "A breadboard is a tool used for prototyping electronic circuits without soldering. It consists of a grid of holes that are electrically connected in rows and columns, allowing components to be placed and connected easily. Components are inserted into the breadboard to create temporary circuits for testing." 
+    }
+  ],
+  "tasks": [],
+  "extraResources": []
+}

@@ -1,0 +1,45 @@
+{
+  "block": "hardwareB2",
+  "module": "1_3",
+  "moduleTitle": "Module 1.3: MeshLab",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "MeshLab is software for editing and optimizing 3D meshes. It is commonly used in 3D scanning, reverse engineering, and digital fabrication. In neurotechnology, it refines brain models and neural implant designs by cleaning and analyzing complex geometries."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Download Meshlab and watch this video on the basic navigation system. Next, watch this video on filtering cleaning.",
+      "videos": [
+        {
+          "title": "Basic Navigation System",
+          "url": "https://www.youtube.com/embed/Sl0vJfmj5LQ",
+          "required": true
+        },
+        {
+          "title": "Filtering and Cleaning",
+          "url": "https://www.youtube.com/embed/j9EKk3Bs1TQ",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    },
+    {
+      "taskTitle": "Task 2",
+      "taskDescription": "Read the entire following document and answer the following questions.",
+      "documents": [
+        {
+          "title": "MeshLab Tutorial PDF",
+          "url": "https://engineering.purdue.edu/ZhangLab/publications/papers/2024-MeshLab_tutorial.pdf",
+          "fileType": "pdf",
+          "required": true
+        }
+      ],
+      "quizId": "hardwareB2Module1_3",
+      "requiredActions": ["readDocuments", "completeQuiz"]
+    }
+  ],
+  "extraResources": []
+}

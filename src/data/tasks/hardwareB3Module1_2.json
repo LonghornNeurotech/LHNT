@@ -1,0 +1,31 @@
+{
+  "block": "hardwareB3",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: Multimeter",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "A multimeter is an essential tool in electronics, used for measuring voltage, current, resistance, and continuity to diagnose circuit performance and troubleshoot faults. It is critical for verifying power supply stability, component integrity, and signal paths in both analog and digital systems. In neurotech applications, multimeters ensure precise readings in low-noise circuits, electrode connections, and biosensor calibration, helping maintain the accuracy and reliability of brain-computer interfaces (BCIs) and neural signal acquisition systems."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch the following videos and learn how to use a multimeter. The videos have overlapping information, but they complement each other.",
+      "videos": [
+        {
+          "title": "How to Use a Multimeter for Beginners - How to Measure Voltage, Resistance, Continuity and Amps",
+          "url": "https://www.youtube.com/embed/TdUK6RPdIrA",
+          "required": true
+        },
+        {
+          "title": "How to use a multimeter like a pro, the ultimate guide",
+          "url": "https://www.youtube.com/embed/0loXukB302Q",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

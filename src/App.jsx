@@ -4,11 +4,14 @@ import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import OnboardingRouter to help control which onboarding pages content gets displayed!
+import OnboardingRouter from "./components/onboarding/OnboardingRouter";
+
 /*
   Implement AuthProvider to manage authentication state of the user
   throughout the Longhorn Neurotech website!
 */
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthProvider";
 
 const App = () => {
   return (
@@ -39,6 +42,15 @@ const App = () => {
                 element={
                   <MemberRoute>
                     <ProgramsMenu />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
+                path="/onboarding/:onboardingBlock/:moduleSubmodule"
+                element={
+                  <MemberRoute>
+                    <OnboardingRouter />
                   </MemberRoute>
                 }
               />

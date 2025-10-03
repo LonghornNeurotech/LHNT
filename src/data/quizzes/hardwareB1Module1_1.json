@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "question": "What is the primary purpose of design controls in medical device development?",
+    "options": [
+      "Speeding up product development",
+      "Ensuring safety, effectiveness, and compliance",
+      "Reducing manufacturing costs",
+      "Simplifying documentation"
+    ],
+    "correctAnswer": "Ensuring safety, effectiveness, and compliance"
+  },
+  {
+    "id": 2,
+    "question": "Which phase in the design control process ensures that the final product meets user needs and intended uses?",
+    "options": [
+      "Design verification",
+      "Design validation",
+      "Risk analysis",
+      "Design transfer"
+    ],
+    "correctAnswer": "Design validation"
+  },
+  {
+    "id": 3,
+    "question": "What document outlines the general requirements and framework for design controls in medical device development?",
+    "options": [
+      "ISO 14971",
+      "ISO 13485",
+      "FDA 510(k)",
+      "CE Mark Certification"
+    ],
+    "correctAnswer": "ISO 13485"
+  },
+  {
+    "id": 4,
+    "question": "Why is traceability crucial in design controls?",
+    "options": [
+      "To reduce manufacturing time",
+      "To link requirements, design, and testing activities",
+      "To eliminate the need for risk assessments",
+      "To ensure faster market approval"
+    ],
+    "correctAnswer": "To link requirements, design, and testing activities"
+  },
+  {
+    "id": 5,
+    "question": "Which of the following is NOT a part of the design control process?",
+    "options": [
+      "Design planning",
+      "Design output",
+      "Post-market surveillance",
+      "Design verification"
+    ],
+    "correctAnswer": "Post-market surveillance"
+  }
+]

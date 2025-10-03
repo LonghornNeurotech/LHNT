@@ -1,0 +1,31 @@
+{
+  "block": "hardwareB3",
+  "module": "2_2",
+  "moduleTitle": "Module 2.2: ESP32",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "The ESP32 is a powerful microcontroller with Wi-Fi and Bluetooth connectivity, ideal for electronics development, IoT applications, and real-time signal processing. In neurotech, it enables wireless brain-computer interfaces (BCIs), remote biosignal monitoring, and low-power neural data transmission, making it a key tool for developing portable and connected neuroelectronic systems."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch the following videos and learn how an ESP32 can upgrade an Arduino.",
+      "videos": [
+        {
+          "title": "A beginner’s guide to ESP32 | Hardware & coding basics + Wi-Fi server demo",
+          "url": "https://www.youtube.com/embed/UuxBfKA3U5M",
+          "required": true
+        },
+        {
+          "title": "Arduino To ESP32: How to Get Started!",
+          "url": "https://www.youtube.com/embed/UuxBfKA3U5M",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

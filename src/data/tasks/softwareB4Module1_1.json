@@ -1,0 +1,26 @@
+{
+  "block": "softwareB4",
+  "module": "1_1",
+  "moduleTitle": "Module 1.1: Linear Regression and Classification",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Linear regression is used for predicting continuous values by modeling the relationship between variables with a linear equation, while classification is used for predicting categorical outcomes by assigning inputs to predefined classes."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video below to learn about the basics of linear regression and classification. We will go more in-depth into code examples throughout this block.",
+      "videos": [
+        {
+          "title": "All Machine Learning Models Explained in 5 Minutes | Types of ML Models Basics",
+          "url": "https://www.youtube.com/embed/yN7ypxC7838",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "question": "Which of the following is NOT one of the UI systems available in Unity?",
+    "options": [
+      "UI Toolkit",
+      "Unity UI (uGUI)",
+      "IMGUI",
+      "Unreal UI"
+    ],
+    "correctAnswer": "Unreal UI"
+  },
+  {
+    "id": 2,
+    "question": "What is a key advantage of UI Toolkit compared to Unity UI (uGUI) and IMGUI?",
+    "options": [
+      "It is the oldest and most stable UI system",
+      "It is based on standard web technologies for better cross-platform performance",
+      "It is exclusively designed for in-game debugging displays",
+      "It replaces the need for any GameObjects in UI development"
+    ],
+    "correctAnswer": "It is based on standard web technologies for better cross-platform performance"
+  },
+  {
+    "id": 3,
+    "question": "When should you use IMGUI in a Unity project?",
+    "options": [
+      "For developing complex runtime UI for games",
+      "For creating custom Inspectors and in-game debugging displays",
+      "As the primary UI system for all new Unity projects",
+      "For creating mobile-friendly user interfaces"
+    ],
+    "correctAnswer": "For creating custom Inspectors and in-game debugging displays"
+  },
+  {
+    "id": 4,
+    "question": "Which statement best describes the current status of UI Toolkit in Unity?",
+    "options": [
+      "It is the only UI system supported for new Unity projects",
+      "It is still missing some features found in Unity UI (uGUI) and IMGUI",
+      "It is exclusively used for developing UI within the Unity Editor",
+      "It has completely replaced the need for Unity UI (uGUI) and IMGUI"
+    ],
+    "correctAnswer": "It is still missing some features found in Unity UI (uGUI) and IMGUI"
+  },
+  {
+    "id": 5,
+    "question": "What is the main difference between UI Toolkit and Unity UI (uGUI)?",
+    "options": [
+      "UI Toolkit is a retained-mode UI system, while Unity UI (uGUI) is GameObject-based",
+      "Unity UI (uGUI) is designed for web development, while UI Toolkit is for game UI",
+      "UI Toolkit relies on the OnGUI function, while Unity UI (uGUI) does not",
+      "Unity UI (uGUI) is newer and optimized for performance across platforms"
+    ],
+    "correctAnswer": "UI Toolkit is a retained-mode UI system, while Unity UI (uGUI) is GameObject-based"
+  }
+]

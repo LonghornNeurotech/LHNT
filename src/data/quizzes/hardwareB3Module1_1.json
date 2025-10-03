@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "question": "What is the primary function of a breadboard?",
+    "options": [
+      "To permanently solder electronic components together",
+      "To quickly build and modify electronic circuits without soldering",
+      "To store electronic components",
+      "To test circuit resistance"
+    ],
+    "correctAnswer": "To quickly build and modify electronic circuits without soldering"
+  },
+  {
+    "id": 2,
+    "question": "Why are the power rails (buses) on a breadboard typically marked with red and black (or blue) lines?",
+    "options": [
+      "To indicate where LEDs should be placed",
+      "To help identify the positive and negative connections for power distribution",
+      "To show where to insert integrated circuits",
+      "To separate different circuit components"
+    ],
+    "correctAnswer": "To help identify the positive and negative connections for power distribution"
+  },
+  {
+    "id": 3,
+    "question": "What common mistake can prevent an LED from lighting up on a breadboard?",
+    "options": [
+      "Placing the LED leads in different rows",
+      "Using a resistor in the circuit",
+      "Placing the LED in the correct row",
+      "Connecting the LED to the power rail"
+    ],
+    "correctAnswer": "Placing the LED leads in different rows"
+  },
+  {
+    "id": 4,
+    "question": "What is the advantage of using solid-core wire over stranded wire in a breadboard?",
+    "options": [
+      "Solid-core wire is more flexible and bends easily",
+      "Solid-core wire is easier to push into the breadboard and holds connections better",
+      "Stranded wire is too thin to conduct electricity",
+      "Solid-core wire prevents short circuits"
+    ],
+    "correctAnswer": "Solid-core wire is easier to push into the breadboard and holds connections better"
+  },
+  {
+    "id": 5,
+    "question": "How should an integrated circuit (IC) be placed on a breadboard?",
+    "options": [
+      "Across the power rails for maximum stability",
+      "Straddling the middle gap so each row is connected separately",
+      "With all pins inserted into a single row",
+      "At the very edge of the breadboard for easy access"
+    ],
+    "correctAnswer": "Straddling the middle gap so each row is connected separately"
+  }
+]

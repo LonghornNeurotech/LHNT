@@ -1,0 +1,26 @@
+{
+  "block": "hardwareB4",
+  "module": "2_2",
+  "moduleTitle": "Module 2.2: Arduino (Integration of C++ skills)",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "C++ is essential for Arduino because the framework is built on it, and its core functions rely on C++. It enables object-oriented programming, efficient memory management, and high performance, which are crucial for microcontrollers with limited resources. Many Arduino libraries use C++ classes, so understanding the language helps with customization and extending functionality. While basic projects require minimal C++ knowledge, mastering it allows for more advanced and efficient programming."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video and follow along to learn how to code C++ for Arduino.",
+      "videos": [
+        {
+          "title": "Learning to code C/C++ with Arduino: Getting Started Programming in the Arduino IDE",
+          "url": "https://www.youtube.com/embed/C3_KJXB1eVU",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

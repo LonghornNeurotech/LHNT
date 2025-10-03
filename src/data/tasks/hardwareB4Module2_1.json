@@ -1,0 +1,33 @@
+{
+  "block": "hardwareB4",
+  "module": "2_1",
+  "moduleTitle": "Module 2.1: Arduino",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "An Arduino is a versatile microcontroller platform used in electronics development for prototyping, automation, and signal processing through easy-to-use hardware and software. In neurotech applications, it facilitates the development of brain-computer interface (BCI) prototypes, biosignal acquisition systems, and neural stimulation devices, enabling rapid testing and real-time data processing for innovative neuroelectronic solutions."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Download [Arduino] and then watch these videos to understand the user interface of the software. Watch the following video to understand the basic components of Arduino. This will give you a basic idea of the hardware you will be working with.",
+      "links": [
+        {
+          "label": "Arduino",
+          "url": "https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE",
+          "required": true
+        }
+      ],
+      "videos": [
+        {
+          "title": "Arduino 101 - Crash Course w/ Mark Rober",
+          "url": "https://www.youtube.com/embed/yi29dbPnu28",
+          "required": true
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
+    }
+  ],
+  "extraResources": []
+}

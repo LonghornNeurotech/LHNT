@@ -1,0 +1,26 @@
+{
+  "block": "hardwareB4",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: Python",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "Python is a high-level, interpreted programming language known for its simplicity, readability, and versatility. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in web development, data science, artificial intelligence, automation, and scientific computing due to its extensive libraries and ease of use."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch this video to learn the basics of Python and follow along. Submit a picture of your work as you follow the video. If you are proficient in Python, submit a screenshot of a previous project instead.",
+      "videos": [
+        {
+          "title": "Python Full Course for Beginners [2025]",
+          "url": "https://www.youtube.com/embed/K5KVEU3aaeQ",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos", "uploadFiles"]
+    }
+  ],
+  "extraResources": []
+}
