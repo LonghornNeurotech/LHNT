@@ -18,6 +18,118 @@ const TaskCard = ({ task }) => {
   const [readDocuments, setReadDocuments] = useState(new Set());
   const [clickedLinks, setClickedLinks] = useState(new Set());
 
+  // Helper handler function for RichTextWithLinks to call when links are clicked
+  const handleRichTextLinkClick = (linkLabel, isRequired) => {
+    if (isRequired && links) {
+      setClickedLinks(prev => new Set(prev).add(linkLabel));
+    }
+  };
+
+  // Function to parse formatted text with markdown-like syntax
+  const parseFormattedText = (text, links = []) => {
+    if (!text) return null;
+
+    // Split by actual newlines directly
+    const lines = text.split('\n');
+    
+    const elements = [];
+    let listType = null; // 'ul' or 'ol'
+    let listItems = [];
+    let keyCounter = 0;
+
+    // Helper function to close current list block
+    const flushList = () => {
+      if (!listType || listItems.length === 0) return;
+      
+      if (listType === "ul") {
+        elements.push(
+          <ul key={`list-${keyCounter++}`} className="list-disc list-outside ml-10 mb-4">
+            {listItems.map((item, idx) => (
+              <li key={`ul-item-${idx}`} className="mb-1">
+                <RichTextWithLinks 
+                  text={item} 
+                  links={links} 
+                  onLinkClick={handleRichTextLinkClick}
+                />
+              </li>
+            ))}
+          </ul>
+        );
+      } else if (listType === "ol") {
+        elements.push(
+          <ol key={`list-${keyCounter++}`} className="list-decimal list-outside ml-10 mb-4">
+            {listItems.map((item, idx) => (
+              <li key={`ol-item-${idx}`} className="mb-1">
+                <RichTextWithLinks 
+                  text={item} 
+                  links={links} 
+                  onLinkClick={handleRichTextLinkClick}
+                />
+              </li>
+            ))}
+          </ol>
+        );
+      }
+      
+      listType = null;
+      listItems = [];
+    };
+
+    lines.forEach((line) => {
+      const trimmed = line.trim();
+
+      // Capture the full content after * including spaces and text
+      const unorderedMatch = /^(\s*)\*\s+(.*)$/.exec(line);
+      
+      // Capture the full content after the number including spaces and text
+      const orderedMatch = /^(\s*)(\d+)[.)]\s+(.*)$/.exec(line);
+
+      if (unorderedMatch) {
+        // Flush previous list if different type
+        if (listType !== "ul") flushList();
+        listType = "ul";
+        
+        // Preserve the full content as captured by regex group 2
+        listItems.push(unorderedMatch[2]);
+        
+      } else if (orderedMatch) {
+        // Flush previous list if different type
+        if (listType !== "ol") flushList();
+        listType = "ol";
+        
+        // Preserve the full content as captured by regex group 3
+        listItems.push(orderedMatch[3]);
+        
+      } else if (trimmed === "") {
+        // Empty line means flush list and add spacing
+        flushList();
+        elements.push(<div key={`spacer-${keyCounter++}`} className="mb-3"></div>);
+        
+      } else {
+        // Normal paragraph or line, flush list first
+        flushList();
+        
+        // Convert tabs to spaces and preserve formatting
+        const processedLine = line.replace(/\t/g, '    ');
+        
+        elements.push(
+          <div key={`text-${keyCounter++}`} className="mb-2" style={{ whiteSpace: "pre-wrap" }}>
+            <RichTextWithLinks 
+              text={processedLine} 
+              links={links} 
+              onLinkClick={handleRichTextLinkClick}
+            />
+          </div>
+        );
+      }
+    });
+
+    // Flush any remaining list
+    flushList();
+
+    return elements.length > 0 ? <div>{elements}</div> : null;
+  };
+
   useEffect(() => {
     // Initialize quiz data if needed
     if (requiredActions.includes("completeQuiz") && quizId) {
@@ -54,13 +166,6 @@ const TaskCard = ({ task }) => {
   const handleDocumentRead = (docTitle, isRequired) => {
     if (isRequired) {
       setReadDocuments(prev => new Set(prev).add(docTitle));
-    }
-  };
-
-  // Handler for RichTextWithLinks to call when links are clicked
-  const handleRichTextLinkClick = (linkLabel, isRequired) => {
-    if (isRequired && links) {
-      setClickedLinks(prev => new Set(prev).add(linkLabel));
     }
   };
 
@@ -145,13 +250,9 @@ const TaskCard = ({ task }) => {
         <CompletionIcon completed={isTaskComplete} />
       </div>
 
-      {/* Task Description */}
+      {/* Task Description - Now with formatted text parsing */}
       <div className="mb-6">
-        <RichTextWithLinks 
-          text={taskDescription || ""} 
-          links={links || []}
-          onLinkClick={handleRichTextLinkClick}
-        />
+        {parseFormattedText(taskDescription || "", links || [])}
       </div>
 
       {/* Success Message for Completed Task */}
