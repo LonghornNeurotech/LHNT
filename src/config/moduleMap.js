@@ -60,7 +60,7 @@ const moduleMap = {
         path: "/onboarding/softwareB2/0_3"
       },
       "1_1": {
-        title: "Module 1.1: C#",
+        title: "Module 1.1: C++",
         path: "/onboarding/softwareB2/1_1"
       },
       "2_1": {

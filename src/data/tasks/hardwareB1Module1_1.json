@@ -28,7 +28,7 @@
     },
     {
       "taskTitle": "Task 2",
-      "taskDescription": "Read both the following [\"Requirement Specifications\" document] and [\"Design Specifications\" document]. There are no required questions for these documents, but here are some things to look out for: \n\t* Formatting (look at the order of titles, the numbering, etc.)\n\t* Writing tone\n\t* the way the information is presented (read through both of them and understand how this serves as an example of proper documentation)",
+      "taskDescription": "Read both the following [\"Requirement Specifications\" document] and [\"Design Specifications\" document]. There are no required questions for these documents, but here are some things to look out for: \n\t* Formatting (look at the order of titles, the numbering, etc.)\n\t* Writing tone\n\t* The way the information is presented (read through both of them and understand how this serves as an example of proper documentation)",
       "links": [
         {
           "label": "\"Requirement Specifications\" document",
