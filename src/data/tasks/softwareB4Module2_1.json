@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "PyTorch is an open-source deep learning framework developed by Meta (formerly Facebook) that provides flexibility and efficiency for building and training neural networks. It is widely used for research and production due to its dynamic computation graph, GPU acceleration, and ease of use with Python."
+      "text": "**PyTorch** is an open-source deep learning framework developed by Meta (formerly Facebook) that provides flexibility and efficiency for building and training neural networks. It is widely used for research and production due to its dynamic computation graph, GPU acceleration, and ease of use with Python."
     }
   ],
   "tasks": [

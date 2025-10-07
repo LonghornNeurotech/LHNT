@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Eagle PCB (Printed Circuit Board) design software is essential for electronics development, enabling the creation of custom circuit layouts, schematic design, and multi-layer PCB prototyping. In neurotech, it is used to design compact, low-noise PCBs for brain-computer interfaces (BCIs), biosignal amplifiers, and neural recording systems, ensuring high precision and signal integrity in advanced neuroelectronic devices."
+      "text": "**Eagle PCB (Printed Circuit Board)** design software is essential for electronics development, enabling the creation of custom circuit layouts, schematic design, and multi-layer PCB prototyping. In neurotech, it is used to design compact, low-noise PCBs for brain-computer interfaces (BCIs), biosignal amplifiers, and neural recording systems, ensuring high precision and signal integrity in advanced neuroelectronic devices."
     }
   ],
   "tasks": [

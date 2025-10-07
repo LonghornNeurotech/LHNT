@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "An oscilloscope is a vital tool in electronics, enabling real-time visualization of voltage signals for circuit debugging, signal integrity analysis, and frequency domain testing. It is crucial for examining waveforms, noise, and transient responses in analog and digital circuits, including low-noise amplifiers, ADCs, and power systems. In neurotech applications, oscilloscopes help analyze neural signals, ensuring precise synchronization, low-noise performance, and EMI reduction in brain-computer interfaces (BCIs) and biosensors."
+      "text": "An **oscilloscope** is a vital tool in electronics, enabling real-time visualization of voltage signals for circuit debugging, signal integrity analysis, and frequency domain testing. It is crucial for examining waveforms, noise, and transient responses in analog and digital circuits, including low-noise amplifiers, ADCs, and power systems. In neurotech applications, oscilloscopes help analyze neural signals, ensuring precise synchronization, low-noise performance, and EMI reduction in brain-computer interfaces (BCIs) and biosensors."
     }
   ],
   "tasks": [

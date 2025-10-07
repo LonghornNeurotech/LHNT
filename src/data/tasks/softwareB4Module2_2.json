@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Convolutional Neural Networks (CNNs) enable advanced analysis of brain signals such as Electroencephalography (EEG) data. By leveraging spatial and temporal patterns, CNNs can efficiently extract meaningful features from raw EEG signals, improving the accuracy of brain-computer interfaces (BCIs) and neurological disorder detection. Their ability to automatically learn representations makes them ideal for real-time applications, from cognitive state monitoring to assistive neuroprosthetic control."
+      "text": "**Convolutional Neural Networks (CNNs)** enable advanced analysis of brain signals such as Electroencephalography (EEG) data. By leveraging spatial and temporal patterns, CNNs can efficiently extract meaningful features from raw EEG signals, improving the accuracy of brain-computer interfaces (BCIs) and neurological disorder detection. Their ability to automatically learn representations makes them ideal for real-time applications, from cognitive state monitoring to assistive neuroprosthetic control."
     }
   ],
   "tasks": [

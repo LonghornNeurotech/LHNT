@@ -5,11 +5,11 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Bandpass filtering allows frequencies within a specific range to pass while attenuating frequencies outside that range. It is used to isolate signals of interest, such as detecting brain wave activity in EEG signals."
+      "text": "**Bandpass filtering** allows frequencies within a specific range to pass while attenuating frequencies outside that range. It is used to isolate signals of interest, such as detecting brain wave activity in EEG signals."
     },
     {
       "type": "text",
-      "text": "Notch filtering (or band-stop filtering) removes a specific frequency range while allowing others to pass. It is useful for eliminating unwanted noise, such as removing 60 Hz power line interference from biosignals."
+      "text": "**Notch filtering** (or **band-stop filtering**) removes a specific frequency range while allowing others to pass. It is useful for eliminating unwanted noise, such as removing 60 Hz power line interference from biosignals."
     },
     {
       "type": "text",
@@ -17,11 +17,11 @@
     },
     {
       "type": "text",
-      "text": "Finite impulse response (FIR) filters only rely on previous inputs to calculate the current filtered output. They have the important property of linear phase, meaning that all frequencies present in the signal have the same delay before being reflected in the output signal. This maintains the timing of frequencies more accurately, but it comes at the cost of requiring a higher filter order for the same specifications (i.e., more past samples are included for the same attenuation)."
+      "text": "**Finite impulse response (FIR) filters** only rely on previous inputs to calculate the current filtered output. They have the important property of linear phase, meaning that all frequencies present in the signal have the same delay before being reflected in the output signal. This maintains the timing of frequencies more accurately, but it comes at the cost of requiring a higher filter order for the same specifications (i.e., more past samples are included for the same attenuation)."
     },
     {
       "type": "text",
-      "text": "Infinite impulse response filters (IIR) do not have linear phase, but they can be designed to have approximately linear phase in the passband of the filter. They don’t require nearly the same order as FIR filters, letting them use fewer multiply and add instructions to execute in code. This makes them an excellent choice for real-time systems."
+      "text": "**Infinite impulse response (IIR) filters** do not have linear phase, but they can be designed to have approximately linear phase in the passband of the filter. They don’t require nearly the same order as FIR filters, letting them use fewer multiply and add instructions to execute in code. This makes them an excellent choice for real-time systems."
     }
   ],
   "tasks": [

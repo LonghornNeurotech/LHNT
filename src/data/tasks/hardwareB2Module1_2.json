@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Blender is an open-source 3D creation software used for modeling, sculpting, rendering, animation, and visual effects. It is used in neurotechnology to model brain structures, simulate neural implants, and visualize complex anatomical data. It helps hardware developers create detailed, accurate representations of neurotech devices, ensuring precise integration with biological systems."
+      "text": "**Blender** is an open-source 3D creation software used for modeling, sculpting, rendering, animation, and visual effects. It is used in neurotechnology to model brain structures, simulate neural implants, and visualize complex anatomical data. It helps hardware developers create detailed, accurate representations of neurotech devices, ensuring precise integration with biological systems."
     }
   ],
   "tasks": [

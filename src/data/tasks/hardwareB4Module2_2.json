@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "C++ is essential for Arduino because the framework is built on it, and its core functions rely on C++. It enables object-oriented programming, efficient memory management, and high performance, which are crucial for microcontrollers with limited resources. Many Arduino libraries use C++ classes, so understanding the language helps with customization and extending functionality. While basic projects require minimal C++ knowledge, mastering it allows for more advanced and efficient programming."
+      "text": "**C++ is essential for Arduino** because the framework is built on it, and its core functions rely on C++. It enables object-oriented programming, efficient memory management, and high performance, which are crucial for microcontrollers with limited resources. Many Arduino libraries use C++ classes, so understanding the language helps with customization and extending functionality. While basic projects require minimal C++ knowledge, mastering it allows for more advanced and efficient programming."
     }
   ],
   "tasks": [

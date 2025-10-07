@@ -5,11 +5,11 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Documenting hardware medical devices is essential for regulatory compliance, traceability, and patient safety. It ensures consistent manufacturing and proper uses, and facilitates troubleshooting by providing clear records of design, testing, and production. Documentation also supports knowledge transfer, legal protection, and innovation, enabling improvements and adherence to industry standards."
+      "text": "**Documenting hardware medical devices** is essential for regulatory compliance, traceability, and patient safety. It ensures consistent manufacturing and proper uses, and facilitates troubleshooting by providing clear records of design, testing, and production. Documentation also supports knowledge transfer, legal protection, and innovation, enabling improvements and adherence to industry standards."
     },
     {
       "type": "text",
-      "text": "ISO 13485 is an international standard that outlines quality management system (QMS) requirements for medical device manufacturers."
+      "text": "**ISO 13485** is an international standard that outlines quality management system (QMS) requirements for medical device manufacturers."
     }
   ],
   "tasks": [

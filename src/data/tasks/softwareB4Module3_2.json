@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Fourier Transforms (FT) are a powerful tool for analyzing signals by converting them from the time domain to the frequency domain. This allows for the identification of dominant frequencies, filtering of noise, and extraction of meaningful patterns from complex data. In neurotechnology, they help analyze EEG and fMRI signals, detecting neural oscillations and brain activity. This improves signal clarity and enhances neural signal processing applications."
+      "text": "**Fourier Transforms (FT)** are a powerful tool for analyzing signals by converting them from the time domain to the frequency domain. This allows for the identification of dominant frequencies, filtering of noise, and extraction of meaningful patterns from complex data. In neurotechnology, they help analyze EEG and fMRI signals, detecting neural oscillations and brain activity. This improves signal clarity and enhances neural signal processing applications."
     }
   ],
   "tasks": [

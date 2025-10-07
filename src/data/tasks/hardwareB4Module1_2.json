@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Python is a high-level, interpreted programming language known for its simplicity, readability, and versatility. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in web development, data science, artificial intelligence, automation, and scientific computing due to its extensive libraries and ease of use."
+      "text": "**Python** is a high-level, interpreted programming language known for its simplicity, readability, and versatility. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in web development, data science, artificial intelligence, automation, and scientific computing due to its extensive libraries and ease of use."
     }
   ],
   "tasks": [

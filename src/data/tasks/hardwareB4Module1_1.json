@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "C++ is a high-performance, general-purpose programming language that extends C by adding object-oriented, generic, and functional programming features. It is widely used for system programming, game development, real-time applications, embedded systems, and high-performance computing. C++ offers fine control over memory and hardware, making it suitable for applications requiring efficiency and speed."
+      "text": "**C++** is a high-performance, general-purpose programming language that extends C by adding object-oriented, generic, and functional programming features. It is widely used for system programming, game development, real-time applications, embedded systems, and high-performance computing. C++ offers fine control over memory and hardware, making it suitable for applications requiring efficiency and speed."
     }
   ],
   "tasks": [

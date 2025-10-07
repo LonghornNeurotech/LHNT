@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "C++ is essential in neurotechnology for its high performance, efficiency, and ability to process complex neural computations in BCIs and neuroimaging. It enables real-time signal processing, machine learning, and hardware optimization, making it crucial for tasks like feature extraction and brain-computer communication. Many neuroscience tools, such as OpenBCI, ITK, and VTK, rely on C++ for their core functions. Learning C++ provides a strong foundation for developing high-performance applications and working with embedded systems in neurotech."
+      "text": "**C++** is essential in neurotechnology for its high performance, efficiency, and ability to process complex neural computations in BCIs and neuroimaging. It enables real-time signal processing, machine learning, and hardware optimization, making it crucial for tasks like feature extraction and brain-computer communication. Many neuroscience tools, such as OpenBCI, ITK, and VTK, rely on C++ for their core functions. Learning C++ provides a strong foundation for developing high-performance applications and working with embedded systems in neurotech."
     }
   ],
   "tasks": [
