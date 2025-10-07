@@ -8,29 +8,26 @@ import VideoGallery from "./videos/VideoGallery";
 const ModulePage = ({ data }) => {
   const { moduleTitle, infoSections = [], tasks = [], extraResources = [] } = data;
 
-  // Render segments with **bold** in prussian_blue
+  // Ensures every segment is inline, preventing line break bugs in lists.
   const renderWithBold = (text, links = []) => {
     const segments = text.split(/(\*\*[^*]+\*\*)/g);
     return segments.map((seg, i) => {
       if (/^\*\*[^*]+\*\*$/.test(seg)) {
         const content = seg.slice(2, -2);
         return (
-          <strong key={i} className="font-bold text-prussian_blue">
-            {content}
-          </strong>
+          <span key={i} style={{ display: "inline" }}>
+            <strong className="font-bold text-prussian_blue">{content}</strong>
+          </span>
         );
       }
       return (
-        <RichTextWithLinks
-          key={i}
-          text={seg}
-          links={links}
-        />
+        <span key={i} style={{ display: "inline" }}>
+          <RichTextWithLinks text={seg} links={links} />
+        </span>
       );
     });
   };
 
-  // Parse text into headings, paragraphs, ULs, and OLs, with bold support
   const parseFormattedText = (text, links = []) => {
     if (!text) return null;
     const processed = text.replace(/\\n/g, "\n").replace(/\\t/g, "\t");
@@ -42,10 +39,13 @@ const ModulePage = ({ data }) => {
       if (!listType || !listItems.length) return;
       const Tag = listType === "ul" ? "ul" : "ol";
       elements.push(
-        <Tag key={key++} className={`${listType === "ul" ? "list-disc" : "list-decimal"} list-outside ml-10 mb-4`}>
+        <Tag
+          key={key++}
+          className={`${listType === "ul" ? "list-disc" : "list-decimal"} list-outside ml-10 mb-4`}
+        >
           {listItems.map((item, i) => (
             <li key={i} className="mb-1">
-              {renderWithBold(item, links)}
+              <span className="whitespace-pre-wrap">{renderWithBold(item, links)}</span>
             </li>
           ))}
         </Tag>
@@ -82,7 +82,7 @@ const ModulePage = ({ data }) => {
         flushList();
         const withTabs = line.replace(/\t/g, "    ");
         elements.push(
-          <div key={key++} className="mb-2" style={{ whiteSpace: "pre-wrap" }}>
+          <div key={key++} className="mb-2 whitespace-pre-wrap">
             {renderWithBold(withTabs, links)}
           </div>
         );
@@ -96,8 +96,6 @@ const ModulePage = ({ data }) => {
   return (
     <div className="mx-auto">
       <h1 className="text-2xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
-
-      {/* Info Sections */}
       <section className="mb-6">
         {infoSections.map((section, i) => {
           if (section.type === "text") {
@@ -110,7 +108,12 @@ const ModulePage = ({ data }) => {
           if (section.type === "document") {
             return (
               <p key={i} className="mb-2">
-                <a href={section.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                <a
+                  href={section.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
                   {section.title}
                 </a>
               </p>
@@ -126,13 +129,11 @@ const ModulePage = ({ data }) => {
           return null;
         })}
       </section>
-
-      {/* Tasks */}
       <section className="mb-6 space-y-8">
-        {tasks.map((t, i) => <TaskCard key={i} task={t} />)}
+        {tasks.map((t, i) => (
+          <TaskCard key={i} task={t} />
+        ))}
       </section>
-
-      {/* Extra Resources */}
       {extraResources.length > 0 && (
         <section>
           <h2 className="font-bold text-lg text-prussian_blue mb-2">Extra Resources</h2>
@@ -149,7 +150,12 @@ const ModulePage = ({ data }) => {
                 {res.title && <h3 className="font-semibold text-prussian_blue mb-1">{res.title}</h3>}
                 {res.text && <div className="text-prussian_blue text-base">{parseFormattedText(res.text, res.links || [])}</div>}
                 {!res.text && res.url && (
-                  <a href={res.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                  <a
+                    href={res.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
                     {res.title || res.url}
                   </a>
                 )}
