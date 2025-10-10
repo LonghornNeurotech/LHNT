@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "A multimeter is an essential tool in electronics, used for measuring voltage, current, resistance, and continuity to diagnose circuit performance and troubleshoot faults. It is critical for verifying power supply stability, component integrity, and signal paths in both analog and digital systems. In neurotech applications, multimeters ensure precise readings in low-noise circuits, electrode connections, and biosensor calibration, helping maintain the accuracy and reliability of brain-computer interfaces (BCIs) and neural signal acquisition systems."
+      "text": "A **multimeter** is an essential tool in electronics, used for measuring voltage, current, resistance, and continuity to diagnose circuit performance and troubleshoot faults. It is critical for verifying power supply stability, component integrity, and signal paths in both analog and digital systems. In neurotech applications, multimeters ensure precise readings in low-noise circuits, electrode connections, and biosensor calibration, helping maintain the accuracy and reliability of brain-computer interfaces (BCIs) and neural signal acquisition systems."
     }
   ],
   "tasks": [

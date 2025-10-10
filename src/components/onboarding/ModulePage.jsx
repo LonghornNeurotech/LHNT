@@ -8,26 +8,106 @@ import VideoGallery from "./videos/VideoGallery";
 const ModulePage = ({ data }) => {
   const { moduleTitle, infoSections = [], tasks = [], extraResources = [] } = data;
 
+  // Ensures every segment is inline, preventing line break bugs in lists.
+  const renderWithBold = (text, links = []) => {
+    const segments = text.split(/(\*\*[^*]+\*\*)/g);
+    return segments.map((seg, i) => {
+      if (/^\*\*[^*]+\*\*$/.test(seg)) {
+        const content = seg.slice(2, -2);
+        return (
+          <span key={i} style={{ display: "inline" }}>
+            <strong className="font-bold text-prussian_blue">{content}</strong>
+          </span>
+        );
+      }
+      return (
+        <span key={i} style={{ display: "inline" }}>
+          <RichTextWithLinks text={seg} links={links} />
+        </span>
+      );
+    });
+  };
+
+  const parseFormattedText = (text, links = []) => {
+    if (!text) return null;
+    const processed = text.replace(/\\n/g, "\n").replace(/\\t/g, "\t");
+    const lines = processed.split("\n");
+    const elements = [];
+    let listType = null, listItems = [], key = 0;
+
+    const flushList = () => {
+      if (!listType || !listItems.length) return;
+      const Tag = listType === "ul" ? "ul" : "ol";
+      elements.push(
+        <Tag
+          key={key++}
+          className={`${listType === "ul" ? "list-disc" : "list-decimal"} list-outside ml-10 mb-4`}
+        >
+          {listItems.map((item, i) => (
+            <li key={i} className="mb-1">
+              <span className="whitespace-pre-wrap">{renderWithBold(item, links)}</span>
+            </li>
+          ))}
+        </Tag>
+      );
+      listType = null;
+      listItems = [];
+    };
+
+    lines.forEach(line => {
+      const trimmed = line.trim();
+      const headingMatch = /^##\s+(.*)$/.exec(line);
+      const ulMatch = /^\s*\*\s+(.*)$/.exec(line);
+      const olMatch = /^\s*\d+[.)]\s+(.*)$/.exec(line);
+
+      if (headingMatch) {
+        flushList();
+        elements.push(
+          <h3 key={key++} className="text-lg font-semibold text-prussian_blue mb-2">
+            {renderWithBold(headingMatch[1], links)}
+          </h3>
+        );
+      } else if (ulMatch) {
+        if (listType !== "ul") flushList();
+        listType = "ul";
+        listItems.push(ulMatch[1]);
+      } else if (olMatch) {
+        if (listType !== "ol") flushList();
+        listType = "ol";
+        listItems.push(olMatch[1]);
+      } else if (!trimmed) {
+        flushList();
+        elements.push(<div key={key++} className="mb-3" />);
+      } else {
+        flushList();
+        const withTabs = line.replace(/\t/g, "    ");
+        elements.push(
+          <div key={key++} className="mb-2 whitespace-pre-wrap">
+            {renderWithBold(withTabs, links)}
+          </div>
+        );
+      }
+    });
+
+    flushList();
+    return elements.length ? <div>{elements}</div> : null;
+  };
+
   return (
     <div className="mx-auto">
       <h1 className="text-2xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
-
-      {/* Info Sections */}
       <section className="mb-6">
-        {infoSections.map((section, idx) => {
+        {infoSections.map((section, i) => {
           if (section.type === "text") {
             return (
-              <p key={idx} className="text-prussian_blue text-base mb-2">
-                <RichTextWithLinks 
-                  text={section.text} 
-                  links={section.links || []} 
-                />
-              </p>
+              <div key={i} className="text-prussian_blue text-base mb-2">
+                {parseFormattedText(section.text, section.links || [])}
+              </div>
             );
           }
           if (section.type === "document") {
             return (
-              <p key={idx} className="mb-2">
+              <p key={i} className="mb-2">
                 <a
                   href={section.url}
                   target="_blank"
@@ -41,47 +121,35 @@ const ModulePage = ({ data }) => {
           }
           if (section.type === "video") {
             return (
-              <div key={idx} className="mb-4">
-                <VideoGallery
-                  videos={[{ url: section.url, title: section.title, required: false }]}
-                />
+              <div key={i} className="mb-4">
+                <VideoGallery videos={[{ url: section.url, title: section.title, required: false }]} />
               </div>
             );
           }
           return null;
         })}
       </section>
-
-      {/* Tasks */}
       <section className="mb-6 space-y-8">
-        {tasks.map((task, idx) => (
-          <TaskCard key={idx} task={task} />
+        {tasks.map((t, i) => (
+          <TaskCard key={i} task={t} />
         ))}
       </section>
-
-      {/* Extra Resources */}
       {extraResources.length > 0 && (
         <section>
           <h2 className="font-bold text-lg text-prussian_blue mb-2">Extra Resources</h2>
-          {extraResources.map((res, idx) => {
+          {extraResources.map((res, i) => {
             if (res.type === "video") {
               return (
-                <div key={idx} className="mb-4">
-                  <VideoGallery
-                    videos={[{ url: res.url, title: res.title, required: false }]}
-                  />
+                <div key={i} className="mb-4">
+                  <VideoGallery videos={[{ url: res.url, title: res.title, required: false }]} />
                 </div>
               );
             }
             return (
-              <div key={idx} className="mb-4">
+              <div key={i} className="mb-4">
                 {res.title && <h3 className="font-semibold text-prussian_blue mb-1">{res.title}</h3>}
-                {res.text && (
-                  <p className="text-prussian_blue text-base">
-                    <RichTextWithLinks text={res.text} links={res.links || []} />
-                  </p>
-                )}
-                {res.url && !res.text && (
+                {res.text && <div className="text-prussian_blue text-base">{parseFormattedText(res.text, res.links || [])}</div>}
+                {!res.text && res.url && (
                   <a
                     href={res.url}
                     target="_blank"
@@ -109,6 +177,7 @@ ModulePage.propTypes = {
         text: PropTypes.string,
         url: PropTypes.string,
         title: PropTypes.string,
+        links: PropTypes.array,
       })
     ),
     tasks: PropTypes.arrayOf(
@@ -124,13 +193,7 @@ ModulePage.propTypes = {
         title: PropTypes.string,
         text: PropTypes.string,
         url: PropTypes.string,
-      })
-    ),
-    links: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-        required: PropTypes.bool,
+        links: PropTypes.array,
       })
     ),
   }).isRequired,

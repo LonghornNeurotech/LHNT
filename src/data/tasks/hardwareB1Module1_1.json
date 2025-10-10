@@ -5,11 +5,11 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Documenting hardware medical devices is essential for regulatory compliance, traceability, and patient safety. It ensures consistent manufacturing and proper uses, and facilitates troubleshooting by providing clear records of design, testing, and production. Documentation also supports knowledge transfer, legal protection, and innovation, enabling improvements and adherence to industry standards."
+      "text": "**Documenting hardware medical devices** is essential for regulatory compliance, traceability, and patient safety. It ensures consistent manufacturing and proper uses, and facilitates troubleshooting by providing clear records of design, testing, and production. Documentation also supports knowledge transfer, legal protection, and innovation, enabling improvements and adherence to industry standards."
     },
     {
       "type": "text",
-      "text": "ISO 13485 is an international standard that outlines quality management system (QMS) requirements for medical device manufacturers."
+      "text": "**ISO 13485** is an international standard that outlines quality management system (QMS) requirements for medical device manufacturers."
     }
   ],
   "tasks": [
@@ -28,7 +28,7 @@
     },
     {
       "taskTitle": "Task 2",
-      "taskDescription": "Read both the following [\"Requirement Specifications\" document] and [\"Design Specifications\" document]. There are no required questions for these documents, but here are some things to look out for: Formatting (look at the order of titles, the numbering, etc.), Writing tone, and the way the information is presented (read through both of them and understand how this serves as an example of proper documentation)",
+      "taskDescription": "Read both the following [\"Requirement Specifications\" document] and [\"Design Specifications\" document]. There are no required questions for these documents, but here are some things to look out for: \n\t* Formatting (look at the order of titles, the numbering, etc.)\n\t* Writing tone\n\t* The way the information is presented (read through both of them and understand how this serves as an example of proper documentation)",
       "links": [
         {
           "label": "\"Requirement Specifications\" document",

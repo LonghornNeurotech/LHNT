@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "The ESP32 is a powerful microcontroller with Wi-Fi and Bluetooth connectivity, ideal for electronics development, IoT applications, and real-time signal processing. In neurotech, it enables wireless brain-computer interfaces (BCIs), remote biosignal monitoring, and low-power neural data transmission, making it a key tool for developing portable and connected neuroelectronic systems."
+      "text": "The **ESP32** is a powerful microcontroller with Wi-Fi and Bluetooth connectivity, ideal for electronics development, IoT applications, and real-time signal processing. In neurotech, it enables wireless brain-computer interfaces (BCIs), remote biosignal monitoring, and low-power neural data transmission, making it a key tool for developing portable and connected neuroelectronic systems."
     }
   ],
   "tasks": [

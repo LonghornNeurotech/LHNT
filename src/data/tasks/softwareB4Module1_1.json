@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Linear regression is used for predicting continuous values by modeling the relationship between variables with a linear equation, while classification is used for predicting categorical outcomes by assigning inputs to predefined classes."
+      "text": "**Linear regression** is used for predicting continuous values by modeling the relationship between variables with a linear equation, while classification is used for predicting categorical outcomes by assigning inputs to predefined classes."
     }
   ],
   "tasks": [

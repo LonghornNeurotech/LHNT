@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Unity 3D's user interface (UI) is crucial in neurotechnology for visualizing BCI data, designing neurofeedback applications, and developing immersive VR/AR environments for cognitive and motor rehabilitation. It enables researchers to create real-time dashboards, BCI control interfaces, and interactive neurorehabilitation experiences. As a powerful tool for translating complex neural data into user-friendly interactions, Unity advances both research and practical applications in neurotech."
+      "text": "**Unity 3D's user interface (UI)** is crucial in neurotechnology for visualizing BCI data, designing neurofeedback applications, and developing immersive VR/AR environments for cognitive and motor rehabilitation. It enables researchers to create real-time dashboards, BCI control interfaces, and interactive neurorehabilitation experiences. As a powerful tool for translating complex neural data into user-friendly interactions, Unity advances both research and practical applications in neurotech."
     }
   ],
   "tasks": [
@@ -43,7 +43,7 @@
   "extraResources": [
     {
       "type": "text",
-      "text": "Extra Resources:\n\t* [Unity Beginner Tutorials YouTube PlayList]\n\t* [Modern Unity UI with UI Toolkit]",
+      "text": "\n\t* [Unity Beginner Tutorials YouTube PlayList]\n\t* [Modern Unity UI with UI Toolkit]",
       "links": [
         {
           "label": "Unity Beginner Tutorials YouTube PlayList",

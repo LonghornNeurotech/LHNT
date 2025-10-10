@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Bandpass filtering extracts signals within a specific frequency range, removing unwanted noise. Segmentation divides data into meaningful sections, such as time windows in EEG analysis. Normalization scales data to a standard range, improving consistency in machine learning and signal processing."
+      "text": "**Bandpass filtering** extracts signals within a specific frequency range, removing unwanted noise. Segmentation divides data into meaningful sections, such as time windows in EEG analysis. Normalization scales data to a standard range, improving consistency in machine learning and signal processing."
     }
   ],
   "tasks": [

@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Rendering is the process of generating visual representations from a model using computer software. It involves transforming data, such as 3D models or simulations, into images, animations, or stimulations that can be viewed and analyzed."
+      "text": "**Rendering** is the process of generating visual representations from a model using computer software. It involves transforming data, such as 3D models or simulations, into images, animations, or stimulations that can be viewed and analyzed."
     }
   ],
   "tasks": [

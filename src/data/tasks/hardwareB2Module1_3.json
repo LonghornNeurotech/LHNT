@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "MeshLab is software for editing and optimizing 3D meshes. It is commonly used in 3D scanning, reverse engineering, and digital fabrication. In neurotechnology, it refines brain models and neural implant designs by cleaning and analyzing complex geometries."
+      "text": "**MeshLab** is software for editing and optimizing 3D meshes. It is commonly used in 3D scanning, reverse engineering, and digital fabrication. In neurotechnology, it refines brain models and neural implant designs by cleaning and analyzing complex geometries."
     }
   ],
   "tasks": [

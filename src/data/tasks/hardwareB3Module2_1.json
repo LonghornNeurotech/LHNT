@@ -5,11 +5,11 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "An Arduino is a versatile microcontroller platform used in electronics development for prototyping, automation, and signal processing through easy-to-use hardware and software. In neurotech applications, it facilitates the development of brain-computer interface (BCI) prototypes, biosignal acquisition systems, and neural stimulation devices, enabling rapid testing and real-time data processing for innovative neuroelectronic solutions."
+      "text": "An **Arduino** is a versatile microcontroller platform used in electronics development for prototyping, automation, and signal processing through easy-to-use hardware and software. In neurotech applications, it facilitates the development of brain-computer interface (BCI) prototypes, biosignal acquisition systems, and neural stimulation devices, enabling rapid testing and real-time data processing for innovative neuroelectronic solutions."
     },
     {
       "type": "text",
-      "text": "Tinkercad is a free online tool that lets you design and test things like electronic circuits and 3D models. It’s like a virtual workshop where you can build and play with electronics without needing actual parts. Arduino is a small computer that you can use to control things like lights, motors, or sensors. Tinkercad works with Arduino by letting you build and test your Arduino projects on the computer first. You can make circuits and write simple code to control the Arduino, all in Tinkercad, before trying it out with real parts."
+      "text": "**Tinkercad** is a free online tool that lets you design and test things like electronic circuits and 3D models. It’s like a virtual workshop where you can build and play with electronics without needing actual parts. Arduino is a small computer that you can use to control things like lights, motors, or sensors. Tinkercad works with Arduino by letting you build and test your Arduino projects on the computer first. You can make circuits and write simple code to control the Arduino, all in Tinkercad, before trying it out with real parts."
     }
   ],
   "tasks": [

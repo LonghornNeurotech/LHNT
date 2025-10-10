@@ -59,7 +59,7 @@ const RichTextWithLinks = ({ text, links = [], onLinkClick }) => {
     parts.push(text.substring(lastIndex));
   }
 
-  return <div>{parts}</div>;
+  return <span>{parts}</span>;
 };
 
 RichTextWithLinks.propTypes = {

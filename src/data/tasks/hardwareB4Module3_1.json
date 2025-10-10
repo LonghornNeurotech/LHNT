@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Arduino communication systems allow interaction between microcontrollers and external devices using serial communication, I2C, SPI, or other protocols. Python, using Spyder or another IDE, provides a platform for processing, analyzing, and visualizing data collected from Arduino-connected sensors."
+      "text": "**Arduino communication systems** allow interaction between microcontrollers and external devices using serial communication, I2C, SPI, or other protocols. Python, using Spyder or another IDE, provides a platform for processing, analyzing, and visualizing data collected from Arduino-connected sensors."
     },
     {
       "type": "text",

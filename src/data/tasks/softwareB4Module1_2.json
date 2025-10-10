@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Neural networks are computational models inspired by the human brain, designed to recognize complex patterns and relationships in data. At their core, they consist of layers of interconnected neurons, each performing weighted computations followed by activation functions to introduce non-linearity. The mathematical foundation involves linear algebra for weight manipulation, calculus for backpropagation-based optimization, and probability theory for handling uncertainty in predictions."
+      "text": "**Neural networks** are computational models inspired by the human brain, designed to recognize complex patterns and relationships in data. At their core, they consist of layers of interconnected neurons, each performing weighted computations followed by activation functions to introduce non-linearity. The mathematical foundation involves linear algebra for weight manipulation, calculus for backpropagation-based optimization, and probability theory for handling uncertainty in predictions."
     }
   ],
   "tasks": [

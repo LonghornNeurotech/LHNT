@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "3D printing, or additive manufacutring, is a process where objects are built layer by layer from a digital model. It starts with a design, typically created in CAD software, which is converted into a printer-readable format such as STL or OBJ. The model is sliced into thin layers, and the printer uses materials like PLA, ABS, resin, or metal to construct the object. Common menthods include FDM (Fused Deposition Modeling), SLA (Sterolithography), and SLS (Selective Laser Sintering). After printing, objects often require post-processing. 3D printing is widely used in prototyping, manufacturing, medical applications such as custom prosthetics, and artistic creation, offering fast and cost-effective production with minimal material waste."
+      "text": "**3D printing**, or **additive manufacutring**, is a process where objects are built layer by layer from a digital model. It starts with a design, typically created in CAD software, which is converted into a printer-readable format such as STL or OBJ. The model is sliced into thin layers, and the printer uses materials like PLA, ABS, resin, or metal to construct the object. Common menthods include FDM (Fused Deposition Modeling), SLA (Sterolithography), and SLS (Selective Laser Sintering). After printing, objects often require post-processing. 3D printing is widely used in prototyping, manufacturing, medical applications such as custom prosthetics, and artistic creation, offering fast and cost-effective production with minimal material waste."
     }
   ],
   "tasks": [

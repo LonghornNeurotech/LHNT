@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "Fourier Transforms (FT) are a powerful tool for analyzing signals by converting them from the time domain to the frequency domain. This allows for the identification of dominant frequencies, filtering of noise, and extraction of meaningful patterns from complex data. In neurotechnology, they help analyze EEG and fMRI signals, detecting neural oscillations and brain activity. This improves signal clarity and enhances neural signal processing applications."
+      "text": "**Fourier Transforms (FT)** are a powerful tool for analyzing signals by converting them from the time domain to the frequency domain. This allows for the identification of dominant frequencies, filtering of noise, and extraction of meaningful patterns from complex data. In neurotechnology, they help analyze EEG and fMRI signals, detecting neural oscillations and brain activity. This improves signal clarity and enhances neural signal processing applications."
     }
   ],
   "tasks": [
@@ -34,38 +34,20 @@
     },
     {
       "type": "text",
-      "text": "[Machine Learning by StatQuest YouTube Playlist]",
+      "text": "## Here are some extra resources for you: \n* [Machine Learning by StatQuest YouTube Playlist] \n* [FreeCodeCamp YouTube Channel] \n* [Google Teachable Machine (for fun!)] \n* [https://www.3blue1brown.com/topics/linear-algebra]",
       "links": [
         {
           "label": "Machine Learning by StatQuest YouTube Playlist",
           "url": "https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=BEpayFYgj1Dx8OIC"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "[FreeCodeCamp YouTube Channel]",
-      "links": [
+        },
         {
           "label": "FreeCodeCamp YouTube Channel",
           "url": "https://www.youtube.com/@freecodecamp"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "[Google Teachable Machine (for fun!)]",
-      "links": [
+        },
         {
           "label": "Google Teachable Machine (for fun!)",
           "url": "https://teachablemachine.withgoogle.com/train"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "[https://www.3blue1brown.com/topics/linear-algebra]",
-      "links": [
+        },
         {
           "label": "https://www.3blue1brown.com/topics/linear-algebra",
           "url": "https://www.3blue1brown.com/topics/linear-algebra"

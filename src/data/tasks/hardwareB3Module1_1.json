@@ -5,7 +5,7 @@
   "infoSections": [
     {
       "type": "text",
-      "text": "A breadboard is a fundamental tool in electronics, allowing for rapid prototyping, circuit testing, and component integration without soldering. In neurotech applications, it enables the development of low-noise amplifiers, signal conditioning circuits, and biosensor interfaces, ensuring reliable testing before final implementation in brain-computer interfaces (BCIs) and neural recording systems."
+      "text": "A **breadboard** is a fundamental tool in electronics, allowing for rapid prototyping, circuit testing, and component integration without soldering. In neurotech applications, it enables the development of low-noise amplifiers, signal conditioning circuits, and biosensor interfaces, ensuring reliable testing before final implementation in brain-computer interfaces (BCIs) and neural recording systems."
     }
   ],
   "tasks": [
