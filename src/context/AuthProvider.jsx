@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   // Check for existing session on mount
   useEffect(() => {
-    const storedMember = localStorage.getItem('member');
+    const storedMember = sessionStorage.getItem('member');
     if (storedMember) {
       setMember(JSON.parse(storedMember));
       setIsAuthenticated(true);
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       };
       setMember(memberObj);
       setIsAuthenticated(true);
-      localStorage.setItem('member', JSON.stringify(memberObj));
+      sessionStorage.setItem('member', JSON.stringify(memberObj));
       return true;
     } else {
       setMember(null);
@@ -39,13 +39,21 @@ export const AuthProvider = ({ children }) => {
 
   // Logout function
   const logout = () => {
-    setMember(null); 
+    setMember(null);
     setIsAuthenticated(false);
+    sessionStorage.removeItem('member');
     localStorage.removeItem('member');
   };
 
   return (
-    <AuthContext.Provider value={{ member, isAuthenticated, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        member,
+        isAuthenticated,
+        login,
+        logout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
