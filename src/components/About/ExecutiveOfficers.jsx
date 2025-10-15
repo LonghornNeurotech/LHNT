@@ -8,11 +8,11 @@ const ExecutiveOfficers = () => {
       <div className="margin-top"><br /></div>
       <h2 className="margin-top about-title font-['Antonio']">Executive Officers</h2>
       {/* <hr style="width:270px; margin-bottom: 40px;" class="w3-opacity" /> */}
-      <ContactCard name="Taima Crean" title="President" img="/OfficerImages/Taima_Crean.jpg" styleClass="pfp taima" linkedin="https://www.linkedin.com/in/taima00">
-        Taima Crean is the President and Co-Founder of Longhorn Neurotech. She is a part of the class of 2025 studying Biomedical Engineering with a focus in computation and double minors in Business and Computer Science. In her work she uses deep learning to optimize radiation treatment for lung cancer patients. She has a passion for innovation and hopes to one day work on machine learning applications in healthcare.
+      <ContactCard name="Raquel Paz Bergia" title="President" img="/OfficerImages/Raquel_Paz_Bergia.jpg" styleClass="pfp taima" linkedin="https://www.linkedin.com/in/raquelpazbergia">
+        Raquel is the President of Longhorn Neurotech and a third-year Neuroscience student from Spain. She enjoys traveling, spending time with friends, and learning about health. Raquel joined Longhorn Neurotech because she is passionate about the intersection of medicine and engineering, especially how it can improve the lives of patients with movement disorders. After graduating in Spring 2026, she plans on working in medical technology and later pursuing an MD/PhD.
       </ContactCard>
-      <ContactCard name="Holland Ernst" title="Captain" img="/OfficerImages/holland1.jpg" styleClass="pfp holland" linkedin="https://www.linkedin.com/in/holland-ernst">
-        Holland Ernst is the Captain and Co-Founder of Longhorn Neurotech. He is a apart of the class of 2025 studying biomedical engineering and planning to pursue a Master's BME with a specification in neural engineering. His mission is to bridge the gap between the brain and the vast world around us. Being part of Longhorn Neurotech and collaborating with such remarkably talented and diverse individuals not only excites him but also drives him forward in the pursuit of a career in neural engineering and BCI.
+      <ContactCard name="Sean Omodon" title="Captain" img="/OfficerImages/Sean_C_Omodon.jpg" styleClass="pfp holland" linkedin="https://www.linkedin.com/in/sean-omodon-5ab32a290">
+        Sean Omodon is the Captain of Longhorn Neurotech. He is part of the class of 2027 studying Biomedical Engineering with a focus on biomedical imaging and instrumentation. As part of the Santacruz Lab, he researches novel approaches for developing flexible brain implants for brain–computer interfaces. His work aims to refine brain–computer interfaces through innovation and advance them into reliable, accessible medical devices. He plans to pursue a Ph.D. to deepen his understanding of the brain and its interaction with these systems.
       </ContactCard>
     </div>
   );
