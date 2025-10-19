@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Go through this [course]. Submit a picture of your completion screen/certificate. If you are proficient in Python, submit a screenshot of a previous project instead. If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
+      "taskDescription": "Go through this [course]. Send a screenshot of your completion screen/certificate in an email to this email address: lhnt.onboarding@gmail.com. If you are proficient in Python, send a screenshot of a previous project in an email to this email address: lhnt.onboarding@gmail.com instead. If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
       "links": [
         {
           "label": "course",

@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "To better understand how Unity 3D works, complete Udemy’s \"[Unity UI Development]\" and Coursera’s \"[Game Design and Development with Unity UI]\".  Send a screenshot of your completion screens upon finishing the courses. If you are proficient with Unity 3D, please send a screenshot of a recent project you have completed.",
+      "taskDescription": "To better understand how Unity 3D works, complete Udemy’s \"[Unity UI Development]\" and Coursera’s \"[Game Design and Development with Unity UI]\".  Send a screenshot of your completion screens upon finishing the courses in an email to this email address: lhnt.onboarding@gmail.com. If you are proficient with Unity 3D, please send a screenshot of a recent project you have completed in an email to this email address: lhnt.onboarding@gmail.com.",
       "links": [
         {
           "label": "Unity UI Development",
@@ -24,7 +24,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     },
     {
       "taskTitle": "Task 2",

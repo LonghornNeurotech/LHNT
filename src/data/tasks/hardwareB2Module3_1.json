@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Enroll in TIW Canvas page [here]. Complete the \"Culture and Community\" module on Canvas and submit a screenshot of completion.",
+      "taskDescription": "Enroll in TIW Canvas page [here]. Complete the \"Culture and Community\" module on Canvas and send a screenshot of completion in an email to this email address: lhnt.onboarding@gmail.com",
       "links": [
         {
           "label": "here",
@@ -19,7 +19,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []

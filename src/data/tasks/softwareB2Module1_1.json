@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Complete either of the following programs. Send a screenshot of your completion screen upon finishing the course. If you are proficient in C++, please send a screenshot of a recent project you have completed.\n\t1. Complete the [Udacity] C++ Nanodegree program. This program covers modern C++ techniques, including memory management and real-time processing, which are crucial for neurotech applications like brain-computer interfaces (BCIs).\n\t2. Complete the [MIT OpenCourseWare] course. This platform offers foundational C++ programming concepts used in computational neuroscience and neuroimaging, making it a solid starting point for neurotech applications.",
+      "taskDescription": "Complete either of the following programs. Send a screenshot of your completion screen upon finishing the course in an email to this email address: lhnt.onboarding@gmail.com. If you are proficient in C++, please send a screenshot of a recent project you have completed in an email to this email address: lhnt.onboarding@gmail.com.\n\t1. Complete the [Udacity] C++ Nanodegree program. This program covers modern C++ techniques, including memory management and real-time processing, which are crucial for neurotech applications like brain-computer interfaces (BCIs).\n\t2. Complete the [MIT OpenCourseWare] course. This platform offers foundational C++ programming concepts used in computational neuroscience and neuroimaging, making it a solid starting point for neurotech applications.",
       "links": [
         {
           "label": "Udacity",
@@ -24,7 +24,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []

@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Read this [article], which you can access using your utexas email, to get an understanding of fast FT and complete the GitHub 3.2.2 [Lesson].  Submit a screenshot of your progress throughout the module",
+      "taskDescription": "Read this [article], which you can access using your utexas email, to get an understanding of fast FT and complete the GitHub 3.2.2 [Lesson].  Send a screenshot of your progress throughout the module in an email to this email address: lhnt.onboarding@gmail.com",
       "links": [
         {
           "label": "article",
@@ -24,7 +24,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []

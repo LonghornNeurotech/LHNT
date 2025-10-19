@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Sign up for this [course] to understand the basics of C++ and follow along. While this course is introductory, it will give you an understanding of the language you will be using. Submit a screenshot of completion and a screenshot of one of the projects within the course. If you are proficient in C++, submit a screenshot of a previous project as a replacement.",
+      "taskDescription": "Sign up for this [course] to understand the basics of C++ and follow along. While this course is introductory, it will give you an understanding of the language you will be using. Send a screenshot of completion and a screenshot of one of the projects within the course in an email to this email address: lhnt.onboarding@gmail.com. If you are proficient in C++, send a screenshot of a previous project as a replacement in an email to this email address: lhnt.onboarding@gmail.com.",
       "links": [
         {
           "label": "course",
@@ -19,7 +19,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []
