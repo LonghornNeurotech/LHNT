@@ -4,7 +4,7 @@ import RichTextWithLinks from "./RichTextWithLinks";
 import VideoGallery from "./videos/VideoGallery";
 import Quiz from "./quizzes/Quiz";
 import FileUploadManager from "./upload/FileUploadManager";
-import CompletionIcon from "../common/CompletionIcon";
+// import CompletionIcon from "../common/CompletionIcon";
 import quizzesData from "../../data/quizzes";
 
 const TaskCard = ({ task }) => {
@@ -247,7 +247,7 @@ const TaskCard = ({ task }) => {
       {/* Task Header with CompletionIcon */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-semibold text-gray-900">{taskTitle}</h2>
-        <CompletionIcon completed={isTaskComplete} />
+        {/* <CompletionIcon completed={isTaskComplete} /> */}
       </div>
 
       {/* Task Description - Now with formatted text parsing */}
@@ -256,13 +256,13 @@ const TaskCard = ({ task }) => {
       </div>
 
       {/* Success Message for Completed Task */}
-      {isTaskComplete && (
+      {/* {isTaskComplete && (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
           <p className="text-green-700 font-semibold text-[1.1rem] md:text-[1.2rem]">
             Great work on successfully completing this task! Keep moving forward on completing the other tasks. I believe you got this!
           </p>
         </div>
-      )}
+      )} */}
 
       {/* Videos Section */}
       {videos && videos.length > 0 && (

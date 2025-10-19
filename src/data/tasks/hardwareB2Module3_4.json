@@ -11,8 +11,8 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Complete the \"SLA 3D Printing\" module on Canvas and submit a screenshot of completion.",
-      "requiredActions": ["uploadFiles"]
+      "taskDescription": "Complete the \"SLA 3D Printing\" module on Canvas and send a screenshot of completion in an email to this email address: lhnt.onboarding@gmail.com",
+      "requiredActions": []
     }
   ],
   "extraResources": []

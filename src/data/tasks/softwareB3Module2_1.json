@@ -27,7 +27,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Follow along on GitHub 3.2.1 Lesson [here] to better understand how real-time EEG signal proceeding works. Submit a screenshot of your progress throughout the module.",
+      "taskDescription": "Follow along on GitHub 3.2.1 Lesson [here] to better understand how real-time EEG signal proceeding works. Send a screenshot of your progress throughout the module in an email to this email address: lhnt.onboarding@gmail.com.",
       "links": [
         {
           "label": "here",
@@ -35,7 +35,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []

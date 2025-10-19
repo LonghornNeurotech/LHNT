@@ -59,7 +59,7 @@
     },
     {
       "taskTitle": "Task 2",
-      "taskDescription": "Read through this [article], and follow the outlined steps. The goal is for you to feel comfortable with TinkerCAD, so do each step as many times as you need. Submit a screenshot of your final screen.",
+      "taskDescription": "Read through this [article], and follow the outlined steps. The goal is for you to feel comfortable with TinkerCAD, so do each step as many times as you need. Email a screenshot of your final screen to this email address: lhnt.onboarding@gmail.com",
       "links": [
         {
           "label": "article",
@@ -67,7 +67,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []

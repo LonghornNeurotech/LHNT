@@ -59,14 +59,14 @@ const Quiz = ({ quizData, onComplete }) => {
     }
   };
 
-  const handleFormSubmit = () => {
-    if (fullName.trim() && eid.trim()) {
-      setFormSubmitted(true);
-      if (onComplete) {
-        onComplete(true);
-      }
-    }
-  };
+  // const handleFormSubmit = () => {
+  //   if (fullName.trim() && eid.trim()) {
+  //     setFormSubmitted(true);
+  //     if (onComplete) {
+  //       onComplete(true);
+  //     }
+  //   }
+  // };
 
   const allAnswered = quizData.length === Object.keys(answers).length;
   const isPerfectScore = score === quizData.length;
@@ -74,12 +74,64 @@ const Quiz = ({ quizData, onComplete }) => {
   return (
     <div className="mt-4">
       <h3 className="text-xl text-prussian_blue font-semibold mb-1">Quiz</h3>
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+      {/* <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
         <p className="text-md text-blue-800 font-medium">
           Complete this quiz with a 100% score to complete this task. You can retry this quiz an unlimited number of times.
         </p>
-      </div>
+      </div> */}
 
+      {/* Perfect Score Messages and Form */}
+      {isPerfectScore ?
+        <>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+            <p className="text-green-700 font-semibold md:text-[1.2rem]">
+              Congratulations! You got a perfect score! Now, take a screenshot of your quiz results and email them to Netta through her email address: nettablin@utexas.edu
+            </p>
+          </div>
+
+          {/* <div>
+            <h4 className="font-medium mb-2">Confirm Your Successful Completion of this Quiz!</h4>
+            <div className="space-y-3">
+              <div>
+                <label className="block font-medium mb-1">Full Name</label>
+                <input
+                  type="text"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="border py-2 px-3 rounded w-full"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div>
+                <label className="block font-medium mb-1">EID</label>
+                <input
+                  type="text"
+                  value={eid}
+                  onChange={(e) => setEid(e.target.value)}
+                  className="border py-2 px-3 rounded w-full"
+                  placeholder="Enter your EID"
+                />
+              </div>
+              <button
+                onClick={handleFormSubmit}
+                disabled={!fullName.trim() || !eid.trim()}
+                className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Submit
+              </button>
+            </div>
+          </div> */}
+        </>
+      :
+        <>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+            <p className="text-md text-blue-800 font-medium">
+              Complete this quiz with a 100% score to complete this task. You can retry this quiz an unlimited number of times.
+            </p>
+          </div>
+        </>
+      }
+    
       {!submitted && (
         <div className="space-y-5">
           {quizData.map((q) => (
@@ -186,12 +238,12 @@ const Quiz = ({ quizData, onComplete }) => {
             })}
           </div>
 
-          {/* Perfect Score Messages and Form */}
-          {isPerfectScore && !formSubmitted && (
+          {/* Place the Perfect Score Messages and Form Here once Progress Tracking is Accurately Implemented */}
+          {/* {isPerfectScore && (
             <>
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
                 <p className="text-green-700 font-semibold md:text-[1.2rem]">
-                  Congratulations! You got a perfect score! Now, fill out your full name and EID below to confirm proof of your successful completion of this quiz to Longhorn Neurotech!
+                  Congratulations! You got a perfect score! Now, take a screenshot of your quiz results and email them to Netta through her email address: nettablin@utexas.edu
                 </p>
               </div>
 
@@ -228,7 +280,7 @@ const Quiz = ({ quizData, onComplete }) => {
                 </div>
               </div>
             </>
-          )}
+          )} */}
 
           {/* Final Success Message */}
           {isPerfectScore && formSubmitted && (

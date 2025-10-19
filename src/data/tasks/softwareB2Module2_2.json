@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Complete the [Unity Essentials Learning Pathway].  Send a screenshot of your completion screen upon finishing the course. If you are proficient with Unity 3D, please submit a screenshot of a recent project you have completed.",
+      "taskDescription": "Complete the [Unity Essentials Learning Pathway].  Send a screenshot of your completion screen upon finishing the course in an email to this email address: lhnt.onboarding@gmail.com. If you are proficient with Unity 3D, please submit a screenshot of a recent project you have completed in an email to this email address: lhnt.onboarding@gmail.com.",
       "links": [
         {
           "label": "Unity Essentials Learning Pathway",
@@ -19,7 +19,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks", "uploadFiles"]
+      "requiredActions": ["clickLinks"]
     }
   ],
   "extraResources": []

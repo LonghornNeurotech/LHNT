@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Watch this video to learn the basics of Python and follow along. Submit a picture of your work as you follow the video. If you are proficient in Python, submit a screenshot of a previous project instead.",
+      "taskDescription": "Watch this video to learn the basics of Python and follow along. Send a picture of your work in an email to this email address: lhnt.onboarding@gmail.com as you follow the video. If you are proficient in Python, send a screenshot of a previous project in an email to this email address: lhnt.onboarding@gmail.com instead",
       "videos": [
         {
           "title": "Python Full Course for Beginners [2025]",
@@ -19,7 +19,7 @@
           "required": true
         }
       ],
-      "requiredActions": ["watchVideos", "uploadFiles"]
+      "requiredActions": ["watchVideos"]
     }
   ],
   "extraResources": []
