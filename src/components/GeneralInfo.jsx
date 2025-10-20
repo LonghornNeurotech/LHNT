@@ -12,20 +12,26 @@ const GeneralInfo = () => (
       style={{ background: BONE_WHITE }}
     >
       <h1
-        className="text-center font-bold mb-8"
+        className="text-center font-bold"
         style={{ color: PRUSSIAN_BLUE, fontSize: '2.5rem', lineHeight: '1.2' }}
       >
-        We’re so excited to have you here. Longhorn Neurotechnology (LHNT) isn’t just a student organization; it’s a place to learn, build, and explore the future of neurotech together.
+        Welcome to Longhorn Neurotech Onboarding!
       </h1>
+      <div
+        className="pt-4 mb-8 text-prussian_blue"
+        style={{ color: PRUSSIAN_BLUE, fontSize: '1.3rem' }}
+      >
+        We’re so excited to have you here. Longhorn Neurotech (LHNT) isn’t just a student organization; it’s a place to learn, build, and explore the future of neurotech together.
+      </div>
       <div className="space-y-8">
         <section>
           <h2
-            className="font-bold mb-4"
+            className="font-bold mb-3"
             style={{ color: PRUSSIAN_BLUE, fontSize: '1.75rem' }}
           >
             Why Onboarding?
           </h2>
-          <ul className="list-disc pl-6 space-y-3" style={{ color: PRUSSIAN_BLUE }}>
+          <ul className="list-disc pl-6 space-y-2" style={{ color: PRUSSIAN_BLUE }}>
             <li className="text-lg leading-relaxed">
               <strong>Our goal</strong> is to make sure every new member gains real, hands-on knowledge in the areas that power LHNT’s teams: hardware, software, and research.
             </li>
@@ -37,12 +43,12 @@ const GeneralInfo = () => (
 
         <section>
           <h2
-            className="font-bold mb-4"
+            className="font-bold mb-3"
             style={{ color: PRUSSIAN_BLUE, fontSize: '1.75rem' }}
           >
             How It Works:
           </h2>
-          <ol className="list-decimal pl-6 space-y-3" style={{ color: PRUSSIAN_BLUE }}>
+          <ol className="list-decimal pl-6 space-y-2" style={{ color: PRUSSIAN_BLUE }}>
             <li className="text-lg leading-relaxed">
               <strong>General Skills Block:</strong> Everyone completes these core modules to get familiar with either hardware or software basics.
             </li>
@@ -57,12 +63,12 @@ const GeneralInfo = () => (
 
         <section>
           <h2
-            className="font-bold mb-4"
+            className="font-bold mb-3"
             style={{ color: PRUSSIAN_BLUE, fontSize: '1.75rem' }}
           >
             What’s Next?
           </h2>
-          <ul className="list-disc pl-6 space-y-3" style={{ color: PRUSSIAN_BLUE }}>
+          <ul className="list-disc pl-6 space-y-2" style={{ color: PRUSSIAN_BLUE }}>
             <li className="text-lg leading-relaxed">
               <strong>Complete your modules → Team up for the competition → Join your spring project team!</strong>
             </li>
@@ -73,8 +79,8 @@ const GeneralInfo = () => (
         </section>
 
         <div
-          className="text-center font-bold pt-6"
-          style={{ color: PRUSSIAN_BLUE, fontSize: '1.5rem' }}
+          className="text-center font-normal pt-2 italic"
+          style={{ color: PRUSSIAN_BLUE, fontSize: '1.5rem', lineHeight: '1.6' }}
         >
           We’re so excited to see what you’ll create. Welcome to the future of neurotechnology at UT!
         </div>
