@@ -90,9 +90,9 @@ const CompetitionInfo = () => (
           </ul>
         </section>
 
-        <div className="space-y-4 pt-6">
+        <div className="space-y-4 pt-2">
           <p
-            className="text-center font-normal pt-2 italic"
+            className="text-center font-normal italic"
             style={{ color: PRUSSIAN_BLUE, fontSize: '1.5rem', lineHeight: '1.6' }}
           >
             Stay tuned! We’ll be sharing the full competition structure, team formation process, and project prompts in October. We can’t wait to see what you build, create, and innovate!

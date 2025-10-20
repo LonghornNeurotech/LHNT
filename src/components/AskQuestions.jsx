@@ -11,21 +11,27 @@ const AskQuestions = () => (
       style={{ background: BONE_WHITE }}
     >
       <h1
-        className="text-center font-bold mb-8"
+        className="text-center font-bold"
         style={{ color: PRUSSIAN_BLUE, fontSize: '2.5rem', lineHeight: '1.2' }}
       >
-        We’re here to help! If you have any questions while completing the onboarding modules, please reach out to the appropriate contact below:
+        Contact Us
       </h1>
+      <div
+        className="pt-4 mb-8 text-prussian_blue"
+        style={{ color: PRUSSIAN_BLUE, fontSize: '1.3rem' }}
+      >
+        We’re here to help! If you have any questions while completing the onboarding modules, please reach out to the appropriate contact below:
+      </div>
 
       <div className="space-y-8">
         <section>
           <h2
-            className="font-bold mb-4"
+            className="font-bold mb-3"
             style={{ color: PRUSSIAN_BLUE, fontSize: '1.75rem' }}
           >
             General Questions:
           </h2>
-          <ul className="space-y-3" style={{ color: PRUSSIAN_BLUE }}>
+          <ul className="space-y-2" style={{ color: PRUSSIAN_BLUE }}>
             <li className="text-lg leading-relaxed">
               <strong>Netta Blinchevsky</strong> (Education Lead) — <a href="mailto:nettablin@utexas.edu" className="text-blue-600 hover:underline">nettablin@utexas.edu</a>
             </li>
@@ -37,7 +43,7 @@ const AskQuestions = () => (
 
         <section>
           <h2
-            className="font-bold mb-4"
+            className="font-bold mb-3"
             style={{ color: PRUSSIAN_BLUE, fontSize: '1.75rem' }}
           >
             Technical Questions:
@@ -45,7 +51,7 @@ const AskQuestions = () => (
           <div className="space-y-6">
             <div>
               <h3
-                className="font-bold mb-3"
+                className="font-bold mb-2"
                 style={{ color: PRUSSIAN_BLUE, fontSize: '1.4rem' }}
               >
                 Hardware Team
@@ -59,7 +65,7 @@ const AskQuestions = () => (
 
             <div>
               <h3
-                className="font-bold mb-3"
+                className="font-bold mb-2"
                 style={{ color: PRUSSIAN_BLUE, fontSize: '1.4rem' }}
               >
                 Software Team
@@ -73,7 +79,7 @@ const AskQuestions = () => (
 
             <div>
               <h3
-                className="font-bold mb-3"
+                className="font-bold mb-2"
                 style={{ color: PRUSSIAN_BLUE, fontSize: '1.4rem' }}
               >
                 Research Team
@@ -88,8 +94,8 @@ const AskQuestions = () => (
         </section>
 
         <div
-          className="text-center font-normal pt-6 italic"
-          style={{ color: PRUSSIAN_BLUE, fontSize: '1.15rem', lineHeight: '1.6' }}
+          className="text-center font-normal pt-2 italic"
+          style={{ color: PRUSSIAN_BLUE, fontSize: '1.5rem', lineHeight: '1.6' }}
         >
           We encourage you to contact the team that best fits your question, but if you’re unsure where to start, feel free to reach out to Netta, and she’ll connect you with the right person.
         </div>
