@@ -7,11 +7,11 @@ const BONE_WHITE = '#F9F6EE';
 const DISABLED_STATUS = 'rgba(93,137,186,0.13';
 
 const options = [
-  { label: 'General Info', enabled: false },
-  { label: 'Programs', enabled: true },
+  { label: 'General Info', enabled: true, route: '/general-info' },
+  { label: 'Programs', enabled: true, route: '/programs' },
   { label: 'Additional Resources', enabled: false },
-  { label: 'Completion Information', enabled: false },
-  { label: 'Ask Questions', enabled: false },
+  { label: 'Competition Information', enabled: true, route: '/competition-info' },
+  { label: 'Contact Us', enabled: true, route: '/contact-us' },
 ];
 
 const MemberHome = () => {
@@ -47,7 +47,7 @@ const MemberHome = () => {
           {options.map((opt) => (
             <button
               key={opt.label}
-              onClick={opt.enabled ? () => navigate('/programs') : undefined}
+              onClick={opt.enabled && opt.route ? () => navigate(opt.route) : undefined}
               disabled={!opt.enabled}
               style={{
                 background: opt.enabled ? SILVER_LAKE_BLUE : DISABLED_STATUS,

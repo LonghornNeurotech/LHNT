@@ -3,6 +3,9 @@ import { Home, About, Contact, Navbar, Events, Login, MemberHome, ProgramsMenu} 
 import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import GeneralInfo from './components/GeneralInfo';
+import CompetitionInfo from './components/CompetitionInfo';
+import AskQuestions from './components/AskQuestions';
 
 // Import OnboardingRouter to help control which onboarding pages content gets displayed!
 import OnboardingRouter from "./components/onboarding/OnboardingRouter";
@@ -37,6 +40,16 @@ const App = () => {
                   </MemberRoute>
                 }
               />
+
+              <Route
+                path="/general-info"
+                element={
+                  <MemberRoute>
+                    <GeneralInfo />
+                  </MemberRoute>
+                }
+              />
+
               <Route
                 path="/programs"
                 element={
@@ -51,6 +64,24 @@ const App = () => {
                 element={
                   <MemberRoute>
                     <OnboardingRouter />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
+                path="/competition-info"
+                element={
+                  <MemberRoute>
+                    <CompetitionInfo />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
+                path="/ask-questions"
+                element={
+                  <MemberRoute>
+                    <AskQuestions />
                   </MemberRoute>
                 }
               />
