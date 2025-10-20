@@ -15,7 +15,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Use this [link] to sign in to TinkerCAD. If you don’t have an account, use your UT credentials to make one. Next, watch the videos below and follow the tutorials. Next, watch the videos below and follow the tutorials. Submit a screenshot of your progress as you follow along with the videos.",
+      "taskDescription": "Use this [link] to sign in to TinkerCAD. If you don’t have an account, use your UT credentials to make one. Next, watch the videos below and follow the tutorials. Next, watch the videos below and follow the tutorials. As you follow along with the videos, email a screenshot of your progress to this email address: lhnt.onboarding@gmail.com.",
       "links": [
         {
           "label": "link",

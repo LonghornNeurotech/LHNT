@@ -11,15 +11,27 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Follow along on GitHub 3.2.1 Lesson and Practice [here] to better understand how real-time EEG signal proceeding works. Send a screenshot of your progress throughout the module in an email to this email address: lhnt.onboarding@gmail.com.",
+      "taskDescription": "Read the following [article] and watch the \"Convolutional Neural Networks for processing EEG signals\" video below to learn about CNNs and how they are used for EEG data. If it's not quite making sense yet, try watching the other video below on a more classic example of number recognition in images.",
       "links": [
         {
-          "label": "here",
-          "url": "https://github.com/raquelpazbergia/SoftwareDocumentation/tree/main/Software%20Block%203",
+          "label": "article",
+          "url": "https://www.geeksforgeeks.org/machine-learning/introduction-convolution-neural-network/",
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks"]
+      "videos": [
+        {
+          "title": "Convolutional Neural Networks for processing EEG signals",
+          "url": "https://www.youtube.com/embed/_z0JIP7pYwE",
+          "required": true
+        },
+        {
+          "title": "Convolutional Neural Networks Explained (CNN Visualized)",
+          "url": "https://www.youtube.com/embed/pj9-rr1wDhM",
+          "required": false
+        }
+      ],
+      "requiredActions": ["clickLinks", "watchVideos"]
     }
   ],
   "extraResources": []
