@@ -54,14 +54,14 @@ const MemberHome = () => {
                 background: opt.enabled ? SILVER_LAKE_BLUE : DISABLED_STATUS,
                 color: opt.enabled ? BONE_WHITE : SILVER_LAKE_BLUE,
                 border: 'none',
-                borderRadius: '9px',
+                borderRadius: '10px',
                 padding: '1.3em 1em',
                 fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
                 fontWeight: 700,
                 letterSpacing: '1px',
                 cursor: opt.enabled ? 'pointer' : 'not-allowed',
                 opacity: opt.enabled ? 1 : 0.6,
-                transition: 'background 0.2s',
+                transition: 'background 0.3s',
               }}
               onMouseEnter={(e) => {
                 if (opt.enabled) {
