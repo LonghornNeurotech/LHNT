@@ -37,10 +37,12 @@ const ProgramsMenu = () => {
       <div style={{
         background: BONE_WHITE,
         borderRadius: '18px',
-        padding: '3em 3.3em',
+        padding: '2.2em 3em',
         boxShadow: `0 8px 32px 0 ${SILVER_LAKE_BLUE}44`,
-        minWidth: '320px',
-        maxWidth: '400px',
+        width: '90%',
+        maxWidth: '600px',
+        height: '200%',
+        maxHeight: '1200px'
       }}>
         {!group ? (
           <>
@@ -48,8 +50,8 @@ const ProgramsMenu = () => {
               textAlign: 'center',
               color: PRUSSIAN_BLUE,
               fontWeight: 700,
-              fontSize: '2.3rem',
-              lineHeight: 1.14,
+              fontSize: 'clamp(2.5rem, 2vw, 3rem)',
+              lineHeight: 1.18,
               marginBottom: '1em',
             }}>
               Which team are you in?
@@ -62,12 +64,20 @@ const ProgramsMenu = () => {
                   color: BONE_WHITE,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '1.3em 0',
-                  fontSize: '1.35rem',
+                  padding: '1.3em 1em',
+                  fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
                   fontWeight: 700,
-                  letterSpacing: '1.2px',
+                  letterSpacing: '1px',
                   cursor: 'pointer',
                   transition: 'background 0.3s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
                 }}
               >
                 Software
@@ -79,12 +89,20 @@ const ProgramsMenu = () => {
                   color: BONE_WHITE,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '1.3em 0',
-                  fontSize: '1.35rem',
+                  padding: '1.3em 1em',
+                  fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
                   fontWeight: 700,
-                  letterSpacing: '1.2px',
+                  letterSpacing: '1px',
                   cursor: 'pointer',
                   transition: 'background 0.3s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
                 }}
               >
                 Hardware
@@ -97,13 +115,21 @@ const ProgramsMenu = () => {
                   color: LIGHT_CREAM,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '0.8em 0',
-                  fontSize: '1.19rem',
+                  padding: '0.8em 1em',
+                  fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
                   fontWeight: 700,
-                  letterSpacing: '1.2px',
+                  letterSpacing: '1px',
                   cursor: 'pointer',
-                  marginTop: '1em',
+                  marginTop: '0.6em',
                   transition: 'background 0.3s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
                 }}
               >
                 Back
@@ -116,31 +142,37 @@ const ProgramsMenu = () => {
               textAlign: 'center',
               color: PRUSSIAN_BLUE,
               fontWeight: 700,
-              fontSize: '2.2rem',
-              lineHeight: 1.15,
+              fontSize: 'clamp(2.5rem, 2vw, 3rem)',
+              lineHeight: 1.18,
               marginBottom: '1em',
             }}>
               Select your onboarding block
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2em' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1em' }}>
               {onboardingBlockMap[group].map(({ label, id }) => (
                 <button
                   key={id}
-                  onClick={() => navigate(`/onboarding/${id}/0_1`)}
+                  onClick={() => navigate(`/onboarding/${id}/1_1`)}
                   style={{
-                    display: 'block',
-                    textAlign: 'center',
                     background: SILVER_LAKE_BLUE,
                     color: BONE_WHITE,
-                    borderRadius: '10px',
-                    padding: '1.14em 0',
-                    fontSize: '1.28rem',
-                    fontWeight: 700,
-                    letterSpacing: '1.1px',
-                    cursor: 'pointer',
-                    marginBottom: '0.6em',
                     border: 'none',
+                    borderRadius: '10px',
+                    padding: '1.3em 1em',
+                    fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
+                    fontWeight: 700,
+                    letterSpacing: '1px',
+                    textAlign: 'center',
+                    cursor: 'pointer',
                     transition: 'background 0.3s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0px)';
+                    e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
                   }}
                 >
                   {label}
@@ -153,13 +185,21 @@ const ProgramsMenu = () => {
                   color: LIGHT_CREAM,
                   border: 'none',
                   borderRadius: '10px',
-                  padding: '0.8em 0',
-                  fontSize: '1.2rem',
+                  padding: '0.8em 1em',
+                  fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
                   fontWeight: 700,
                   letterSpacing: '1px',
                   cursor: 'pointer',
-                  marginTop: '1em',
+                  marginTop: '0.6em',
                   transition: 'background 0.3s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0px)';
+                  e.currentTarget.style.boxShadow = `0 4px 12px 0 ${SILVER_LAKE_BLUE}66`;
                 }}
               >
                 Back

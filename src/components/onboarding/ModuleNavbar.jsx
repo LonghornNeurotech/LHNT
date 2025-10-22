@@ -1,3 +1,4 @@
+// Module Navbar providing easier user navigation within the onboarding pages
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -50,10 +51,10 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
     }));
   };
 
-  // Handle onboarding block selection
+  // Handle when an onboarding block is selected
   const handleBlockSelection = (blockKey) => {
-    // Always navigate to Module 0.1 of the selected block
-    navigate(`/onboarding/${blockKey}/0_1`);
+    // Always navigate to Module 1.1 of the selected block
+    navigate(`/onboarding/${blockKey}/1_1`);
     setIsBlockDropdownOpen(false);
   };
 
@@ -71,7 +72,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
       }}
     >
       <div className="flex-1 flex flex-col gap-3">
-        {/* Onboarding Block Selector - Distinguished with prussian_blue background */}
+        {/* Onboarding Block Selector */}
         <div className="mb-1">
           <button
             type="button"
@@ -80,7 +81,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
             style={{ minHeight: "56px", fontSize: "1.15rem" }}
           >
             <span className="flex items-center" style={{ width: 24, height: 24 }}>
-              {/* Block selector icon placeholder */}
+              {/* Insert CompletionIcon component here once progress tracking is fully implemented */}
             </span>
             <span className="text-left flex-1 leading-tight whitespace-normal break-words">
               Onboarding {moduleMapData.title}
@@ -88,7 +89,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
             <span className={`transition-transform duration-200 flex-shrink-0 ${isBlockDropdownOpen ? "rotate-90" : ""}`} style={{ verticalAlign: "middle" }}>▸</span>
           </button>
 
-          {/* Dropdown for Onboarding Blocks - Same design as submodule links */}
+          {/* Dropdown for Onboarding Blocks */}
           {isBlockDropdownOpen && (
             <div className="flex flex-col gap-y-2 mt-2">
               {allBlocks.map((block) => (
@@ -104,7 +105,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                   style={{ fontSize: "1rem", minHeight: "52px" }}
                 >
                   <span className="flex items-center justify-center" style={{ width: 24, height: 24 }}>
-                    {/* Block option icon placeholder */}
+                    {/* Insert CompletionIcon component here once progress tracking is fully implemented */}
                   </span>
                   <span className="ml-3 text-left flex-1 leading-tight whitespace-normal break-words">
                     {block.title}
@@ -115,7 +116,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
           )}
         </div>
 
-        {/* Module Groups Navigation - Unchanged */}
+        {/* Module Groups Navigation */}
         {groupsArr.map((group, groupIdx) => (
           <div key={groupIdx} className="mb-1">
             <button

@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Follow along on the GitHub 4.2.1 Lesson and Practice [here] to practice using Pytorch for linear regression. Send a screenshot of your progress throughout the module in an email to this email address: lhnt.onboarding@gmail.com.",
+      "taskDescription": "Follow along on the GitHub 4.2.1 Lesson, and practice [here] to practice using Pytorch for linear regression. Send a screenshot of your progress throughout the module in an email to this email address: lhnt.onboarding@gmail.com.",
       "links": [
         {
           "label": "here",

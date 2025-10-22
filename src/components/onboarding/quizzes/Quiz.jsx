@@ -1,3 +1,10 @@
+/*
+  Developer's Notes:
+  Once progress tracking is fully implemented and saved for each member,
+  then include the CompletionIcon component. For now, omit the CompletionIcon 
+  component and any semblance of progress indicators from the user until 
+  progress tracking is fully implemented and saved for each member.
+*/
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
@@ -85,7 +92,7 @@ const Quiz = ({ quizData, onComplete }) => {
         <>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
             <p className="text-green-700 font-semibold md:text-[1.2rem]">
-              Congratulations! You got a perfect score! Now, take a screenshot of your quiz results and email them to Netta through her email address: nettablin@utexas.edu
+              Congratulations! You got a perfect score! Now, take a screenshot of your quiz results and email them to this email address: lhnt.onboarding@gmail.com
             </p>
           </div>
 
