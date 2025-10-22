@@ -1,7 +1,8 @@
-// New Competition Info page
 const PRUSSIAN_BLUE = '#003153';
 const BONE_WHITE   = '#F9F6EE';
 
+// Competition Info page - only accessible to logged in members
+// Provides information about upcoming onboarding competition available for all members
 const CompetitionInfo = () => (
   <div
     className="min-h-screen flex justify-center items-center px-4 py-8"

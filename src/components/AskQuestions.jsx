@@ -1,6 +1,8 @@
 const PRUSSIAN_BLUE = '#003153';
 const BONE_WHITE   = '#F9F6EE';
 
+// Ask Questions page - only accessible to logged in members
+// Provides contact information for members to reach out if have any questions about onboarding process
 const AskQuestions = () => (
   <div
     className="min-h-screen flex justify-center items-center px-4 py-8"

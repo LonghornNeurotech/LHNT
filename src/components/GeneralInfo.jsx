@@ -1,4 +1,5 @@
-// New General Info page
+// General Info page - only accessible to logged in members
+// Provides general information about the onboarding process for members
 const PRUSSIAN_BLUE = '#003153';
 const BONE_WHITE   = '#F9F6EE';
 
