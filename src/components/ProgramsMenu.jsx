@@ -152,7 +152,7 @@ const ProgramsMenu = () => {
               {onboardingBlockMap[group].map(({ label, id }) => (
                 <button
                   key={id}
-                  onClick={() => navigate(`/onboarding/${id}/0_1`)}
+                  onClick={() => navigate(`/onboarding/${id}/1_1`)}
                   style={{
                     background: SILVER_LAKE_BLUE,
                     color: BONE_WHITE,
