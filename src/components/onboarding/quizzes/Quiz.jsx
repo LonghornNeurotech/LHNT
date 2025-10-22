@@ -1,3 +1,10 @@
+/*
+  Developer's Notes:
+  Once progress tracking is fully implemented and saved for each member,
+  then include the CompletionIcon component. For now, omit the CompletionIcon 
+  component and any semblance of progress indicators from the user until 
+  progress tracking is fully implemented and saved for each member.
+*/
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
