@@ -1,3 +1,10 @@
+/* 
+  Onboarding Block Page - only accessible to logged in members
+  Contains 2 important components: ModuleNavbar and ModulePage
+  Onboarding Block Page takes onboardingBlock, moduleSubmodule, and data props
+  from the OnboardingRouter component in order to pass it to ModuleNavbar and ModulePage
+  to help them display the needed content!
+*/
 import PropTypes from "prop-types";
 import ModuleNavbar from "./ModuleNavbar";
 import ModulePage from "./ModulePage";
