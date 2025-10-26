@@ -1,7 +1,7 @@
 {
   "block": "softwareB1",
-  "module": "2_2",
-  "moduleTitle": "Module 2.2: Numpy and Time Series",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: Numpy and Time Series",
   "infoSections": [
     {
       "type": "text",

@@ -5,26 +5,21 @@ const moduleMap = {
   softwareB1: {
     title: "Software Block 1: General Skills",
     groups: {
-      "Module 1": ["1_1"],
-      "Module 2": ["2_1", "2_2"],
-      "Module 3": ["3_1"]
+      "Module 1": ["1_1", "1_2"],
+      "Module 2": ["2_1"]
     },
     modules: {
       "1_1": {
-        title: "Module 1.1: OneNote",
+        title: "Module 1.1: Python Basics",
         path: "/onboarding/softwareB1/1_1"
       },
+      "1_2": {
+        title: "Module 1.2: Numpy and Time Series",
+        path: "/onboarding/softwareB1/1_2"
+      },
       "2_1": {
-        title: "Module 2.1: Python Basics",
+        title: "Module 2.1: Statistics",
         path: "/onboarding/softwareB1/2_1"
-      },
-      "2_2": {
-        title: "Module 2.2: Numpy and Time Series",
-        path: "/onboarding/softwareB1/2_2"
-      },
-      "3_1": {
-        title: "Module 3.1: Statistics",
-        path: "/onboarding/softwareB1/3_1"
       }
     }
   },
@@ -124,7 +119,7 @@ const moduleMap = {
   hardwareB1: {
     title: "Hardware Block 1: General Skills",
     groups: {
-      "Module 1": ["1_1", "1_2"],
+      "Module 1": ["1_1"],
       "Module 2": ["2_1"],
       "Module 3": ["3_1", "3_2"]
     },
@@ -132,10 +127,6 @@ const moduleMap = {
       "1_1": {
         title: "Module 1.1: Documentation",
         path: "/onboarding/hardwareB1/1_1"
-      },
-      "1_2": {
-        title: "Module 1.2: OneNote",
-        path: "/onboarding/hardwareB1/1_2"
       },
       "2_1": {
         title: "Module 2.1: Fusion 360 (CAD)",
