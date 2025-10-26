@@ -9,7 +9,7 @@ const LeadershipTeam = () => {
       <div className="container">
         {/* Left Side */}
         <div className="column">
-          <ContactCard name="Zarqa Fathima" title="VP of Operations" img="/OfficerImages/Zarqa_Fathima.jpg" styleClass="pfp tarun">
+          <ContactCard name="Zarqa Fathima" title="VP of Operations" img="/OfficerImages/Zarqa_Fathima.jpg" styleClass="pfp tarun" linkedin="https://www.linkedin.com/in/zarqa-fathima">
             Zarqa Fathima is the VP of Operations at Longhorn Neurotech and a part of the class of 2027 studying Biomedical Engineering. She led the UX/UI Interface Team as a Subsystem Lead during the 2024-2025 year to successfully update the appearance of the Longhorn Neurotech website. She currently applies her powerful voice and past leadership experience to deliver timely communication for every member and ensured this organization's continual, smooth operation. You'll always have a good time in any conversation with her because she is really fun to talk too.
           </ContactCard>
           <ContactCard name="Saisha Singh" title="VP of Marketing" img="/OfficerImages/Saisha_Singh.jpeg" linkedin="https://www.linkedin.com/in/saishasingh03">
