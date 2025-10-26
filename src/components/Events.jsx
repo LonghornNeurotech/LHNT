@@ -75,7 +75,7 @@ const Events = () => {
 
                 {/* Texas Neurotech BCI Competition Banner */}
                 <div className="flex justify-center mt-4 mx-4">
-                    <img src="/public/assets/events/Competition Banner.png" className="rounded-2xl m-auto"></img>
+                    <img src="/assets/events/Competition Banner.png" className="rounded-2xl m-auto"></img>
                 </div>
 
                 <h1 style={{color: VANILLA, lineHeight: "125%", letterSpacing: "0.02em"}} className="text-6xl font-bold text-center pt-3 heading">
