@@ -21,9 +21,6 @@ const LeadershipTeam = () => {
           <ContactCard name="Neha Palsikar" title="VP of Finance" img="/OfficerImages/Neha_Palsikar.jpeg" linkedin="https://www.linkedin.com/in/neha-palsikar-529510204">
             Neha Palsikar is the VP of Finance of Longhorn Neurotech and a part of the class of 2027 studying Biomedical Engineering. She is currently pursuing a certificate in Computational Science and Engineering. In her work, she develops biophysical models of tumor growth to better understand cancer biology and design forecasting methods that guide personalized treatment. In her free time, she enjoys reading, playing tennis, and exploring Austin.
           </ContactCard>
-          <ContactCard name="Sofiya Borodina" title="VP of Outreach" img="/OfficerImages/Sofiya_Borodina.jpg">
-            Sofiya Borodina is the VP of Outreach of Longhorn Neurotech. She is a sophomore in the class of 2028, majoring in Neuroscience with an academic focus on signal processing. She is currently conducting research in the Lu Lab, where she works on the development of HD-EMG systems and electrodes. Sofiya's goal is to expand public engagement with neurotech and create more opportunities for others to explore the field.
-          </ContactCard>
         </div>
 
         {/* Right Side */}
@@ -36,6 +33,9 @@ const LeadershipTeam = () => {
           </ContactCard>
           <ContactCard name="Aryan Kia Roghani" title="Research & Development Director" img="/OfficerImages/Aryan_K_Roghani.jpg" linkedin="https://www.linkedin.com/in/aryan-roghani-200774243">
             Aryan Kia Roghani is the Director of Research & Development at Longhorn Neurotech. He is a part of the class of 2028 studying Biomedical Engineering with a focus in neuro-instrumentation and a minor in Entrepreneurship. In his work he uses targeted neuro-nanomedicine delivery systems to target the brain and cross the blood-brain barrier in treating neurodegenerative diseases. He has a passion for innovation and hopes to one day work on reshaping drug delivery in medicine.
+          </ContactCard>
+          <ContactCard name="Sofiya Borodina" title="VP of Outreach" img="/OfficerImages/Sofiya_Borodina.jpg">
+            Sofiya Borodina is the VP of Outreach of Longhorn Neurotech. She is a sophomore in the class of 2028, majoring in Neuroscience with an academic focus on signal processing. She is currently conducting research in the Lu Lab, where she works on the development of HD-EMG systems and electrodes. Sofiya's goal is to expand public engagement with neurotech and create more opportunities for others to explore the field.
           </ContactCard>
         </div>
       </div>
