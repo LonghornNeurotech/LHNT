@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div style={{ backgroundColor: '#213C58' }}>
       <AboutInfo />
-      <OfficerSection />  
+      <OfficerSection />
       <SponsorsWidget />
     </div>
   );
