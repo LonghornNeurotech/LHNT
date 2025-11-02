@@ -1,5 +1,44 @@
 /* Styling for Executive Officers's Info Card*/
-.about-title{
-    color: #FFEBAD;
-    font-size: 30px;
+.about-title {
+  color: #FFEBAD;
+  font-size: 30px;
+}
+
+.officers-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 12px;
+}
+
+.org-chart-btn {
+  background-color: #5D89BA;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.org-chart-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.org-chart-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 123, 255, 0.3);
+}
+
+.org-chart-btn svg {
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
