@@ -129,7 +129,111 @@ const events = [
             talk.`,
         type: `Guest Speaker Talks`,
         images: ["/assets/events/justin.png", "/assets/events/ivan_tashev.png"]
-    }
+    },
+
+    {
+        id: 8,
+        name: "Info Session #1",
+        date: new Date("2025-09-09"),
+        location: "Zoom",
+        details: `We hosted our first info session of the 2025-2026 year remotely on Zoom,
+            where our officers provided all attendees a wonderful, detailed introduction to Longhorn Neurotech organization and the various 
+            opportunties for prospective memebers to work in teams on many exciting projects 
+            planned out for the 2025-2026 year! If you missed this event, don't worry. There's another 
+            info session on September 16, 2025 you can attend to learn about Longhorn Neurotech and the opportunties to join us.`,
+        type: `General Meeting`,
+        images: ["/assets/events/LHNT Info Sessions.jpg"]
+    },
+
+    {
+        id: 9,
+        name: "Fall Kickoff Meeting",
+        date: new Date("2025-09-14"),
+        location: "TIW Headquarters in EER building",
+        details: `We kickstarted our first project meeting to welcome all of our project members for another exciting, project-filled year! 
+            Our project members have been introduced to all of our officers from the project team and presidential team for the 2025-2026 year
+            and immediately began their onboarding process.`,
+        type: `Project Meeting`,
+        images: []
+    },
+
+    {
+        id: 10,
+        name: "Info Session #2",
+        date: new Date("2025-09-16"),
+        location: "BME Seminar Room",
+        details: `We hosted our second info session of the 2025-2026 year in-person at BME Seminar Room,
+            where our officers provided all attendees a wonderful, detailed introduction to Longhorn Neurotech 
+            organization and the various opportunties for prospective memebers to work in teams on many exciting 
+            projects planned out for the 2025-2026 year! If you missed this event, don't worry. We'll host 
+            more info sessions and open up opportunties for prospective members to join us someday near the start 
+            of next semester!`,
+        type: `General Meeting`,
+        images: ["/assets/events/LHNT Info Sessions.jpg"]
+    },
+
+    {
+        id: 11,
+        name: "Journal Club Meeting #1",
+        date: new Date("2025-10-19"),
+        location: "EER 3.642D",
+        details: `We hosted our first journal club meeting of the 2025-2026 year, open to anyone!
+            There will be Journal Club meetings every other Sunday in the EER 3.642D from 3PM to 4PM, and interesting 
+            discussion about neuroscience foudnations and novel neural engineering tools are included!`,
+        type: `General Meeting`,
+        images: ["/assets/events/LHNT Journal Club.jpg"]
+    },
+
+    {
+        id: 12,
+        name: "Journal Club Meeting #2",
+        date: new Date("2025-11-02"),
+        location: "EER 3.642D",
+        details: `We hosted our second journal club meeting of the 2025-2026 year, open to anyone! 
+            Our Signals Lead and R&D Research Lead led an interesting discussion about neuromodulation and the Inverse
+            Electrophysiology: Inferring Neuronal Characteristics from Optimal Stimulation Waveforms Using Machine Learning.
+            There will be Journal Club meetings every other Sunday in the EER 3.642D from 3PM to 4PM, and interesting 
+            discussion about neuroscience foudnations and novel neural engineering tools are included!`,
+        type: `General Meeting`,
+        images: ["/assets/events/LHNT Journal Club.jpg"]
+    },
+
+    {
+        id: 13,
+        name: "Journal Club Meeting #3",
+        date: new Date("2025-11-16"),
+        location: "EER 3.642D",
+        details: `We hosted our third journal club meeting of the 2025-2026 year, open to anyone!
+            Our Signals Lead discussed about his paper covering the multimodal apporaches in mental state detection,
+            and our R&D Research member discussed his paper covering on the workload estimator.
+            There will be Journal Club meetings every other Sunday in the EER 3.642D from 3PM to 4PM, and interesting 
+            discussion about neuroscience foudnations and novel neural engineering tools are included!`,
+        type: `General Meeting`,
+        images: ["/assets/events/LHNT Journal Club.jpg"]
+    },
+
+    {
+        id: 14,
+        name: "Dr. Ilya Pyatnitskiy Talk",
+        date: new Date("2025-11-09"),
+        location: "WEL 1.316",
+        details: `We hosted Dr. Ilya Pyatniskiy, CEO of Neurawear, for him to share his personal journey 
+            in building a startup and the interesting work being done at Neurawear in a special guest speaker 
+            talk open to anyone, and we have a packed house for this event! Our members received 
+            his valuable advice into building a startup from a clinical, research, and entrepreneurial perspective.`,
+        type: `Guest Speaker Talk`,
+        images: ["/assets/events/Pyatnitskiy Talk.jpg", "/assets/events/Pyatnitskiy Talk Event.jpg", "/assets/events/Pyatnitskiy Talk Post-Talk.jpg"]
+    },
+
+    {
+        id: 15,
+        name: "Onboarding Competition Kickoff",
+        date: new Date("2025-11-09"),
+        location: "EER 3.642",
+        details: `We kickstarted our organization's first-ever onboarding competition for our project members to participate!`,
+        type: `Project Meeting`,
+        images: []
+    },
 
 ];
 
