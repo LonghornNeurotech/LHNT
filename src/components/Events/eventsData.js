@@ -154,7 +154,7 @@ const events = [
             Our project members have been introduced to all of our officers from the project team and presidential team for the 2025-2026 year
             and immediately began their onboarding process.`,
         type: `Project Meeting`,
-        images: []
+        images: ["/assets/events/Fall 25 Kickoff.jpg"]
     },
 
     {
@@ -169,7 +169,7 @@ const events = [
             more info sessions and open up opportunties for prospective members to join us someday near the start 
             of next semester!`,
         type: `General Meeting`,
-        images: ["/assets/events/LHNT Info Sessions.jpg"]
+        images: ["/assets/events/LHNT Info Sessions.jpg", "/assets/events/LHNT Info Session 2.jpg"]
     },
 
     {
@@ -252,6 +252,18 @@ const events = [
             "/assets/events/World of Engineering Photo 2.jpg",
             "/assets/events/World of Engineering Photo 3.jpg",
             "/assets/events/World of Engineering Photo 4.jpg",
+        ]
+    },
+
+    {
+        id: 17,
+        name: "LHNT Profit Share at Noam's Gelato & Bean",
+        date: new Date("2025-09-24"),
+        location: "2512 Rio Grande St, Austin, TX 78705",
+        details: `We hosted a profit share, where our members enjoyed ice cream from Noam's Gelato & Bean and network with other members! It's a packed event!`,
+        type: `Social Events`,
+        images: ["/assets/events/Profit Share Photo 1.jpg", 
+            "/assets/events/Profit Share Photo 2.jpg"
         ]
     },
 
