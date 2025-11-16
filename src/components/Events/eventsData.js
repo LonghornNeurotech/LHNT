@@ -217,10 +217,15 @@ const events = [
         name: "Dr. Ilya Pyatnitskiy Talk",
         date: new Date("2025-11-09"),
         location: "WEL 1.316",
-        details: `We hosted Dr. Ilya Pyatniskiy, CEO of Neurawear, for him to share his personal journey 
-            in building a startup and the interesting work being done at Neurawear in a special guest speaker 
-            talk open to anyone, and we have a packed house for this event! Our members received 
-            his valuable advice into building a startup from a clinical, research, and entrepreneurial perspective.`,
+        details: `Dr. Ilya Pyatnitskiy, CEO of Neurawear and Co-Director of Wang Lab at UT BME, joined us in a special guest talk 
+            to share his personal journey building his startup from a clinical, research, and entrepreneurial perspective. Dr. Pyatnitskiy 
+            also shared about the interesting works being done at Neurawear: developing non-invasive devices for recording & stimulating 
+            brain and peripheral neural activity using advanced hydrogen EEG electrodes and compact wearable ultrasound transducers. 
+            Neurawear, affiliated with Wang Lab at UT as well as Dell Med, embarks on a mission to empower 
+            clinicians and researchers worldwide with non-invasive tools that provide deeper insights into 
+            neurological challenges and stimulate deep brain regions, ultimately transforming patient care and advancing our understanding 
+            of the brain. We had a packed house for this talk, and our members eagerly received valuable insights about building a startup 
+            and the kind of development into innovative wearable technology that Neurawear does!`,
         type: `Guest Speaker Talk`,
         images: ["/assets/events/Pyatnitskiy Talk.jpg", "/assets/events/Pyatnitskiy Talk Event.jpg", "/assets/events/Pyatnitskiy Talk Post-Talk.jpg"]
     },
@@ -233,6 +238,21 @@ const events = [
         details: `We kickstarted our organization's first-ever onboarding competition for our project members to participate!`,
         type: `Project Meeting`,
         images: []
+    },
+
+    {
+        id: 16,
+        name: "World of Engineering",
+        date: new Date("2025-11-08"),
+        location: "EER 0th Floor Lobby",
+        details: `We showcased our EEG & Rover technology that our project members worked on and offered hands-on activities 
+            for all attendees at the World of Engineering event!`,
+        type: `Social Events`,
+        images: ["/assets/events/World of Engineering Photo 1.jpg", 
+            "/assets/events/World of Engineering Photo 2.jpg",
+            "/assets/events/World of Engineering Photo 3.jpg",
+            "/assets/events/World of Engineering Photo 4.jpg",
+        ]
     },
 
 ];
