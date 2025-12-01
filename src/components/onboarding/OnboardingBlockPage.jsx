@@ -5,11 +5,19 @@
   from the OnboardingRouter component in order to pass it to ModuleNavbar and ModulePage
   to help them display the needed content!
 */
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import ModuleNavbar from "./ModuleNavbar";
 import ModulePage from "./ModulePage";
+import OnboardingHeader from "./OnboardingHeader";
 
 const OnboardingBlockPage = ({onboardingBlock, moduleSubmodule, data}) => {
+  const mainRef = useRef(null);
+
+  // When switching modules, bring the user to the top of the content panel
+  useEffect(() => {
+    mainRef.current?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [onboardingBlock, moduleSubmodule]);
 
   return (
     <div
@@ -34,9 +42,15 @@ const OnboardingBlockPage = ({onboardingBlock, moduleSubmodule, data}) => {
         </div>
       </aside>
       <main
+        ref={mainRef}
         className="flex-1 h-full rounded-xl bg-white px-8 py-6 overflow-auto"
         style={{ boxSizing: "border-box" }}
       >
+        <OnboardingHeader
+          onboardingBlock={onboardingBlock}
+          moduleSubmodule={moduleSubmodule}
+          moduleTitle={data?.moduleTitle}
+        />
         <ModulePage data={data} />
       </main>
     </div>

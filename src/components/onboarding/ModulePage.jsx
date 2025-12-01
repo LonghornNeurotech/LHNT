@@ -95,7 +95,6 @@ const ModulePage = ({ data }) => {
 
   return (
     <div className="mx-auto">
-      <h1 className="text-2xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
       <section className="mb-6">
         {infoSections.map((section, i) => {
           if (section.type === "text") {
