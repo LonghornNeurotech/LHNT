@@ -11,15 +11,15 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Go through this [course]. Send a screenshot of your completion screen/certificate in an email to this email address: lhnt.onboarding@gmail.com. If you are proficient in Python, send a screenshot of a previous project in an email to this email address: lhnt.onboarding@gmail.com instead. If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
-      "links": [
+      "taskDescription": "Watch this videos that help explain some important Python concepts in 30 minutes! If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
+      "videos": [
         {
-          "label": "course",
-          "url": "https://pll.harvard.edu/course/cs50s-introduction-programming-python",
+          "title": "Learn Python in only 30 minutes (Beginner Tutorial)",
+          "url": "https://www.youtube.com/watch?v=Ro_MScTDfU4",
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks"]
+      "requiredActions": ["watchVideos"]
     }
   ],
  "extraResources": [

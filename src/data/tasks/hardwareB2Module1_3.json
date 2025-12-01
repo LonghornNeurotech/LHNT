@@ -14,12 +14,12 @@
       "taskDescription": "Download Meshlab and watch this video on the basic navigation system. Next, watch this video on filtering cleaning.",
       "videos": [
         {
-          "title": "Basic Navigation System",
+          "title": "MeshLab Basics: Navigation",
           "url": "https://www.youtube.com/embed/Sl0vJfmj5LQ",
           "required": true
         },
         {
-          "title": "Filtering and Cleaning",
+          "title": "Cleaning and Remeshing Filters in Meshlab",
           "url": "https://www.youtube.com/embed/j9EKk3Bs1TQ",
           "required": true
         }

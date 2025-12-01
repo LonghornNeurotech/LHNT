@@ -22,7 +22,7 @@
       "videos": [
         {
           "title": "Neural Networks Explained in 5 minutes",
-          "url": "https://www.youtube.com/embed/FgakZw6K1QQ",
+          "url": "https://www.youtube.com/embed/jmmW0F0biz0",
           "required": true
         },
         {
@@ -42,6 +42,16 @@
         {
           "label": "here",
           "url": "https://www.3blue1brown.com/topics/linear-algebra"
+        }
+      ]
+    }, 
+    {
+      "type": "text",
+      "text": "You can also read this [article] here to explore more about the math behind neural networks.",
+      "links": [
+        {
+          "label": "article",
+          "url": "https://towardsdatascience.com/the-math-behind-neural-networks-a34a51b93873/"
         }
       ]
     }
