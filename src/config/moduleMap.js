@@ -133,7 +133,7 @@ const moduleMap = {
         path: "/onboarding/hardwareB1/2_1"
       },
       "3_1": {
-        title: "Module 3.1: Basics (Ohm's Law, Components, Schematics, Breadboard)",
+        title: "Module 3.1: Electronic Basics",
         path: "/onboarding/hardwareB1/3_1"
       },
       "3_2": {
@@ -159,31 +159,31 @@ const moduleMap = {
         path: "/onboarding/hardwareB2/1_2"
       },
       "1_3": {
-        title: "Module 1.3: Simulation",
+        title: "Module 1.3: MeshLab",
         path: "/onboarding/hardwareB2/1_3"
       },
       "2_1": {
-        title: "Module 2.1: PCB Design",
+        title: "Module 2.1: Reverse Engineering and Spatial Visualization",
         path: "/onboarding/hardwareB2/2_1"
       },
       "2_2": {
-        title: "Module 2.2: Component Soldering",
+        title: "Module 2.2: CAD Skills",
         path: "/onboarding/hardwareB2/2_2"
       },
       "3_1": {
-        title: "Module 3.1: Testing",
+        title: "Module 3.1: Basics of 3D Printing",
         path: "/onboarding/hardwareB2/3_1"
       },
       "3_2": {
-        title: "Module 3.2: Debugging",
+        title: "Module 3.2: Bambu Lab P1P 3D Printing Training",
         path: "/onboarding/hardwareB2/3_2"
       },
       "3_3": {
-        title: "Module 3.3: Documentation",
+        title: "Module 3.3: Raise3D Advanced Filament Printers Training",
         path: "/onboarding/hardwareB2/3_3"
       },
       "3_4": {
-        title: "Module 3.4: Final Assembly",
+        title: "Module 3.4: SLA 3D Printing Training",
         path: "/onboarding/hardwareB2/3_4"
       }
     }
@@ -197,7 +197,7 @@ const moduleMap = {
     },
     modules: {
       "1_1": {
-        title: "Module 1.1: Tools",
+        title: "Module 1.1: Breadboard",
         path: "/onboarding/hardwareB3/1_1"
       },
       "1_2": {
@@ -209,7 +209,7 @@ const moduleMap = {
         path: "/onboarding/hardwareB3/1_3"
       },
       "2_1": {
-        title: "Module 2.1: Arduino",
+        title: "Module 2.1: Tinkering Arduino on Tinkercad",
         path: "/onboarding/hardwareB3/2_1"
       },
       "2_2": {
@@ -225,11 +225,11 @@ const moduleMap = {
         path: "/onboarding/hardwareB3/2_4"
       },
       "3_1": {
-        title: "Module 3.1: Soldering",
+        title: "Module 3.1: Soldering Basics",
         path: "/onboarding/hardwareB3/3_1"
       },
       "3_2": {
-        title: "Module 3.2: TIW Training - Basic Soldering Training (E1)",
+        title: "Module 3.2: Basic Soldering Training",
         path: "/onboarding/hardwareB3/3_2"
       }
     }
@@ -255,7 +255,7 @@ const moduleMap = {
         path: "/onboarding/hardwareB4/2_1"
       },
       "2_2": {
-        title: "Module 2.2: Arduino (Integration of C++ skills)",
+        title: "Module 2.2: C++ on Arduino",
         path: "/onboarding/hardwareB4/2_2"
       },
       "3_1": {

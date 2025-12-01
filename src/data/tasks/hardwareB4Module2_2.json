@@ -1,7 +1,7 @@
 {
   "block": "hardwareB4",
   "module": "2_2",
-  "moduleTitle": "Module 2.2: Arduino (Integration of C++ skills)",
+  "moduleTitle": "Module 2.2: C++ on Arduino",
   "infoSections": [
     {
       "type": "text",
