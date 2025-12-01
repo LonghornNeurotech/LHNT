@@ -6,7 +6,7 @@ import TaskCard from "./TaskCard";
 import VideoGallery from "./videos/VideoGallery";
 
 const ModulePage = ({ data }) => {
-  const { moduleTitle, infoSections = [], tasks = [], extraResources = [] } = data;
+  const { infoSections = [], tasks = [], extraResources = [] } = data;
 
   // Ensures every segment is inline, preventing line break bugs in lists.
   const renderWithBold = (text, links = []) => {

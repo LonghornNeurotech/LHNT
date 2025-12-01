@@ -2,12 +2,13 @@
 import { useParams } from "react-router-dom";
 import OnboardingBlockPage from "./OnboardingBlockPage";
 import tasksData from "../../data/tasks/index.js";
+import { buildModuleIntroData } from "../../config/moduleIntroBuilder.js";
 
 const OnboardingRouter = () => {
   const { onboardingBlock, moduleSubmodule } = useParams();
 
   const dataKey = `${onboardingBlock}Module${moduleSubmodule}`;
-  const data = tasksData[dataKey];
+  const data = tasksData[dataKey] || buildModuleIntroData(onboardingBlock, moduleSubmodule);
 
   if (!data) {
     return <div className="text-red-600 p-4">Data not found for key: {dataKey}</div>;
