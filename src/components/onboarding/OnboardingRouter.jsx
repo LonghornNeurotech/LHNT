@@ -5,7 +5,6 @@ import tasksData from "../../data/tasks/index.js";
 
 const OnboardingRouter = () => {
   const { onboardingBlock, moduleSubmodule } = useParams();
-  console.log("Params:", onboardingBlock, moduleSubmodule);
 
   const dataKey = `${onboardingBlock}Module${moduleSubmodule}`;
   const data = tasksData[dataKey];

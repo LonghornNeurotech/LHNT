@@ -78,7 +78,7 @@ const moduleMap = {
       },
       "3_3": {
         title: "Module 3.3: LDA",
-        path: "/onboarding/hardwareB2/3_3"
+        path: "/onboarding/softwareB3/3_3"
       }
     }
   },
@@ -138,7 +138,7 @@ const moduleMap = {
       },
       "3_2": {
         title: "Module 3.2: Electronic Systems",
-        path: "/onboarding/hardwareB2/3_2"
+        path: "/onboarding/hardwareB1/3_2"
       }
     }
   },
