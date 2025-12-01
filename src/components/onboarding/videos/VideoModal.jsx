@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import ReactPlayer from "react-player";
+import YouTubeEmbed from "./YouTubeEmbed";
 
 const VideoModal = ({ video, isOpen, onClose, onEmbedError }) => {
   const [hasError, setHasError] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const iframeRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -26,11 +27,21 @@ const VideoModal = ({ video, isOpen, onClose, onEmbedError }) => {
 
   if (!isOpen || !video) return null;
 
-  const handleIframeError = () => {
-    console.log('Iframe failed to load, video may be restricted');
+  const handlePlayerError = () => {
     setHasError(true);
     if (onEmbedError) {
       onEmbedError(video);
+    }
+  };
+
+  const handleYouTubeError = (code) => {
+    // For YouTube, 101/150 are the classic "embedding disabled" errors.
+    // Treat ANY error code as a reason to fall back to opening the original platform.
+    if (code != null) {
+      handlePlayerError();
+    } else {
+      // If we couldn't even parse/init the player, also fall back.
+      handlePlayerError();
     }
   };
 
@@ -39,6 +50,14 @@ const VideoModal = ({ video, isOpen, onClose, onEmbedError }) => {
       if (embedUrl.includes('youtube.com/embed/')) {
         const videoId = embedUrl.split('/embed/')[1].split('?')[0];
         return `https://www.youtube.com/watch?v=${videoId}`;
+      }
+      if (embedUrl.includes('youtu.be/')) {
+        const videoId = embedUrl.split('youtu.be/')[1].split(/[?&]/)[0];
+        return `https://www.youtube.com/watch?v=${videoId}`;
+      }
+      if (embedUrl.includes('youtube.com/watch')) {
+        const videoId = new URL(embedUrl).searchParams.get('v');
+        return videoId ? `https://www.youtube.com/watch?v=${videoId}` : embedUrl;
       }
       return embedUrl;
     } catch {
@@ -49,19 +68,12 @@ const VideoModal = ({ video, isOpen, onClose, onEmbedError }) => {
 
   const openVideoDirectly = () => {
     const directUrl = getDirectVideoUrl(video.url);
-    window.open(directUrl, '_blank');
+    // Open ONLY in a new tab (do not navigate away in the current tab).
+    window.open(directUrl, "_blank", "noopener,noreferrer");
   };
 
-  // Create auto-play URL
-  const getAutoPlayUrl = (url) => {
-    try {
-      const separator = url.includes('?') ? '&' : '?';
-      return `${url}${separator}autoplay=1&rel=0`;
-    } catch {
-      // Removed unused error variable
-      return url;
-    }
-  };
+  const playerUrl = getDirectVideoUrl(video.url);
+  const isYouTube = /youtube\.com|youtu\.be/.test(String(video.url));
 
   // Responsive sizing - PERFECT mobile layout
   const modalClasses = isMobile 
@@ -98,32 +110,23 @@ const VideoModal = ({ video, isOpen, onClose, onEmbedError }) => {
           style={{ height: videoHeight }}
         >
           {!hasError ? (
-            <iframe
-              ref={iframeRef}
-              src={getAutoPlayUrl(video.url)}
-              title={video.title}
-              className="w-full h-full border-0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              onError={handleIframeError}
-              onLoad={() => {
-                // Additional check for restricted videos after delay
-                setTimeout(() => {
-                  try {
-                    const iframe = iframeRef.current;
-                    if (iframe && iframe.contentDocument) {
-                      const iframeContent = iframe.contentDocument.body.textContent;
-                      if (iframeContent && (iframeContent.includes('unavailable') || iframeContent.includes('blocked'))) {
-                        handleIframeError();
-                      }
-                    }
-                  } catch {
-                    // Cross-origin restrictions prevent access, but video might still work
-                    console.log('Cannot access iframe content due to CORS, but video may be working');
-                  }
-                }, 2000);
-              }}
-            />
+            isYouTube ? (
+              <YouTubeEmbed
+                url={video.url}
+                title={video.title}
+                autoplay={true}
+                onError={handleYouTubeError}
+              />
+            ) : (
+              <ReactPlayer
+                url={playerUrl}
+                width="100%"
+                height="100%"
+                playing
+                controls
+                onError={handlePlayerError}
+              />
+            )
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center text-white">
               <div className="text-center mb-6 px-4">
