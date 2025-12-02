@@ -103,7 +103,7 @@ const moduleMap = {
         path: "/onboarding/softwareB4/2_1"
       },
       "2_2": {
-        title: "Module 2.2: Convolutional Neural Netowrks (with EEG Applications)",
+        title: "Module 2.2: Convolutional Neural Networks (with EEG Applications)",
         path: "/onboarding/softwareB4/2_2"
       },
       "3_1": {

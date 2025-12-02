@@ -1,12 +1,27 @@
 // ./src/components/onboarding/ModulePage.jsx
 // This is the submodule page that displays all the content for the current submodule of the current onboarding block the user is in!
+import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 import RichTextWithLinks from "./RichTextWithLinks";
 import TaskCard from "./TaskCard";
 import VideoGallery from "./videos/VideoGallery";
+import { useProgress } from "../../context/useProgress";
 
 const ModulePage = ({ data }) => {
   const { infoSections = [], tasks = [], extraResources = [] } = data;
+  const { onboardingBlock, moduleSubmodule } = useParams();
+  const { progress, markSubmoduleVisited, updateSubmoduleCompletion } = useProgress();
+
+  useEffect(() => {
+    if (!onboardingBlock || !moduleSubmodule) return;
+    markSubmoduleVisited(onboardingBlock, moduleSubmodule);
+  }, [onboardingBlock, moduleSubmodule, markSubmoduleVisited]);
+
+  useEffect(() => {
+    if (!onboardingBlock || !moduleSubmodule) return;
+    updateSubmoduleCompletion(onboardingBlock, moduleSubmodule, tasks || []);
+  }, [onboardingBlock, moduleSubmodule, tasks, progress, updateSubmoduleCompletion]);
 
   // Ensures every segment is inline, preventing line break bugs in lists.
   const renderWithBold = (text, links = []) => {

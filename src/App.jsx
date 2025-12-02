@@ -16,9 +16,13 @@ import OnboardingRouter from "./components/onboarding/OnboardingRouter";
 */
 import { AuthProvider } from "./context/AuthProvider";
 
+// Implement ProgressProvider to keep track of onboarding progress throughout the website
+import { ProgressProvider } from "./context/ProgressProvider";
+
 const App = () => {
   return (
     <AuthProvider>
+      <ProgressProvider>
       <Router>
         <div>
           <Navbar />
@@ -89,6 +93,7 @@ const App = () => {
           </div>
         </div>
       </Router>
+      </ProgressProvider>
     </AuthProvider>
   );
 };

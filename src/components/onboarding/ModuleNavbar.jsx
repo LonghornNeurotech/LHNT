@@ -3,6 +3,8 @@ import { useMemo, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { NavLink, useNavigate } from "react-router-dom";
 import moduleMap from "../../config/moduleMap";
+import CompletionIcon from "../common/CompletionIcon";
+import { useProgress } from "../../context/useProgress";
 
 // Developer note: Omit CompletionIcon display from ModuleNavbar component 
 // until progress tracking for submodules and modules are correctly implemented!
@@ -11,6 +13,7 @@ import moduleMap from "../../config/moduleMap";
 const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
   const navigate = useNavigate();
   const moduleMapData = moduleMap[onboardingBlock];
+  const { progress, isModuleCompleted } = useProgress();
 
   // State for onboarding block dropdown
   const [isBlockDropdownOpen, setIsBlockDropdownOpen] = useState(false);
@@ -149,9 +152,14 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
               style={{ minHeight: "56px", fontSize: "1.15rem" }}
             >
               <span className="flex items-center" style={{ width: 24, height: 24 }}>
-                {/* <CompletionIcon
-                  completed={group.submodules.every(id => moduleMapData.modules[id]?.completed)}
-                /> */}
+                {(() => {
+                  const match = /^Module\s+(\d+)/.exec(group.name);
+                  const moduleNumber = match?.[1];
+                  const done = moduleNumber
+                    ? isModuleCompleted(onboardingBlock, moduleNumber)
+                    : false;
+                  return <CompletionIcon completed={done} />;
+                })()}
               </span>
               <span className="truncate text-left flex-1">{group.name}</span>
               <span className={`transition-transform duration-200 ${openGroupIdx === groupIdx ? "rotate-90" : ""}`} style={{ verticalAlign: "middle" }}>▸</span>
@@ -167,6 +175,8 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                     ? `Module ${String(subId).split("_")[0]} Overview`
                     : null;
                   if (!sub && !fallbackTitle) return null;
+                  const subKey = `${onboardingBlock}_${subId}`;
+                  const subCompleted = Boolean(progress.submodules?.[subKey]);
                   return (
                     <NavLink
                       key={subId}
@@ -182,7 +192,7 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                       style={{ fontSize: "1rem", minHeight: "52px" }}
                     >
                       <span className="flex items-center justify-center" style={{ width: 24, height: 24 }}>
-                        {/* <CompletionIcon completed={sub.completed} /> */}
+                        {!isIntro && <CompletionIcon completed={subCompleted} />}
                       </span>
                       <span className="ml-3 text-left flex-1">{sub?.title || fallbackTitle}</span>
                     </NavLink>

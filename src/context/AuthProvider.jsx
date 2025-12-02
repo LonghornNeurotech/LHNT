@@ -21,9 +21,9 @@ export const AuthProvider = ({ children }) => {
     const validPassword = 'LHNTFALL25';
     if (password === validPassword && fullName.trim() && eid.trim()) {
       const memberObj = {
-        memberId: Date.now().toString(),
+        memberId: eid.trim().toLowerCase(),
         fullName: fullName.trim(),
-        eid: eid.trim(),
+        eid: eid.trim().toLowerCase(),
         role: 'member',
       };
       setMember(memberObj);
@@ -45,6 +45,27 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('member');
   };
 
+  // Delete account function
+  const deleteAccount = async () => {
+    if (!member?.eid) {
+      logout();
+      return;
+    }
+
+    try {
+      await fetch('/api/delete-account', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ eid: member.eid }),
+      });
+    } catch {
+      // Ignore errors; still clear local data.
+    }
+
+    localStorage.removeItem(`progress_${member.eid}`);
+    logout();
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -52,6 +73,7 @@ export const AuthProvider = ({ children }) => {
         isAuthenticated,
         login,
         logout,
+        deleteAccount,
       }}
     >
       {children}

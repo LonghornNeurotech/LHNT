@@ -7,6 +7,7 @@
 */
 import { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
+import CompletionIcon from "../../common/CompletionIcon";
 // import CompletionIcon from "../../common/CompletionIcon";
 
 const getThumbnailUrls = (id) => [
@@ -100,7 +101,7 @@ const VideoThumbnail = ({ video, onClick, isWatched }) => {
       </div>
       <div className="flex items-center justify-between px-2">
         <h4 className="text-sm font-medium line-clamp-2">{video.title}</h4>
-        {/* {video.required && <CompletionIcon completed={isWatched} />} */}
+        {video.required && <CompletionIcon completed={Boolean(isWatched)} />}
       </div>
     </div>
   );

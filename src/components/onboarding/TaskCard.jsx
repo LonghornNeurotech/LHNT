@@ -6,17 +6,26 @@
   progress tracking is fully implemented and saved for each member.
 */
 
-import { useState, useEffect } from "react";
+import { useMemo, useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 import RichTextWithLinks from "./RichTextWithLinks";
 import VideoGallery from "./videos/VideoGallery";
 import Quiz from "./quizzes/Quiz";
 import FileUploadManager from "./upload/FileUploadManager";
-// import CompletionIcon from "../common/CompletionIcon";
+import CompletionIcon from "../common/CompletionIcon";
 import quizzesData from "../../data/quizzes";
+import { useProgress } from "../../context/useProgress";
 
 const TaskCard = ({ task }) => {
   const { taskTitle, taskDescription, videos, documents, links, requiredActions = [], quizId } = task;
+  const { onboardingBlock, moduleSubmodule } = useParams();
+  const { updateTaskProgress, getTaskProgress, isTaskCompleted } = useProgress();
+
+  const taskProgress = useMemo(() => {
+    if (!onboardingBlock || !moduleSubmodule) return {};
+    return getTaskProgress(onboardingBlock, moduleSubmodule, taskTitle);
+  }, [getTaskProgress, onboardingBlock, moduleSubmodule, taskTitle]);
   
   // State for different completion types
   const [quizData, setQuizData] = useState(null);
@@ -28,8 +37,12 @@ const TaskCard = ({ task }) => {
 
   // Helper handler function for RichTextWithLinks to call when links are clicked
   const handleRichTextLinkClick = (linkLabel, isRequired) => {
-    if (isRequired && links) {
-      setClickedLinks(prev => new Set(prev).add(linkLabel));
+    if (isRequired && links && onboardingBlock && moduleSubmodule) {
+      setClickedLinks(prev => {
+        const next = new Set(prev).add(linkLabel);
+        updateTaskProgress(onboardingBlock, moduleSubmodule, taskTitle, "clickedLinks", Array.from(next));
+        return next;
+      });
     }
   };
 
@@ -59,6 +72,7 @@ const TaskCard = ({ task }) => {
                   text={item} 
                   links={links} 
                   onLinkClick={handleRichTextLinkClick}
+                  clickedLabels={clickedLinks}
                 />
               </li>
             ))}
@@ -73,6 +87,7 @@ const TaskCard = ({ task }) => {
                   text={item} 
                   links={links} 
                   onLinkClick={handleRichTextLinkClick}
+                  clickedLabels={clickedLinks}
                 />
               </li>
             ))}
@@ -127,6 +142,7 @@ const TaskCard = ({ task }) => {
               text={processedLine} 
               links={links} 
               onLinkClick={handleRichTextLinkClick}
+              clickedLabels={clickedLinks}
             />
           </div>
         );
@@ -150,31 +166,49 @@ const TaskCard = ({ task }) => {
     }
 
     // Reset completion states
-    setQuizCompleted(false);
-    setUploadCompleted(false);
-    setWatchedVideos(new Set());
-    setReadDocuments(new Set());
-    setClickedLinks(new Set());
-  }, [requiredActions, quizId]);
+    setQuizCompleted(Boolean(taskProgress.quizCompleted));
+    setUploadCompleted(Boolean(taskProgress.uploadCompleted));
+    setWatchedVideos(new Set(taskProgress.watchedVideos || []));
+    setReadDocuments(new Set(taskProgress.readDocuments || []));
+    setClickedLinks(new Set(taskProgress.clickedLinks || []));
+  }, [requiredActions, quizId, taskProgress]);
 
   // Handler functions
   const handleQuizComplete = (completed) => {
     setQuizCompleted(completed);
+    if (onboardingBlock && moduleSubmodule) {
+      updateTaskProgress(onboardingBlock, moduleSubmodule, taskTitle, "quizCompleted", completed);
+    }
   };
 
   const handleUploadComplete = (completed) => {
     setUploadCompleted(completed);
+    if (onboardingBlock && moduleSubmodule) {
+      updateTaskProgress(onboardingBlock, moduleSubmodule, taskTitle, "uploadCompleted", completed);
+    }
   };
 
   const handleVideoWatch = (videoTitle, isRequired) => {
     if (isRequired) {
-      setWatchedVideos(prev => new Set(prev).add(videoTitle));
+      setWatchedVideos(prev => {
+        const next = new Set(prev).add(videoTitle);
+        if (onboardingBlock && moduleSubmodule) {
+          updateTaskProgress(onboardingBlock, moduleSubmodule, taskTitle, "watchedVideos", Array.from(next));
+        }
+        return next;
+      });
     }
   };
 
   const handleDocumentRead = (docTitle, isRequired) => {
     if (isRequired) {
-      setReadDocuments(prev => new Set(prev).add(docTitle));
+      setReadDocuments(prev => {
+        const next = new Set(prev).add(docTitle);
+        if (onboardingBlock && moduleSubmodule) {
+          updateTaskProgress(onboardingBlock, moduleSubmodule, taskTitle, "readDocuments", Array.from(next));
+        }
+        return next;
+      });
     }
   };
 
@@ -249,14 +283,18 @@ const TaskCard = ({ task }) => {
     return isTaskComplete;
   };
 
-  const isTaskComplete = calculateTaskCompletion();
+  const isTaskComplete = onboardingBlock && moduleSubmodule
+    ? isTaskCompleted(onboardingBlock, moduleSubmodule, task)
+    : calculateTaskCompletion();
+
+  // Submodule completion is handled at the ModulePage level (with full task list).
 
   return (
     <div className={`bg-white rounded-lg shadow-sm p-6 mb-6 border-silver_lake_blue`}>
       {/* Task Header with CompletionIcon */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-semibold text-gray-900">{taskTitle}</h2>
-        {/* <CompletionIcon completed={isTaskComplete} /> */}
+        <CompletionIcon completed={isTaskComplete} />
       </div>
 
       {/* Task Description - Now with formatted text parsing */}

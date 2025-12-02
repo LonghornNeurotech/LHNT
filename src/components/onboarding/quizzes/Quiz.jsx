@@ -49,8 +49,8 @@ const Quiz = ({ quizData, onComplete }) => {
     
     // Don't mark as complete yet if perfect score - wait for form submission
     const isPerfect = correctCount === quizData.length;
-    if (!isPerfect && onComplete) {
-      onComplete(false);
+    if (onComplete) {
+      onComplete(isPerfect);
     }
   };
 

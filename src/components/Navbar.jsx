@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isLogoutHovered, setIsLogoutHovered] = useState(false);
   const [isMobileLogoutHovered, setIsMobileLogoutHovered] = useState(false);
   // Authentication state and navigation 
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, deleteAccount } = useAuth();
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -29,6 +29,18 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
+    setProfileDropdown(false);
+    setMobileProfileDropdown(false);
+    setIsOpen(false);
+    navigate("/");
+  };
+
+  const handleDeleteAccount = async () => {
+    const confirmed = window.confirm(
+      "Delete your account and all onboarding progress? This cannot be undone."
+    );
+    if (!confirmed) return;
+    await deleteAccount();
     setProfileDropdown(false);
     setMobileProfileDropdown(false);
     setIsOpen(false);
@@ -80,6 +92,17 @@ const Navbar = () => {
                         }}
                       >
                         Logout
+                      </button>
+                      <button
+                        onClick={handleDeleteAccount}
+                        className="w-full text-left font-['Antonio'] leading-snug hover:bg-[#FFD6D6] transition-colors"
+                        style={{
+                          color: "#7A1D1D",
+                          fontSize: "1.2rem",
+                          padding: "0.85rem 1.3rem",
+                        }}
+                      >
+                        Delete Account
                       </button>
                     </div>
                   )}
@@ -221,6 +244,18 @@ const Navbar = () => {
                   }}
                 >
                   Logout
+                </button>
+                <button
+                  onClick={handleDeleteAccount}
+                  className="w-full text-left font-['Antonio'] flex items-center transition-colors"
+                  style={{
+                    color: "#7A1D1D",
+                    fontSize: "1.15rem",
+                    padding: "0.85rem 1.3rem",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Delete Account
                 </button>
               </div>
             </div>
