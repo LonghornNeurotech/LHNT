@@ -93,6 +93,20 @@ const ModulePage = ({ data }) => {
     return elements.length ? <div>{elements}</div> : null;
   };
 
+  // Supports for display of multiple videos in the module page's info section and in the extra resources section
+  const normalizeOptionalVideos = (entry) => {
+    if (!entry) return [];
+    if (Array.isArray(entry.videos)) {
+      return entry.videos
+        .filter((v) => v?.url && v?.title)
+        .map((v) => ({ ...v, required: false }));
+    }
+    if (entry.url && entry.title) {
+      return [{ url: entry.url, title: entry.title, required: false }];
+    }
+    return [];
+  };
+
   return (
     <div className="mx-auto">
       <section className="mb-6">
@@ -118,10 +132,12 @@ const ModulePage = ({ data }) => {
               </p>
             );
           }
-          if (section.type === "video") {
+          if (section.type === "video" || section.type === "videos") {
+            const videos = normalizeOptionalVideos(section);
+            if (!videos.length) return null;
             return (
               <div key={i} className="mb-4">
-                <VideoGallery videos={[{ url: section.url, title: section.title, required: false }]} />
+                <VideoGallery videos={videos} />
               </div>
             );
           }
@@ -137,10 +153,12 @@ const ModulePage = ({ data }) => {
         <section>
           <h2 className="font-bold text-lg text-prussian_blue mb-2">Extra Resources</h2>
           {extraResources.map((res, i) => {
-            if (res.type === "video") {
+            if (res.type === "video" || res.type === "videos") {
+              const videos = normalizeOptionalVideos(res);
+              if (!videos.length) return null;
               return (
                 <div key={i} className="mb-4">
-                  <VideoGallery videos={[{ url: res.url, title: res.title, required: false }]} />
+                  <VideoGallery videos={videos} />
                 </div>
               );
             }
@@ -177,6 +195,12 @@ ModulePage.propTypes = {
         url: PropTypes.string,
         title: PropTypes.string,
         links: PropTypes.array,
+        videos: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+          })
+        ),
       })
     ),
     tasks: PropTypes.arrayOf(
@@ -193,6 +217,12 @@ ModulePage.propTypes = {
         text: PropTypes.string,
         url: PropTypes.string,
         links: PropTypes.array,
+        videos: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+          })
+        ),
       })
     ),
   }).isRequired,

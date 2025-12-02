@@ -37,8 +37,9 @@ const TaskCard = ({ task }) => {
   const parseFormattedText = (text, links = []) => {
     if (!text) return null;
 
-    // Split by actual newlines directly
-    const lines = text.split('\n');
+    // Support both literal "\n" sequences and actual newlines
+    const processed = text.replace(/\\n/g, "\n").replace(/\\t/g, "\t");
+    const lines = processed.split('\n');
     
     const elements = [];
     let listType = null; // 'ul' or 'ol'

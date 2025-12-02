@@ -38,14 +38,17 @@
       ]
     },
     {
-      "type": "video",
-      "title": "Getting Started with Python in VS Code (Official Video)",
-      "url": "https://www.youtube.com/embed/D2cwvpJSBX4"
-    },
-    {
-      "type": "video",
-      "title": "Python Programming Tutorial | Introduction | GeeksforGeeks",
-      "url": "https://www.youtube.com/embed/OLPbd-7Pp_8"
+      "type": "videos",
+      "videos": [
+        {
+          "title": "Getting Started with Python in VS Code (Official Video)",
+          "url": "https://www.youtube.com/embed/D2cwvpJSBX4"
+        },
+        {
+          "title": "Python Programming Tutorial | Introduction | GeeksforGeeks",
+          "url": "https://www.youtube.com/embed/OLPbd-7Pp_8"
+        }
+      ]
     }
   ]
 }
