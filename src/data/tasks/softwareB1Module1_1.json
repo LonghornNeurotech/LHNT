@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Watch this videos that help explain some important Python concepts in 30 minutes! If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
+      "taskDescription": "Watch this video that help explain some important Python concepts in 30 minutes! If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
       "videos": [
         {
           "title": "Learn Python in only 30 minutes (Beginner Tutorial)",
@@ -25,7 +25,7 @@
  "extraResources": [
     {
       "type": "text",
-      "text": "* [scikit-learn Machine Learning in Python] \n\t* [Dive into Deep Learning]",
+      "text": "The links below touches on more advanced uses of Python that the Machine Learning team currently applies in their projects! The videos below help you get more setup for Python. \n* [scikit-learn Machine Learning in Python] \n\t* [Dive into Deep Learning]",
       "links": [
         {
           "label": "scikit-learn Machine Learning in Python",
