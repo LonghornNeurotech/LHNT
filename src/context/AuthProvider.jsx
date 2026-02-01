@@ -53,7 +53,8 @@ export const AuthProvider = ({ children }) => {
     }
 
     try {
-      await fetch('/api/delete-account', {
+      const apiBase = import.meta.env.VITE_API_BASE_URL || "";
+      await fetch(`${apiBase}/api/delete-account`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ eid: member.eid }),
@@ -62,7 +63,6 @@ export const AuthProvider = ({ children }) => {
       // Ignore errors; still clear local data.
     }
 
-    localStorage.removeItem(`progress_${member.eid}`);
     logout();
   };
 

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { ProgressContext } from "./ProgressContext";
 import { useAuth } from "./useAuth";
@@ -22,27 +22,58 @@ const dedupe = (arr) => Array.from(new Set(arr.filter(Boolean)));
 export const ProgressProvider = ({ children }) => {
   const { member } = useAuth();
   const eid = member?.eid;
-  const storageKey = eid ? `progress_${eid}` : null;
+  const apiBase = import.meta.env.VITE_API_BASE_URL || "";
   const [progress, setProgress] = useState(emptyProgress);
+  const [loaded, setLoaded] = useState(false);
+  const saveTimerRef = useRef(null);
 
   useEffect(() => {
-    if (!storageKey) return;
-    const raw = localStorage.getItem(storageKey);
-    if (!raw) {
+    if (!eid) {
       setProgress(emptyProgress);
+      setLoaded(false);
       return;
     }
-    try {
-      setProgress(JSON.parse(raw));
-    } catch {
-      setProgress(emptyProgress);
-    }
-  }, [storageKey]);
+
+    let canceled = false;
+    setLoaded(false);
+    fetch(`${apiBase}/api/progress?eid=${encodeURIComponent(eid)}`)
+      .then(async (res) => {
+        if (!res.ok) throw new Error("Failed to load progress");
+        return res.json();
+      })
+      .then((data) => {
+        if (canceled) return;
+        setProgress(data?.progress || emptyProgress);
+        setLoaded(true);
+      })
+      .catch(() => {
+        if (canceled) return;
+        setProgress(emptyProgress);
+        setLoaded(true);
+      });
+
+    return () => {
+      canceled = true;
+    };
+  }, [apiBase, eid]);
 
   useEffect(() => {
-    if (!storageKey) return;
-    localStorage.setItem(storageKey, JSON.stringify(progress));
-  }, [storageKey, progress]);
+    if (!eid || !loaded) return;
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      fetch(`${apiBase}/api/progress`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ eid, full_name: member?.fullName || null, progress }),
+      }).catch(() => {
+        // Silently ignore; next save will retry.
+      });
+    }, 600);
+
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    };
+  }, [apiBase, eid, loaded, progress, member?.fullName]);
 
   const getTaskKey = useCallback((block, sub, title) => `${block}_${sub}_${title}`, []);
   const getSubKey = useCallback((block, sub) => `${block}_${sub}`, []);

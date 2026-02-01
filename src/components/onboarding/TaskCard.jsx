@@ -363,7 +363,11 @@ const TaskCard = ({ task }) => {
 
       {/* Quiz Section */}
       {requiredActions.includes("completeQuiz") && quizData && quizData.length > 0 && (
-        <Quiz quizData={quizData} onComplete={handleQuizComplete} />
+        <Quiz
+          quizData={quizData}
+          onComplete={handleQuizComplete}
+          initialCompleted={Boolean(taskProgress.quizCompleted)}
+        />
       )}
 
       {/* File Upload Section */}

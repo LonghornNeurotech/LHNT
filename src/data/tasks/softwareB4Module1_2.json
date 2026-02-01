@@ -11,7 +11,7 @@
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Read this article and watch the following lessons to understand the basics of neural networks and how you can work with them.",
+      "taskDescription": "Read this [article] and watch the following lessons to understand the basics of neural networks and how you can work with them.",
       "links": [
         {
           "label": "article",

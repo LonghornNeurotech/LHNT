@@ -8,7 +8,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const Quiz = ({ quizData, onComplete }) => {
+const Quiz = ({ quizData, onComplete, initialCompleted = false }) => {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -18,16 +18,12 @@ const Quiz = ({ quizData, onComplete }) => {
 
   useEffect(() => {
     setAnswers({});
-    setSubmitted(false);
-    setScore(0);
+    setSubmitted(initialCompleted);
+    setScore(initialCompleted ? quizData.length : 0);
     setFullName("");
     setEid("");
     setFormSubmitted(false);
-    // Reset completion when quiz data changes
-    if (onComplete) {
-      onComplete(false);
-    }
-  }, [quizData,]);
+  }, [quizData, initialCompleted]);
 
   const handleAnswerChange = (questionId, option) => {
     if (submitted) return;
@@ -88,7 +84,13 @@ const Quiz = ({ quizData, onComplete }) => {
       </div> */}
 
       {/* Perfect Score Messages and Form */}
-      {isPerfectScore ?
+      {initialCompleted ? (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+          <p className="text-green-700 font-semibold md:text-[1.2rem]">
+            Congratulations! You successfully completed this quiz with a perfect score!
+          </p>
+        </div>
+      ) : isPerfectScore ?
         <>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
             <p className="text-green-700 font-semibold md:text-[1.2rem]">
@@ -325,6 +327,7 @@ Quiz.propTypes = {
     })
   ).isRequired,
   onComplete: PropTypes.func,
+  initialCompleted: PropTypes.bool,
 };
 
 export default Quiz;
