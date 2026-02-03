@@ -20,7 +20,7 @@ const OnboardingHeader = ({ onboardingBlock, moduleSubmodule, moduleTitle }) => 
               </Link>
               <span className="text-gray-400">/</span>
               <Link to="/programs" className="hover:underline">
-                Programs
+                Programs & Training
               </Link>
               <span className="text-gray-400">/</span>
               <Link
