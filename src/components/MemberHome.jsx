@@ -10,6 +10,7 @@ const options = [
   { label: 'Start Here: General Info & Onboarding', enabled: true, route: '/general-info' },
   { label: 'Programs & Training', enabled: true, route: '/programs' },
   { label: 'Competitions & Deadlines', enabled: true, route: '/competition-info' },
+  { label: 'View Past Competitions', enabled: true, route: '/past-competitions' },
   { label: 'Ask Questions / Get Help', enabled: true, route: '/ask-questions' },
 ];
 

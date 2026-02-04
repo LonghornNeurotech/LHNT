@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import { Home, About, Contact, Navbar, Events, Login, MemberHome, ProgramsMenu} from "./components";
+import { Home, About, Contact, Navbar, Events, Login, MemberHome, ProgramsMenu, ViewPastCompetitions} from "./components";
 import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -77,6 +77,15 @@ const App = () => {
                 element={
                   <MemberRoute>
                     <CompetitionInfo />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
+                path="/past-competitions"
+                element={
+                  <MemberRoute>
+                    <ViewPastCompetitions />
                   </MemberRoute>
                 }
               />
