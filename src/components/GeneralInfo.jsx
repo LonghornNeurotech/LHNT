@@ -51,10 +51,22 @@ const GeneralInfo = () => (
           </h2>
           <ol className="list-decimal pl-6 space-y-2" style={{ color: PRUSSIAN_BLUE }}>
             <li className="text-lg leading-relaxed">
+              <strong>Hardware vs Software Blocks</strong> The provided onboarding pages are grouped into hardware blocks (for Hardware project teams) and software blocks (for Software project teams). All onboarding blocks are available to all LHNT members, regardless of what team any member is part of.
+            </li>
+            <li className="text-lg leading-relaxed">
               <strong>General Skills Block:</strong> Everyone completes these core modules to get familiar with either hardware or software basics.
             </li>
             <li className="text-lg leading-relaxed">
               <strong>Specific Skills Blocks:</strong> You’ll work through training tailored to the skillset you were admitted to.
+            </li>
+            <li className="text-lg leading-relaxed">
+              <strong>Module Overview pages:</strong> Each module has a module overview page that introduce the concepts and examples of our projects teams applying those concepts in their projects!
+            </li>
+            <li className="text-lg leading-relaxed">
+              <strong>Required Tasks:</strong> Each submodule may contain a number of required tasks for each member to do. For completing a specific submodule, each member must complete all of the required tasks specified in that specific submodule. If there are no required tasks in the submodule, then visiting that submodule automatically marks that submodule completed.
+            </li>
+            <li className="text-lg leading-relaxed">
+              <strong>Completing a Module:</strong> To complete a specific module, each member must complete all submodules for that module. A checkmark will be visibly marked next to the module in the vertical module navbar to mark your successful completion of that module!
             </li>
             <li className="text-lg leading-relaxed">
               <strong>Onboarding Competition (October to December):</strong> Teams of new members will take on a relevant, hands-on neurotech challenge. Projects will be ranked by our leadership, and the results will help determine spring team placements.
@@ -70,6 +82,12 @@ const GeneralInfo = () => (
             What’s Next?
           </h2>
           <ul className="list-disc pl-6 space-y-2" style={{ color: PRUSSIAN_BLUE }}>
+            <li className="text-lg leading-relaxed">
+              Get started with your onboarding by heading over to the Member Home page and selecting the Programs & Training button on there. Navigate to either the software or hardware blocks and then choose any specific onboarding block you want to start first.
+            </li>
+            <li className="text-lg leading-relaxed">
+              <strong>Any tasks, submodules, and modules can be completed in any order as you please!</strong> If you encountered any difficulties, head over to the Member Home page and select the Ask Questions / Get Help button to see contact details of people you can contact for help.
+            </li>
             <li className="text-lg leading-relaxed">
               <strong>Complete your modules → Team up for the competition → Join your spring project team!</strong>
             </li>
