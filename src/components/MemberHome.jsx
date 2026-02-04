@@ -7,7 +7,7 @@ const BONE_WHITE = '#F9F6EE';
 const DISABLED_STATUS = 'rgba(93,137,186,0.13)';
 
 const options = [
-  { label: 'General Info & Onboarding', enabled: true, route: '/general-info' },
+  { label: 'Start Here: General Info & Onboarding', enabled: true, route: '/general-info' },
   { label: 'Programs & Training', enabled: true, route: '/programs' },
   { label: 'Competitions & Deadlines', enabled: true, route: '/competition-info' },
   { label: 'Ask Questions / Get Help', enabled: true, route: '/ask-questions' },
