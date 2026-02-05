@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Carousel as BootstrapCarousel } from 'react-bootstrap';
 
@@ -8,9 +9,20 @@ const SILVER_LAKE_BLUE = '#5D89BA';
 
 // Photo carousel component
 const PhotoCarousel = ({ title, items }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   if (!items || items.length === 0) {
     return null;
   }
+
+  const goToPrevious = () => {
+    setActiveIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setActiveIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <section className="space-y-4">
@@ -60,12 +72,14 @@ const PhotoCarousel = ({ title, items }) => {
           interval={5000}
           controls={items.length > 1}
           indicators={items.length > 1}
+          onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
         >
           {items.map((item) => (
             <BootstrapCarousel.Item key={item.src}>
               <div
-                className="relative w-full h-[440px] overflow-hidden"
+                className="relative w-full h-[440px] overflow-hidden cursor-pointer"
                 style={{ background: '#0b0f14' }}
+                onClick={() => setIsFullscreen(true)}
               >
                 <img
                   className="w-full h-full object-contain"
@@ -78,6 +92,52 @@ const PhotoCarousel = ({ title, items }) => {
           ))}
         </BootstrapCarousel>
       </div>
+
+      {/* Show enlarged version of the photo for users to easily see against a shaded background of page */}
+      {isFullscreen &&
+        createPortal(
+          <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
+            {/* Button to exit display of enlarged photo */}
+            <button
+              type="button"
+              className="absolute top-4 right-4 text-white text-2xl p-2 rounded-full hover:bg-white/10"
+              onClick={() => setIsFullscreen(false)}
+              aria-label="Close full screen image"
+            >
+              ✕
+            </button>
+
+            {/* Previous and Next navigation button for the enlarged photo */}
+            {items.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  aria-label="Previous image"
+                  onClick={goToPrevious}
+                  className="carousel-control-prev"
+                  style={{ left: '2rem' }}
+                >
+                  <span className="carousel-control-prev-icon" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next image"
+                  onClick={goToNext}
+                  className="carousel-control-next"
+                  style={{ right: '2rem' }}
+                >
+                  <span className="carousel-control-next-icon" aria-hidden="true" />
+                </button>
+              </>
+            )}
+            <img
+              src={items[activeIndex].src}
+              alt={items[activeIndex].alt}
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+            />
+          </div>,
+          document.body
+        )}
     </section>
   );
 };
