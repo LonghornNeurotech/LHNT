@@ -23,27 +23,28 @@ const moduleMap = {
       }
     }
   },
-  softwareB2: {
-    title: "Software Block 2: Virtual Reality",
-    groups: {
-      "Module 1": ["1_1"],
-      "Module 2": ["2_1", "2_2"]
-    },
-    modules: {
-      "1_1": {
-        title: "Module 1.1: C++",
-        path: "/onboarding/softwareB2/1_1"
-      },
-      "2_1": {
-        title: "Module 2.1: Unity 3D User Interface",
-        path: "/onboarding/softwareB2/2_1"
-      },
-      "2_2": {
-        title: "Module 2.2: Unity 3D Basic Applications",
-        path: "/onboarding/softwareB2/2_2"
-      }
-    }
-  },
+  // For now software onboarding block 2 is hidden because it's temporarily not needed but still keep the data for it not deleted.
+  // softwareB2: {
+  //   title: "Software Block 2: Virtual Reality",
+  //   groups: {
+  //     "Module 1": ["1_1"],
+  //     "Module 2": ["2_1", "2_2"]
+  //   },
+  //   modules: {
+  //     "1_1": {
+  //       title: "Module 1.1: C++",
+  //       path: "/onboarding/softwareB2/1_1"
+  //     },
+  //     "2_1": {
+  //       title: "Module 2.1: Unity 3D User Interface",
+  //       path: "/onboarding/softwareB2/2_1"
+  //     },
+  //     "2_2": {
+  //       title: "Module 2.2: Unity 3D Basic Applications",
+  //       path: "/onboarding/softwareB2/2_2"
+  //     }
+  //   }
+  // },
   softwareB3: {
     title: "Software Block 3: Signals",
     groups: {

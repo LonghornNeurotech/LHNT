@@ -10,7 +10,7 @@ const BONE_WHITE = '#F9F6EE';
 const onboardingBlockMap = {
   Software: [
     { label: 'Block 1: General Skills', id: 'softwareB1' },
-    { label: 'Block 2: Virtual Reality', id: 'softwareB2' },
+    // { label: 'Block 2: Virtual Reality', id: 'softwareB2' },  // For now software onboarding block 2 is hidden because it's temporarily not needed but still keep the data for it not deleted.
     { label: 'Block 3: Signals', id: 'softwareB3' },
     { label: 'Block 4: Machine Learning', id: 'softwareB4' }
   ],
