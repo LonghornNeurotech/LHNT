@@ -46,7 +46,7 @@ const moduleMap = {
   //   }
   // },
   softwareB3: {
-    title: "Software Block 3: Signals",
+    title: "Software Block 2: Signals",
     groups: {
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
@@ -84,7 +84,7 @@ const moduleMap = {
     }
   },
   softwareB4: {
-    title: "Software Block 4: Machine Learning",
+    title: "Software Block 3: Machine Learning",
     groups: {
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
