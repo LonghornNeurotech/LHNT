@@ -1,0 +1,62 @@
+{
+  "block": "softwareB1",
+  "module": "1_2",
+  "moduleTitle": "Module 1.2: Numpy and Time Series",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "These 3 Python libraries below play a crucial role in our software-based projects!"
+    },
+    {
+      "type": "text",
+      "text": "\n\t * **NumPy** is a fundamental package for scientific computing in Python. It provides support for large, multi-dimensional arrays and matrices."
+    },
+    {
+      "type": "text",
+      "text": "\n\t * **SciPy** builds on NumPy and provides additional functionality for scientific computing, including signal processing tools."
+    },
+    {
+      "type": "text",
+      "text": "\n\t * **MNE-Python** is an open-source package for processing EEG and MEG data."
+    }
+  ],
+  "tasks": [
+    {
+      "taskTitle": "Task 1",
+      "taskDescription": "Watch these videos to get started on those 3 important Python libraries.",
+      "videos": [
+        {
+          "title": "NumPy for Beginners in 15 minutes | Python Crash Course",
+          "url": "https://www.youtube.com/embed/uRsE5WGiKWo",
+          "required": true
+        },
+        {
+          "title": "Numpy vs SciPy",
+          "url": "https://www.youtube.com/embed/l3s-_8uTBVA?",
+          "required": true
+        },
+        {
+          "title": "MNE Tutorial in Python",
+          "url": "https://www.youtube.com/embed/lEUmgSFQaAY",
+          "required": true
+        }
+      ],
+      "requiredActions": ["watchVideos"]
+    }
+  ],
+  "extraResources": [
+    {
+      "type": "text",
+      "text": "MNE-Python is not only a useful library for some of the software teams, such as the Signals team for analyzing EEG signals from the headset! This library is also useful for some of the hardware teams too, especially for the EEG team! Feel free to optionally watch the video below for a more complete preview of MNE-Python's use for these teams!"
+    },
+    {
+      "type": "videos",
+      "videos": [
+        {
+          "title": "MNE-Python Tutorial for EEG and MEG data analysis and visualization",
+          "url": "https://www.youtube.com/embed/sttf-Rgfl1Q"
+        }
+      ]
+    }
+  ]
+}

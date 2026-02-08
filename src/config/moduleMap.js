@@ -5,52 +5,48 @@ const moduleMap = {
   softwareB1: {
     title: "Software Block 1: General Skills",
     groups: {
-      "Module 1": ["1_1"],
-      "Module 2": ["2_1", "2_2"],
-      "Module 3": ["3_1"]
+      "Module 1": ["1_1", "1_2"],
+      "Module 2": ["2_1"]
     },
     modules: {
       "1_1": {
-        title: "Module 1.1: OneNote",
+        title: "Module 1.1: Python Basics",
         path: "/onboarding/softwareB1/1_1"
       },
+      "1_2": {
+        title: "Module 1.2: Numpy and Time Series",
+        path: "/onboarding/softwareB1/1_2"
+      },
       "2_1": {
-        title: "Module 2.1: Python Basics",
+        title: "Module 2.1: Statistics",
         path: "/onboarding/softwareB1/2_1"
-      },
-      "2_2": {
-        title: "Module 2.2: Numpy and Time Series",
-        path: "/onboarding/softwareB1/2_2"
-      },
-      "3_1": {
-        title: "Module 3.1: Statistics",
-        path: "/onboarding/softwareB1/3_1"
       }
     }
   },
-  softwareB2: {
-    title: "Software Block 2: Virtual Reality",
-    groups: {
-      "Module 1": ["1_1"],
-      "Module 2": ["2_1", "2_2"]
-    },
-    modules: {
-      "1_1": {
-        title: "Module 1.1: C++",
-        path: "/onboarding/softwareB2/1_1"
-      },
-      "2_1": {
-        title: "Module 2.1: Unity 3D User Interface",
-        path: "/onboarding/softwareB2/2_1"
-      },
-      "2_2": {
-        title: "Module 2.2: Unity 3D Basic Applications",
-        path: "/onboarding/softwareB2/2_2"
-      }
-    }
-  },
+  // For now software onboarding block 2 is hidden because it's temporarily not needed but still keep the data for it not deleted.
+  // softwareB2: {
+  //   title: "Software Block 2: Virtual Reality",
+  //   groups: {
+  //     "Module 1": ["1_1"],
+  //     "Module 2": ["2_1", "2_2"]
+  //   },
+  //   modules: {
+  //     "1_1": {
+  //       title: "Module 1.1: C++",
+  //       path: "/onboarding/softwareB2/1_1"
+  //     },
+  //     "2_1": {
+  //       title: "Module 2.1: Unity 3D User Interface",
+  //       path: "/onboarding/softwareB2/2_1"
+  //     },
+  //     "2_2": {
+  //       title: "Module 2.2: Unity 3D Basic Applications",
+  //       path: "/onboarding/softwareB2/2_2"
+  //     }
+  //   }
+  // },
   softwareB3: {
-    title: "Software Block 3: Signals",
+    title: "Software Block 2: Signals",
     groups: {
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
@@ -83,12 +79,12 @@ const moduleMap = {
       },
       "3_3": {
         title: "Module 3.3: LDA",
-        path: "/onboarding/hardwareB2/3_3"
+        path: "/onboarding/softwareB3/3_3"
       }
     }
   },
   softwareB4: {
-    title: "Software Block 4: Machine Learning",
+    title: "Software Block 3: Machine Learning",
     groups: {
       "Module 1": ["1_1", "1_2"],
       "Module 2": ["2_1", "2_2"],
@@ -108,7 +104,7 @@ const moduleMap = {
         path: "/onboarding/softwareB4/2_1"
       },
       "2_2": {
-        title: "Module 2.2: Convolutional Neural Netowrks (with EEG Applications)",
+        title: "Module 2.2: Convolutional Neural Networks (with EEG Applications)",
         path: "/onboarding/softwareB4/2_2"
       },
       "3_1": {
@@ -124,7 +120,7 @@ const moduleMap = {
   hardwareB1: {
     title: "Hardware Block 1: General Skills",
     groups: {
-      "Module 1": ["1_1", "1_2"],
+      "Module 1": ["1_1"],
       "Module 2": ["2_1"],
       "Module 3": ["3_1", "3_2"]
     },
@@ -133,21 +129,17 @@ const moduleMap = {
         title: "Module 1.1: Documentation",
         path: "/onboarding/hardwareB1/1_1"
       },
-      "1_2": {
-        title: "Module 1.2: OneNote",
-        path: "/onboarding/hardwareB1/1_2"
-      },
       "2_1": {
         title: "Module 2.1: Fusion 360 (CAD)",
         path: "/onboarding/hardwareB1/2_1"
       },
       "3_1": {
-        title: "Module 3.1: Basics (Ohm's Law, Components, Schematics, Breadboard)",
+        title: "Module 3.1: Electronic Basics",
         path: "/onboarding/hardwareB1/3_1"
       },
       "3_2": {
         title: "Module 3.2: Electronic Systems",
-        path: "/onboarding/hardwareB2/3_2"
+        path: "/onboarding/hardwareB1/3_2"
       }
     }
   },
@@ -168,31 +160,31 @@ const moduleMap = {
         path: "/onboarding/hardwareB2/1_2"
       },
       "1_3": {
-        title: "Module 1.3: Simulation",
+        title: "Module 1.3: MeshLab",
         path: "/onboarding/hardwareB2/1_3"
       },
       "2_1": {
-        title: "Module 2.1: PCB Design",
+        title: "Module 2.1: Reverse Engineering and Spatial Visualization",
         path: "/onboarding/hardwareB2/2_1"
       },
       "2_2": {
-        title: "Module 2.2: Component Soldering",
+        title: "Module 2.2: CAD Skills",
         path: "/onboarding/hardwareB2/2_2"
       },
       "3_1": {
-        title: "Module 3.1: Testing",
+        title: "Module 3.1: Basics of 3D Printing",
         path: "/onboarding/hardwareB2/3_1"
       },
       "3_2": {
-        title: "Module 3.2: Debugging",
+        title: "Module 3.2: Bambu Lab P1P 3D Printing Training",
         path: "/onboarding/hardwareB2/3_2"
       },
       "3_3": {
-        title: "Module 3.3: Documentation",
+        title: "Module 3.3: Raise3D Advanced Filament Printers Training",
         path: "/onboarding/hardwareB2/3_3"
       },
       "3_4": {
-        title: "Module 3.4: Final Assembly",
+        title: "Module 3.4: SLA 3D Printing Training",
         path: "/onboarding/hardwareB2/3_4"
       }
     }
@@ -206,7 +198,7 @@ const moduleMap = {
     },
     modules: {
       "1_1": {
-        title: "Module 1.1: Tools",
+        title: "Module 1.1: Breadboard",
         path: "/onboarding/hardwareB3/1_1"
       },
       "1_2": {
@@ -218,7 +210,7 @@ const moduleMap = {
         path: "/onboarding/hardwareB3/1_3"
       },
       "2_1": {
-        title: "Module 2.1: Arduino",
+        title: "Module 2.1: Tinkering Arduino on Tinkercad",
         path: "/onboarding/hardwareB3/2_1"
       },
       "2_2": {
@@ -234,11 +226,11 @@ const moduleMap = {
         path: "/onboarding/hardwareB3/2_4"
       },
       "3_1": {
-        title: "Module 3.1: Soldering",
+        title: "Module 3.1: Soldering Basics",
         path: "/onboarding/hardwareB3/3_1"
       },
       "3_2": {
-        title: "Module 3.2: TIW Training - Basic Soldering Training (E1)",
+        title: "Module 3.2: Basic Soldering Training",
         path: "/onboarding/hardwareB3/3_2"
       }
     }
@@ -264,7 +256,7 @@ const moduleMap = {
         path: "/onboarding/hardwareB4/2_1"
       },
       "2_2": {
-        title: "Module 2.2: Arduino (Integration of C++ skills)",
+        title: "Module 2.2: C++ on Arduino",
         path: "/onboarding/hardwareB4/2_2"
       },
       "3_1": {

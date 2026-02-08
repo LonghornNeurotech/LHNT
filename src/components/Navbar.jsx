@@ -10,11 +10,8 @@ const Navbar = () => {
   // Controlling whether profile dropdown menu shows up or not
   const [profileDropdown, setProfileDropdown] = useState(false);
   const [mobileProfileDropdown, setMobileProfileDropdown] = useState(false);
-  // Controlling hover state over Logout dropdown menu option
-  const [isLogoutHovered, setIsLogoutHovered] = useState(false);
-  const [isMobileLogoutHovered, setIsMobileLogoutHovered] = useState(false);
   // Authentication state and navigation 
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, deleteAccount } = useAuth();
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -29,6 +26,18 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
+    setProfileDropdown(false);
+    setMobileProfileDropdown(false);
+    setIsOpen(false);
+    navigate("/");
+  };
+
+  const handleDeleteAccount = async () => {
+    const confirmed = window.confirm(
+      "Delete your account and all onboarding progress? This cannot be undone."
+    );
+    if (!confirmed) return;
+    await deleteAccount();
     setProfileDropdown(false);
     setMobileProfileDropdown(false);
     setIsOpen(false);
@@ -69,17 +78,25 @@ const Navbar = () => {
                     <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                       <button
                         onClick={handleLogout}
-                        onMouseEnter={() => setIsLogoutHovered(true)}
-                        onMouseLeave={() => setIsLogoutHovered(false)}
                         className="w-full text-left font-['Antonio'] leading-snug hover:bg-[#FFEBAD] transition-colors"
                         style={{ 
                           color: "#003153", 
                           fontSize: "1.35rem",
                           padding: "0.95rem 1.3rem",
-                          backgroundColor: isLogoutHovered ? "#FFEBAD" : "transparent",
                         }}
                       >
                         Logout
+                      </button>
+                      <button
+                        onClick={handleDeleteAccount}
+                        className="w-full text-left font-['Antonio'] leading-snug hover:bg-[#FFD6D6] transition-colors"
+                        style={{
+                          color: "#7A1D1D",
+                          fontSize: "1.35rem",
+                          padding: "0.95rem 1.3rem",
+                        }}
+                      >
+                        Delete Account
                       </button>
                     </div>
                   )}
@@ -210,17 +227,25 @@ const Navbar = () => {
               <div className="flex flex-col">
                 <button
                   onClick={handleLogout}
-                  onMouseEnter={() => setIsMobileLogoutHovered(true)}
-                  onMouseLeave={() => setIsMobileLogoutHovered(false)}
-                  className="w-full text-left font-['Antonio'] flex items-center transition-colors"
+                  className="w-full text-left font-['Antonio'] flex items-center hover:bg-[#FFEBAD] transition-colors"
                   style={{
                     color: "#003153",
                     fontSize: "1.35rem",
                     padding: "0.95rem 1.3rem",
-                    backgroundColor: isMobileLogoutHovered ? "#FFEBAD" : "transparent",
                   }}
                 >
                   Logout
+                </button>
+                <button
+                  onClick={handleDeleteAccount}
+                  className="w-full text-left font-['Antonio'] flex items-center hover:bg-[#FFD6D6] transition-colors"
+                  style={{
+                    color: "#7A1D1D",
+                    fontSize: "1.35rem",
+                    padding: "0.95rem 1.3rem",
+                  }}
+                >
+                  Delete Account
                 </button>
               </div>
             </div>

@@ -4,6 +4,7 @@
     margin-bottom: 30px;
     transition: all 0.7s ease;
     border: 10px solid transparent;
+    border-radius: 12px;
     transform: scale(90%);
     background-color: #F9F6EE;
 }

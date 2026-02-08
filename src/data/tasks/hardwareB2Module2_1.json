@@ -14,7 +14,7 @@
       "taskDescription": "Watch this video below and understand how you will apply reverse engineering and spatial visualization.",
       "videos": [
         {
-          "title": "Reverse Engineering and Spatial Visualization",
+          "title": "SOUPS 2020 - An Exploratory Study of Hardware Reverse Engineering — Technical and Cognitive Processing",
           "url": "https://www.youtube.com/embed/4-B66eoNJ7E",
           "required": true
         }

@@ -8,9 +8,9 @@ const ContactCard = ({ name, title, img, styleClass, linkedin, children }) => {
         <img src={img} alt={`${img}`} className={styleClass} />
       </div>
       <div>
-        <h2 className="margin-top">{title}:</h2>
-        <h2 className="w3-xlarge margin-top"><b>{name}</b></h2>
-        <div className="margin-bottom2">{children}</div>
+        <h2 className="margin-top text-2xl font-bold text-prussian_blue">{title}:</h2>
+        <h2 className="margin-top text-2xl font-medium mb-3 text-prussian_blue opacity-80">{name}</h2>
+        <div className="margin-bottom2 text-lg">{children}</div>
       </div>
       {linkedin && (
         <div className="text">

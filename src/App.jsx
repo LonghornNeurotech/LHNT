@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import { Home, About, Contact, Navbar, Events, Login, MemberHome, ProgramsMenu} from "./components";
+import { Home, About, Contact, Navbar, Events, Login, MemberHome, ProgramsMenu, ViewPastCompetitions} from "./components";
 import MemberRoute from "./components/MemberRoute";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,9 +16,13 @@ import OnboardingRouter from "./components/onboarding/OnboardingRouter";
 */
 import { AuthProvider } from "./context/AuthProvider";
 
+// Implement ProgressProvider to keep track of onboarding progress throughout the website
+import { ProgressProvider } from "./context/ProgressProvider";
+
 const App = () => {
   return (
     <AuthProvider>
+      <ProgressProvider>
       <Router>
         <div>
           <Navbar />
@@ -78,6 +82,15 @@ const App = () => {
               />
 
               <Route
+                path="/past-competitions"
+                element={
+                  <MemberRoute>
+                    <ViewPastCompetitions />
+                  </MemberRoute>
+                }
+              />
+
+              <Route
                 path="/ask-questions"
                 element={
                   <MemberRoute>
@@ -89,6 +102,7 @@ const App = () => {
           </div>
         </div>
       </Router>
+      </ProgressProvider>
     </AuthProvider>
   );
 };

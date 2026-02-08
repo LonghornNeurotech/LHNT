@@ -7,7 +7,8 @@ for (const path in modules) {
   const match = path.match(/\.\/(.*)\.json$/);
   if (match) {
     const key = match[1];
-    tasksData[key] = modules[path];
+    // Vite JSON eager imports can be either the raw object or a module with `default`
+    tasksData[key] = modules[path]?.default ?? modules[path];
   }
 }
 

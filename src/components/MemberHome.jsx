@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 const SILVER_LAKE_BLUE = '#5D89BA';
 const PRUSSIAN_BLUE = '#003153';
 const BONE_WHITE = '#F9F6EE';
-const DISABLED_STATUS = 'rgba(93,137,186,0.13';
+const DISABLED_STATUS = 'rgba(93,137,186,0.13)';
 
 const options = [
-  { label: 'General Info', enabled: true, route: '/general-info' },
-  { label: 'Programs', enabled: true, route: '/programs' },
-  { label: 'Competition Information', enabled: true, route: '/competition-info' },
-  { label: 'Ask Questions', enabled: true, route: '/ask-questions' },
+  { label: 'Start Here: General Info & Onboarding', enabled: true, route: '/general-info' },
+  { label: 'Programs & Training', enabled: true, route: '/programs' },
+  { label: 'Competitions & Deadlines', enabled: true, route: '/competition-info' },
+  { label: 'View Past Competitions', enabled: true, route: '/past-competitions' },
+  { label: 'Ask Questions / Get Help', enabled: true, route: '/ask-questions' },
 ];
 
 const MemberHome = () => {

@@ -1,10 +1,27 @@
 // ./src/components/onboarding/RichTextWithLinks.jsx
 // This is the clickable links embedded in the text content of the submodule page for user to click on.
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const RichTextWithLinks = ({ text, links = [], onLinkClick }) => {
+const RichTextWithLinks = ({ text, links = [], onLinkClick, clickedLabels }) => {
   const [clickedLinks, setClickedLinks] = useState({});
+
+  useEffect(() => {
+    if (!clickedLabels) return;
+    const labels = Array.isArray(clickedLabels)
+      ? clickedLabels
+      : clickedLabels instanceof Set
+        ? Array.from(clickedLabels)
+        : [];
+    if (!labels.length) return;
+    setClickedLinks((prev) => {
+      const next = { ...prev };
+      labels.forEach((label) => {
+        next[label] = true;
+      });
+      return next;
+    });
+  }, [clickedLabels]);
 
   const linkMap = Object.fromEntries(links.map((link) => [link.label, link]));
 
@@ -72,6 +89,7 @@ RichTextWithLinks.propTypes = {
     })
   ),
   onLinkClick: PropTypes.func,
+  clickedLabels: PropTypes.oneOfType([PropTypes.array, PropTypes.instanceOf(Set)]),
 };
 
 export default RichTextWithLinks;

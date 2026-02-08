@@ -1,8 +1,10 @@
 // Module Navbar providing easier user navigation within the onboarding pages
-import { useState, useEffect } from "react";
+import { useMemo, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { NavLink, useNavigate } from "react-router-dom";
 import moduleMap from "../../config/moduleMap";
+import CompletionIcon from "../common/CompletionIcon";
+import { useProgress } from "../../context/useProgress";
 
 // Developer note: Omit CompletionIcon display from ModuleNavbar component 
 // until progress tracking for submodules and modules are correctly implemented!
@@ -11,21 +13,38 @@ import moduleMap from "../../config/moduleMap";
 const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
   const navigate = useNavigate();
   const moduleMapData = moduleMap[onboardingBlock];
+  const { progress, isModuleCompleted } = useProgress();
 
   // State for onboarding block dropdown
   const [isBlockDropdownOpen, setIsBlockDropdownOpen] = useState(false);
 
   // Transform groups object to array for rendering and logic
-  const groupsArr = moduleMapData && moduleMapData.groups
-    ? Object.entries(moduleMapData.groups).map(([name, submodules]) => ({ name, submodules }))
-    : [];
+  const groupsArr = useMemo(() => {
+    if (!moduleMapData?.groups) return [];
+    return Object.entries(moduleMapData.groups).map(([name, submodules]) => ({
+      name,
+      submodules: Array.isArray(submodules) ? submodules.map(String) : [],
+    }));
+  }, [moduleMapData]);
 
-  const isGroupsValid = Array.isArray(groupsArr) && groupsArr.length > 0;
+  // Inject a synthetic "Module Overview" page at the start of each module group (e.g., 1_0, 2_0, ...)
+  const groupsArrWithIntro = useMemo(() => {
+    return groupsArr.map((group) => {
+      const match = /^Module\s+(\d+)/.exec(group.name);
+      const modNum = match?.[1];
+      if (!modNum) return group;
+      const introId = `${modNum}_0`;
+      const rest = group.submodules.filter((id) => id !== introId);
+      return { ...group, submodules: [introId, ...rest] };
+    });
+  }, [groupsArr]);
+
+  const isGroupsValid = Array.isArray(groupsArrWithIntro) && groupsArrWithIntro.length > 0;
 
   const [openGroupIdx, setOpenGroupIdx] = useState(() => {
     if (!isGroupsValid) return null;
     const submoduleStr = String(moduleSubmodule);
-    const groupIdx = groupsArr.findIndex(group =>
+    const groupIdx = groupsArrWithIntro.findIndex(group =>
       Array.isArray(group.submodules) && group.submodules.includes(submoduleStr)
     );
     return groupIdx === -1 ? null : groupIdx;
@@ -37,11 +56,11 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
       return;
     }
     const submoduleStr = String(moduleSubmodule);
-    const groupIdx = groupsArr.findIndex(group =>
+    const groupIdx = groupsArrWithIntro.findIndex(group =>
       Array.isArray(group.submodules) && group.submodules.includes(submoduleStr)
     );
     setOpenGroupIdx(groupIdx === -1 ? null : groupIdx);
-  }, [onboardingBlock, moduleSubmodule, isGroupsValid, moduleMapData]);
+  }, [onboardingBlock, moduleSubmodule, isGroupsValid, moduleMapData, groupsArrWithIntro]);
 
   // Get all onboarding blocks for the dropdown
   const getAllOnboardingBlocks = () => {
@@ -53,8 +72,8 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
 
   // Handle when an onboarding block is selected
   const handleBlockSelection = (blockKey) => {
-    // Always navigate to Module 1.1 of the selected block
-    navigate(`/onboarding/${blockKey}/1_1`);
+    // Start at the Module 1 overview page
+    navigate(`/onboarding/${blockKey}/1_0`);
     setIsBlockDropdownOpen(false);
   };
 
@@ -117,8 +136,9 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
         </div>
 
         {/* Module Groups Navigation */}
-        {groupsArr.map((group, groupIdx) => (
+        {groupsArrWithIntro.map((group, groupIdx) => (
           <div key={groupIdx} className="mb-1">
+            {/* Module Button that's also a dropdown button */}
             <button
               type="button"
               onClick={() => setOpenGroupIdx(openGroupIdx === groupIdx ? null : groupIdx)}
@@ -132,19 +152,31 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
               style={{ minHeight: "56px", fontSize: "1.15rem" }}
             >
               <span className="flex items-center" style={{ width: 24, height: 24 }}>
-                {/* <CompletionIcon
-                  completed={group.submodules.every(id => moduleMapData.modules[id]?.completed)}
-                /> */}
+                {(() => {
+                  const match = /^Module\s+(\d+)/.exec(group.name);
+                  const moduleNumber = match?.[1];
+                  const done = moduleNumber
+                    ? isModuleCompleted(onboardingBlock, moduleNumber)
+                    : false;
+                  return <CompletionIcon completed={done} />;
+                })()}
               </span>
               <span className="truncate text-left flex-1">{group.name}</span>
               <span className={`transition-transform duration-200 ${openGroupIdx === groupIdx ? "rotate-90" : ""}`} style={{ verticalAlign: "middle" }}>▸</span>
             </button>
 
+            {/* Submodule Navigation Button */}
             {openGroupIdx === groupIdx && (
               <div className="flex flex-col gap-y-2 mt-2">
                 {group.submodules.map((subId) => {
-                  const sub = moduleMapData.modules[subId];
-                  if (!sub) return null;
+                  const isIntro = /_0$/.test(String(subId));
+                  const sub = moduleMapData?.modules?.[subId];
+                  const fallbackTitle = isIntro
+                    ? `Module ${String(subId).split("_")[0]} Overview`
+                    : null;
+                  if (!sub && !fallbackTitle) return null;
+                  const subKey = `${onboardingBlock}_${subId}`;
+                  const subCompleted = Boolean(progress.submodules?.[subKey]);
                   return (
                     <NavLink
                       key={subId}
@@ -160,9 +192,9 @@ const ModuleNavbar = ({ onboardingBlock, moduleSubmodule }) => {
                       style={{ fontSize: "1rem", minHeight: "52px" }}
                     >
                       <span className="flex items-center justify-center" style={{ width: 24, height: 24 }}>
-                        {/* <CompletionIcon completed={sub.completed} /> */}
+                        {!isIntro && <CompletionIcon completed={subCompleted} />}
                       </span>
-                      <span className="ml-3 text-left flex-1">{sub.title}</span>
+                      <span className="ml-3 text-left flex-1">{sub?.title || fallbackTitle}</span>
                     </NavLink>
                   );
                 })}

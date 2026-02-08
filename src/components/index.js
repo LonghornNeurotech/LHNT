@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import MemberHome from "./MemberHome";
 import ProgramsMenu from "./ProgramsMenu";
+import ViewPastCompetitions from "./ViewPastCompetitions";
 
 export { 
     Navbar, 
@@ -22,4 +23,5 @@ export {
     SponsorWidget,
     MemberHome,
     ProgramsMenu,
+    ViewPastCompetitions,
 };

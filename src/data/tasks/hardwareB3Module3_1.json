@@ -1,7 +1,7 @@
 {
   "block": "hardwareB3",
   "module": "3_1",
-  "moduleTitle": "Module 3.1: Soldering",
+  "moduleTitle": "Module 3.1: Soldering Basics",
   "infoSections": [
     {
       "type": "text",
@@ -15,7 +15,7 @@
       "videos": [
         {
           "title": "Soldering Tutorial for Beginners: Five Easy Steps",
-          "url": "https://www.youtube.com/embed/TjgqGNcewZg",
+          "url": "https://www.youtube.com/embed/Qps9woUGkvI",
           "required": true
         }
       ],

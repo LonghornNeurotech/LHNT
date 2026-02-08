@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import VideoThumbnail from "./VideoThumbnail";
 import VideoModal from "./VideoModal";
@@ -6,8 +6,39 @@ import VideoModal from "./VideoModal";
 const VideoGallery = ({ videos, onVideoWatch, watchedVideos = new Set() }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [restrictedVideos, setRestrictedVideos] = useState(new Set());
+  const RESTRICTED_STORAGE_KEY = "restrictedVideoUrls";
+  const lastOpenRef = useRef(new Map()); // url -> timestamp ms
 
-  // Enhanced video ID extraction (same as VideoThumbnail)
+  // Persist restricted videos so "redirect-on-click" keeps working even after leaving the site.
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem(RESTRICTED_STORAGE_KEY);
+      const arr = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(arr)) setRestrictedVideos(new Set(arr));
+    } catch {
+      // ignore
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const rememberRestricted = useCallback(
+    (url) => {
+      if (!url) return;
+      setRestrictedVideos((prev) => {
+        const next = new Set(prev);
+        next.add(url);
+        try {
+          sessionStorage.setItem(RESTRICTED_STORAGE_KEY, JSON.stringify([...next]));
+        } catch {
+          // ignore
+        }
+        return next;
+      });
+    },
+    [RESTRICTED_STORAGE_KEY]
+  );
+
+  // Enhanced video ID extraction
   const extractVideoId = useCallback((url) => {
     try {
       if (url.includes('youtube.com/embed/')) {
@@ -35,59 +66,14 @@ const VideoGallery = ({ videos, onVideoWatch, watchedVideos = new Set() }) => {
     return url; // fallback to original
   }, [extractVideoId]);
 
-  // Check if a video is likely to be restricted
-  const checkIfVideoRestricted = async (video) => {
-    try {
-      const videoId = extractVideoId(video.url);
-      if (!videoId) return true; // Invalid URL = restricted
-      
-      // Test thumbnail accessibility
-      const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-      
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => {
-          console.log('Video thumbnail accessible:', video.title);
-          resolve(false);
-        };
-        img.onerror = () => {
-          console.log('Video thumbnail not accessible:', video.title);
-          resolve(true);
-        };
-        img.src = thumbnailUrl;
-        
-        // Timeout after 3 seconds
-        setTimeout(() => {
-          console.log('Thumbnail check timeout for:', video.title);
-          resolve(true);
-        }, 3000);
-      });
-    } catch {
-      return true; // Error = restricted
-    }
-  };
-
   const handleVideoClick = async (video) => {
-    console.log('Video clicked:', video.title, 'URL:', video.url);
-    
     // Check if we already know this video is restricted
-    if (restrictedVideos.has(video.title)) {
-      console.log('Video already known to be restricted:', video.title);
-      handleRestrictedVideo(video);
-      return;
-    }
-    
-    // Quick check for restriction patterns
-    const isRestricted = await checkIfVideoRestricted(video);
-    if (isRestricted) {
-      console.log('Video detected as restricted:', video.title);
-      setRestrictedVideos(prev => new Set(prev).add(video.title));
+    if (restrictedVideos.has(video.url)) {
       handleRestrictedVideo(video);
       return;
     }
 
     // Video seems accessible, open in modal
-    console.log('Opening video in modal:', video.title);
     setSelectedVideo(video);
     
     // Mark video as watched when clicked
@@ -97,8 +83,12 @@ const VideoGallery = ({ videos, onVideoWatch, watchedVideos = new Set() }) => {
   };
 
   const handleRestrictedVideo = (video) => {
-    console.log('Redirecting to YouTube for restricted video:', video.title);
-    
+    // Guard against multiple error signals causing multiple new tabs.
+    const now = Date.now();
+    const last = lastOpenRef.current.get(video.url) || 0;
+    if (now - last < 1500) return;
+    lastOpenRef.current.set(video.url, now);
+
     // Mark video as watched even if going directly to YouTube
     if (onVideoWatch) {
       onVideoWatch(video.title, video.required);
@@ -106,15 +96,13 @@ const VideoGallery = ({ videos, onVideoWatch, watchedVideos = new Set() }) => {
     
     // Open directly in YouTube with corrected URL
     const directUrl = getCorrectYouTubeUrl(video.url);
-    console.log('Opening YouTube URL:', directUrl);
-    window.open(directUrl, '_blank');
+    // Per request: open ONLY in a new tab (do not navigate away in the current tab).
+    window.open(directUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleEmbedError = (video) => {
-    console.log('Embed error for video:', video.title);
-    
     // Remember this video is restricted for future clicks
-    setRestrictedVideos(prev => new Set(prev).add(video.title));
+    rememberRestricted(video.url);
     
     // Close modal and open in YouTube immediately
     setSelectedVideo(null);

@@ -1,21 +1,54 @@
 {
   "block": "softwareB1",
   "module": "1_1",
-  "moduleTitle": "Module 1.1: OneNote",
-  "infoSections": [],
+  "moduleTitle": "Module 1.1: Python Basics",
+  "infoSections": [
+    {
+      "type": "text",
+      "text": "**Python** is an essential programming language for software development in neurotechnology. It is easy to learn and use, making it a great tool for processing neural data, building machine learning models, and automating research tasks. With Python, you can develop skills in data analysis, signal processing, and algorithm design, which are key for working with brain-computer interfaces, neuroimaging, and neural simulations. Its libraries, like NumPy, SciPy, and TensorFlow, help with handling large datasets and applying AI to neuroscience problems. Knowing Python allows you to quickly test ideas, analyze brain signals, and create software for neurotech applications."
+    }
+  ],
   "tasks": [
     {
       "taskTitle": "Task 1",
-      "taskDescription": "Make sure you have access to the OneNote. Look at this example of the [Weekly Meeting] template, and complete the following.\n\t1. Open OneNote\n\t2. Click \"SOP\"\n\t3. Click \"Weekly Meeting Example\"\n\t4. Make a copy of it and move it to \"Onboarding\"\n\t5. Rename the page to your first and last name.\n\t6. Find the contact infomration of your subsystem lead or director. Send a message/email asking for access to Jira.\n\t7. Go back to OneNote, and at the bottom of your personal page, type \"I have requested access to Jira by contacting [who you contacted].\"",
-      "links": [
+      "taskDescription": "Watch this video that help explain some important Python concepts in 30 minutes! If you are stuck at any point, do not hesitate to use the internet or ask for help. However, please refrain from using generative AI during the preliminary stages of learning Python.",
+      "videos": [
         {
-          "label": "Weekly Meeting",
-          "url": "https://drive.google.com/file/d/1_BzpJJnEQHBNoEvzgNXRGaEl90ZnOBGl/view?usp=sharing",
+          "title": "Learn Python in only 30 minutes (Beginner Tutorial)",
+          "url": "https://www.youtube.com/watch?v=Ro_MScTDfU4",
           "required": true
         }
       ],
-      "requiredActions": ["clickLinks"]
+      "requiredActions": ["watchVideos"]
     }
   ],
-  "extraResources": []
+ "extraResources": [
+    {
+      "type": "text",
+      "text": "The links below touches on more advanced uses of Python that the Machine Learning team currently applies in their projects! The videos below help you get more setup for Python. \n* [scikit-learn Machine Learning in Python] \n\t* [Dive into Deep Learning]",
+      "links": [
+        {
+          "label": "scikit-learn Machine Learning in Python",
+          "url": "https://scikit-learn.org/stable/index.html"
+        },
+        {
+          "label": "Dive into Deep Learning",
+          "url": "https://d2l.ai/"
+        }
+      ]
+    },
+    {
+      "type": "videos",
+      "videos": [
+        {
+          "title": "Getting Started with Python in VS Code (Official Video)",
+          "url": "https://www.youtube.com/embed/D2cwvpJSBX4"
+        },
+        {
+          "title": "Python Programming Tutorial | Introduction | GeeksforGeeks",
+          "url": "https://www.youtube.com/embed/OLPbd-7Pp_8"
+        }
+      ]
+    }
+  ]
 }

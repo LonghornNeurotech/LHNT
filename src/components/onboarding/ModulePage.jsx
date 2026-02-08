@@ -1,12 +1,27 @@
 // ./src/components/onboarding/ModulePage.jsx
 // This is the submodule page that displays all the content for the current submodule of the current onboarding block the user is in!
+import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 import RichTextWithLinks from "./RichTextWithLinks";
 import TaskCard from "./TaskCard";
 import VideoGallery from "./videos/VideoGallery";
+import { useProgress } from "../../context/useProgress";
 
 const ModulePage = ({ data }) => {
-  const { moduleTitle, infoSections = [], tasks = [], extraResources = [] } = data;
+  const { infoSections = [], tasks = [], extraResources = [] } = data;
+  const { onboardingBlock, moduleSubmodule } = useParams();
+  const { progress, markSubmoduleVisited, updateSubmoduleCompletion } = useProgress();
+
+  useEffect(() => {
+    if (!onboardingBlock || !moduleSubmodule) return;
+    markSubmoduleVisited(onboardingBlock, moduleSubmodule);
+  }, [onboardingBlock, moduleSubmodule, markSubmoduleVisited]);
+
+  useEffect(() => {
+    if (!onboardingBlock || !moduleSubmodule) return;
+    updateSubmoduleCompletion(onboardingBlock, moduleSubmodule, tasks || []);
+  }, [onboardingBlock, moduleSubmodule, tasks, progress, updateSubmoduleCompletion]);
 
   // Ensures every segment is inline, preventing line break bugs in lists.
   const renderWithBold = (text, links = []) => {
@@ -93,9 +108,22 @@ const ModulePage = ({ data }) => {
     return elements.length ? <div>{elements}</div> : null;
   };
 
+  // Supports for display of multiple videos in the module page's info section and in the extra resources section
+  const normalizeOptionalVideos = (entry) => {
+    if (!entry) return [];
+    if (Array.isArray(entry.videos)) {
+      return entry.videos
+        .filter((v) => v?.url && v?.title)
+        .map((v) => ({ ...v, required: false }));
+    }
+    if (entry.url && entry.title) {
+      return [{ url: entry.url, title: entry.title, required: false }];
+    }
+    return [];
+  };
+
   return (
     <div className="mx-auto">
-      <h1 className="text-2xl font-bold text-prussian_blue mb-4">{moduleTitle}</h1>
       <section className="mb-6">
         {infoSections.map((section, i) => {
           if (section.type === "text") {
@@ -119,10 +147,12 @@ const ModulePage = ({ data }) => {
               </p>
             );
           }
-          if (section.type === "video") {
+          if (section.type === "video" || section.type === "videos") {
+            const videos = normalizeOptionalVideos(section);
+            if (!videos.length) return null;
             return (
               <div key={i} className="mb-4">
-                <VideoGallery videos={[{ url: section.url, title: section.title, required: false }]} />
+                <VideoGallery videos={videos} />
               </div>
             );
           }
@@ -138,10 +168,12 @@ const ModulePage = ({ data }) => {
         <section>
           <h2 className="font-bold text-lg text-prussian_blue mb-2">Extra Resources</h2>
           {extraResources.map((res, i) => {
-            if (res.type === "video") {
+            if (res.type === "video" || res.type === "videos") {
+              const videos = normalizeOptionalVideos(res);
+              if (!videos.length) return null;
               return (
                 <div key={i} className="mb-4">
-                  <VideoGallery videos={[{ url: res.url, title: res.title, required: false }]} />
+                  <VideoGallery videos={videos} />
                 </div>
               );
             }
@@ -178,6 +210,12 @@ ModulePage.propTypes = {
         url: PropTypes.string,
         title: PropTypes.string,
         links: PropTypes.array,
+        videos: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+          })
+        ),
       })
     ),
     tasks: PropTypes.arrayOf(
@@ -194,6 +232,12 @@ ModulePage.propTypes = {
         text: PropTypes.string,
         url: PropTypes.string,
         links: PropTypes.array,
+        videos: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+          })
+        ),
       })
     ),
   }).isRequired,
