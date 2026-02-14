@@ -218,7 +218,7 @@ const ViewPastCompetitions = () => {
             View Past Competitions
           </h1>
           <p className="text-center text-lg" style={{ color: PRUSSIAN_BLUE }}>
-            Explore highlights from previous competitions and review past presentation slides.
+            Explore highlights and notable presentation slides from our first-ever onboarding competition for our project members hosted on Fall 2025!
           </p>
         </header>
 
